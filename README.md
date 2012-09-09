@@ -39,10 +39,9 @@ The API can the be accessed via the `ConnectionManager`. For instance, for fetch
 all music albums, you would write:
 
 ```java
-final TextView label = (TextView) findViewById(R.id.label);
 final ConnectionManager cm = new ConnectionManager(getApplicationContext(), new HostConfig("192.168.0.100"));
 final AudioLibrary.GetAlbums getAlbumsCall = new AudioLibrary.GetAlbums(null, null, 
-		AudioModel.AlbumFields.TITLE, AudioModel.AlbumFields.ARTISTID, AudioModel.AlbumFields.YEAR);
+		AudioModel.AlbumFields.TITLE, AudioModel.AlbumFields.YEAR);
 cm.call(getAlbumsCall, new ApiCallback<AudioModel.AlbumDetails>() {
 	public void onResponse(AbstractCall<AlbumDetails> apiCall) {
 		for (AlbumDetails album : apiCall.getResults()) {
@@ -62,5 +61,4 @@ in the UI thread.
 Also note that it is currently compiled against Eden. For Froyo, I'll have to
 look for potential conflicts and maybe figure out a way to communicate with
 multiple versions of the API transparently.
-
 
