@@ -22,6 +22,7 @@ Dependencies
 * Obivously, the [Android framework](http://developer.android.com/sdk/index.html) is needed.
 * As serializer, Jackson is used, which can be obtained [here](http://jackson.codehaus.org/).
 
+All dependencies should be in the Eclipse project that is included in the repository.
 
 Integration
 -----------
@@ -31,7 +32,7 @@ your Manifest under `application`:
 
 	<service android:name="org.xbmc.android.jsonrpc.service.ConnectionService" />
 	
-You'll also need to request permission to access the network (under) `manifest`:
+You'll also need to request permission to access the network (under `manifest`):
 
 	<uses-permission android:name="android.permission.INTERNET" />
 
