@@ -1,6 +1,6 @@
-#################################
+
 XBMC JSON-RPC library for Android
-#################################
+=================================
 
 This is a library that is [generated](https://github.com/freezy/xbmc-jsonrpc-javaclassgen)
 from JSON-RPC's [introspect](http://wiki.xbmc.org/index.php?title=JSON-RPC_API/v3#JSONRPC.Introspect).
@@ -17,14 +17,14 @@ used if necessary.
 
 
 Dependencies
-############
+------------
 
 * Obivously, the [Android framework](http://developer.android.com/sdk/index.html) is needed.
 * As serializer, Jackson is used, which can be obtained [here](http://jackson.codehaus.org/).
 
 
 Integration
-###########
+-----------
 
 If you want to use the provided connection service, you'll have to add this into
 your Manifest under `application`: 
@@ -35,24 +35,26 @@ You'll also need to request permission to access the network (under) `manifest`:
 
 	<uses-permission android:name="android.permission.INTERNET" />
 
-The API can the be accessed via the `ConnectionManager`. For instance, fetching
+The API can the be accessed via the `ConnectionManager`. For instance, for fetching
 all music albums, you would write:
 
-	final TextView label = (TextView) findViewById(R.id.label);
-	final ConnectionManager cm = new ConnectionManager(getApplicationContext(), new HostConfig("192.168.0.100"));
-	final AudioLibrary.GetAlbums getAlbumsCall = new AudioLibrary.GetAlbums(null, null, 
-			AudioModel.AlbumFields.TITLE, AudioModel.AlbumFields.ARTISTID, AudioModel.AlbumFields.YEAR);
-	cm.call(getAlbumsCall, new ApiCallback<AudioModel.AlbumDetails>() {
-		public void onResponse(AbstractCall<AlbumDetails> apiCall) {
-			for (AlbumDetails album : apiCall.getResults()) {
-				Log.d(TAG, "Got album: " + album.title + " (" + album.year + ")");
-			}
+```java
+final TextView label = (TextView) findViewById(R.id.label);
+final ConnectionManager cm = new ConnectionManager(getApplicationContext(), new HostConfig("192.168.0.100"));
+final AudioLibrary.GetAlbums getAlbumsCall = new AudioLibrary.GetAlbums(null, null, 
+		AudioModel.AlbumFields.TITLE, AudioModel.AlbumFields.ARTISTID, AudioModel.AlbumFields.YEAR);
+cm.call(getAlbumsCall, new ApiCallback<AudioModel.AlbumDetails>() {
+	public void onResponse(AbstractCall<AlbumDetails> apiCall) {
+		for (AlbumDetails album : apiCall.getResults()) {
+			Log.d(TAG, "Got album: " + album.title + " (" + album.year + ")");
 		}
-	
-		public void onError(int code, String message, String hint) {
-			Log.d(TAG, "Error " + code + ": " + message);
-		}
-	});
+	}
+
+	public void onError(int code, String message, String hint) {
+		Log.d(TAG, "Error " + code + ": " + message);
+	}
+});
+```
 
 Note that the response is always asynchronous and is run in the service and not 
 in the UI thread. 
