@@ -57,4 +57,8 @@ all music albums, you would write:
 Note that the response is always asynchronous and is run in the service and not 
 in the UI thread. 
 
+Also note that it is currently compiled against Eden. For Froyo, I'll have to
+look for potential conflicts and maybe figure out a way to communicate with
+multiple versions of the API transparently.
+
 
