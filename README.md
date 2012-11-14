@@ -2,7 +2,7 @@
 XBMC JSON-RPC library for Android
 =================================
 
-This is a library that is [generated](https://github.com/freezy/xbmc-jsonrpc-javaclassgen)
+This is a library that is [generated](https://github.com/freezy/xbmc-jsonrpclib-android-generator)
 from JSON-RPC's [introspect](http://wiki.xbmc.org/index.php?title=JSON-RPC_API/v3#JSONRPC.Introspect).
 It takes care of marshaling and unmarshaling the JSON data into Java class
 objects and vice versa. It also wraps a Java object model around JSON-RPC's output
@@ -40,16 +40,20 @@ The API can the be accessed via the `ConnectionManager`. For instance, for fetch
 all music albums, you would write:
 
 ```java
+// init connection manager
 final ConnectionManager cm = new ConnectionManager(getApplicationContext(), new HostConfig("192.168.0.100"));
-final AudioLibrary.GetAlbums getAlbumsCall = new AudioLibrary.GetAlbums(null, null, 
-		AudioModel.AlbumFields.TITLE, AudioModel.AlbumFields.YEAR);
-cm.call(getAlbumsCall, new ApiCallback<AudioModel.AlbumDetails>() {
-	public void onResponse(AbstractCall<AlbumDetails> apiCall) {
-		for (AlbumDetails album : apiCall.getResults()) {
+
+// create api call object
+final AudioLibrary.GetAlbums call = new AudioLibrary.GetAlbums(null, null, (ListModel.AlbumFilter)null, 
+		AudioModel.AlbumFields.TITLE, AudioModel.AlbumFields.YEAR); // only fetch title and year
+
+// execute
+cm.call(call, new ApiCallback<AlbumDetail>() {
+	public void onResponse(AbstractCall<AlbumDetail> call) {
+		for (AlbumDetail album : call.getResults()) {
 			Log.d(TAG, "Got album: " + album.title + " (" + album.year + ")");
 		}
 	}
-
 	public void onError(int code, String message, String hint) {
 		Log.d(TAG, "Error " + code + ": " + message);
 	}
@@ -59,7 +63,9 @@ cm.call(getAlbumsCall, new ApiCallback<AudioModel.AlbumDetails>() {
 Note that the response is always asynchronous and is run in the service and not 
 in the UI thread. 
 
-Also note that it is currently compiled against Eden. For Froyo, I'll have to
-look for potential conflicts and maybe figure out a way to communicate with
-multiple versions of the API transparently.
+Branches
+--------
+
+The master branch will always be built against a nightly build of XBMC. I'll 
+create additional branches for Eden and Frodo soon.
 
