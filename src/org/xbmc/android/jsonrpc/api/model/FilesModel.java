@@ -1,5 +1,5 @@
 /*
- *      Copyright (C) 2005-2015 Team XBMC
+ *      Copyright (C) 2005-2012 Team XBMC
  *      http://xbmc.org
  *
  *  This Program is free software; you can redistribute it and/or modify
@@ -18,16 +18,25 @@
  *  http://www.gnu.org/copyleft/gpl.html
  *
  */
-
 package org.xbmc.android.jsonrpc.api.model;
 
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 public final class FilesModel {
+
+	/**
+	 * API Name: <tt>Files.Media</tt>
+	 */
 	public interface Media {
+
 		public final String VIDEO = "video";
 		public final String MUSIC = "music";
 		public final String PICTURES = "pictures";
 		public final String FILES = "files";
 		public final String PROGRAMS = "programs";
+
+		public final static Set<String> values = new HashSet<String>(Arrays.asList(VIDEO, MUSIC, PICTURES, FILES, PROGRAMS));
 	}
 }

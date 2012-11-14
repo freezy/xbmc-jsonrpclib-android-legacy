@@ -37,6 +37,7 @@ import java.util.TimerTask;
 
 import org.codehaus.jackson.JsonFactory;
 import org.codehaus.jackson.JsonNode;
+import org.codehaus.jackson.JsonParseException;
 import org.codehaus.jackson.JsonParser;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.node.ObjectNode;
@@ -230,18 +231,24 @@ public class ConnectionService extends IntentService {
 			final JsonParser jp = jf.createJsonParser(socket.getInputStream());
 			JsonNode node = null;
 			while ((node = OM.readTree(jp)) != null) {
-				Log.i(TAG, "READ: " + node.toString().substring(0, 80) + "...");
-//				Log.i(TAG, "READ: " + node.toString());
+				if (node.toString().length() > 80) {
+					Log.i(TAG, "READ: " + node.toString().substring(0, 80) + "...");
+				} else {
+					Log.i(TAG, "READ: " + node.toString());
+				}
 				notifyClients(node);
 			}
 			mOut.close();
 			Log.i(TAG, "TCP socket closed.");
 
+		} catch (JsonParseException e) {
+			Log.e(TAG, "Cannot parse JSON response: " + e.getMessage(), e);
+			notifyError(new ApiException(ApiException.JSON_EXCEPTION,  "Error while parsing JSON response: " + e.getMessage(), e), null);
 		} catch (EOFException e) {
 			Log.i(TAG, "Connection broken, quitting.");
 			notifyError(new ApiException(ApiException.IO_DISCONNECTED,  "Socket disconnected: " + e.getMessage(), e), null);
 		} catch (IOException e) {
-			Log.e(TAG, "I/O error while reading: " + e.getMessage(), e);
+			Log.e(TAG, "I/O error while reading (" + e.getClass().getSimpleName() + "): " + e.getMessage(), e);
 			notifyError(new ApiException(ApiException.IO_EXCEPTION_WHILE_READING,  "I/O error while reading: " + e.getMessage(), e), null);
 		} finally {
 			try {
@@ -326,8 +333,12 @@ public class ConnectionService extends IntentService {
 		final HashMap<String, AbstractCall<?>> calls = mCalls;
 		final HashMap<String, JsonHandler> handlers = mHandlers;
 		
+		// check for errors
+		if (node.has("error")) {
+			notifyError(new ApiException(node), node.get("id").getValueAsText());
+			
 		// check if notification or api call
-		if (node.has("id")) {
+		} else if (node.has("id")) {
 			// it's api call.
 			final String id = node.get("id").getValueAsText();
 			if (calls.containsKey(id)) {

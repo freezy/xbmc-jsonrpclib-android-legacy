@@ -1,5 +1,5 @@
 /*
- *      Copyright (C) 2005-2015 Team XBMC
+ *      Copyright (C) 2005-2012 Team XBMC
  *      http://xbmc.org
  *
  *  This Program is free software; you can redistribute it and/or modify
@@ -18,141 +18,71 @@
  *  http://www.gnu.org/copyleft/gpl.html
  *
  */
-
 package org.xbmc.android.jsonrpc.api.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import org.codehaus.jackson.JsonNode;
 import org.codehaus.jackson.node.ArrayNode;
+import org.codehaus.jackson.node.BooleanNode;
 import org.codehaus.jackson.node.ObjectNode;
+import org.codehaus.jackson.node.TextNode;
 import org.xbmc.android.jsonrpc.api.AbstractModel;
 
 public final class GlobalModel {
+
 	/**
-	 * Configuration
+	 * API Name: <tt>Global.Time</tt>
 	 * <p/>
-	 * <i>This class was generated automatically from XBMC's JSON-RPC introspect.</i>
-	 */
-	public static class Configuration extends AbstractModel {
-		public final static String API_TYPE = "Configuration";
-		// field names
-		public static final String NOTIFICATIONS = "notifications";
-		// class members
-		public final ConfigurationModel.Notifications notifications;
-		/**
-		 * Construct from JSON object.
-		 * @param obj JSON object representing a Configuration object
-		 */
-		public Configuration(ObjectNode node) {
-			mType = API_TYPE;
-			notifications = new ConfigurationModel.Notifications((ObjectNode)node.get(NOTIFICATIONS));
-		}
-		/**
-		 * Construct object with native values for later serialization.
-		 * @param notifications 
-		 */
-		public Configuration(ConfigurationModel.Notifications notifications) {
-			this.notifications = notifications;
-		}
-		@Override
-		public ObjectNode toObjectNode() {
-			final ObjectNode node = OM.createObjectNode();
-			node.put(NOTIFICATIONS, notifications.toObjectNode());
-			return node;
-		}
-		/**
-		 * Extracts a list of {@link GlobalModel.Configuration} objects from a JSON array.
-		 * @param obj ObjectNode containing the list of objects
-		 * @param key Key pointing to the node where the list is stored
-		 */
-		static ArrayList<GlobalModel.Configuration> getGlobalModelConfigurationList(ObjectNode node, String key) {
-			if (node.has(key)) {
-				final ArrayNode a = (ArrayNode)node.get(key);
-				final ArrayList<GlobalModel.Configuration> l = new ArrayList<GlobalModel.Configuration>(a.size());
-				for (int i = 0; i < a.size(); i++) {
-					l.add(new GlobalModel.Configuration((ObjectNode)a.get(i)));
-				}
-				return l;
-			}
-			return new ArrayList<GlobalModel.Configuration>(0);
-		}
-		/**
-		 * Flatten this object into a Parcel.
-		 * @param parcel the Parcel in which the object should be written
-		 * @param flags additional flags about how the object should be written
-		 */
-		@Override
-		public void writeToParcel(Parcel parcel, int flags) {
-			parcel.writeValue(notifications);
-		}
-		@Override
-		public int describeContents() {
-			return 0;
-		}
-		/**
-		 * Construct via parcel
-		 */
-		protected Configuration(Parcel parcel) {
-			notifications = parcel.<ConfigurationModel.Notifications>readParcelable(ConfigurationModel.Notifications.class.getClassLoader());
-		}
-		/**
-		 * Generates instances of this Parcelable class from a Parcel.
-		 */
-		public static final Parcelable.Creator<Configuration> CREATOR = new Parcelable.Creator<Configuration>() {
-			@Override
-			public Configuration createFromParcel(Parcel parcel) {
-				return new Configuration(parcel);
-			}
-			@Override
-			public Configuration[] newArray(int n) {
-				return new Configuration[n];
-			}
-		};
-	}
-	/**
-	 * Global.Time
-	 * <p/>
+	 * Note: This class is used as result only.<br/>
 	 * <i>This class was generated automatically from XBMC's JSON-RPC introspect.</i>
 	 */
 	public static class Time extends AbstractModel {
 		public final static String API_TYPE = "Global.Time";
+
 		// field names
 		public static final String HOURS = "hours";
 		public static final String MILLISECONDS = "milliseconds";
 		public static final String MINUTES = "minutes";
 		public static final String SECONDS = "seconds";
+
 		// class members
-		public final int hours;
-		public final int milliseconds;
-		public final int minutes;
-		public final int seconds;
+		public final Integer hours;
+		public final Integer milliseconds;
+		public final Integer minutes;
+		public final Integer seconds;
+
 		/**
-		 * Construct from JSON object.
-		 * @param obj JSON object representing a Time object
+		 * @param hours
+		 * @param milliseconds
+		 * @param minutes
+		 * @param seconds
 		 */
-		public Time(ObjectNode node) {
-			mType = API_TYPE;
-			hours = node.get(HOURS).getIntValue();
-			milliseconds = node.get(MILLISECONDS).getIntValue();
-			minutes = node.get(MINUTES).getIntValue();
-			seconds = node.get(SECONDS).getIntValue();
-		}
-		/**
-		 * Construct object with native values for later serialization.
-		 * @param hours 
-		 * @param milliseconds 
-		 * @param minutes 
-		 * @param seconds 
-		 */
-		public Time(int hours, int milliseconds, int minutes, int seconds) {
+		public Time(Integer hours, Integer milliseconds, Integer minutes, Integer seconds) {
 			this.hours = hours;
 			this.milliseconds = milliseconds;
 			this.minutes = minutes;
 			this.seconds = seconds;
 		}
+
+		/**
+		 * Construct from JSON object.
+		 * @param node JSON object representing a Time object
+		 */
+		public Time(ObjectNode node) {
+			hours = node.get(HOURS).getIntValue(); // required value
+			milliseconds = node.get(MILLISECONDS).getIntValue(); // required value
+			minutes = node.get(MINUTES).getIntValue(); // required value
+			seconds = node.get(SECONDS).getIntValue(); // required value
+		}
+
 		@Override
-		public ObjectNode toObjectNode() {
+		public JsonNode toJsonNode() {
 			final ObjectNode node = OM.createObjectNode();
 			node.put(HOURS, hours);
 			node.put(MILLISECONDS, milliseconds);
@@ -160,26 +90,28 @@ public final class GlobalModel {
 			node.put(SECONDS, seconds);
 			return node;
 		}
+
 		/**
-		 * Extracts a list of {@link GlobalModel.Time} objects from a JSON array.
-		 * @param obj ObjectNode containing the list of objects
-		 * @param key Key pointing to the node where the list is stored
+		 * Extracts a list of {@link Time} objects from a JSON array.
+		 * @param obj ObjectNode containing the list of objects.
+		 * @param key Key pointing to the node where the list is stored.
 		 */
-		static ArrayList<GlobalModel.Time> getGlobalModelTimeList(ObjectNode node, String key) {
+		static List<Time> getGlobalModelTimeList(ObjectNode node, String key) {
 			if (node.has(key)) {
 				final ArrayNode a = (ArrayNode)node.get(key);
-				final ArrayList<GlobalModel.Time> l = new ArrayList<GlobalModel.Time>(a.size());
+				final List<Time> l = new ArrayList<Time>(a.size());
 				for (int i = 0; i < a.size(); i++) {
-					l.add(new GlobalModel.Time((ObjectNode)a.get(i)));
+					l.add(new Time((ObjectNode)a.get(i)));
 				}
 				return l;
 			}
-			return new ArrayList<GlobalModel.Time>(0);
+			return new ArrayList<Time>(0);
 		}
+
 		/**
 		 * Flatten this object into a Parcel.
-		 * @param parcel the Parcel in which the object should be written
-		 * @param flags additional flags about how the object should be written
+		 * @param parcel the Parcel in which the object should be written.
+		 * @param flags additional flags about how the object should be written.
 		 */
 		@Override
 		public void writeToParcel(Parcel parcel, int flags) {
@@ -188,12 +120,9 @@ public final class GlobalModel {
 			parcel.writeValue(minutes);
 			parcel.writeValue(seconds);
 		}
-		@Override
-		public int describeContents() {
-			return 0;
-		}
+
 		/**
-		 * Construct via parcel
+		 * Construct via parcel.
 		 */
 		protected Time(Parcel parcel) {
 			hours = parcel.readInt();
@@ -201,6 +130,7 @@ public final class GlobalModel {
 			minutes = parcel.readInt();
 			seconds = parcel.readInt();
 		}
+
 		/**
 		 * Generates instances of this Parcelable class from a Parcel.
 		 */
@@ -214,12 +144,110 @@ public final class GlobalModel {
 				return new Time[n];
 			}
 		};
-		/**
-		 * Returns time in milliseconds.
-		 * @return Time in milliseconds
-		 */
-		public long getMilliseconds() {
-			return hours * 3600000 + minutes * 60000 + seconds * 1000 + milliseconds;
+
+		@Override
+		public int describeContents() {
+			return 0;
 		}
+	}
+
+	/**
+	 * API Name: <tt>Global.Toggle</tt>
+	 * <p/>
+	 * Note: This class is used as parameter only.<br/>
+	 * <i>This class was generated automatically from XBMC's JSON-RPC introspect.</i>
+	 */
+	public static class Toggle extends AbstractModel {
+		public final static String API_TYPE = "Global.Toggle";
+
+		// class members
+		public final Boolean booleanArg;
+		public final String stringArg;
+
+		/**
+		 * @param booleanArg
+		 */
+		public Toggle(Boolean booleanArg) {
+			this.booleanArg = booleanArg;
+			this.stringArg = null;
+		}
+
+		/**
+		 * @param stringArg One of: <tt>toggle</tt>. See constants at {@link GlobalModel.Toggle.StringArg}.
+		 */
+		public Toggle(String stringArg) {
+			this.stringArg = stringArg;
+			this.booleanArg = null;
+		}
+
+		@Override
+		public JsonNode toJsonNode() {
+			if (booleanArg != null) {
+				return booleanArg ? BooleanNode.TRUE : BooleanNode.FALSE;
+			}
+			if (stringArg != null) {
+				return new TextNode(stringArg); // 3num
+			}
+			return null; // this is completely excluded. theoretically.
+		}
+
+		/**
+		 * Flatten this object into a Parcel.
+		 * @param parcel the Parcel in which the object should be written.
+		 * @param flags additional flags about how the object should be written.
+		 */
+		@Override
+		public void writeToParcel(Parcel parcel, int flags) {
+			parcel.writeInt(booleanArg ? 1 : 0);
+			parcel.writeValue(stringArg); // enum
+		}
+
+		/**
+		 * Construct via parcel.
+		 */
+		protected Toggle(Parcel parcel) {
+			booleanArg = parcel.readInt() == 1;
+			stringArg = parcel.readString(); // enum
+		}
+
+		/**
+		 * Generates instances of this Parcelable class from a Parcel.
+		 */
+		public static final Parcelable.Creator<Toggle> CREATOR = new Parcelable.Creator<Toggle>() {
+			@Override
+			public Toggle createFromParcel(Parcel parcel) {
+				return new Toggle(parcel);
+			}
+			@Override
+			public Toggle[] newArray(int n) {
+				return new Toggle[n];
+			}
+		};
+
+		@Override
+		public int describeContents() {
+			return 0;
+		}
+
+		/**
+		 * API Name: <tt>stringArg</tt>
+		 */
+		public interface StringArg {
+
+			public final String TOGGLE = "toggle";
+
+			public final static Set<String> values = new HashSet<String>(Arrays.asList(TOGGLE));
+		}
+	}
+
+	/**
+	 * API Name: <tt>Global.IncrementDecrement</tt>
+	 */
+	public interface IncrementDecrement {
+
+		public final String INCREMENT = "increment";
+		public final String DECREMENT = "decrement";
+
+		public final static Set<String> values = new HashSet<String>(Arrays.asList(INCREMENT, DECREMENT));
 	}
 }

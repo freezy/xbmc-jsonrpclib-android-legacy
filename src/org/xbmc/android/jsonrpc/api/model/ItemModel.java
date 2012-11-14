@@ -1,5 +1,5 @@
 /*
- *      Copyright (C) 2005-2015 Team XBMC
+ *      Copyright (C) 2005-2012 Team XBMC
  *      http://xbmc.org
  *
  *  This Program is free software; you can redistribute it and/or modify
@@ -18,96 +18,107 @@
  *  http://www.gnu.org/copyleft/gpl.html
  *
  */
-
 package org.xbmc.android.jsonrpc.api.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;
 import java.util.ArrayList;
+import java.util.List;
+import org.codehaus.jackson.JsonNode;
 import org.codehaus.jackson.node.ArrayNode;
 import org.codehaus.jackson.node.ObjectNode;
 import org.xbmc.android.jsonrpc.api.AbstractModel;
 
 public final class ItemModel {
+
 	/**
-	 * Item.Details.Base
+	 * API Name: <tt>Item.Details.Base</tt>
 	 * <p/>
+	 * Note: This class is used as result only.<br/>
 	 * <i>This class was generated automatically from XBMC's JSON-RPC introspect.</i>
 	 */
-	public static class BaseDetails extends AbstractModel {
+	public static class BaseDetail extends AbstractModel {
 		public final static String API_TYPE = "Item.Details.Base";
+
 		// field names
 		public static final String LABEL = "label";
+
 		// class members
 		public final String label;
+
 		/**
-		 * Construct from JSON object.
-		 * @param obj JSON object representing a BaseDetails object
+		 * @param label
 		 */
-		public BaseDetails(ObjectNode node) {
-			mType = API_TYPE;
-			label = node.get(LABEL).getTextValue();
-		}
-		/**
-		 * Construct object with native values for later serialization.
-		 * @param label 
-		 */
-		public BaseDetails(String label) {
+		public BaseDetail(String label) {
 			this.label = label;
 		}
+
+		/**
+		 * Construct from JSON object.
+		 * @param node JSON object representing a BaseDetail object
+		 */
+		public BaseDetail(ObjectNode node) {
+			label = node.get(LABEL).getTextValue(); // required value
+		}
+
 		@Override
-		public ObjectNode toObjectNode() {
+		public JsonNode toJsonNode() {
 			final ObjectNode node = OM.createObjectNode();
 			node.put(LABEL, label);
 			return node;
 		}
+
 		/**
-		 * Extracts a list of {@link ItemModel.BaseDetails} objects from a JSON array.
-		 * @param obj ObjectNode containing the list of objects
-		 * @param key Key pointing to the node where the list is stored
+		 * Extracts a list of {@link BaseDetail} objects from a JSON array.
+		 * @param obj ObjectNode containing the list of objects.
+		 * @param key Key pointing to the node where the list is stored.
 		 */
-		static ArrayList<ItemModel.BaseDetails> getItemModelBaseDetailsList(ObjectNode node, String key) {
+		static List<BaseDetail> getItemModelBaseDetailList(ObjectNode node, String key) {
 			if (node.has(key)) {
 				final ArrayNode a = (ArrayNode)node.get(key);
-				final ArrayList<ItemModel.BaseDetails> l = new ArrayList<ItemModel.BaseDetails>(a.size());
+				final List<BaseDetail> l = new ArrayList<BaseDetail>(a.size());
 				for (int i = 0; i < a.size(); i++) {
-					l.add(new ItemModel.BaseDetails((ObjectNode)a.get(i)));
+					l.add(new BaseDetail((ObjectNode)a.get(i)));
 				}
 				return l;
 			}
-			return new ArrayList<ItemModel.BaseDetails>(0);
+			return new ArrayList<BaseDetail>(0);
 		}
+
 		/**
 		 * Flatten this object into a Parcel.
-		 * @param parcel the Parcel in which the object should be written
-		 * @param flags additional flags about how the object should be written
+		 * @param parcel the Parcel in which the object should be written.
+		 * @param flags additional flags about how the object should be written.
 		 */
 		@Override
 		public void writeToParcel(Parcel parcel, int flags) {
 			parcel.writeValue(label);
 		}
+
+		/**
+		 * Construct via parcel.
+		 */
+		protected BaseDetail(Parcel parcel) {
+			label = parcel.readString();
+		}
+
+		/**
+		 * Generates instances of this Parcelable class from a Parcel.
+		 */
+		public static final Parcelable.Creator<BaseDetail> CREATOR = new Parcelable.Creator<BaseDetail>() {
+			@Override
+			public BaseDetail createFromParcel(Parcel parcel) {
+				return new BaseDetail(parcel);
+			}
+			@Override
+			public BaseDetail[] newArray(int n) {
+				return new BaseDetail[n];
+			}
+		};
+
 		@Override
 		public int describeContents() {
 			return 0;
 		}
-		/**
-		 * Construct via parcel
-		 */
-		protected BaseDetails(Parcel parcel) {
-			label = parcel.readString();
-		}
-		/**
-		 * Generates instances of this Parcelable class from a Parcel.
-		 */
-		public static final Parcelable.Creator<BaseDetails> CREATOR = new Parcelable.Creator<BaseDetails>() {
-			@Override
-			public BaseDetails createFromParcel(Parcel parcel) {
-				return new BaseDetails(parcel);
-			}
-			@Override
-			public BaseDetails[] newArray(int n) {
-				return new BaseDetails[n];
-			}
-		};
 	}
 }

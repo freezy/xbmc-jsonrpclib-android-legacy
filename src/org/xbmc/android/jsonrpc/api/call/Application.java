@@ -1,5 +1,5 @@
 /*
- *      Copyright (C) 2005-2015 Team XBMC
+ *      Copyright (C) 2005-2012 Team XBMC
  *      http://xbmc.org
  *
  *  This Program is free software; you can redistribute it and/or modify
@@ -18,7 +18,6 @@
  *  http://www.gnu.org/copyleft/gpl.html
  *
  */
-
 package org.xbmc.android.jsonrpc.api.call;
 
 import android.os.Parcel;
@@ -26,55 +25,36 @@ import android.os.Parcelable;
 import org.codehaus.jackson.node.ObjectNode;
 import org.xbmc.android.jsonrpc.api.AbstractCall;
 import org.xbmc.android.jsonrpc.api.model.ApplicationModel;
+import org.xbmc.android.jsonrpc.api.model.GlobalModel;
 
 public final class Application {
 
-	private final static String PREFIX = "Application.";
-
 	/**
-	 * Retrieves the values of the given properties
+	 * Retrieves the values of the given properties.
 	 * <p/>
-	 * API Name: <code>Application.GetProperties</code>
+	 * This class represents the API method <tt>Application.GetProperties</tt>
 	 * <p/>
 	 * <i>This class was generated automatically from XBMC's JSON-RPC introspect.</i>
 	 */
-	public static class GetProperties extends AbstractCall<ApplicationModel.PropertyValue> { 
-		private static final String NAME = "GetProperties";
-		/**
-		 * Retrieves the values of the given properties
-		 * @param properties One or more of: <tt>volume</tt>, <tt>muted</tt>, <tt>name</tt>, <tt>version</tt>. See constants at {@link ApplicationModel.PropertyName}.
-		 * @see ApplicationModel.PropertyName
-		 */
-		public GetProperties(String... properties) {
-			super();
-			addParameter("properties", properties);
-		}
-		@Override
-		protected ApplicationModel.PropertyValue parseOne(ObjectNode node) {
-			return new ApplicationModel.PropertyValue(node);
-		}
-		@Override
-		public String getName() {
-			return PREFIX + NAME;
-		}
-		@Override
-		protected boolean returnsList() {
-			return false;
-		}
+	public static class GetProperties extends AbstractCall<ApplicationModel.PropertyValue> {
+		public final static String API_TYPE = "Application.GetProperties";
+
 		@Override
 		public void writeToParcel(Parcel parcel, int flags) {
 			super.writeToParcel(parcel, flags);
-				parcel.writeParcelable(mResult, flags);
-			}
+			parcel.writeParcelable(mResult, flags);
+		}
+
 		/**
-		 * Construct via parcel
+		 * Construct via parcel.
 		 */
 		protected GetProperties(Parcel parcel) {
 			super(parcel);
 		}
+
 		/**
-		* Generates instances of this Parcelable class from a Parcel.
-		*/
+		 * Generates instances of this Parcelable class from a Parcel.
+		 */
 		public static final Parcelable.Creator<GetProperties> CREATOR = new Parcelable.Creator<GetProperties>() {
 			@Override
 			public GetProperties createFromParcel(Parcel parcel) {
@@ -85,48 +65,58 @@ public final class Application {
 				return new GetProperties[n];
 			}
 		};
-}
-	/**
-	 * Quit application
-	 * <p/>
-	 * API Name: <code>Application.Quit</code>
-	 * <p/>
-	 * <i>This class was generated automatically from XBMC's JSON-RPC introspect.</i>
-	 */
-	public static class Quit extends AbstractCall<String> { 
-		private static final String NAME = "Quit";
+
 		/**
-		 * Quit application
+		 * Retrieves the values of the given properties.
+		 * @param properties One or more of: <tt>volume</tt>, <tt>muted</tt>, <tt>name</tt>, <tt>version</tt>. See constants at {@link ApplicationModel.PropertyName}.
 		 */
-		public Quit() {
+		public GetProperties(String... properties) {
 			super();
+			addParameter("properties", properties);
 		}
+
 		@Override
-		protected String parseOne(ObjectNode node) {
-			return node.getTextValue();
+		protected ApplicationModel.PropertyValue parseOne(ObjectNode node) {
+			return new ApplicationModel.PropertyValue(node);
 		}
+
 		@Override
 		public String getName() {
-			return PREFIX + NAME;
+			return API_TYPE;
 		}
+
 		@Override
 		protected boolean returnsList() {
 			return false;
 		}
+	}
+
+	/**
+	 * Quit application.
+	 * <p/>
+	 * This class represents the API method <tt>Application.Quit</tt>
+	 * <p/>
+	 * <i>This class was generated automatically from XBMC's JSON-RPC introspect.</i>
+	 */
+	public static class Quit extends AbstractCall<String> {
+		public final static String API_TYPE = "Application.Quit";
+
 		@Override
 		public void writeToParcel(Parcel parcel, int flags) {
 			super.writeToParcel(parcel, flags);
-				parcel.writeValue(mResult);
-			}
+			parcel.writeValue(mResult);
+		}
+
 		/**
-		 * Construct via parcel
+		 * Construct via parcel.
 		 */
 		protected Quit(Parcel parcel) {
 			super(parcel);
 		}
+
 		/**
-		* Generates instances of this Parcelable class from a Parcel.
-		*/
+		 * Generates instances of this Parcelable class from a Parcel.
+		 */
 		public static final Parcelable.Creator<Quit> CREATOR = new Parcelable.Creator<Quit>() {
 			@Override
 			public Quit createFromParcel(Parcel parcel) {
@@ -137,58 +127,56 @@ public final class Application {
 				return new Quit[n];
 			}
 		};
-}
-	/**
-	 * Toggle mute/unmute
-	 * <p/>
-	 * API Name: <code>Application.SetMute</code>
-	 * <p/>
-	 * <i>This class was generated automatically from XBMC's JSON-RPC introspect.</i>
-	 */
-	public static class SetMute extends AbstractCall<Boolean> { 
-		private static final String NAME = "SetMute";
+
 		/**
-		 * Toggle mute/unmute
-		 * @param mute 
+		 * Quit application.
 		 */
-		public SetMute(Boolean mute) {
+		public Quit() {
 			super();
-			addParameter("mute", mute);
 		}
-		/**
-		 * Toggle mute/unmute
-		 * @param mute 
-		 */
-		public SetMute(String mute) {
-			super();
-			addParameter("mute", mute);
-		}
+
 		@Override
-		protected Boolean parseOne(ObjectNode node) {
-			return node.getBooleanValue();
+		protected String parseOne(ObjectNode node) {
+			return node.getTextValue();
 		}
+
 		@Override
 		public String getName() {
-			return PREFIX + NAME;
+			return API_TYPE;
 		}
+
 		@Override
 		protected boolean returnsList() {
 			return false;
 		}
+	}
+
+	/**
+	 * Toggle mute/unmute.
+	 * <p/>
+	 * This class represents the API method <tt>Application.SetMute</tt>
+	 * <p/>
+	 * <i>This class was generated automatically from XBMC's JSON-RPC introspect.</i>
+	 */
+	public static class SetMute extends AbstractCall<Boolean> {
+		public final static String API_TYPE = "Application.SetMute";
+
 		@Override
 		public void writeToParcel(Parcel parcel, int flags) {
 			super.writeToParcel(parcel, flags);
-				parcel.writeValue(mResult);
-			}
+			parcel.writeValue(mResult);
+		}
+
 		/**
-		 * Construct via parcel
+		 * Construct via parcel.
 		 */
 		protected SetMute(Parcel parcel) {
 			super(parcel);
 		}
+
 		/**
-		* Generates instances of this Parcelable class from a Parcel.
-		*/
+		 * Generates instances of this Parcelable class from a Parcel.
+		 */
 		public static final Parcelable.Creator<SetMute> CREATOR = new Parcelable.Creator<SetMute>() {
 			@Override
 			public SetMute createFromParcel(Parcel parcel) {
@@ -199,50 +187,58 @@ public final class Application {
 				return new SetMute[n];
 			}
 		};
-}
-	/**
-	 * Set the current volume
-	 * <p/>
-	 * API Name: <code>Application.SetVolume</code>
-	 * <p/>
-	 * <i>This class was generated automatically from XBMC's JSON-RPC introspect.</i>
-	 */
-	public static class SetVolume extends AbstractCall<Integer> { 
-		private static final String NAME = "SetVolume";
+
 		/**
-		 * Set the current volume
-		 * @param volume 
+		 * Toggle mute/unmute.
+		 * @param mute
 		 */
-		public SetVolume(int volume) {
+		public SetMute(GlobalModel.Toggle mute) {
 			super();
-			addParameter("volume", volume);
+			addParameter("mute", mute);
 		}
+
 		@Override
-		protected Integer parseOne(ObjectNode node) {
-			return node.getIntValue();
+		protected Boolean parseOne(ObjectNode node) {
+			return node.getBooleanValue();
 		}
+
 		@Override
 		public String getName() {
-			return PREFIX + NAME;
+			return API_TYPE;
 		}
+
 		@Override
 		protected boolean returnsList() {
 			return false;
 		}
+	}
+
+	/**
+	 * Set the current volume.
+	 * <p/>
+	 * This class represents the API method <tt>Application.SetVolume</tt>
+	 * <p/>
+	 * <i>This class was generated automatically from XBMC's JSON-RPC introspect.</i>
+	 */
+	public static class SetVolume extends AbstractCall<Integer> {
+		public final static String API_TYPE = "Application.SetVolume";
+
 		@Override
 		public void writeToParcel(Parcel parcel, int flags) {
 			super.writeToParcel(parcel, flags);
-				parcel.writeValue(mResult);
-			}
+			parcel.writeValue(mResult);
+		}
+
 		/**
-		 * Construct via parcel
+		 * Construct via parcel.
 		 */
 		protected SetVolume(Parcel parcel) {
 			super(parcel);
 		}
+
 		/**
-		* Generates instances of this Parcelable class from a Parcel.
-		*/
+		 * Generates instances of this Parcelable class from a Parcel.
+		 */
 		public static final Parcelable.Creator<SetVolume> CREATOR = new Parcelable.Creator<SetVolume>() {
 			@Override
 			public SetVolume createFromParcel(Parcel parcel) {
@@ -253,5 +249,38 @@ public final class Application {
 				return new SetVolume[n];
 			}
 		};
-}
+
+		/**
+		 * Set the current volume.
+		 * @param volume
+		 */
+		public SetVolume(Integer volume) {
+			super();
+			addParameter("volume", volume);
+		}
+
+		/**
+		 * Set the current volume.
+		 * @param volume One of: <tt>increment</tt>, <tt>decrement</tt>. See constants at {@link GlobalModel.IncrementDecrement}.
+		 */
+		public SetVolume(String volume) {
+			super();
+			addParameter("volume", volume);
+		}
+
+		@Override
+		protected Integer parseOne(ObjectNode node) {
+			return node.getIntValue();
+		}
+
+		@Override
+		public String getName() {
+			return API_TYPE;
+		}
+
+		@Override
+		protected boolean returnsList() {
+			return false;
+		}
+	}
 }

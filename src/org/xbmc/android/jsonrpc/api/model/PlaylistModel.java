@@ -1,5 +1,5 @@
 /*
- *      Copyright (C) 2005-2015 Team XBMC
+ *      Copyright (C) 2005-2012 Team XBMC
  *      http://xbmc.org
  *
  *  This Program is free software; you can redistribute it and/or modify
@@ -18,235 +18,242 @@
  *  http://www.gnu.org/copyleft/gpl.html
  *
  */
-
 package org.xbmc.android.jsonrpc.api.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import org.codehaus.jackson.JsonNode;
 import org.codehaus.jackson.node.ArrayNode;
 import org.codehaus.jackson.node.ObjectNode;
 import org.xbmc.android.jsonrpc.api.AbstractModel;
 
 public final class PlaylistModel {
+
 	/**
-	 * Playlist.Item
+	 * API Name: <tt>Playlist.Item</tt>
 	 * <p/>
+	 * Note: This class is used as parameter only.<br/>
 	 * <i>This class was generated automatically from XBMC's JSON-RPC introspect.</i>
 	 */
 	public static class Item extends AbstractModel {
 		public final static String API_TYPE = "Playlist.Item";
-		// field names
-		public static final String FILE = "file";
-		public static final String DIRECTORY = "directory";
-		public static final String MOVIEID = "movieid";
-		public static final String EPISODEID = "episodeid";
-		public static final String MUSICVIDEOID = "musicvideoid";
-		public static final String ARTISTID = "artistid";
-		public static final String ALBUMID = "albumid";
-		public static final String SONGID = "songid";
-		public static final String GENREID = "genreid";
+
 		// class members
+		public final Albumid albumid;
+		public final Artistid artistid;
+		public final Directory directory;
+		public final Episodeid episodeid;
+		public final File file;
+		public final Genreid genreid;
+		public final Movieid movieid;
+		public final Musicvideoid musicvideoid;
+		public final Songid songid;
+
 		/**
-		 * Path to a file (not a directory) to be added to the playlist.
+		 * @param albumid
 		 */
-		public final String file;
-		public final String directory;
-		public final int movieid;
-		public final int episodeid;
-		public final int musicvideoid;
-		public final int artistid;
-		public final int albumid;
-		public final int songid;
-		/**
-		 * Identification of a genre from the AudioLibrary.
-		 */
-		public final int genreid;
-		/**
-		 * Construct from JSON object.
-		 * @param obj JSON object representing a Item object
-		 */
-		public Item(ObjectNode node) {
-			mType = API_TYPE;
-			file = node.get(FILE).getTextValue();
-			directory = node.get(DIRECTORY).getTextValue();
-			movieid = node.get(MOVIEID).getIntValue();
-			episodeid = node.get(EPISODEID).getIntValue();
-			musicvideoid = node.get(MUSICVIDEOID).getIntValue();
-			artistid = node.get(ARTISTID).getIntValue();
-			albumid = node.get(ALBUMID).getIntValue();
-			songid = node.get(SONGID).getIntValue();
-			genreid = node.get(GENREID).getIntValue();
-		}
-		/**
-		 * Construct object with native values for later serialization.
-		 * @param file Path to a file (not a directory) to be added to the playlist 
-		 * @param directory 
-		 * @param movieid 
-		 * @param episodeid 
-		 * @param musicvideoid 
-		 * @param artistid 
-		 * @param albumid 
-		 * @param songid 
-		 * @param genreid Identification of a genre from the AudioLibrary 
-		 */
-		public Item(String file, String directory, int movieid, int episodeid, int musicvideoid, int artistid, int albumid, int songid, int genreid) {
-			this.file = file;
-			this.directory = directory;
-			this.movieid = movieid;
-			this.episodeid = episodeid;
-			this.musicvideoid = musicvideoid;
-			this.artistid = artistid;
+		public Item(Albumid albumid) {
 			this.albumid = albumid;
-			this.songid = songid;
+			this.artistid = null;
+			this.directory = null;
+			this.episodeid = null;
+			this.file = null;
+			this.genreid = null;
+			this.movieid = null;
+			this.musicvideoid = null;
+			this.songid = null;
+		}
+
+		/**
+		 * @param artistid
+		 */
+		public Item(Artistid artistid) {
+			this.artistid = artistid;
+			this.albumid = null;
+			this.directory = null;
+			this.episodeid = null;
+			this.file = null;
+			this.genreid = null;
+			this.movieid = null;
+			this.musicvideoid = null;
+			this.songid = null;
+		}
+
+		/**
+		 * @param directory
+		 */
+		public Item(Directory directory) {
+			this.directory = directory;
+			this.albumid = null;
+			this.artistid = null;
+			this.episodeid = null;
+			this.file = null;
+			this.genreid = null;
+			this.movieid = null;
+			this.musicvideoid = null;
+			this.songid = null;
+		}
+
+		/**
+		 * @param episodeid
+		 */
+		public Item(Episodeid episodeid) {
+			this.episodeid = episodeid;
+			this.albumid = null;
+			this.artistid = null;
+			this.directory = null;
+			this.file = null;
+			this.genreid = null;
+			this.movieid = null;
+			this.musicvideoid = null;
+			this.songid = null;
+		}
+
+		/**
+		 * @param file
+		 */
+		public Item(File file) {
+			this.file = file;
+			this.albumid = null;
+			this.artistid = null;
+			this.directory = null;
+			this.episodeid = null;
+			this.genreid = null;
+			this.movieid = null;
+			this.musicvideoid = null;
+			this.songid = null;
+		}
+
+		/**
+		 * @param genreid
+		 */
+		public Item(Genreid genreid) {
 			this.genreid = genreid;
+			this.albumid = null;
+			this.artistid = null;
+			this.directory = null;
+			this.episodeid = null;
+			this.file = null;
+			this.movieid = null;
+			this.musicvideoid = null;
+			this.songid = null;
 		}
+
+		/**
+		 * @param movieid
+		 */
+		public Item(Movieid movieid) {
+			this.movieid = movieid;
+			this.albumid = null;
+			this.artistid = null;
+			this.directory = null;
+			this.episodeid = null;
+			this.file = null;
+			this.genreid = null;
+			this.musicvideoid = null;
+			this.songid = null;
+		}
+
+		/**
+		 * @param musicvideoid
+		 */
+		public Item(Musicvideoid musicvideoid) {
+			this.musicvideoid = musicvideoid;
+			this.albumid = null;
+			this.artistid = null;
+			this.directory = null;
+			this.episodeid = null;
+			this.file = null;
+			this.genreid = null;
+			this.movieid = null;
+			this.songid = null;
+		}
+
+		/**
+		 * @param songid
+		 */
+		public Item(Songid songid) {
+			this.songid = songid;
+			this.albumid = null;
+			this.artistid = null;
+			this.directory = null;
+			this.episodeid = null;
+			this.file = null;
+			this.genreid = null;
+			this.movieid = null;
+			this.musicvideoid = null;
+		}
+
 		@Override
-		public ObjectNode toObjectNode() {
-			final ObjectNode node = OM.createObjectNode();
-			node.put(FILE, file);
-			node.put(DIRECTORY, directory);
-			node.put(MOVIEID, movieid);
-			node.put(EPISODEID, episodeid);
-			node.put(MUSICVIDEOID, musicvideoid);
-			node.put(ARTISTID, artistid);
-			node.put(ALBUMID, albumid);
-			node.put(SONGID, songid);
-			node.put(GENREID, genreid);
-			return node;
-		}
-		/**
-		 * Default constructor.
-		 * @param file Path to a file (not a directory) to be added to the playlist 
-		 */
-		public class FileItem extends Item {
-			public FileItem(String file) {
-				super(file, null, -1, -1, -1, -1, -1, -1, -1);
+		public JsonNode toJsonNode() {
+			if (albumid != null) {
+				return albumid.toJsonNode();
 			}
-		}
-		/**
-		 * Default constructor.
-		 * @param directory 
-		 */
-		public class DirectoryItem extends Item {
-			public DirectoryItem(String directory) {
-				super(null, directory, -1, -1, -1, -1, -1, -1, -1);
+			if (artistid != null) {
+				return artistid.toJsonNode();
 			}
-		}
-		/**
-		 * Default constructor.
-		 * @param movieid 
-		 */
-		public class MovieidItem extends Item {
-			public MovieidItem(int movieid) {
-				super(null, null, movieid, -1, -1, -1, -1, -1, -1);
+			if (directory != null) {
+				return directory.toJsonNode();
 			}
-		}
-		/**
-		 * Default constructor.
-		 * @param episodeid 
-		 */
-		public class EpisodeidItem extends Item {
-			public EpisodeidItem(int episodeid) {
-				super(null, null, -1, episodeid, -1, -1, -1, -1, -1);
+			if (episodeid != null) {
+				return episodeid.toJsonNode();
 			}
-		}
-		/**
-		 * Default constructor.
-		 * @param musicvideoid 
-		 */
-		public class MusicvideoidItem extends Item {
-			public MusicvideoidItem(int musicvideoid) {
-				super(null, null, -1, -1, musicvideoid, -1, -1, -1, -1);
+			if (file != null) {
+				return file.toJsonNode();
 			}
-		}
-		/**
-		 * Default constructor.
-		 * @param artistid 
-		 */
-		public class ArtistidItem extends Item {
-			public ArtistidItem(int artistid) {
-				super(null, null, -1, -1, -1, artistid, -1, -1, -1);
+			if (genreid != null) {
+				return genreid.toJsonNode();
 			}
-		}
-		/**
-		 * Default constructor.
-		 * @param albumid 
-		 */
-		public class AlbumidItem extends Item {
-			public AlbumidItem(int albumid) {
-				super(null, null, -1, -1, -1, -1, albumid, -1, -1);
+			if (movieid != null) {
+				return movieid.toJsonNode();
 			}
-		}
-		/**
-		 * Default constructor.
-		 * @param songid 
-		 */
-		public class SongidItem extends Item {
-			public SongidItem(int songid) {
-				super(null, null, -1, -1, -1, -1, -1, songid, -1);
+			if (musicvideoid != null) {
+				return musicvideoid.toJsonNode();
 			}
-		}
-		/**
-		 * Default constructor.
-		 * @param genreid Identification of a genre from the AudioLibrary 
-		 */
-		public class GenreidItem extends Item {
-			public GenreidItem(int genreid) {
-				super(null, null, -1, -1, -1, -1, -1, -1, genreid);
+			if (songid != null) {
+				return songid.toJsonNode();
 			}
+			return null; // this is completely excluded. theoretically.
 		}
-		/**
-		 * Extracts a list of {@link PlaylistModel.Item} objects from a JSON array.
-		 * @param obj ObjectNode containing the list of objects
-		 * @param key Key pointing to the node where the list is stored
-		 */
-		static ArrayList<PlaylistModel.Item> getPlaylistModelItemList(ObjectNode node, String key) {
-			if (node.has(key)) {
-				final ArrayNode a = (ArrayNode)node.get(key);
-				final ArrayList<PlaylistModel.Item> l = new ArrayList<PlaylistModel.Item>(a.size());
-				for (int i = 0; i < a.size(); i++) {
-					l.add(new PlaylistModel.Item((ObjectNode)a.get(i)));
-				}
-				return l;
-			}
-			return new ArrayList<PlaylistModel.Item>(0);
-		}
+
 		/**
 		 * Flatten this object into a Parcel.
-		 * @param parcel the Parcel in which the object should be written
-		 * @param flags additional flags about how the object should be written
+		 * @param parcel the Parcel in which the object should be written.
+		 * @param flags additional flags about how the object should be written.
 		 */
 		@Override
 		public void writeToParcel(Parcel parcel, int flags) {
-			parcel.writeValue(file);
-			parcel.writeValue(directory);
-			parcel.writeValue(movieid);
-			parcel.writeValue(episodeid);
-			parcel.writeValue(musicvideoid);
-			parcel.writeValue(artistid);
 			parcel.writeValue(albumid);
-			parcel.writeValue(songid);
+			parcel.writeValue(artistid);
+			parcel.writeValue(directory);
+			parcel.writeValue(episodeid);
+			parcel.writeValue(file);
 			parcel.writeValue(genreid);
+			parcel.writeValue(movieid);
+			parcel.writeValue(musicvideoid);
+			parcel.writeValue(songid);
 		}
-		@Override
-		public int describeContents() {
-			return 0;
-		}
+
 		/**
-		 * Construct via parcel
+		 * Construct via parcel.
 		 */
 		protected Item(Parcel parcel) {
-			file = parcel.readString();
-			directory = parcel.readString();
-			movieid = parcel.readInt();
-			episodeid = parcel.readInt();
-			musicvideoid = parcel.readInt();
-			artistid = parcel.readInt();
-			albumid = parcel.readInt();
-			songid = parcel.readInt();
-			genreid = parcel.readInt();
+			albumid = parcel.<Albumid>readParcelable(Albumid.class.getClassLoader());
+			artistid = parcel.<Artistid>readParcelable(Artistid.class.getClassLoader());
+			directory = parcel.<Directory>readParcelable(Directory.class.getClassLoader());
+			episodeid = parcel.<Episodeid>readParcelable(Episodeid.class.getClassLoader());
+			file = parcel.<File>readParcelable(File.class.getClassLoader());
+			genreid = parcel.<Genreid>readParcelable(Genreid.class.getClassLoader());
+			movieid = parcel.<Movieid>readParcelable(Movieid.class.getClassLoader());
+			musicvideoid = parcel.<Musicvideoid>readParcelable(Musicvideoid.class.getClassLoader());
+			songid = parcel.<Songid>readParcelable(Songid.class.getClassLoader());
 		}
+
 		/**
 		 * Generates instances of this Parcelable class from a Parcel.
 		 */
@@ -260,86 +267,659 @@ public final class PlaylistModel {
 				return new Item[n];
 			}
 		};
+
+		@Override
+		public int describeContents() {
+			return 0;
+		}
+
+		/**
+		 * Note: This class is used as parameter only.<br/>
+		 * <i>This class was generated automatically from XBMC's JSON-RPC introspect.</i>
+		 */
+		public static class File extends AbstractModel {
+
+			// field names
+			public static final String FILE = "file";
+
+			// class members
+			public final String file;
+
+			/**
+			 * @param file
+			 */
+			public File(String file) {
+				this.file = file;
+			}
+
+			@Override
+			public JsonNode toJsonNode() {
+				final ObjectNode node = OM.createObjectNode();
+				node.put(FILE, file);
+				return node;
+			}
+
+			/**
+			 * Flatten this object into a Parcel.
+			 * @param parcel the Parcel in which the object should be written.
+			 * @param flags additional flags about how the object should be written.
+			 */
+			@Override
+			public void writeToParcel(Parcel parcel, int flags) {
+				parcel.writeValue(file);
+			}
+
+			/**
+			 * Construct via parcel.
+			 */
+			protected File(Parcel parcel) {
+				file = parcel.readString();
+			}
+
+			/**
+			 * Generates instances of this Parcelable class from a Parcel.
+			 */
+			public static final Parcelable.Creator<File> CREATOR = new Parcelable.Creator<File>() {
+				@Override
+				public File createFromParcel(Parcel parcel) {
+					return new File(parcel);
+				}
+				@Override
+				public File[] newArray(int n) {
+					return new File[n];
+				}
+			};
+
+			@Override
+			public int describeContents() {
+				return 0;
+			}
+		}
+
+		/**
+		 * Note: This class is used as parameter only.<br/>
+		 * <i>This class was generated automatically from XBMC's JSON-RPC introspect.</i>
+		 */
+		public static class Directory extends AbstractModel {
+
+			// field names
+			public static final String DIRECTORY = "directory";
+
+			// class members
+			public final String directory;
+
+			/**
+			 * @param directory
+			 */
+			public Directory(String directory) {
+				this.directory = directory;
+			}
+
+			@Override
+			public JsonNode toJsonNode() {
+				final ObjectNode node = OM.createObjectNode();
+				node.put(DIRECTORY, directory);
+				return node;
+			}
+
+			/**
+			 * Flatten this object into a Parcel.
+			 * @param parcel the Parcel in which the object should be written.
+			 * @param flags additional flags about how the object should be written.
+			 */
+			@Override
+			public void writeToParcel(Parcel parcel, int flags) {
+				parcel.writeValue(directory);
+			}
+
+			/**
+			 * Construct via parcel.
+			 */
+			protected Directory(Parcel parcel) {
+				directory = parcel.readString();
+			}
+
+			/**
+			 * Generates instances of this Parcelable class from a Parcel.
+			 */
+			public static final Parcelable.Creator<Directory> CREATOR = new Parcelable.Creator<Directory>() {
+				@Override
+				public Directory createFromParcel(Parcel parcel) {
+					return new Directory(parcel);
+				}
+				@Override
+				public Directory[] newArray(int n) {
+					return new Directory[n];
+				}
+			};
+
+			@Override
+			public int describeContents() {
+				return 0;
+			}
+		}
+
+		/**
+		 * Note: This class is used as parameter only.<br/>
+		 * <i>This class was generated automatically from XBMC's JSON-RPC introspect.</i>
+		 */
+		public static class Movieid extends AbstractModel {
+
+			// field names
+			public static final String MOVIEID = "movieid";
+
+			// class members
+			public final Integer movieid;
+
+			/**
+			 * @param movieid
+			 */
+			public Movieid(Integer movieid) {
+				this.movieid = movieid;
+			}
+
+			@Override
+			public JsonNode toJsonNode() {
+				final ObjectNode node = OM.createObjectNode();
+				node.put(MOVIEID, movieid);
+				return node;
+			}
+
+			/**
+			 * Flatten this object into a Parcel.
+			 * @param parcel the Parcel in which the object should be written.
+			 * @param flags additional flags about how the object should be written.
+			 */
+			@Override
+			public void writeToParcel(Parcel parcel, int flags) {
+				parcel.writeValue(movieid);
+			}
+
+			/**
+			 * Construct via parcel.
+			 */
+			protected Movieid(Parcel parcel) {
+				movieid = parcel.readInt();
+			}
+
+			/**
+			 * Generates instances of this Parcelable class from a Parcel.
+			 */
+			public static final Parcelable.Creator<Movieid> CREATOR = new Parcelable.Creator<Movieid>() {
+				@Override
+				public Movieid createFromParcel(Parcel parcel) {
+					return new Movieid(parcel);
+				}
+				@Override
+				public Movieid[] newArray(int n) {
+					return new Movieid[n];
+				}
+			};
+
+			@Override
+			public int describeContents() {
+				return 0;
+			}
+		}
+
+		/**
+		 * Note: This class is used as parameter only.<br/>
+		 * <i>This class was generated automatically from XBMC's JSON-RPC introspect.</i>
+		 */
+		public static class Episodeid extends AbstractModel {
+
+			// field names
+			public static final String EPISODEID = "episodeid";
+
+			// class members
+			public final Integer episodeid;
+
+			/**
+			 * @param episodeid
+			 */
+			public Episodeid(Integer episodeid) {
+				this.episodeid = episodeid;
+			}
+
+			@Override
+			public JsonNode toJsonNode() {
+				final ObjectNode node = OM.createObjectNode();
+				node.put(EPISODEID, episodeid);
+				return node;
+			}
+
+			/**
+			 * Flatten this object into a Parcel.
+			 * @param parcel the Parcel in which the object should be written.
+			 * @param flags additional flags about how the object should be written.
+			 */
+			@Override
+			public void writeToParcel(Parcel parcel, int flags) {
+				parcel.writeValue(episodeid);
+			}
+
+			/**
+			 * Construct via parcel.
+			 */
+			protected Episodeid(Parcel parcel) {
+				episodeid = parcel.readInt();
+			}
+
+			/**
+			 * Generates instances of this Parcelable class from a Parcel.
+			 */
+			public static final Parcelable.Creator<Episodeid> CREATOR = new Parcelable.Creator<Episodeid>() {
+				@Override
+				public Episodeid createFromParcel(Parcel parcel) {
+					return new Episodeid(parcel);
+				}
+				@Override
+				public Episodeid[] newArray(int n) {
+					return new Episodeid[n];
+				}
+			};
+
+			@Override
+			public int describeContents() {
+				return 0;
+			}
+		}
+
+		/**
+		 * Note: This class is used as parameter only.<br/>
+		 * <i>This class was generated automatically from XBMC's JSON-RPC introspect.</i>
+		 */
+		public static class Musicvideoid extends AbstractModel {
+
+			// field names
+			public static final String MUSICVIDEOID = "musicvideoid";
+
+			// class members
+			public final Integer musicvideoid;
+
+			/**
+			 * @param musicvideoid
+			 */
+			public Musicvideoid(Integer musicvideoid) {
+				this.musicvideoid = musicvideoid;
+			}
+
+			@Override
+			public JsonNode toJsonNode() {
+				final ObjectNode node = OM.createObjectNode();
+				node.put(MUSICVIDEOID, musicvideoid);
+				return node;
+			}
+
+			/**
+			 * Flatten this object into a Parcel.
+			 * @param parcel the Parcel in which the object should be written.
+			 * @param flags additional flags about how the object should be written.
+			 */
+			@Override
+			public void writeToParcel(Parcel parcel, int flags) {
+				parcel.writeValue(musicvideoid);
+			}
+
+			/**
+			 * Construct via parcel.
+			 */
+			protected Musicvideoid(Parcel parcel) {
+				musicvideoid = parcel.readInt();
+			}
+
+			/**
+			 * Generates instances of this Parcelable class from a Parcel.
+			 */
+			public static final Parcelable.Creator<Musicvideoid> CREATOR = new Parcelable.Creator<Musicvideoid>() {
+				@Override
+				public Musicvideoid createFromParcel(Parcel parcel) {
+					return new Musicvideoid(parcel);
+				}
+				@Override
+				public Musicvideoid[] newArray(int n) {
+					return new Musicvideoid[n];
+				}
+			};
+
+			@Override
+			public int describeContents() {
+				return 0;
+			}
+		}
+
+		/**
+		 * Note: This class is used as parameter only.<br/>
+		 * <i>This class was generated automatically from XBMC's JSON-RPC introspect.</i>
+		 */
+		public static class Artistid extends AbstractModel {
+
+			// field names
+			public static final String ARTISTID = "artistid";
+
+			// class members
+			public final Integer artistid;
+
+			/**
+			 * @param artistid
+			 */
+			public Artistid(Integer artistid) {
+				this.artistid = artistid;
+			}
+
+			@Override
+			public JsonNode toJsonNode() {
+				final ObjectNode node = OM.createObjectNode();
+				node.put(ARTISTID, artistid);
+				return node;
+			}
+
+			/**
+			 * Flatten this object into a Parcel.
+			 * @param parcel the Parcel in which the object should be written.
+			 * @param flags additional flags about how the object should be written.
+			 */
+			@Override
+			public void writeToParcel(Parcel parcel, int flags) {
+				parcel.writeValue(artistid);
+			}
+
+			/**
+			 * Construct via parcel.
+			 */
+			protected Artistid(Parcel parcel) {
+				artistid = parcel.readInt();
+			}
+
+			/**
+			 * Generates instances of this Parcelable class from a Parcel.
+			 */
+			public static final Parcelable.Creator<Artistid> CREATOR = new Parcelable.Creator<Artistid>() {
+				@Override
+				public Artistid createFromParcel(Parcel parcel) {
+					return new Artistid(parcel);
+				}
+				@Override
+				public Artistid[] newArray(int n) {
+					return new Artistid[n];
+				}
+			};
+
+			@Override
+			public int describeContents() {
+				return 0;
+			}
+		}
+
+		/**
+		 * Note: This class is used as parameter only.<br/>
+		 * <i>This class was generated automatically from XBMC's JSON-RPC introspect.</i>
+		 */
+		public static class Albumid extends AbstractModel {
+
+			// field names
+			public static final String ALBUMID = "albumid";
+
+			// class members
+			public final Integer albumid;
+
+			/**
+			 * @param albumid
+			 */
+			public Albumid(Integer albumid) {
+				this.albumid = albumid;
+			}
+
+			@Override
+			public JsonNode toJsonNode() {
+				final ObjectNode node = OM.createObjectNode();
+				node.put(ALBUMID, albumid);
+				return node;
+			}
+
+			/**
+			 * Flatten this object into a Parcel.
+			 * @param parcel the Parcel in which the object should be written.
+			 * @param flags additional flags about how the object should be written.
+			 */
+			@Override
+			public void writeToParcel(Parcel parcel, int flags) {
+				parcel.writeValue(albumid);
+			}
+
+			/**
+			 * Construct via parcel.
+			 */
+			protected Albumid(Parcel parcel) {
+				albumid = parcel.readInt();
+			}
+
+			/**
+			 * Generates instances of this Parcelable class from a Parcel.
+			 */
+			public static final Parcelable.Creator<Albumid> CREATOR = new Parcelable.Creator<Albumid>() {
+				@Override
+				public Albumid createFromParcel(Parcel parcel) {
+					return new Albumid(parcel);
+				}
+				@Override
+				public Albumid[] newArray(int n) {
+					return new Albumid[n];
+				}
+			};
+
+			@Override
+			public int describeContents() {
+				return 0;
+			}
+		}
+
+		/**
+		 * Note: This class is used as parameter only.<br/>
+		 * <i>This class was generated automatically from XBMC's JSON-RPC introspect.</i>
+		 */
+		public static class Songid extends AbstractModel {
+
+			// field names
+			public static final String SONGID = "songid";
+
+			// class members
+			public final Integer songid;
+
+			/**
+			 * @param songid
+			 */
+			public Songid(Integer songid) {
+				this.songid = songid;
+			}
+
+			@Override
+			public JsonNode toJsonNode() {
+				final ObjectNode node = OM.createObjectNode();
+				node.put(SONGID, songid);
+				return node;
+			}
+
+			/**
+			 * Flatten this object into a Parcel.
+			 * @param parcel the Parcel in which the object should be written.
+			 * @param flags additional flags about how the object should be written.
+			 */
+			@Override
+			public void writeToParcel(Parcel parcel, int flags) {
+				parcel.writeValue(songid);
+			}
+
+			/**
+			 * Construct via parcel.
+			 */
+			protected Songid(Parcel parcel) {
+				songid = parcel.readInt();
+			}
+
+			/**
+			 * Generates instances of this Parcelable class from a Parcel.
+			 */
+			public static final Parcelable.Creator<Songid> CREATOR = new Parcelable.Creator<Songid>() {
+				@Override
+				public Songid createFromParcel(Parcel parcel) {
+					return new Songid(parcel);
+				}
+				@Override
+				public Songid[] newArray(int n) {
+					return new Songid[n];
+				}
+			};
+
+			@Override
+			public int describeContents() {
+				return 0;
+			}
+		}
+
+		/**
+		 * Note: This class is used as parameter only.<br/>
+		 * <i>This class was generated automatically from XBMC's JSON-RPC introspect.</i>
+		 */
+		public static class Genreid extends AbstractModel {
+
+			// field names
+			public static final String GENREID = "genreid";
+
+			// class members
+			public final Integer genreid;
+
+			/**
+			 * @param genreid
+			 */
+			public Genreid(Integer genreid) {
+				this.genreid = genreid;
+			}
+
+			@Override
+			public JsonNode toJsonNode() {
+				final ObjectNode node = OM.createObjectNode();
+				node.put(GENREID, genreid);
+				return node;
+			}
+
+			/**
+			 * Flatten this object into a Parcel.
+			 * @param parcel the Parcel in which the object should be written.
+			 * @param flags additional flags about how the object should be written.
+			 */
+			@Override
+			public void writeToParcel(Parcel parcel, int flags) {
+				parcel.writeValue(genreid);
+			}
+
+			/**
+			 * Construct via parcel.
+			 */
+			protected Genreid(Parcel parcel) {
+				genreid = parcel.readInt();
+			}
+
+			/**
+			 * Generates instances of this Parcelable class from a Parcel.
+			 */
+			public static final Parcelable.Creator<Genreid> CREATOR = new Parcelable.Creator<Genreid>() {
+				@Override
+				public Genreid createFromParcel(Parcel parcel) {
+					return new Genreid(parcel);
+				}
+				@Override
+				public Genreid[] newArray(int n) {
+					return new Genreid[n];
+				}
+			};
+
+			@Override
+			public int describeContents() {
+				return 0;
+			}
+		}
 	}
-	public interface PropertyName {
-		public final String TYPE = "type";
-		public final String SIZE = "size";
-	}
+
 	/**
-	 * Playlist.Property.Value
+	 * API Name: <tt>Playlist.Property.Value</tt>
 	 * <p/>
+	 * Note: This class is used as result only.<br/>
 	 * <i>This class was generated automatically from XBMC's JSON-RPC introspect.</i>
 	 */
 	public static class PropertyValue extends AbstractModel {
 		public final static String API_TYPE = "Playlist.Property.Value";
+
 		// field names
 		public static final String SIZE = "size";
 		public static final String TYPE = "type";
+
 		// class members
 		public final Integer size;
 		public final String type;
+
 		/**
-		 * Construct from JSON object.
-		 * @param obj JSON object representing a PropertyValue object
-		 */
-		public PropertyValue(ObjectNode node) {
-			mType = API_TYPE;
-			size = parseInt(node, SIZE);
-			type = parseString(node, TYPE);
-		}
-		/**
-		 * Construct object with native values for later serialization.
-		 * @param size 
-		 * @param type 
+		 * @param size
+		 * @param type One of: <tt>unknown</tt>, <tt>video</tt>, <tt>audio</tt>, <tt>picture</tt>, <tt>mixed</tt>. See constants at {@link PlaylistModel.PropertyValue.Type}.
 		 */
 		public PropertyValue(Integer size, String type) {
 			this.size = size;
 			this.type = type;
 		}
+
+		/**
+		 * Construct from JSON object.
+		 * @param node JSON object representing a PropertyValue object
+		 */
+		public PropertyValue(ObjectNode node) {
+			size = parseInt(node, SIZE);
+			type = parseString(node, TYPE);
+		}
+
 		@Override
-		public ObjectNode toObjectNode() {
+		public JsonNode toJsonNode() {
 			final ObjectNode node = OM.createObjectNode();
 			node.put(SIZE, size);
-			node.put(TYPE, type);
+			node.put(TYPE, type); // enum
 			return node;
 		}
+
 		/**
-		 * Extracts a list of {@link PlaylistModel.PropertyValue} objects from a JSON array.
-		 * @param obj ObjectNode containing the list of objects
-		 * @param key Key pointing to the node where the list is stored
+		 * Extracts a list of {@link PropertyValue} objects from a JSON array.
+		 * @param obj ObjectNode containing the list of objects.
+		 * @param key Key pointing to the node where the list is stored.
 		 */
-		static ArrayList<PlaylistModel.PropertyValue> getPlaylistModelPropertyValueList(ObjectNode node, String key) {
+		static List<PropertyValue> getPlaylistModelPropertyValueList(ObjectNode node, String key) {
 			if (node.has(key)) {
 				final ArrayNode a = (ArrayNode)node.get(key);
-				final ArrayList<PlaylistModel.PropertyValue> l = new ArrayList<PlaylistModel.PropertyValue>(a.size());
+				final List<PropertyValue> l = new ArrayList<PropertyValue>(a.size());
 				for (int i = 0; i < a.size(); i++) {
-					l.add(new PlaylistModel.PropertyValue((ObjectNode)a.get(i)));
+					l.add(new PropertyValue((ObjectNode)a.get(i)));
 				}
 				return l;
 			}
-			return new ArrayList<PlaylistModel.PropertyValue>(0);
+			return new ArrayList<PropertyValue>(0);
 		}
+
 		/**
 		 * Flatten this object into a Parcel.
-		 * @param parcel the Parcel in which the object should be written
-		 * @param flags additional flags about how the object should be written
+		 * @param parcel the Parcel in which the object should be written.
+		 * @param flags additional flags about how the object should be written.
 		 */
 		@Override
 		public void writeToParcel(Parcel parcel, int flags) {
 			parcel.writeValue(size);
-			parcel.writeValue(type);
+			parcel.writeValue(type); // enum
 		}
-		@Override
-		public int describeContents() {
-			return 0;
-		}
+
 		/**
-		 * Construct via parcel
+		 * Construct via parcel.
 		 */
 		protected PropertyValue(Parcel parcel) {
 			size = parcel.readInt();
-			type = parcel.readString();
+			type = parcel.readString(); // enum
 		}
+
 		/**
 		 * Generates instances of this Parcelable class from a Parcel.
 		 */
@@ -353,12 +933,49 @@ public final class PlaylistModel {
 				return new PropertyValue[n];
 			}
 		};
+
+		@Override
+		public int describeContents() {
+			return 0;
+		}
+
+		/**
+		 * API Name: <tt>type</tt>
+		 */
+		public interface Type {
+
+			public final String UNKNOWN = "unknown";
+			public final String VIDEO = "video";
+			public final String AUDIO = "audio";
+			public final String PICTURE = "picture";
+			public final String MIXED = "mixed";
+
+			public final static Set<String> values = new HashSet<String>(Arrays.asList(UNKNOWN, VIDEO, AUDIO, PICTURE, MIXED));
+		}
 	}
+
+	/**
+	 * API Name: <tt>Playlist.Property.Name</tt>
+	 */
+	public interface PropertyName {
+
+		public final String TYPE = "type";
+		public final String SIZE = "size";
+
+		public final static Set<String> values = new HashSet<String>(Arrays.asList(TYPE, SIZE));
+	}
+
+	/**
+	 * API Name: <tt>Playlist.Type</tt>
+	 */
 	public interface Type {
+
 		public final String UNKNOWN = "unknown";
 		public final String VIDEO = "video";
 		public final String AUDIO = "audio";
 		public final String PICTURE = "picture";
 		public final String MIXED = "mixed";
+
+		public final static Set<String> values = new HashSet<String>(Arrays.asList(UNKNOWN, VIDEO, AUDIO, PICTURE, MIXED));
 	}
 }

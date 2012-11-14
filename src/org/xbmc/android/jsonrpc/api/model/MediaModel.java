@@ -1,5 +1,5 @@
 /*
- *      Copyright (C) 2005-2015 Team XBMC
+ *      Copyright (C) 2005-2012 Team XBMC
  *      http://xbmc.org
  *
  *  This Program is free software; you can redistribute it and/or modify
@@ -18,66 +18,190 @@
  *  http://www.gnu.org/copyleft/gpl.html
  *
  */
-
 package org.xbmc.android.jsonrpc.api.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;
 import java.util.ArrayList;
+import java.util.List;
+import org.codehaus.jackson.JsonNode;
 import org.codehaus.jackson.node.ArrayNode;
 import org.codehaus.jackson.node.ObjectNode;
+import org.xbmc.android.jsonrpc.api.AbstractModel;
 
 public final class MediaModel {
+
 	/**
-	 * Media.Details.Base
+	 * API Name: <tt>Media.Artwork</tt>
 	 * <p/>
+	 * Note: This class is used as parameter as well as result.<br/>
 	 * <i>This class was generated automatically from XBMC's JSON-RPC introspect.</i>
 	 */
-	public static class BaseDetails extends ItemModel.BaseDetails {
+	public static class Artwork extends AbstractModel {
+		public final static String API_TYPE = "Media.Artwork";
+
+		// field names
+		public static final String BANNER = "banner";
+		public static final String FANART = "fanart";
+		public static final String POSTER = "poster";
+		public static final String THUMB = "thumb";
+
+		// class members
+		public final String banner;
+		public final String fanart;
+		public final String poster;
+		public final String thumb;
+
+		/**
+		 * @param banner
+		 * @param fanart
+		 * @param poster
+		 * @param thumb
+		 */
+		public Artwork(String banner, String fanart, String poster, String thumb) {
+			this.banner = banner;
+			this.fanart = fanart;
+			this.poster = poster;
+			this.thumb = thumb;
+		}
+
+		/**
+		 * Construct from JSON object.
+		 * @param node JSON object representing a Artwork object
+		 */
+		public Artwork(ObjectNode node) {
+			banner = parseString(node, BANNER);
+			fanart = parseString(node, FANART);
+			poster = parseString(node, POSTER);
+			thumb = parseString(node, THUMB);
+		}
+
+		@Override
+		public JsonNode toJsonNode() {
+			final ObjectNode node = OM.createObjectNode();
+			node.put(BANNER, banner);
+			node.put(FANART, fanart);
+			node.put(POSTER, poster);
+			node.put(THUMB, thumb);
+			return node;
+		}
+
+		/**
+		 * Extracts a list of {@link Artwork} objects from a JSON array.
+		 * @param obj ObjectNode containing the list of objects.
+		 * @param key Key pointing to the node where the list is stored.
+		 */
+		static List<Artwork> getMediaModelArtworkList(ObjectNode node, String key) {
+			if (node.has(key)) {
+				final ArrayNode a = (ArrayNode)node.get(key);
+				final List<Artwork> l = new ArrayList<Artwork>(a.size());
+				for (int i = 0; i < a.size(); i++) {
+					l.add(new Artwork((ObjectNode)a.get(i)));
+				}
+				return l;
+			}
+			return new ArrayList<Artwork>(0);
+		}
+
+		/**
+		 * Flatten this object into a Parcel.
+		 * @param parcel the Parcel in which the object should be written.
+		 * @param flags additional flags about how the object should be written.
+		 */
+		@Override
+		public void writeToParcel(Parcel parcel, int flags) {
+			parcel.writeValue(banner);
+			parcel.writeValue(fanart);
+			parcel.writeValue(poster);
+			parcel.writeValue(thumb);
+		}
+
+		/**
+		 * Construct via parcel.
+		 */
+		protected Artwork(Parcel parcel) {
+			banner = parcel.readString();
+			fanart = parcel.readString();
+			poster = parcel.readString();
+			thumb = parcel.readString();
+		}
+
+		/**
+		 * Generates instances of this Parcelable class from a Parcel.
+		 */
+		public static final Parcelable.Creator<Artwork> CREATOR = new Parcelable.Creator<Artwork>() {
+			@Override
+			public Artwork createFromParcel(Parcel parcel) {
+				return new Artwork(parcel);
+			}
+			@Override
+			public Artwork[] newArray(int n) {
+				return new Artwork[n];
+			}
+		};
+
+		@Override
+		public int describeContents() {
+			return 0;
+		}
+	}
+
+	/**
+	 * API Name: <tt>Media.Details.Base</tt>
+	 * <p/>
+	 * Note: This class is used as result only.<br/>
+	 * <i>This class was generated automatically from XBMC's JSON-RPC introspect.</i>
+	 */
+	public static class BaseDetail extends ItemModel.BaseDetail {
 		public final static String API_TYPE = "Media.Details.Base";
+
 		// field names
 		public static final String FANART = "fanart";
 		public static final String THUMBNAIL = "thumbnail";
+
 		// class members
 		public final String fanart;
 		public final String thumbnail;
+
 		/**
 		 * Construct from JSON object.
-		 * @param obj JSON object representing a BaseDetails object
+		 * @param node JSON object representing a BaseDetail object
 		 */
-		public BaseDetails(ObjectNode node) {
+		public BaseDetail(ObjectNode node) {
 			super(node);
-			mType = API_TYPE;
 			fanart = parseString(node, FANART);
 			thumbnail = parseString(node, THUMBNAIL);
 		}
+
 		@Override
-		public ObjectNode toObjectNode() {
-			final ObjectNode node = OM.createObjectNode();
+		public JsonNode toJsonNode() {
+			final ObjectNode node = (ObjectNode)super.toJsonNode();
 			node.put(FANART, fanart);
 			node.put(THUMBNAIL, thumbnail);
 			return node;
 		}
+
 		/**
-		 * Extracts a list of {@link MediaModel.BaseDetails} objects from a JSON array.
-		 * @param obj ObjectNode containing the list of objects
-		 * @param key Key pointing to the node where the list is stored
+		 * Extracts a list of {@link BaseDetail} objects from a JSON array.
+		 * @param obj ObjectNode containing the list of objects.
+		 * @param key Key pointing to the node where the list is stored.
 		 */
-		static ArrayList<MediaModel.BaseDetails> getMediaModelBaseDetailsList(ObjectNode node, String key) {
+		static List<BaseDetail> getMediaModelBaseDetailList(ObjectNode node, String key) {
 			if (node.has(key)) {
 				final ArrayNode a = (ArrayNode)node.get(key);
-				final ArrayList<MediaModel.BaseDetails> l = new ArrayList<MediaModel.BaseDetails>(a.size());
+				final List<BaseDetail> l = new ArrayList<BaseDetail>(a.size());
 				for (int i = 0; i < a.size(); i++) {
-					l.add(new MediaModel.BaseDetails((ObjectNode)a.get(i)));
+					l.add(new BaseDetail((ObjectNode)a.get(i)));
 				}
 				return l;
 			}
-			return new ArrayList<MediaModel.BaseDetails>(0);
+			return new ArrayList<BaseDetail>(0);
 		}
+
 		/**
 		 * Flatten this object into a Parcel.
-		 * @param parcel the Parcel in which the object should be written
-		 * @param flags additional flags about how the object should be written
+		 * @param parcel the Parcel in which the object should be written.
+		 * @param flags additional flags about how the object should be written.
 		 */
 		@Override
 		public void writeToParcel(Parcel parcel, int flags) {
@@ -85,30 +209,33 @@ public final class MediaModel {
 			parcel.writeValue(fanart);
 			parcel.writeValue(thumbnail);
 		}
-		@Override
-		public int describeContents() {
-			return 0;
-		}
+
 		/**
-		 * Construct via parcel
+		 * Construct via parcel.
 		 */
-		protected BaseDetails(Parcel parcel) {
+		protected BaseDetail(Parcel parcel) {
 			super(parcel);
 			fanart = parcel.readString();
 			thumbnail = parcel.readString();
 		}
+
 		/**
 		 * Generates instances of this Parcelable class from a Parcel.
 		 */
-		public static final Parcelable.Creator<BaseDetails> CREATOR = new Parcelable.Creator<BaseDetails>() {
+		public static final Parcelable.Creator<BaseDetail> CREATOR = new Parcelable.Creator<BaseDetail>() {
 			@Override
-			public BaseDetails createFromParcel(Parcel parcel) {
-				return new BaseDetails(parcel);
+			public BaseDetail createFromParcel(Parcel parcel) {
+				return new BaseDetail(parcel);
 			}
 			@Override
-			public BaseDetails[] newArray(int n) {
-				return new BaseDetails[n];
+			public BaseDetail[] newArray(int n) {
+				return new BaseDetail[n];
 			}
 		};
+
+		@Override
+		public int describeContents() {
+			return 0;
+		}
 	}
 }

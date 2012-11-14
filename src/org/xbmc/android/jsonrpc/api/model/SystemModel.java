@@ -1,5 +1,5 @@
 /*
- *      Copyright (C) 2005-2015 Team XBMC
+ *      Copyright (C) 2005-2012 Team XBMC
  *      http://xbmc.org
  *
  *  This Program is free software; you can redistribute it and/or modify
@@ -18,57 +18,48 @@
  *  http://www.gnu.org/copyleft/gpl.html
  *
  */
-
 package org.xbmc.android.jsonrpc.api.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import org.codehaus.jackson.JsonNode;
 import org.codehaus.jackson.node.ArrayNode;
 import org.codehaus.jackson.node.ObjectNode;
 import org.xbmc.android.jsonrpc.api.AbstractModel;
 
 public final class SystemModel {
-	public interface PropertyName {
-		public final String CANSHUTDOWN = "canshutdown";
-		public final String CANSUSPEND = "cansuspend";
-		public final String CANHIBERNATE = "canhibernate";
-		public final String CANREBOOT = "canreboot";
-	}
+
 	/**
-	 * System.Property.Value
+	 * API Name: <tt>System.Property.Value</tt>
 	 * <p/>
+	 * Note: This class is used as result only.<br/>
 	 * <i>This class was generated automatically from XBMC's JSON-RPC introspect.</i>
 	 */
 	public static class PropertyValue extends AbstractModel {
 		public final static String API_TYPE = "System.Property.Value";
+
 		// field names
 		public static final String CANHIBERNATE = "canhibernate";
 		public static final String CANREBOOT = "canreboot";
 		public static final String CANSHUTDOWN = "canshutdown";
 		public static final String CANSUSPEND = "cansuspend";
+
 		// class members
 		public final Boolean canhibernate;
 		public final Boolean canreboot;
 		public final Boolean canshutdown;
 		public final Boolean cansuspend;
+
 		/**
-		 * Construct from JSON object.
-		 * @param obj JSON object representing a PropertyValue object
-		 */
-		public PropertyValue(ObjectNode node) {
-			mType = API_TYPE;
-			canhibernate = parseBoolean(node, CANHIBERNATE);
-			canreboot = parseBoolean(node, CANREBOOT);
-			canshutdown = parseBoolean(node, CANSHUTDOWN);
-			cansuspend = parseBoolean(node, CANSUSPEND);
-		}
-		/**
-		 * Construct object with native values for later serialization.
-		 * @param canhibernate 
-		 * @param canreboot 
-		 * @param canshutdown 
-		 * @param cansuspend 
+		 * @param canhibernate
+		 * @param canreboot
+		 * @param canshutdown
+		 * @param cansuspend
 		 */
 		public PropertyValue(Boolean canhibernate, Boolean canreboot, Boolean canshutdown, Boolean cansuspend) {
 			this.canhibernate = canhibernate;
@@ -76,8 +67,20 @@ public final class SystemModel {
 			this.canshutdown = canshutdown;
 			this.cansuspend = cansuspend;
 		}
+
+		/**
+		 * Construct from JSON object.
+		 * @param node JSON object representing a PropertyValue object
+		 */
+		public PropertyValue(ObjectNode node) {
+			canhibernate = parseBoolean(node, CANHIBERNATE);
+			canreboot = parseBoolean(node, CANREBOOT);
+			canshutdown = parseBoolean(node, CANSHUTDOWN);
+			cansuspend = parseBoolean(node, CANSUSPEND);
+		}
+
 		@Override
-		public ObjectNode toObjectNode() {
+		public JsonNode toJsonNode() {
 			final ObjectNode node = OM.createObjectNode();
 			node.put(CANHIBERNATE, canhibernate);
 			node.put(CANREBOOT, canreboot);
@@ -85,40 +88,39 @@ public final class SystemModel {
 			node.put(CANSUSPEND, cansuspend);
 			return node;
 		}
+
 		/**
-		 * Extracts a list of {@link SystemModel.PropertyValue} objects from a JSON array.
-		 * @param obj ObjectNode containing the list of objects
-		 * @param key Key pointing to the node where the list is stored
+		 * Extracts a list of {@link PropertyValue} objects from a JSON array.
+		 * @param obj ObjectNode containing the list of objects.
+		 * @param key Key pointing to the node where the list is stored.
 		 */
-		static ArrayList<SystemModel.PropertyValue> getSystemModelPropertyValueList(ObjectNode node, String key) {
+		static List<PropertyValue> getSystemModelPropertyValueList(ObjectNode node, String key) {
 			if (node.has(key)) {
 				final ArrayNode a = (ArrayNode)node.get(key);
-				final ArrayList<SystemModel.PropertyValue> l = new ArrayList<SystemModel.PropertyValue>(a.size());
+				final List<PropertyValue> l = new ArrayList<PropertyValue>(a.size());
 				for (int i = 0; i < a.size(); i++) {
-					l.add(new SystemModel.PropertyValue((ObjectNode)a.get(i)));
+					l.add(new PropertyValue((ObjectNode)a.get(i)));
 				}
 				return l;
 			}
-			return new ArrayList<SystemModel.PropertyValue>(0);
+			return new ArrayList<PropertyValue>(0);
 		}
+
 		/**
 		 * Flatten this object into a Parcel.
-		 * @param parcel the Parcel in which the object should be written
-		 * @param flags additional flags about how the object should be written
+		 * @param parcel the Parcel in which the object should be written.
+		 * @param flags additional flags about how the object should be written.
 		 */
 		@Override
 		public void writeToParcel(Parcel parcel, int flags) {
-			parcel.writeValue(canhibernate);
-			parcel.writeValue(canreboot);
-			parcel.writeValue(canshutdown);
-			parcel.writeValue(cansuspend);
+			parcel.writeInt(canhibernate ? 1 : 0);
+			parcel.writeInt(canreboot ? 1 : 0);
+			parcel.writeInt(canshutdown ? 1 : 0);
+			parcel.writeInt(cansuspend ? 1 : 0);
 		}
-		@Override
-		public int describeContents() {
-			return 0;
-		}
+
 		/**
-		 * Construct via parcel
+		 * Construct via parcel.
 		 */
 		protected PropertyValue(Parcel parcel) {
 			canhibernate = parcel.readInt() == 1;
@@ -126,6 +128,7 @@ public final class SystemModel {
 			canshutdown = parcel.readInt() == 1;
 			cansuspend = parcel.readInt() == 1;
 		}
+
 		/**
 		 * Generates instances of this Parcelable class from a Parcel.
 		 */
@@ -139,5 +142,23 @@ public final class SystemModel {
 				return new PropertyValue[n];
 			}
 		};
+
+		@Override
+		public int describeContents() {
+			return 0;
+		}
+	}
+
+	/**
+	 * API Name: <tt>System.Property.Name</tt>
+	 */
+	public interface PropertyName {
+
+		public final String CANSHUTDOWN = "canshutdown";
+		public final String CANSUSPEND = "cansuspend";
+		public final String CANHIBERNATE = "canhibernate";
+		public final String CANREBOOT = "canreboot";
+
+		public final static Set<String> values = new HashSet<String>(Arrays.asList(CANSHUTDOWN, CANSUSPEND, CANHIBERNATE, CANREBOOT));
 	}
 }

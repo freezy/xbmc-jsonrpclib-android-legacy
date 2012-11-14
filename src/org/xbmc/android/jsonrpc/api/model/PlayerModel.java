@@ -1,5 +1,5 @@
 /*
- *      Copyright (C) 2005-2015 Team XBMC
+ *      Copyright (C) 2005-2012 Team XBMC
  *      http://xbmc.org
  *
  *  This Program is free software; you can redistribute it and/or modify
@@ -18,81 +18,92 @@
  *  http://www.gnu.org/copyleft/gpl.html
  *
  */
-
 package org.xbmc.android.jsonrpc.api.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import org.codehaus.jackson.JsonNode;
 import org.codehaus.jackson.node.ArrayNode;
 import org.codehaus.jackson.node.ObjectNode;
 import org.xbmc.android.jsonrpc.api.AbstractModel;
 
 public final class PlayerModel {
+
 	/**
-	 * Player.Audio.Stream
+	 * API Name: <tt>Player.Audio.Stream</tt>
 	 * <p/>
+	 * Note: This class is used as result only.<br/>
 	 * <i>This class was generated automatically from XBMC's JSON-RPC introspect.</i>
 	 */
 	public static class AudioStream extends AbstractModel {
 		public final static String API_TYPE = "Player.Audio.Stream";
+
 		// field names
 		public static final String INDEX = "index";
 		public static final String LANGUAGE = "language";
 		public static final String NAME = "name";
+
 		// class members
-		public final int index;
+		public final Integer index;
 		public final String language;
 		public final String name;
+
 		/**
-		 * Construct from JSON object.
-		 * @param obj JSON object representing a AudioStream object
+		 * @param index
+		 * @param language
+		 * @param name
 		 */
-		public AudioStream(ObjectNode node) {
-			mType = API_TYPE;
-			index = node.get(INDEX).getIntValue();
-			language = node.get(LANGUAGE).getTextValue();
-			name = node.get(NAME).getTextValue();
-		}
-		/**
-		 * Construct object with native values for later serialization.
-		 * @param index 
-		 * @param language 
-		 * @param name 
-		 */
-		public AudioStream(int index, String language, String name) {
+		public AudioStream(Integer index, String language, String name) {
 			this.index = index;
 			this.language = language;
 			this.name = name;
 		}
+
+		/**
+		 * Construct from JSON object.
+		 * @param node JSON object representing a AudioStream object
+		 */
+		public AudioStream(ObjectNode node) {
+			index = node.get(INDEX).getIntValue(); // required value
+			language = node.get(LANGUAGE).getTextValue(); // required value
+			name = node.get(NAME).getTextValue(); // required value
+		}
+
 		@Override
-		public ObjectNode toObjectNode() {
+		public JsonNode toJsonNode() {
 			final ObjectNode node = OM.createObjectNode();
 			node.put(INDEX, index);
 			node.put(LANGUAGE, language);
 			node.put(NAME, name);
 			return node;
 		}
+
 		/**
-		 * Extracts a list of {@link PlayerModel.AudioStream} objects from a JSON array.
-		 * @param obj ObjectNode containing the list of objects
-		 * @param key Key pointing to the node where the list is stored
+		 * Extracts a list of {@link AudioStream} objects from a JSON array.
+		 * @param obj ObjectNode containing the list of objects.
+		 * @param key Key pointing to the node where the list is stored.
 		 */
-		static ArrayList<PlayerModel.AudioStream> getPlayerModelAudioStreamList(ObjectNode node, String key) {
+		static List<AudioStream> getPlayerModelAudioStreamList(ObjectNode node, String key) {
 			if (node.has(key)) {
 				final ArrayNode a = (ArrayNode)node.get(key);
-				final ArrayList<PlayerModel.AudioStream> l = new ArrayList<PlayerModel.AudioStream>(a.size());
+				final List<AudioStream> l = new ArrayList<AudioStream>(a.size());
 				for (int i = 0; i < a.size(); i++) {
-					l.add(new PlayerModel.AudioStream((ObjectNode)a.get(i)));
+					l.add(new AudioStream((ObjectNode)a.get(i)));
 				}
 				return l;
 			}
-			return new ArrayList<PlayerModel.AudioStream>(0);
+			return new ArrayList<AudioStream>(0);
 		}
+
 		/**
 		 * Flatten this object into a Parcel.
-		 * @param parcel the Parcel in which the object should be written
-		 * @param flags additional flags about how the object should be written
+		 * @param parcel the Parcel in which the object should be written.
+		 * @param flags additional flags about how the object should be written.
 		 */
 		@Override
 		public void writeToParcel(Parcel parcel, int flags) {
@@ -100,18 +111,16 @@ public final class PlayerModel {
 			parcel.writeValue(language);
 			parcel.writeValue(name);
 		}
-		@Override
-		public int describeContents() {
-			return 0;
-		}
+
 		/**
-		 * Construct via parcel
+		 * Construct via parcel.
 		 */
 		protected AudioStream(Parcel parcel) {
 			index = parcel.readInt();
 			language = parcel.readString();
 			name = parcel.readString();
 		}
+
 		/**
 		 * Generates instances of this Parcelable class from a Parcel.
 		 */
@@ -125,61 +134,73 @@ public final class PlayerModel {
 				return new AudioStream[n];
 			}
 		};
+
+		@Override
+		public int describeContents() {
+			return 0;
+		}
 	}
+
 	/**
-	 * Player.Audio.Stream.Extended
+	 * API Name: <tt>Player.Audio.Stream.Extended</tt>
 	 * <p/>
+	 * Note: This class is used as result only.<br/>
 	 * <i>This class was generated automatically from XBMC's JSON-RPC introspect.</i>
 	 */
-	public static class AudioStreamExtended extends PlayerModel.AudioStream {
+	public static class AudioStreamExtended extends AudioStream {
 		public final static String API_TYPE = "Player.Audio.Stream.Extended";
+
 		// field names
 		public static final String BITRATE = "bitrate";
 		public static final String CHANNELS = "channels";
 		public static final String CODEC = "codec";
+
 		// class members
-		public final int bitrate;
-		public final int channels;
+		public final Integer bitrate;
+		public final Integer channels;
 		public final String codec;
+
 		/**
 		 * Construct from JSON object.
-		 * @param obj JSON object representing a AudioStreamExtended object
+		 * @param node JSON object representing a AudioStreamExtended object
 		 */
 		public AudioStreamExtended(ObjectNode node) {
 			super(node);
-			mType = API_TYPE;
-			bitrate = node.get(BITRATE).getIntValue();
-			channels = node.get(CHANNELS).getIntValue();
-			codec = node.get(CODEC).getTextValue();
+			bitrate = node.get(BITRATE).getIntValue(); // required value
+			channels = node.get(CHANNELS).getIntValue(); // required value
+			codec = node.get(CODEC).getTextValue(); // required value
 		}
+
 		@Override
-		public ObjectNode toObjectNode() {
-			final ObjectNode node = OM.createObjectNode();
+		public JsonNode toJsonNode() {
+			final ObjectNode node = (ObjectNode)super.toJsonNode();
 			node.put(BITRATE, bitrate);
 			node.put(CHANNELS, channels);
 			node.put(CODEC, codec);
 			return node;
 		}
+
 		/**
-		 * Extracts a list of {@link PlayerModel.AudioStreamExtended} objects from a JSON array.
-		 * @param obj ObjectNode containing the list of objects
-		 * @param key Key pointing to the node where the list is stored
+		 * Extracts a list of {@link AudioStreamExtended} objects from a JSON array.
+		 * @param obj ObjectNode containing the list of objects.
+		 * @param key Key pointing to the node where the list is stored.
 		 */
-		static ArrayList<PlayerModel.AudioStreamExtended> getPlayerModelAudioStreamExtendedList(ObjectNode node, String key) {
+		static List<AudioStreamExtended> getPlayerModelAudioStreamExtendedList(ObjectNode node, String key) {
 			if (node.has(key)) {
 				final ArrayNode a = (ArrayNode)node.get(key);
-				final ArrayList<PlayerModel.AudioStreamExtended> l = new ArrayList<PlayerModel.AudioStreamExtended>(a.size());
+				final List<AudioStreamExtended> l = new ArrayList<AudioStreamExtended>(a.size());
 				for (int i = 0; i < a.size(); i++) {
-					l.add(new PlayerModel.AudioStreamExtended((ObjectNode)a.get(i)));
+					l.add(new AudioStreamExtended((ObjectNode)a.get(i)));
 				}
 				return l;
 			}
-			return new ArrayList<PlayerModel.AudioStreamExtended>(0);
+			return new ArrayList<AudioStreamExtended>(0);
 		}
+
 		/**
 		 * Flatten this object into a Parcel.
-		 * @param parcel the Parcel in which the object should be written
-		 * @param flags additional flags about how the object should be written
+		 * @param parcel the Parcel in which the object should be written.
+		 * @param flags additional flags about how the object should be written.
 		 */
 		@Override
 		public void writeToParcel(Parcel parcel, int flags) {
@@ -188,12 +209,9 @@ public final class PlayerModel {
 			parcel.writeValue(channels);
 			parcel.writeValue(codec);
 		}
-		@Override
-		public int describeContents() {
-			return 0;
-		}
+
 		/**
-		 * Construct via parcel
+		 * Construct via parcel.
 		 */
 		protected AudioStreamExtended(Parcel parcel) {
 			super(parcel);
@@ -201,6 +219,7 @@ public final class PlayerModel {
 			channels = parcel.readInt();
 			codec = parcel.readString();
 		}
+
 		/**
 		 * Generates instances of this Parcelable class from a Parcel.
 		 */
@@ -214,82 +233,66 @@ public final class PlayerModel {
 				return new AudioStreamExtended[n];
 			}
 		};
+
+		@Override
+		public int describeContents() {
+			return 0;
+		}
 	}
+
 	/**
-	 * Player.Notifications.Data
+	 * API Name: <tt>Player.Notifications.Data</tt>
 	 * <p/>
+	 * Note: Seems this class isn't used yet in the API.<br/>
 	 * <i>This class was generated automatically from XBMC's JSON-RPC introspect.</i>
 	 */
 	public static class NotificationsData extends AbstractModel {
 		public final static String API_TYPE = "Player.Notifications.Data";
+
 		// field names
 		public static final String ITEM = "item";
 		public static final String PLAYER = "player";
+
 		// class members
-		public final PlayerModel.NotificationsItem item;
-		public final PlayerModel.NotificationsPlayer player;
+		public final NotificationsModel.Item item;
+		public final NotificationsPlayer player;
+
 		/**
-		 * Construct from JSON object.
-		 * @param obj JSON object representing a NotificationsData object
+		 * @param item
+		 * @param player
 		 */
-		public NotificationsData(ObjectNode node) {
-			mType = API_TYPE;
-			item = new NotificationsItem((ObjectNode)node.get(ITEM));
-			player = new PlayerModel.NotificationsPlayer((ObjectNode)node.get(PLAYER));
-		}
-		/**
-		 * Construct object with native values for later serialization.
-		 * @param item 
-		 * @param player 
-		 */
-		public NotificationsData(PlayerModel.NotificationsItem item, PlayerModel.NotificationsPlayer player) {
+		public NotificationsData(NotificationsModel.Item item, NotificationsPlayer player) {
 			this.item = item;
 			this.player = player;
 		}
+
 		@Override
-		public ObjectNode toObjectNode() {
+		public JsonNode toJsonNode() {
 			final ObjectNode node = OM.createObjectNode();
-			node.put(ITEM, item.toObjectNode());
-			node.put(PLAYER, player.toObjectNode());
+			node.put(ITEM, item.toJsonNode());
+			node.put(PLAYER, player.toJsonNode());
 			return node;
 		}
-		/**
-		 * Extracts a list of {@link PlayerModel.NotificationsData} objects from a JSON array.
-		 * @param obj ObjectNode containing the list of objects
-		 * @param key Key pointing to the node where the list is stored
-		 */
-		static ArrayList<PlayerModel.NotificationsData> getPlayerModelNotificationsDataList(ObjectNode node, String key) {
-			if (node.has(key)) {
-				final ArrayNode a = (ArrayNode)node.get(key);
-				final ArrayList<PlayerModel.NotificationsData> l = new ArrayList<PlayerModel.NotificationsData>(a.size());
-				for (int i = 0; i < a.size(); i++) {
-					l.add(new PlayerModel.NotificationsData((ObjectNode)a.get(i)));
-				}
-				return l;
-			}
-			return new ArrayList<PlayerModel.NotificationsData>(0);
-		}
+
 		/**
 		 * Flatten this object into a Parcel.
-		 * @param parcel the Parcel in which the object should be written
-		 * @param flags additional flags about how the object should be written
+		 * @param parcel the Parcel in which the object should be written.
+		 * @param flags additional flags about how the object should be written.
 		 */
 		@Override
 		public void writeToParcel(Parcel parcel, int flags) {
 			parcel.writeValue(item);
 			parcel.writeValue(player);
 		}
-		@Override
-		public int describeContents() {
-			return 0;
-		}
+
 		/**
-		 * Construct via parcel
+		 * Construct via parcel.
 		 */
 		protected NotificationsData(Parcel parcel) {
-			item = parcel.<PlayerModel.NotificationsItem>readParcelable(PlayerModel.NotificationsItem.class.getClassLoader());
-			player = parcel.<PlayerModel.NotificationsPlayer>readParcelable(PlayerModel.NotificationsPlayer.class.getClassLoader());
+			item = parcel.<NotificationsModel.Item>readParcelable(NotificationsModel.Item.class.getClassLoader());
+			player = parcel.<NotificationsPlayer>readParcelable(NotificationsPlayer.class.getClassLoader());
 		}
+
 		/**
 		 * Generates instances of this Parcelable class from a Parcel.
 		 */
@@ -303,316 +306,66 @@ public final class PlayerModel {
 				return new NotificationsData[n];
 			}
 		};
-	}
-	/**
-	 * Player.Notifications.Item
-	 * <p/>
-	 * <i>This class was generated automatically from XBMC's JSON-RPC introspect.</i>
-	 */
-	public static class NotificationsItem extends AbstractModel {
-		public final static String API_TYPE = "Player.Notifications.Item";
-		// field names
-		public static final String TYPE = "type";
-		public static final String ID = "id";
-		public static final String TITLE = "title";
-		public static final String YEAR = "year";
-		public static final String EPISODE = "episode";
-		public static final String SEASON = "season";
-		public static final String SHOWTITLE = "showtitle";
-		public static final String ALBUM = "album";
-		public static final String ARTIST = "artist";
-		public static final String TRACK = "track";
-		// class members
-		public final String type;
-		public final int id;
-		public final String title;
-		public final Integer year;
-		public final Integer episode;
-		public final Integer season;
-		public final String showtitle;
-		public final String album;
-		public final String artist;
-		public final Integer track;
-		/**
-		 * Construct from JSON object.
-		 * @param obj JSON object representing a NotificationsItem object
-		 */
-		public NotificationsItem(ObjectNode node) {
-			mType = API_TYPE;
-			type = node.get(TYPE).getTextValue();
-			id = node.get(ID).getIntValue();
-			title = node.get(TITLE).getTextValue();
-			year = parseInt(node, YEAR);
-			episode = parseInt(node, EPISODE);
-			season = parseInt(node, SEASON);
-			showtitle = parseString(node, SHOWTITLE);
-			album = parseString(node, ALBUM);
-			artist = parseString(node, ARTIST);
-			track = parseInt(node, TRACK);
-		}
-		/**
-		 * Construct object with native values for later serialization.
-		 * @param type 
-		 * @param id 
-		 * @param title 
-		 * @param year 
-		 * @param episode 
-		 * @param season 
-		 * @param showtitle 
-		 * @param album 
-		 * @param artist 
-		 * @param track 
-		 */
-		public NotificationsItem(String type, int id, String title, Integer year, Integer episode, Integer season, String showtitle, String album, String artist, Integer track) {
-			this.type = type;
-			this.id = id;
-			this.title = title;
-			this.year = year;
-			this.episode = episode;
-			this.season = season;
-			this.showtitle = showtitle;
-			this.album = album;
-			this.artist = artist;
-			this.track = track;
-		}
-		@Override
-		public ObjectNode toObjectNode() {
-			final ObjectNode node = OM.createObjectNode();
-			node.put(TYPE, type);
-			node.put(ID, id);
-			node.put(TITLE, title);
-			node.put(YEAR, year);
-			node.put(EPISODE, episode);
-			node.put(SEASON, season);
-			node.put(SHOWTITLE, showtitle);
-			node.put(ALBUM, album);
-			node.put(ARTIST, artist);
-			node.put(TRACK, track);
-			return node;
-		}
-		/**
-		 * An unknown item does not have any additional information.
-		 * @param type See {@link PlayerModel.NotificationsItemType} for values.
-		 * @see PlayerModel.NotificationsItemType
-		 */
-		public class TypeNotificationsItem extends NotificationsItem {
-			public TypeNotificationsItem(String type) {
-				super(type, -1, null, null, null, null, null, null, null, null);
-			}
-		}
-		/**
-		 * An item known to the database has an identification.
-		 * @param id 
-		 * @param type See {@link PlayerModel.NotificationsItemType} for values.
-		 * @see PlayerModel.NotificationsItemType
-		 */
-		public class IdTypeNotificationsItem extends NotificationsItem {
-			public IdTypeNotificationsItem(int id, String type) {
-				super(type, id, null, null, null, null, null, null, null, null);
-			}
-		}
-		/**
-		 * A movie item has a title and may have a release year.
-		 * @param title 
-		 * @param type See {@link PlayerModel.NotificationsItemType} for values.
-		 * @param year 
-		 * @see PlayerModel.NotificationsItemType
-		 */
-		public class TitleTypeYearNotificationsItem extends NotificationsItem {
-			public TitleTypeYearNotificationsItem(String title, String type, Integer year) {
-				super(type, -1, title, year, null, null, null, null, null, null);
-			}
-		}
-		/**
-		 * A tv episode has a title and may have an episode number, season number and the title of the show it belongs to.
-		 * @param episode 
-		 * @param season 
-		 * @param showtitle 
-		 * @param title 
-		 * @param type See {@link PlayerModel.NotificationsItemType} for values.
-		 * @see PlayerModel.NotificationsItemType
-		 */
-		public class EpisodeSeasonShowtitleTitleTypeNotificationsItem extends NotificationsItem {
-			public EpisodeSeasonShowtitleTitleTypeNotificationsItem(Integer episode, Integer season, String showtitle, String title, String type) {
-				super(type, -1, title, null, episode, season, showtitle, null, null, null);
-			}
-		}
-		/**
-		 * A music video has a title and may have an album and an artist.
-		 * @param album 
-		 * @param artist 
-		 * @param title 
-		 * @param type See {@link PlayerModel.NotificationsItemType} for values.
-		 * @see PlayerModel.NotificationsItemType
-		 */
-		public class AlbumArtistTitleTypeNotificationsItem extends NotificationsItem {
-			public AlbumArtistTitleTypeNotificationsItem(String album, String artist, String title, String type) {
-				super(type, -1, title, null, null, null, null, album, artist, null);
-			}
-		}
-		/**
-		 * A song has a title and may have an album, an artist and a track number.
-		 * @param album 
-		 * @param artist 
-		 * @param title 
-		 * @param track 
-		 * @param type See {@link PlayerModel.NotificationsItemType} for values.
-		 * @see PlayerModel.NotificationsItemType
-		 */
-		public class AlbumArtistTitleTrackTypeNotificationsItem extends NotificationsItem {
-			public AlbumArtistTitleTrackTypeNotificationsItem(String album, String artist, String title, Integer track, String type) {
-				super(type, -1, title, null, null, null, null, album, artist, track);
-			}
-		}
-		/**
-		 * Extracts a list of {@link PlayerModel.NotificationsItem} objects from a JSON array.
-		 * @param obj ObjectNode containing the list of objects
-		 * @param key Key pointing to the node where the list is stored
-		 */
-		static ArrayList<PlayerModel.NotificationsItem> getPlayerModelNotificationsItemList(ObjectNode node, String key) {
-			if (node.has(key)) {
-				final ArrayNode a = (ArrayNode)node.get(key);
-				final ArrayList<PlayerModel.NotificationsItem> l = new ArrayList<PlayerModel.NotificationsItem>(a.size());
-				for (int i = 0; i < a.size(); i++) {
-					l.add(new PlayerModel.NotificationsItem((ObjectNode)a.get(i)));
-				}
-				return l;
-			}
-			return new ArrayList<PlayerModel.NotificationsItem>(0);
-		}
-		/**
-		 * Flatten this object into a Parcel.
-		 * @param parcel the Parcel in which the object should be written
-		 * @param flags additional flags about how the object should be written
-		 */
-		@Override
-		public void writeToParcel(Parcel parcel, int flags) {
-			parcel.writeValue(type);
-			parcel.writeValue(id);
-			parcel.writeValue(title);
-			parcel.writeValue(year);
-			parcel.writeValue(episode);
-			parcel.writeValue(season);
-			parcel.writeValue(showtitle);
-			parcel.writeValue(album);
-			parcel.writeValue(artist);
-			parcel.writeValue(track);
-		}
+
 		@Override
 		public int describeContents() {
 			return 0;
 		}
-		/**
-		 * Construct via parcel
-		 */
-		protected NotificationsItem(Parcel parcel) {
-			type = parcel.readString();
-			id = parcel.readInt();
-			title = parcel.readString();
-			year = parcel.readInt();
-			episode = parcel.readInt();
-			season = parcel.readInt();
-			showtitle = parcel.readString();
-			album = parcel.readString();
-			artist = parcel.readString();
-			track = parcel.readInt();
-		}
-		/**
-		 * Generates instances of this Parcelable class from a Parcel.
-		 */
-		public static final Parcelable.Creator<NotificationsItem> CREATOR = new Parcelable.Creator<NotificationsItem>() {
-			@Override
-			public NotificationsItem createFromParcel(Parcel parcel) {
-				return new NotificationsItem(parcel);
-			}
-			@Override
-			public NotificationsItem[] newArray(int n) {
-				return new NotificationsItem[n];
-			}
-		};
 	}
-	public interface NotificationsItemType {
-		public final String UNKNOWN = "unknown";
-		public final String MOVIE = "movie";
-		public final String EPISODE = "episode";
-		public final String MUSICVIDEO = "musicvideo";
-		public final String SONG = "song";
-	}
+
 	/**
-	 * Player.Notifications.Player
+	 * API Name: <tt>Player.Notifications.Player</tt>
 	 * <p/>
+	 * Note: Seems this class isn't used yet in the API.<br/>
 	 * <i>This class was generated automatically from XBMC's JSON-RPC introspect.</i>
 	 */
 	public static class NotificationsPlayer extends AbstractModel {
 		public final static String API_TYPE = "Player.Notifications.Player";
+
 		// field names
 		public static final String PLAYERID = "playerid";
 		public static final String SPEED = "speed";
+
 		// class members
-		public final int playerid;
+		public final Integer playerid;
 		public final Integer speed;
+
 		/**
-		 * Construct from JSON object.
-		 * @param obj JSON object representing a NotificationsPlayer object
+		 * @param playerid
+		 * @param speed
 		 */
-		public NotificationsPlayer(ObjectNode node) {
-			mType = API_TYPE;
-			playerid = node.get(PLAYERID).getIntValue();
-			speed = parseInt(node, SPEED);
-		}
-		/**
-		 * Construct object with native values for later serialization.
-		 * @param playerid 
-		 * @param speed 
-		 */
-		public NotificationsPlayer(int playerid, Integer speed) {
+		public NotificationsPlayer(Integer playerid, Integer speed) {
 			this.playerid = playerid;
 			this.speed = speed;
 		}
+
 		@Override
-		public ObjectNode toObjectNode() {
+		public JsonNode toJsonNode() {
 			final ObjectNode node = OM.createObjectNode();
 			node.put(PLAYERID, playerid);
 			node.put(SPEED, speed);
 			return node;
 		}
-		/**
-		 * Extracts a list of {@link PlayerModel.NotificationsPlayer} objects from a JSON array.
-		 * @param obj ObjectNode containing the list of objects
-		 * @param key Key pointing to the node where the list is stored
-		 */
-		static ArrayList<PlayerModel.NotificationsPlayer> getPlayerModelNotificationsPlayerList(ObjectNode node, String key) {
-			if (node.has(key)) {
-				final ArrayNode a = (ArrayNode)node.get(key);
-				final ArrayList<PlayerModel.NotificationsPlayer> l = new ArrayList<PlayerModel.NotificationsPlayer>(a.size());
-				for (int i = 0; i < a.size(); i++) {
-					l.add(new PlayerModel.NotificationsPlayer((ObjectNode)a.get(i)));
-				}
-				return l;
-			}
-			return new ArrayList<PlayerModel.NotificationsPlayer>(0);
-		}
+
 		/**
 		 * Flatten this object into a Parcel.
-		 * @param parcel the Parcel in which the object should be written
-		 * @param flags additional flags about how the object should be written
+		 * @param parcel the Parcel in which the object should be written.
+		 * @param flags additional flags about how the object should be written.
 		 */
 		@Override
 		public void writeToParcel(Parcel parcel, int flags) {
 			parcel.writeValue(playerid);
 			parcel.writeValue(speed);
 		}
-		@Override
-		public int describeContents() {
-			return 0;
-		}
+
 		/**
-		 * Construct via parcel
+		 * Construct via parcel.
 		 */
 		protected NotificationsPlayer(Parcel parcel) {
 			playerid = parcel.readInt();
 			speed = parcel.readInt();
 		}
+
 		/**
 		 * Generates instances of this Parcelable class from a Parcel.
 		 */
@@ -626,57 +379,42 @@ public final class PlayerModel {
 				return new NotificationsPlayer[n];
 			}
 		};
+
+		@Override
+		public int describeContents() {
+			return 0;
+		}
 	}
+
 	/**
-	 * Player.Notifications.Player.Seek
+	 * API Name: <tt>Player.Notifications.Player.Seek</tt>
 	 * <p/>
+	 * Note: Seems this class isn't used yet in the API.<br/>
 	 * <i>This class was generated automatically from XBMC's JSON-RPC introspect.</i>
 	 */
-	public static class NotificationsPlayerSeek extends PlayerModel.NotificationsPlayer {
+	public static class NotificationsPlayerSeek extends NotificationsPlayer {
 		public final static String API_TYPE = "Player.Notifications.Player.Seek";
+
 		// field names
 		public static final String SEEKOFFSET = "seekoffset";
 		public static final String TIME = "time";
+
 		// class members
 		public final GlobalModel.Time seekoffset;
 		public final GlobalModel.Time time;
-		/**
-		 * Construct from JSON object.
-		 * @param obj JSON object representing a NotificationsPlayerSeek object
-		 */
-		public NotificationsPlayerSeek(ObjectNode node) {
-			super(node);
-			mType = API_TYPE;
-			seekoffset = node.has(SEEKOFFSET) ? new GlobalModel.Time((ObjectNode)node.get(SEEKOFFSET)) : null;
-			time = node.has(TIME) ? new GlobalModel.Time((ObjectNode)node.get(TIME)) : null;
-		}
+
 		@Override
-		public ObjectNode toObjectNode() {
-			final ObjectNode node = OM.createObjectNode();
-			node.put(SEEKOFFSET, seekoffset.toObjectNode());
-			node.put(TIME, time.toObjectNode());
+		public JsonNode toJsonNode() {
+			final ObjectNode node = (ObjectNode)super.toJsonNode();
+			node.put(SEEKOFFSET, seekoffset.toJsonNode());
+			node.put(TIME, time.toJsonNode());
 			return node;
 		}
-		/**
-		 * Extracts a list of {@link PlayerModel.NotificationsPlayerSeek} objects from a JSON array.
-		 * @param obj ObjectNode containing the list of objects
-		 * @param key Key pointing to the node where the list is stored
-		 */
-		static ArrayList<PlayerModel.NotificationsPlayerSeek> getPlayerModelNotificationsPlayerSeekList(ObjectNode node, String key) {
-			if (node.has(key)) {
-				final ArrayNode a = (ArrayNode)node.get(key);
-				final ArrayList<PlayerModel.NotificationsPlayerSeek> l = new ArrayList<PlayerModel.NotificationsPlayerSeek>(a.size());
-				for (int i = 0; i < a.size(); i++) {
-					l.add(new PlayerModel.NotificationsPlayerSeek((ObjectNode)a.get(i)));
-				}
-				return l;
-			}
-			return new ArrayList<PlayerModel.NotificationsPlayerSeek>(0);
-		}
+
 		/**
 		 * Flatten this object into a Parcel.
-		 * @param parcel the Parcel in which the object should be written
-		 * @param flags additional flags about how the object should be written
+		 * @param parcel the Parcel in which the object should be written.
+		 * @param flags additional flags about how the object should be written.
 		 */
 		@Override
 		public void writeToParcel(Parcel parcel, int flags) {
@@ -684,18 +422,16 @@ public final class PlayerModel {
 			parcel.writeValue(seekoffset);
 			parcel.writeValue(time);
 		}
-		@Override
-		public int describeContents() {
-			return 0;
-		}
+
 		/**
-		 * Construct via parcel
+		 * Construct via parcel.
 		 */
 		protected NotificationsPlayerSeek(Parcel parcel) {
 			super(parcel);
 			seekoffset = parcel.<GlobalModel.Time>readParcelable(GlobalModel.Time.class.getClassLoader());
 			time = parcel.<GlobalModel.Time>readParcelable(GlobalModel.Time.class.getClassLoader());
 		}
+
 		/**
 		 * Generates instances of this Parcelable class from a Parcel.
 		 */
@@ -709,8 +445,619 @@ public final class PlayerModel {
 				return new NotificationsPlayerSeek[n];
 			}
 		};
+
+		@Override
+		public int describeContents() {
+			return 0;
+		}
 	}
+
+	/**
+	 * Time to start from.
+	 * <p/>
+	 * API Name: <tt>Player.Position.Time</tt>
+	 * <p/>
+	 * Note: This class is used as parameter only.<br/>
+	 * <i>This class was generated automatically from XBMC's JSON-RPC introspect.</i>
+	 */
+	public static class PositionTime extends AbstractModel {
+		public final static String API_TYPE = "Player.Position.Time";
+
+		// field names
+		public static final String HOURS = "hours";
+		public static final String MILLISECONDS = "milliseconds";
+		public static final String MINUTES = "minutes";
+		public static final String SECONDS = "seconds";
+
+		// class members
+		public final Integer hours;
+		public final Integer milliseconds;
+		public final Integer minutes;
+		public final Integer seconds;
+
+		/**
+		 * Time to start from.
+		 * @param hours
+		 * @param milliseconds
+		 * @param minutes
+		 * @param seconds
+		 */
+		public PositionTime(Integer hours, Integer milliseconds, Integer minutes, Integer seconds) {
+			this.hours = hours;
+			this.milliseconds = milliseconds;
+			this.minutes = minutes;
+			this.seconds = seconds;
+		}
+
+		@Override
+		public JsonNode toJsonNode() {
+			final ObjectNode node = OM.createObjectNode();
+			node.put(HOURS, hours);
+			node.put(MILLISECONDS, milliseconds);
+			node.put(MINUTES, minutes);
+			node.put(SECONDS, seconds);
+			return node;
+		}
+
+		/**
+		 * Flatten this object into a Parcel.
+		 * @param parcel the Parcel in which the object should be written.
+		 * @param flags additional flags about how the object should be written.
+		 */
+		@Override
+		public void writeToParcel(Parcel parcel, int flags) {
+			parcel.writeValue(hours);
+			parcel.writeValue(milliseconds);
+			parcel.writeValue(minutes);
+			parcel.writeValue(seconds);
+		}
+
+		/**
+		 * Construct via parcel.
+		 */
+		protected PositionTime(Parcel parcel) {
+			hours = parcel.readInt();
+			milliseconds = parcel.readInt();
+			minutes = parcel.readInt();
+			seconds = parcel.readInt();
+		}
+
+		/**
+		 * Generates instances of this Parcelable class from a Parcel.
+		 */
+		public static final Parcelable.Creator<PositionTime> CREATOR = new Parcelable.Creator<PositionTime>() {
+			@Override
+			public PositionTime createFromParcel(Parcel parcel) {
+				return new PositionTime(parcel);
+			}
+			@Override
+			public PositionTime[] newArray(int n) {
+				return new PositionTime[n];
+			}
+		};
+
+		@Override
+		public int describeContents() {
+			return 0;
+		}
+	}
+
+	/**
+	 * API Name: <tt>Player.Property.Value</tt>
+	 * <p/>
+	 * Note: This class is used as result only.<br/>
+	 * <i>This class was generated automatically from XBMC's JSON-RPC introspect.</i>
+	 */
+	public static class PropertyValue extends AbstractModel {
+		public final static String API_TYPE = "Player.Property.Value";
+
+		// field names
+		public static final String AUDIOSTREAMS = "audiostreams";
+		public static final String CANCHANGESPEED = "canchangespeed";
+		public static final String CANMOVE = "canmove";
+		public static final String CANREPEAT = "canrepeat";
+		public static final String CANROTATE = "canrotate";
+		public static final String CANSEEK = "canseek";
+		public static final String CANSHUFFLE = "canshuffle";
+		public static final String CANZOOM = "canzoom";
+		public static final String CURRENTAUDIOSTREAM = "currentaudiostream";
+		public static final String CURRENTSUBTITLE = "currentsubtitle";
+		public static final String LIVE = "live";
+		public static final String PARTYMODE = "partymode";
+		public static final String PERCENTAGE = "percentage";
+		public static final String PLAYLISTID = "playlistid";
+		public static final String POSITION = "position";
+		public static final String REPEAT = "repeat";
+		public static final String SHUFFLED = "shuffled";
+		public static final String SPEED = "speed";
+		public static final String SUBTITLEENABLED = "subtitleenabled";
+		public static final String SUBTITLES = "subtitles";
+		public static final String TIME = "time";
+		public static final String TOTALTIME = "totaltime";
+		public static final String TYPE = "type";
+
+		// class members
+		public final List<AudioStream> audiostreams;
+		public final Boolean canchangespeed;
+		public final Boolean canmove;
+		public final Boolean canrepeat;
+		public final Boolean canrotate;
+		public final Boolean canseek;
+		public final Boolean canshuffle;
+		public final Boolean canzoom;
+		public final AudioStreamExtended currentaudiostream;
+		public final Subtitle currentsubtitle;
+		public final Boolean live;
+		public final Boolean partymode;
+		public final Double percentage;
+		public final Integer playlistid;
+		public final Integer position;
+		public final String repeat;
+		public final Boolean shuffled;
+		public final Integer speed;
+		public final Boolean subtitleenabled;
+		public final List<Subtitle> subtitles;
+		public final GlobalModel.Time time;
+		public final GlobalModel.Time totaltime;
+		public final String type;
+
+		/**
+		 * @param audiostreams
+		 * @param canchangespeed
+		 * @param canmove
+		 * @param canrepeat
+		 * @param canrotate
+		 * @param canseek
+		 * @param canshuffle
+		 * @param canzoom
+		 * @param currentaudiostream
+		 * @param currentsubtitle
+		 * @param live
+		 * @param partymode
+		 * @param percentage
+		 * @param playlistid
+		 * @param position
+		 * @param repeat One of: <tt>off</tt>, <tt>one</tt>, <tt>all</tt>. See constants at {@link PlayerModel.PropertyValue.Repeat}.
+		 * @param shuffled
+		 * @param speed
+		 * @param subtitleenabled
+		 * @param subtitles
+		 * @param time
+		 * @param totaltime
+		 * @param type One of: <tt>video</tt>, <tt>audio</tt>, <tt>picture</tt>. See constants at {@link PlayerModel.PropertyValue.Type}.
+		 */
+		public PropertyValue(List<AudioStream> audiostreams, Boolean canchangespeed, Boolean canmove, Boolean canrepeat, Boolean canrotate, Boolean canseek, Boolean canshuffle, Boolean canzoom, AudioStreamExtended currentaudiostream, Subtitle currentsubtitle, Boolean live, Boolean partymode, Double percentage, Integer playlistid, Integer position, String repeat, Boolean shuffled, Integer speed, Boolean subtitleenabled, List<Subtitle> subtitles, GlobalModel.Time time, GlobalModel.Time totaltime, String type) {
+			this.audiostreams = audiostreams;
+			this.canchangespeed = canchangespeed;
+			this.canmove = canmove;
+			this.canrepeat = canrepeat;
+			this.canrotate = canrotate;
+			this.canseek = canseek;
+			this.canshuffle = canshuffle;
+			this.canzoom = canzoom;
+			this.currentaudiostream = currentaudiostream;
+			this.currentsubtitle = currentsubtitle;
+			this.live = live;
+			this.partymode = partymode;
+			this.percentage = percentage;
+			this.playlistid = playlistid;
+			this.position = position;
+			this.repeat = repeat;
+			this.shuffled = shuffled;
+			this.speed = speed;
+			this.subtitleenabled = subtitleenabled;
+			this.subtitles = subtitles;
+			this.time = time;
+			this.totaltime = totaltime;
+			this.type = type;
+		}
+
+		/**
+		 * Construct from JSON object.
+		 * @param node JSON object representing a PropertyValue object
+		 */
+		public PropertyValue(ObjectNode node) {
+			audiostreams = AudioStream.getPlayerModelAudioStreamList(node, AUDIOSTREAMS);
+			canchangespeed = parseBoolean(node, CANCHANGESPEED);
+			canmove = parseBoolean(node, CANMOVE);
+			canrepeat = parseBoolean(node, CANREPEAT);
+			canrotate = parseBoolean(node, CANROTATE);
+			canseek = parseBoolean(node, CANSEEK);
+			canshuffle = parseBoolean(node, CANSHUFFLE);
+			canzoom = parseBoolean(node, CANZOOM);
+			currentaudiostream = node.has(CURRENTAUDIOSTREAM) ? new AudioStreamExtended((ObjectNode)node.get(CURRENTAUDIOSTREAM)) : null;
+			currentsubtitle = node.has(CURRENTSUBTITLE) ? new Subtitle((ObjectNode)node.get(CURRENTSUBTITLE)) : null;
+			live = parseBoolean(node, LIVE);
+			partymode = parseBoolean(node, PARTYMODE);
+			percentage = parseDouble(node, PERCENTAGE);
+			playlistid = parseInt(node, PLAYLISTID);
+			position = parseInt(node, POSITION);
+			repeat = parseString(node, REPEAT);
+			shuffled = parseBoolean(node, SHUFFLED);
+			speed = parseInt(node, SPEED);
+			subtitleenabled = parseBoolean(node, SUBTITLEENABLED);
+			subtitles = Subtitle.getPlayerModelSubtitleList(node, SUBTITLES);
+			time = node.has(TIME) ? new GlobalModel.Time((ObjectNode)node.get(TIME)) : null;
+			totaltime = node.has(TOTALTIME) ? new GlobalModel.Time((ObjectNode)node.get(TOTALTIME)) : null;
+			type = parseString(node, TYPE);
+		}
+
+		@Override
+		public JsonNode toJsonNode() {
+			final ObjectNode node = OM.createObjectNode();
+			final ArrayNode audiostreamsArray = OM.createArrayNode();
+			for (AudioStream item : audiostreams) {
+				audiostreamsArray.add(item.toJsonNode());
+			}
+			node.put(AUDIOSTREAMS, audiostreamsArray);
+			node.put(CANCHANGESPEED, canchangespeed);
+			node.put(CANMOVE, canmove);
+			node.put(CANREPEAT, canrepeat);
+			node.put(CANROTATE, canrotate);
+			node.put(CANSEEK, canseek);
+			node.put(CANSHUFFLE, canshuffle);
+			node.put(CANZOOM, canzoom);
+			node.put(CURRENTAUDIOSTREAM, currentaudiostream.toJsonNode());
+			node.put(CURRENTSUBTITLE, currentsubtitle.toJsonNode());
+			node.put(LIVE, live);
+			node.put(PARTYMODE, partymode);
+			node.put(PERCENTAGE, percentage);
+			node.put(PLAYLISTID, playlistid);
+			node.put(POSITION, position);
+			node.put(REPEAT, repeat); // enum
+			node.put(SHUFFLED, shuffled);
+			node.put(SPEED, speed);
+			node.put(SUBTITLEENABLED, subtitleenabled);
+			final ArrayNode subtitlesArray = OM.createArrayNode();
+			for (Subtitle item : subtitles) {
+				subtitlesArray.add(item.toJsonNode());
+			}
+			node.put(SUBTITLES, subtitlesArray);
+			node.put(TIME, time.toJsonNode());
+			node.put(TOTALTIME, totaltime.toJsonNode());
+			node.put(TYPE, type); // enum
+			return node;
+		}
+
+		/**
+		 * Extracts a list of {@link PropertyValue} objects from a JSON array.
+		 * @param obj ObjectNode containing the list of objects.
+		 * @param key Key pointing to the node where the list is stored.
+		 */
+		static List<PropertyValue> getPlayerModelPropertyValueList(ObjectNode node, String key) {
+			if (node.has(key)) {
+				final ArrayNode a = (ArrayNode)node.get(key);
+				final List<PropertyValue> l = new ArrayList<PropertyValue>(a.size());
+				for (int i = 0; i < a.size(); i++) {
+					l.add(new PropertyValue((ObjectNode)a.get(i)));
+				}
+				return l;
+			}
+			return new ArrayList<PropertyValue>(0);
+		}
+
+		/**
+		 * Flatten this object into a Parcel.
+		 * @param parcel the Parcel in which the object should be written.
+		 * @param flags additional flags about how the object should be written.
+		 */
+		@Override
+		public void writeToParcel(Parcel parcel, int flags) {
+			parcel.writeInt(audiostreams.size());
+			for (AudioStream item : audiostreams) {
+				parcel.writeParcelable(item, flags);
+			}
+			parcel.writeInt(canchangespeed ? 1 : 0);
+			parcel.writeInt(canmove ? 1 : 0);
+			parcel.writeInt(canrepeat ? 1 : 0);
+			parcel.writeInt(canrotate ? 1 : 0);
+			parcel.writeInt(canseek ? 1 : 0);
+			parcel.writeInt(canshuffle ? 1 : 0);
+			parcel.writeInt(canzoom ? 1 : 0);
+			parcel.writeValue(currentaudiostream);
+			parcel.writeValue(currentsubtitle);
+			parcel.writeInt(live ? 1 : 0);
+			parcel.writeInt(partymode ? 1 : 0);
+			parcel.writeValue(percentage);
+			parcel.writeValue(playlistid);
+			parcel.writeValue(position);
+			parcel.writeValue(repeat); // enum
+			parcel.writeInt(shuffled ? 1 : 0);
+			parcel.writeValue(speed);
+			parcel.writeInt(subtitleenabled ? 1 : 0);
+			parcel.writeInt(subtitles.size());
+			for (Subtitle item : subtitles) {
+				parcel.writeParcelable(item, flags);
+			}
+			parcel.writeValue(time);
+			parcel.writeValue(totaltime);
+			parcel.writeValue(type); // enum
+		}
+
+		/**
+		 * Construct via parcel.
+		 */
+		protected PropertyValue(Parcel parcel) {
+			final int audiostreamsSize = parcel.readInt();
+			audiostreams = new ArrayList<AudioStream>(audiostreamsSize);
+			for (int i = 0; i < audiostreamsSize; i++) {
+				audiostreams.add(parcel.<AudioStream>readParcelable(AudioStream.class.getClassLoader()));
+			}
+			canchangespeed = parcel.readInt() == 1;
+			canmove = parcel.readInt() == 1;
+			canrepeat = parcel.readInt() == 1;
+			canrotate = parcel.readInt() == 1;
+			canseek = parcel.readInt() == 1;
+			canshuffle = parcel.readInt() == 1;
+			canzoom = parcel.readInt() == 1;
+			currentaudiostream = parcel.<AudioStreamExtended>readParcelable(AudioStreamExtended.class.getClassLoader());
+			currentsubtitle = parcel.<Subtitle>readParcelable(Subtitle.class.getClassLoader());
+			live = parcel.readInt() == 1;
+			partymode = parcel.readInt() == 1;
+			percentage = parcel.readDouble();
+			playlistid = parcel.readInt();
+			position = parcel.readInt();
+			repeat = parcel.readString(); // enum
+			shuffled = parcel.readInt() == 1;
+			speed = parcel.readInt();
+			subtitleenabled = parcel.readInt() == 1;
+			final int subtitlesSize = parcel.readInt();
+			subtitles = new ArrayList<Subtitle>(subtitlesSize);
+			for (int i = 0; i < subtitlesSize; i++) {
+				subtitles.add(parcel.<Subtitle>readParcelable(Subtitle.class.getClassLoader()));
+			}
+			time = parcel.<GlobalModel.Time>readParcelable(GlobalModel.Time.class.getClassLoader());
+			totaltime = parcel.<GlobalModel.Time>readParcelable(GlobalModel.Time.class.getClassLoader());
+			type = parcel.readString(); // enum
+		}
+
+		/**
+		 * Generates instances of this Parcelable class from a Parcel.
+		 */
+		public static final Parcelable.Creator<PropertyValue> CREATOR = new Parcelable.Creator<PropertyValue>() {
+			@Override
+			public PropertyValue createFromParcel(Parcel parcel) {
+				return new PropertyValue(parcel);
+			}
+			@Override
+			public PropertyValue[] newArray(int n) {
+				return new PropertyValue[n];
+			}
+		};
+
+		@Override
+		public int describeContents() {
+			return 0;
+		}
+
+		/**
+		 * API Name: <tt>repeat</tt>
+		 */
+		public interface Repeat {
+
+			public final String OFF = "off";
+			public final String ONE = "one";
+			public final String ALL = "all";
+
+			public final static Set<String> values = new HashSet<String>(Arrays.asList(OFF, ONE, ALL));
+		}
+
+		/**
+		 * API Name: <tt>type</tt>
+		 */
+		public interface Type {
+
+			public final String VIDEO = "video";
+			public final String AUDIO = "audio";
+			public final String PICTURE = "picture";
+
+			public final static Set<String> values = new HashSet<String>(Arrays.asList(VIDEO, AUDIO, PICTURE));
+		}
+	}
+
+	/**
+	 * API Name: <tt>Player.Speed</tt>
+	 * <p/>
+	 * Note: This class is used as result only.<br/>
+	 * <i>This class was generated automatically from XBMC's JSON-RPC introspect.</i>
+	 */
+	public static class Speed extends AbstractModel {
+		public final static String API_TYPE = "Player.Speed";
+
+		// field names
+		public static final String SPEED = "speed";
+
+		// class members
+		public final Integer speed;
+
+		/**
+		 * @param speed
+		 */
+		public Speed(Integer speed) {
+			this.speed = speed;
+		}
+
+		/**
+		 * Construct from JSON object.
+		 * @param node JSON object representing a Speed object
+		 */
+		public Speed(ObjectNode node) {
+			speed = parseInt(node, SPEED);
+		}
+
+		@Override
+		public JsonNode toJsonNode() {
+			final ObjectNode node = OM.createObjectNode();
+			node.put(SPEED, speed);
+			return node;
+		}
+
+		/**
+		 * Extracts a list of {@link Speed} objects from a JSON array.
+		 * @param obj ObjectNode containing the list of objects.
+		 * @param key Key pointing to the node where the list is stored.
+		 */
+		static List<Speed> getPlayerModelSpeedList(ObjectNode node, String key) {
+			if (node.has(key)) {
+				final ArrayNode a = (ArrayNode)node.get(key);
+				final List<Speed> l = new ArrayList<Speed>(a.size());
+				for (int i = 0; i < a.size(); i++) {
+					l.add(new Speed((ObjectNode)a.get(i)));
+				}
+				return l;
+			}
+			return new ArrayList<Speed>(0);
+		}
+
+		/**
+		 * Flatten this object into a Parcel.
+		 * @param parcel the Parcel in which the object should be written.
+		 * @param flags additional flags about how the object should be written.
+		 */
+		@Override
+		public void writeToParcel(Parcel parcel, int flags) {
+			parcel.writeValue(speed);
+		}
+
+		/**
+		 * Construct via parcel.
+		 */
+		protected Speed(Parcel parcel) {
+			speed = parcel.readInt();
+		}
+
+		/**
+		 * Generates instances of this Parcelable class from a Parcel.
+		 */
+		public static final Parcelable.Creator<Speed> CREATOR = new Parcelable.Creator<Speed>() {
+			@Override
+			public Speed createFromParcel(Parcel parcel) {
+				return new Speed(parcel);
+			}
+			@Override
+			public Speed[] newArray(int n) {
+				return new Speed[n];
+			}
+		};
+
+		@Override
+		public int describeContents() {
+			return 0;
+		}
+	}
+
+	/**
+	 * API Name: <tt>Player.Subtitle</tt>
+	 * <p/>
+	 * Note: This class is used as result only.<br/>
+	 * <i>This class was generated automatically from XBMC's JSON-RPC introspect.</i>
+	 */
+	public static class Subtitle extends AbstractModel {
+		public final static String API_TYPE = "Player.Subtitle";
+
+		// field names
+		public static final String INDEX = "index";
+		public static final String LANGUAGE = "language";
+		public static final String NAME = "name";
+
+		// class members
+		public final Integer index;
+		public final String language;
+		public final String name;
+
+		/**
+		 * @param index
+		 * @param language
+		 * @param name
+		 */
+		public Subtitle(Integer index, String language, String name) {
+			this.index = index;
+			this.language = language;
+			this.name = name;
+		}
+
+		/**
+		 * Construct from JSON object.
+		 * @param node JSON object representing a Subtitle object
+		 */
+		public Subtitle(ObjectNode node) {
+			index = node.get(INDEX).getIntValue(); // required value
+			language = node.get(LANGUAGE).getTextValue(); // required value
+			name = node.get(NAME).getTextValue(); // required value
+		}
+
+		@Override
+		public JsonNode toJsonNode() {
+			final ObjectNode node = OM.createObjectNode();
+			node.put(INDEX, index);
+			node.put(LANGUAGE, language);
+			node.put(NAME, name);
+			return node;
+		}
+
+		/**
+		 * Extracts a list of {@link Subtitle} objects from a JSON array.
+		 * @param obj ObjectNode containing the list of objects.
+		 * @param key Key pointing to the node where the list is stored.
+		 */
+		static List<Subtitle> getPlayerModelSubtitleList(ObjectNode node, String key) {
+			if (node.has(key)) {
+				final ArrayNode a = (ArrayNode)node.get(key);
+				final List<Subtitle> l = new ArrayList<Subtitle>(a.size());
+				for (int i = 0; i < a.size(); i++) {
+					l.add(new Subtitle((ObjectNode)a.get(i)));
+				}
+				return l;
+			}
+			return new ArrayList<Subtitle>(0);
+		}
+
+		/**
+		 * Flatten this object into a Parcel.
+		 * @param parcel the Parcel in which the object should be written.
+		 * @param flags additional flags about how the object should be written.
+		 */
+		@Override
+		public void writeToParcel(Parcel parcel, int flags) {
+			parcel.writeValue(index);
+			parcel.writeValue(language);
+			parcel.writeValue(name);
+		}
+
+		/**
+		 * Construct via parcel.
+		 */
+		protected Subtitle(Parcel parcel) {
+			index = parcel.readInt();
+			language = parcel.readString();
+			name = parcel.readString();
+		}
+
+		/**
+		 * Generates instances of this Parcelable class from a Parcel.
+		 */
+		public static final Parcelable.Creator<Subtitle> CREATOR = new Parcelable.Creator<Subtitle>() {
+			@Override
+			public Subtitle createFromParcel(Parcel parcel) {
+				return new Subtitle(parcel);
+			}
+			@Override
+			public Subtitle[] newArray(int n) {
+				return new Subtitle[n];
+			}
+		};
+
+		@Override
+		public int describeContents() {
+			return 0;
+		}
+	}
+
+	/**
+	 * API Name: <tt>Player.Property.Name</tt>
+	 */
 	public interface PropertyName {
+
 		public final String TYPE = "type";
 		public final String PARTYMODE = "partymode";
 		public final String SPEED = "speed";
@@ -733,464 +1080,32 @@ public final class PlayerModel {
 		public final String SUBTITLEENABLED = "subtitleenabled";
 		public final String CURRENTSUBTITLE = "currentsubtitle";
 		public final String SUBTITLES = "subtitles";
+		public final String LIVE = "live";
+
+		public final static Set<String> values = new HashSet<String>(Arrays.asList(TYPE, PARTYMODE, SPEED, TIME, PERCENTAGE, TOTALTIME, PLAYLISTID, POSITION, REPEAT, SHUFFLED, CANSEEK, CANCHANGESPEED, CANMOVE, CANZOOM, CANROTATE, CANSHUFFLE, CANREPEAT, CURRENTAUDIOSTREAM, AUDIOSTREAMS, SUBTITLEENABLED, CURRENTSUBTITLE, SUBTITLES, LIVE));
 	}
+
 	/**
-	 * Player.Property.Value
-	 * <p/>
-	 * <i>This class was generated automatically from XBMC's JSON-RPC introspect.</i>
+	 * API Name: <tt>Player.Repeat</tt>
 	 */
-	public static class PropertyValue extends AbstractModel {
-		public final static String API_TYPE = "Player.Property.Value";
-		// field names
-		public static final String AUDIOSTREAMS = "audiostreams";
-		public static final String CANCHANGESPEED = "canchangespeed";
-		public static final String CANMOVE = "canmove";
-		public static final String CANREPEAT = "canrepeat";
-		public static final String CANROTATE = "canrotate";
-		public static final String CANSEEK = "canseek";
-		public static final String CANSHUFFLE = "canshuffle";
-		public static final String CANZOOM = "canzoom";
-		public static final String CURRENTAUDIOSTREAM = "currentaudiostream";
-		public static final String CURRENTSUBTITLE = "currentsubtitle";
-		public static final String PARTYMODE = "partymode";
-		public static final String PERCENTAGE = "percentage";
-		public static final String PLAYLISTID = "playlistid";
-		public static final String POSITION = "position";
-		public static final String REPEAT = "repeat";
-		public static final String SHUFFLED = "shuffled";
-		public static final String SPEED = "speed";
-		public static final String SUBTITLEENABLED = "subtitleenabled";
-		public static final String SUBTITLES = "subtitles";
-		public static final String TIME = "time";
-		public static final String TOTALTIME = "totaltime";
-		public static final String TYPE = "type";
-		// class members
-		public final ArrayList<PlayerModel.AudioStream> audiostreams;
-		public final Boolean canchangespeed;
-		public final Boolean canmove;
-		public final Boolean canrepeat;
-		public final Boolean canrotate;
-		public final Boolean canseek;
-		public final Boolean canshuffle;
-		public final Boolean canzoom;
-		public final PlayerModel.AudioStreamExtended currentaudiostream;
-		public final PlayerModel.Subtitle currentsubtitle;
-		public final Boolean partymode;
-		public final Double percentage;
-		public final Integer playlistid;
-		public final Integer position;
-		public final String repeat;
-		public final Boolean shuffled;
-		public final Integer speed;
-		public final Boolean subtitleenabled;
-		public final ArrayList<PlayerModel.Subtitle> subtitles;
-		public final GlobalModel.Time time;
-		public final GlobalModel.Time totaltime;
-		public final String type;
-		/**
-		 * Construct from JSON object.
-		 * @param obj JSON object representing a PropertyValue object
-		 */
-		public PropertyValue(ObjectNode node) {
-			mType = API_TYPE;
-			audiostreams = PlayerModel.AudioStream.getPlayerModelAudioStreamList(node, AUDIOSTREAMS);
-			canchangespeed = parseBoolean(node, CANCHANGESPEED);
-			canmove = parseBoolean(node, CANMOVE);
-			canrepeat = parseBoolean(node, CANREPEAT);
-			canrotate = parseBoolean(node, CANROTATE);
-			canseek = parseBoolean(node, CANSEEK);
-			canshuffle = parseBoolean(node, CANSHUFFLE);
-			canzoom = parseBoolean(node, CANZOOM);
-			currentaudiostream = node.has(CURRENTAUDIOSTREAM) ? new PlayerModel.AudioStreamExtended((ObjectNode)node.get(CURRENTAUDIOSTREAM)) : null;
-			currentsubtitle = node.has(CURRENTSUBTITLE) ? new PlayerModel.Subtitle((ObjectNode)node.get(CURRENTSUBTITLE)) : null;
-			partymode = parseBoolean(node, PARTYMODE);
-			percentage = parseDouble(node, PERCENTAGE);
-			playlistid = parseInt(node, PLAYLISTID);
-			position = parseInt(node, POSITION);
-			repeat = parseString(node, REPEAT);
-			shuffled = parseBoolean(node, SHUFFLED);
-			speed = parseInt(node, SPEED);
-			subtitleenabled = parseBoolean(node, SUBTITLEENABLED);
-			subtitles = PlayerModel.Subtitle.getPlayerModelSubtitleList(node, SUBTITLES);
-			time = node.has(TIME) ? new GlobalModel.Time((ObjectNode)node.get(TIME)) : null;
-			totaltime = node.has(TOTALTIME) ? new GlobalModel.Time((ObjectNode)node.get(TOTALTIME)) : null;
-			type = parseString(node, TYPE);
-		}
-		/**
-		 * Construct object with native values for later serialization.
-		 * @param audiostreams 
-		 * @param canchangespeed 
-		 * @param canmove 
-		 * @param canrepeat 
-		 * @param canrotate 
-		 * @param canseek 
-		 * @param canshuffle 
-		 * @param canzoom 
-		 * @param currentaudiostream 
-		 * @param currentsubtitle 
-		 * @param partymode 
-		 * @param percentage 
-		 * @param playlistid 
-		 * @param position 
-		 * @param repeat 
-		 * @param shuffled 
-		 * @param speed 
-		 * @param subtitleenabled 
-		 * @param subtitles 
-		 * @param time 
-		 * @param totaltime 
-		 * @param type 
-		 */
-		public PropertyValue(ArrayList<PlayerModel.AudioStream> audiostreams, Boolean canchangespeed, Boolean canmove, Boolean canrepeat, Boolean canrotate, Boolean canseek, Boolean canshuffle, Boolean canzoom, PlayerModel.AudioStreamExtended currentaudiostream, PlayerModel.Subtitle currentsubtitle, Boolean partymode, Double percentage, Integer playlistid, Integer position, String repeat, Boolean shuffled, Integer speed, Boolean subtitleenabled, ArrayList<PlayerModel.Subtitle> subtitles, GlobalModel.Time time, GlobalModel.Time totaltime, String type) {
-			this.audiostreams = audiostreams;
-			this.canchangespeed = canchangespeed;
-			this.canmove = canmove;
-			this.canrepeat = canrepeat;
-			this.canrotate = canrotate;
-			this.canseek = canseek;
-			this.canshuffle = canshuffle;
-			this.canzoom = canzoom;
-			this.currentaudiostream = currentaudiostream;
-			this.currentsubtitle = currentsubtitle;
-			this.partymode = partymode;
-			this.percentage = percentage;
-			this.playlistid = playlistid;
-			this.position = position;
-			this.repeat = repeat;
-			this.shuffled = shuffled;
-			this.speed = speed;
-			this.subtitleenabled = subtitleenabled;
-			this.subtitles = subtitles;
-			this.time = time;
-			this.totaltime = totaltime;
-			this.type = type;
-		}
-		@Override
-		public ObjectNode toObjectNode() {
-			final ObjectNode node = OM.createObjectNode();
-			final ArrayNode audiostreamsArray = OM.createArrayNode();
-			for (PlayerModel.AudioStream item : audiostreams) {
-				audiostreamsArray.add(item.toObjectNode());
-			}
-			node.put(AUDIOSTREAMS, audiostreamsArray);
-			node.put(CANCHANGESPEED, canchangespeed);
-			node.put(CANMOVE, canmove);
-			node.put(CANREPEAT, canrepeat);
-			node.put(CANROTATE, canrotate);
-			node.put(CANSEEK, canseek);
-			node.put(CANSHUFFLE, canshuffle);
-			node.put(CANZOOM, canzoom);
-			node.put(CURRENTAUDIOSTREAM, currentaudiostream.toObjectNode());
-			node.put(CURRENTSUBTITLE, currentsubtitle.toObjectNode());
-			node.put(PARTYMODE, partymode);
-			node.put(PERCENTAGE, percentage);
-			node.put(PLAYLISTID, playlistid);
-			node.put(POSITION, position);
-			node.put(REPEAT, repeat);
-			node.put(SHUFFLED, shuffled);
-			node.put(SPEED, speed);
-			node.put(SUBTITLEENABLED, subtitleenabled);
-			final ArrayNode subtitlesArray = OM.createArrayNode();
-			for (PlayerModel.Subtitle item : subtitles) {
-				subtitlesArray.add(item.toObjectNode());
-			}
-			node.put(SUBTITLES, subtitlesArray);
-			node.put(TIME, time.toObjectNode());
-			node.put(TOTALTIME, totaltime.toObjectNode());
-			node.put(TYPE, type);
-			return node;
-		}
-		/**
-		 * Extracts a list of {@link PlayerModel.PropertyValue} objects from a JSON array.
-		 * @param obj ObjectNode containing the list of objects
-		 * @param key Key pointing to the node where the list is stored
-		 */
-		static ArrayList<PlayerModel.PropertyValue> getPlayerModelPropertyValueList(ObjectNode node, String key) {
-			if (node.has(key)) {
-				final ArrayNode a = (ArrayNode)node.get(key);
-				final ArrayList<PlayerModel.PropertyValue> l = new ArrayList<PlayerModel.PropertyValue>(a.size());
-				for (int i = 0; i < a.size(); i++) {
-					l.add(new PlayerModel.PropertyValue((ObjectNode)a.get(i)));
-				}
-				return l;
-			}
-			return new ArrayList<PlayerModel.PropertyValue>(0);
-		}
-		/**
-		 * Flatten this object into a Parcel.
-		 * @param parcel the Parcel in which the object should be written
-		 * @param flags additional flags about how the object should be written
-		 */
-		@Override
-		public void writeToParcel(Parcel parcel, int flags) {
-			parcel.writeInt(audiostreams.size());
-			for (PlayerModel.AudioStream item : audiostreams) {
-				parcel.writeParcelable(item, flags);
-			}
-			parcel.writeValue(canchangespeed);
-			parcel.writeValue(canmove);
-			parcel.writeValue(canrepeat);
-			parcel.writeValue(canrotate);
-			parcel.writeValue(canseek);
-			parcel.writeValue(canshuffle);
-			parcel.writeValue(canzoom);
-			parcel.writeValue(currentaudiostream);
-			parcel.writeValue(currentsubtitle);
-			parcel.writeValue(partymode);
-			parcel.writeValue(percentage);
-			parcel.writeValue(playlistid);
-			parcel.writeValue(position);
-			parcel.writeValue(repeat);
-			parcel.writeValue(shuffled);
-			parcel.writeValue(speed);
-			parcel.writeValue(subtitleenabled);
-			parcel.writeInt(subtitles.size());
-			for (PlayerModel.Subtitle item : subtitles) {
-				parcel.writeParcelable(item, flags);
-			}
-			parcel.writeValue(time);
-			parcel.writeValue(totaltime);
-			parcel.writeValue(type);
-		}
-		@Override
-		public int describeContents() {
-			return 0;
-		}
-		/**
-		 * Construct via parcel
-		 */
-		protected PropertyValue(Parcel parcel) {
-			final int audiostreamsSize = parcel.readInt();
-			audiostreams = new ArrayList<PlayerModel.AudioStream>(audiostreamsSize);
-			for (int i = 0; i < audiostreamsSize; i++) {
-				audiostreams.add(parcel.<PlayerModel.AudioStream>readParcelable(PlayerModel.AudioStream.class.getClassLoader()));
-			}
-			canchangespeed = parcel.readInt() == 1;
-			canmove = parcel.readInt() == 1;
-			canrepeat = parcel.readInt() == 1;
-			canrotate = parcel.readInt() == 1;
-			canseek = parcel.readInt() == 1;
-			canshuffle = parcel.readInt() == 1;
-			canzoom = parcel.readInt() == 1;
-			currentaudiostream = parcel.<PlayerModel.AudioStreamExtended>readParcelable(PlayerModel.AudioStreamExtended.class.getClassLoader());
-			currentsubtitle = parcel.<PlayerModel.Subtitle>readParcelable(PlayerModel.Subtitle.class.getClassLoader());
-			partymode = parcel.readInt() == 1;
-			percentage = parcel.readDouble();
-			playlistid = parcel.readInt();
-			position = parcel.readInt();
-			repeat = parcel.readString();
-			shuffled = parcel.readInt() == 1;
-			speed = parcel.readInt();
-			subtitleenabled = parcel.readInt() == 1;
-			final int subtitlesSize = parcel.readInt();
-			subtitles = new ArrayList<PlayerModel.Subtitle>(subtitlesSize);
-			for (int i = 0; i < subtitlesSize; i++) {
-				subtitles.add(parcel.<PlayerModel.Subtitle>readParcelable(PlayerModel.Subtitle.class.getClassLoader()));
-			}
-			time = parcel.<GlobalModel.Time>readParcelable(GlobalModel.Time.class.getClassLoader());
-			totaltime = parcel.<GlobalModel.Time>readParcelable(GlobalModel.Time.class.getClassLoader());
-			type = parcel.readString();
-		}
-		/**
-		 * Generates instances of this Parcelable class from a Parcel.
-		 */
-		public static final Parcelable.Creator<PropertyValue> CREATOR = new Parcelable.Creator<PropertyValue>() {
-			@Override
-			public PropertyValue createFromParcel(Parcel parcel) {
-				return new PropertyValue(parcel);
-			}
-			@Override
-			public PropertyValue[] newArray(int n) {
-				return new PropertyValue[n];
-			}
-		};
-	}
 	public interface Repeat {
+
 		public final String OFF = "off";
 		public final String ONE = "one";
 		public final String ALL = "all";
+
+		public final static Set<String> values = new HashSet<String>(Arrays.asList(OFF, ONE, ALL));
 	}
+
 	/**
-	 * Player.Speed
-	 * <p/>
-	 * <i>This class was generated automatically from XBMC's JSON-RPC introspect.</i>
+	 * API Name: <tt>Player.Type</tt>
 	 */
-	public static class Speed extends AbstractModel {
-		public final static String API_TYPE = "Player.Speed";
-		// field names
-		public static final String SPEED = "speed";
-		// class members
-		public final Integer speed;
-		/**
-		 * Construct from JSON object.
-		 * @param obj JSON object representing a Speed object
-		 */
-		public Speed(ObjectNode node) {
-			mType = API_TYPE;
-			speed = parseInt(node, SPEED);
-		}
-		/**
-		 * Construct object with native values for later serialization.
-		 * @param speed 
-		 */
-		public Speed(Integer speed) {
-			this.speed = speed;
-		}
-		@Override
-		public ObjectNode toObjectNode() {
-			final ObjectNode node = OM.createObjectNode();
-			node.put(SPEED, speed);
-			return node;
-		}
-		/**
-		 * Extracts a list of {@link PlayerModel.Speed} objects from a JSON array.
-		 * @param obj ObjectNode containing the list of objects
-		 * @param key Key pointing to the node where the list is stored
-		 */
-		static ArrayList<PlayerModel.Speed> getPlayerModelSpeedList(ObjectNode node, String key) {
-			if (node.has(key)) {
-				final ArrayNode a = (ArrayNode)node.get(key);
-				final ArrayList<PlayerModel.Speed> l = new ArrayList<PlayerModel.Speed>(a.size());
-				for (int i = 0; i < a.size(); i++) {
-					l.add(new PlayerModel.Speed((ObjectNode)a.get(i)));
-				}
-				return l;
-			}
-			return new ArrayList<PlayerModel.Speed>(0);
-		}
-		/**
-		 * Flatten this object into a Parcel.
-		 * @param parcel the Parcel in which the object should be written
-		 * @param flags additional flags about how the object should be written
-		 */
-		@Override
-		public void writeToParcel(Parcel parcel, int flags) {
-			parcel.writeValue(speed);
-		}
-		@Override
-		public int describeContents() {
-			return 0;
-		}
-		/**
-		 * Construct via parcel
-		 */
-		protected Speed(Parcel parcel) {
-			speed = parcel.readInt();
-		}
-		/**
-		 * Generates instances of this Parcelable class from a Parcel.
-		 */
-		public static final Parcelable.Creator<Speed> CREATOR = new Parcelable.Creator<Speed>() {
-			@Override
-			public Speed createFromParcel(Parcel parcel) {
-				return new Speed(parcel);
-			}
-			@Override
-			public Speed[] newArray(int n) {
-				return new Speed[n];
-			}
-		};
-	}
-	/**
-	 * Player.Subtitle
-	 * <p/>
-	 * <i>This class was generated automatically from XBMC's JSON-RPC introspect.</i>
-	 */
-	public static class Subtitle extends AbstractModel {
-		public final static String API_TYPE = "Player.Subtitle";
-		// field names
-		public static final String INDEX = "index";
-		public static final String LANGUAGE = "language";
-		public static final String NAME = "name";
-		// class members
-		public final int index;
-		public final String language;
-		public final String name;
-		/**
-		 * Construct from JSON object.
-		 * @param obj JSON object representing a Subtitle object
-		 */
-		public Subtitle(ObjectNode node) {
-			mType = API_TYPE;
-			index = node.get(INDEX).getIntValue();
-			language = node.get(LANGUAGE).getTextValue();
-			name = node.get(NAME).getTextValue();
-		}
-		/**
-		 * Construct object with native values for later serialization.
-		 * @param index 
-		 * @param language 
-		 * @param name 
-		 */
-		public Subtitle(int index, String language, String name) {
-			this.index = index;
-			this.language = language;
-			this.name = name;
-		}
-		@Override
-		public ObjectNode toObjectNode() {
-			final ObjectNode node = OM.createObjectNode();
-			node.put(INDEX, index);
-			node.put(LANGUAGE, language);
-			node.put(NAME, name);
-			return node;
-		}
-		/**
-		 * Extracts a list of {@link PlayerModel.Subtitle} objects from a JSON array.
-		 * @param obj ObjectNode containing the list of objects
-		 * @param key Key pointing to the node where the list is stored
-		 */
-		static ArrayList<PlayerModel.Subtitle> getPlayerModelSubtitleList(ObjectNode node, String key) {
-			if (node.has(key)) {
-				final ArrayNode a = (ArrayNode)node.get(key);
-				final ArrayList<PlayerModel.Subtitle> l = new ArrayList<PlayerModel.Subtitle>(a.size());
-				for (int i = 0; i < a.size(); i++) {
-					l.add(new PlayerModel.Subtitle((ObjectNode)a.get(i)));
-				}
-				return l;
-			}
-			return new ArrayList<PlayerModel.Subtitle>(0);
-		}
-		/**
-		 * Flatten this object into a Parcel.
-		 * @param parcel the Parcel in which the object should be written
-		 * @param flags additional flags about how the object should be written
-		 */
-		@Override
-		public void writeToParcel(Parcel parcel, int flags) {
-			parcel.writeValue(index);
-			parcel.writeValue(language);
-			parcel.writeValue(name);
-		}
-		@Override
-		public int describeContents() {
-			return 0;
-		}
-		/**
-		 * Construct via parcel
-		 */
-		protected Subtitle(Parcel parcel) {
-			index = parcel.readInt();
-			language = parcel.readString();
-			name = parcel.readString();
-		}
-		/**
-		 * Generates instances of this Parcelable class from a Parcel.
-		 */
-		public static final Parcelable.Creator<Subtitle> CREATOR = new Parcelable.Creator<Subtitle>() {
-			@Override
-			public Subtitle createFromParcel(Parcel parcel) {
-				return new Subtitle(parcel);
-			}
-			@Override
-			public Subtitle[] newArray(int n) {
-				return new Subtitle[n];
-			}
-		};
-	}
 	public interface Type {
+
 		public final String VIDEO = "video";
 		public final String AUDIO = "audio";
 		public final String PICTURE = "picture";
+
+		public final static Set<String> values = new HashSet<String>(Arrays.asList(VIDEO, AUDIO, PICTURE));
 	}
 }

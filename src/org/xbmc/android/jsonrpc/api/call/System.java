@@ -1,5 +1,5 @@
 /*
- *      Copyright (C) 2005-2015 Team XBMC
+ *      Copyright (C) 2005-2012 Team XBMC
  *      http://xbmc.org
  *
  *  This Program is free software; you can redistribute it and/or modify
@@ -18,7 +18,6 @@
  *  http://www.gnu.org/copyleft/gpl.html
  *
  */
-
 package org.xbmc.android.jsonrpc.api.call;
 
 import android.os.Parcel;
@@ -29,52 +28,92 @@ import org.xbmc.android.jsonrpc.api.model.SystemModel;
 
 public final class System {
 
-	private final static String PREFIX = "System.";
-
 	/**
-	 * Retrieves the values of the given properties
+	 * Ejects or closes the optical disc drive (if available).
 	 * <p/>
-	 * API Name: <code>System.GetProperties</code>
+	 * This class represents the API method <tt>System.EjectOpticalDrive</tt>
 	 * <p/>
 	 * <i>This class was generated automatically from XBMC's JSON-RPC introspect.</i>
 	 */
-	public static class GetProperties extends AbstractCall<SystemModel.PropertyValue> { 
-		private static final String NAME = "GetProperties";
-		/**
-		 * Retrieves the values of the given properties
-		 * @param properties One or more of: <tt>canshutdown</tt>, <tt>cansuspend</tt>, <tt>canhibernate</tt>, <tt>canreboot</tt>. See constants at {@link SystemModel.PropertyName}.
-		 * @see SystemModel.PropertyName
-		 */
-		public GetProperties(String... properties) {
-			super();
-			addParameter("properties", properties);
-		}
+	public static class EjectOpticalDrive extends AbstractCall<String> {
+		public final static String API_TYPE = "System.EjectOpticalDrive";
+
 		@Override
-		protected SystemModel.PropertyValue parseOne(ObjectNode node) {
-			return new SystemModel.PropertyValue(node);
+		public void writeToParcel(Parcel parcel, int flags) {
+			super.writeToParcel(parcel, flags);
+			parcel.writeValue(mResult);
 		}
+
+		/**
+		 * Construct via parcel.
+		 */
+		protected EjectOpticalDrive(Parcel parcel) {
+			super(parcel);
+		}
+
+		/**
+		 * Generates instances of this Parcelable class from a Parcel.
+		 */
+		public static final Parcelable.Creator<EjectOpticalDrive> CREATOR = new Parcelable.Creator<EjectOpticalDrive>() {
+			@Override
+			public EjectOpticalDrive createFromParcel(Parcel parcel) {
+				return new EjectOpticalDrive(parcel);
+			}
+			@Override
+			public EjectOpticalDrive[] newArray(int n) {
+				return new EjectOpticalDrive[n];
+			}
+		};
+
+		/**
+		 * Ejects or closes the optical disc drive (if available).
+		 */
+		public EjectOpticalDrive() {
+			super();
+		}
+
+		@Override
+		protected String parseOne(ObjectNode node) {
+			return node.getTextValue();
+		}
+
 		@Override
 		public String getName() {
-			return PREFIX + NAME;
+			return API_TYPE;
 		}
+
 		@Override
 		protected boolean returnsList() {
 			return false;
 		}
+	}
+
+	/**
+	 * Retrieves the values of the given properties.
+	 * <p/>
+	 * This class represents the API method <tt>System.GetProperties</tt>
+	 * <p/>
+	 * <i>This class was generated automatically from XBMC's JSON-RPC introspect.</i>
+	 */
+	public static class GetProperties extends AbstractCall<SystemModel.PropertyValue> {
+		public final static String API_TYPE = "System.GetProperties";
+
 		@Override
 		public void writeToParcel(Parcel parcel, int flags) {
 			super.writeToParcel(parcel, flags);
-				parcel.writeParcelable(mResult, flags);
-			}
+			parcel.writeParcelable(mResult, flags);
+		}
+
 		/**
-		 * Construct via parcel
+		 * Construct via parcel.
 		 */
 		protected GetProperties(Parcel parcel) {
 			super(parcel);
 		}
+
 		/**
-		* Generates instances of this Parcelable class from a Parcel.
-		*/
+		 * Generates instances of this Parcelable class from a Parcel.
+		 */
 		public static final Parcelable.Creator<GetProperties> CREATOR = new Parcelable.Creator<GetProperties>() {
 			@Override
 			public GetProperties createFromParcel(Parcel parcel) {
@@ -85,48 +124,58 @@ public final class System {
 				return new GetProperties[n];
 			}
 		};
-}
-	/**
-	 * Puts the system running XBMC into hibernate mode
-	 * <p/>
-	 * API Name: <code>System.Hibernate</code>
-	 * <p/>
-	 * <i>This class was generated automatically from XBMC's JSON-RPC introspect.</i>
-	 */
-	public static class Hibernate extends AbstractCall<String> { 
-		private static final String NAME = "Hibernate";
+
 		/**
-		 * Puts the system running XBMC into hibernate mode
+		 * Retrieves the values of the given properties.
+		 * @param properties One or more of: <tt>canshutdown</tt>, <tt>cansuspend</tt>, <tt>canhibernate</tt>, <tt>canreboot</tt>. See constants at {@link SystemModel.PropertyName}.
 		 */
-		public Hibernate() {
+		public GetProperties(String... properties) {
 			super();
+			addParameter("properties", properties);
 		}
+
 		@Override
-		protected String parseOne(ObjectNode node) {
-			return node.getTextValue();
+		protected SystemModel.PropertyValue parseOne(ObjectNode node) {
+			return new SystemModel.PropertyValue(node);
 		}
+
 		@Override
 		public String getName() {
-			return PREFIX + NAME;
+			return API_TYPE;
 		}
+
 		@Override
 		protected boolean returnsList() {
 			return false;
 		}
+	}
+
+	/**
+	 * Puts the system running XBMC into hibernate mode.
+	 * <p/>
+	 * This class represents the API method <tt>System.Hibernate</tt>
+	 * <p/>
+	 * <i>This class was generated automatically from XBMC's JSON-RPC introspect.</i>
+	 */
+	public static class Hibernate extends AbstractCall<String> {
+		public final static String API_TYPE = "System.Hibernate";
+
 		@Override
 		public void writeToParcel(Parcel parcel, int flags) {
 			super.writeToParcel(parcel, flags);
-				parcel.writeValue(mResult);
-			}
+			parcel.writeValue(mResult);
+		}
+
 		/**
-		 * Construct via parcel
+		 * Construct via parcel.
 		 */
 		protected Hibernate(Parcel parcel) {
 			super(parcel);
 		}
+
 		/**
-		* Generates instances of this Parcelable class from a Parcel.
-		*/
+		 * Generates instances of this Parcelable class from a Parcel.
+		 */
 		public static final Parcelable.Creator<Hibernate> CREATOR = new Parcelable.Creator<Hibernate>() {
 			@Override
 			public Hibernate createFromParcel(Parcel parcel) {
@@ -137,48 +186,56 @@ public final class System {
 				return new Hibernate[n];
 			}
 		};
-}
-	/**
-	 * Reboots the system running XBMC
-	 * <p/>
-	 * API Name: <code>System.Reboot</code>
-	 * <p/>
-	 * <i>This class was generated automatically from XBMC's JSON-RPC introspect.</i>
-	 */
-	public static class Reboot extends AbstractCall<String> { 
-		private static final String NAME = "Reboot";
+
 		/**
-		 * Reboots the system running XBMC
+		 * Puts the system running XBMC into hibernate mode.
 		 */
-		public Reboot() {
+		public Hibernate() {
 			super();
 		}
+
 		@Override
 		protected String parseOne(ObjectNode node) {
 			return node.getTextValue();
 		}
+
 		@Override
 		public String getName() {
-			return PREFIX + NAME;
+			return API_TYPE;
 		}
+
 		@Override
 		protected boolean returnsList() {
 			return false;
 		}
+	}
+
+	/**
+	 * Reboots the system running XBMC.
+	 * <p/>
+	 * This class represents the API method <tt>System.Reboot</tt>
+	 * <p/>
+	 * <i>This class was generated automatically from XBMC's JSON-RPC introspect.</i>
+	 */
+	public static class Reboot extends AbstractCall<String> {
+		public final static String API_TYPE = "System.Reboot";
+
 		@Override
 		public void writeToParcel(Parcel parcel, int flags) {
 			super.writeToParcel(parcel, flags);
-				parcel.writeValue(mResult);
-			}
+			parcel.writeValue(mResult);
+		}
+
 		/**
-		 * Construct via parcel
+		 * Construct via parcel.
 		 */
 		protected Reboot(Parcel parcel) {
 			super(parcel);
 		}
+
 		/**
-		* Generates instances of this Parcelable class from a Parcel.
-		*/
+		 * Generates instances of this Parcelable class from a Parcel.
+		 */
 		public static final Parcelable.Creator<Reboot> CREATOR = new Parcelable.Creator<Reboot>() {
 			@Override
 			public Reboot createFromParcel(Parcel parcel) {
@@ -189,48 +246,56 @@ public final class System {
 				return new Reboot[n];
 			}
 		};
-}
-	/**
-	 * Shuts the system running XBMC down
-	 * <p/>
-	 * API Name: <code>System.Shutdown</code>
-	 * <p/>
-	 * <i>This class was generated automatically from XBMC's JSON-RPC introspect.</i>
-	 */
-	public static class Shutdown extends AbstractCall<String> { 
-		private static final String NAME = "Shutdown";
+
 		/**
-		 * Shuts the system running XBMC down
+		 * Reboots the system running XBMC.
 		 */
-		public Shutdown() {
+		public Reboot() {
 			super();
 		}
+
 		@Override
 		protected String parseOne(ObjectNode node) {
 			return node.getTextValue();
 		}
+
 		@Override
 		public String getName() {
-			return PREFIX + NAME;
+			return API_TYPE;
 		}
+
 		@Override
 		protected boolean returnsList() {
 			return false;
 		}
+	}
+
+	/**
+	 * Shuts the system running XBMC down.
+	 * <p/>
+	 * This class represents the API method <tt>System.Shutdown</tt>
+	 * <p/>
+	 * <i>This class was generated automatically from XBMC's JSON-RPC introspect.</i>
+	 */
+	public static class Shutdown extends AbstractCall<String> {
+		public final static String API_TYPE = "System.Shutdown";
+
 		@Override
 		public void writeToParcel(Parcel parcel, int flags) {
 			super.writeToParcel(parcel, flags);
-				parcel.writeValue(mResult);
-			}
+			parcel.writeValue(mResult);
+		}
+
 		/**
-		 * Construct via parcel
+		 * Construct via parcel.
 		 */
 		protected Shutdown(Parcel parcel) {
 			super(parcel);
 		}
+
 		/**
-		* Generates instances of this Parcelable class from a Parcel.
-		*/
+		 * Generates instances of this Parcelable class from a Parcel.
+		 */
 		public static final Parcelable.Creator<Shutdown> CREATOR = new Parcelable.Creator<Shutdown>() {
 			@Override
 			public Shutdown createFromParcel(Parcel parcel) {
@@ -241,48 +306,56 @@ public final class System {
 				return new Shutdown[n];
 			}
 		};
-}
-	/**
-	 * Suspends the system running XBMC
-	 * <p/>
-	 * API Name: <code>System.Suspend</code>
-	 * <p/>
-	 * <i>This class was generated automatically from XBMC's JSON-RPC introspect.</i>
-	 */
-	public static class Suspend extends AbstractCall<String> { 
-		private static final String NAME = "Suspend";
+
 		/**
-		 * Suspends the system running XBMC
+		 * Shuts the system running XBMC down.
 		 */
-		public Suspend() {
+		public Shutdown() {
 			super();
 		}
+
 		@Override
 		protected String parseOne(ObjectNode node) {
 			return node.getTextValue();
 		}
+
 		@Override
 		public String getName() {
-			return PREFIX + NAME;
+			return API_TYPE;
 		}
+
 		@Override
 		protected boolean returnsList() {
 			return false;
 		}
+	}
+
+	/**
+	 * Suspends the system running XBMC.
+	 * <p/>
+	 * This class represents the API method <tt>System.Suspend</tt>
+	 * <p/>
+	 * <i>This class was generated automatically from XBMC's JSON-RPC introspect.</i>
+	 */
+	public static class Suspend extends AbstractCall<String> {
+		public final static String API_TYPE = "System.Suspend";
+
 		@Override
 		public void writeToParcel(Parcel parcel, int flags) {
 			super.writeToParcel(parcel, flags);
-				parcel.writeValue(mResult);
-			}
+			parcel.writeValue(mResult);
+		}
+
 		/**
-		 * Construct via parcel
+		 * Construct via parcel.
 		 */
 		protected Suspend(Parcel parcel) {
 			super(parcel);
 		}
+
 		/**
-		* Generates instances of this Parcelable class from a Parcel.
-		*/
+		 * Generates instances of this Parcelable class from a Parcel.
+		 */
 		public static final Parcelable.Creator<Suspend> CREATOR = new Parcelable.Creator<Suspend>() {
 			@Override
 			public Suspend createFromParcel(Parcel parcel) {
@@ -293,5 +366,27 @@ public final class System {
 				return new Suspend[n];
 			}
 		};
-}
+
+		/**
+		 * Suspends the system running XBMC.
+		 */
+		public Suspend() {
+			super();
+		}
+
+		@Override
+		protected String parseOne(ObjectNode node) {
+			return node.getTextValue();
+		}
+
+		@Override
+		public String getName() {
+			return API_TYPE;
+		}
+
+		@Override
+		protected boolean returnsList() {
+			return false;
+		}
+	}
 }

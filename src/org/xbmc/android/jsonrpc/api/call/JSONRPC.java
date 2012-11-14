@@ -1,5 +1,5 @@
 /*
- *      Copyright (C) 2005-2015 Team XBMC
+ *      Copyright (C) 2005-2012 Team XBMC
  *      http://xbmc.org
  *
  *  This Program is free software; you can redistribute it and/or modify
@@ -18,207 +18,46 @@
  *  http://www.gnu.org/copyleft/gpl.html
  *
  */
-
 package org.xbmc.android.jsonrpc.api.call;
 
 import android.os.Parcel;
 import android.os.Parcelable;
 import java.util.ArrayList;
+import java.util.List;
+import org.codehaus.jackson.JsonNode;
 import org.codehaus.jackson.node.ArrayNode;
 import org.codehaus.jackson.node.ObjectNode;
 import org.xbmc.android.jsonrpc.api.AbstractCall;
 import org.xbmc.android.jsonrpc.api.AbstractModel;
-import org.xbmc.android.jsonrpc.api.UndefinedResult;
 
 public final class JSONRPC {
 
-	private final static String PREFIX = "JSONRPC.";
+	/**
+	 * Notify all other connected clients.
+	 * <p/>
+	 * This class represents the API method <tt>JSONRPC.NotifyAll</tt>
+	 * <p/>
+	 * <i>This class was generated automatically from XBMC's JSON-RPC introspect.</i>
+	 */
+	public static class NotifyAll extends AbstractCall<String> {
+		public final static String API_TYPE = "JSONRPC.NotifyAll";
 
-	/**
-	 * Enumerates all actions and descriptions
-	 * <p/>
-	 * API Name: <code>JSONRPC.Introspect</code>
-	 * <p/>
-	 * <i>This class was generated automatically from XBMC's JSON-RPC introspect.</i>
-	 */
-	public static class Introspect extends AbstractCall<UndefinedResult> { 
-		private static final String NAME = "Introspect";
-		/**
-		 * Enumerates all actions and descriptions
-		 * @param getdescriptions 
-		 * @param getmetadata 
-		 * @param filterbytransport 
-		 * @param filter 
-		 */
-		public Introspect(Boolean getdescriptions, Boolean getmetadata, Boolean filterbytransport, GetreferencesIdType filter) {
-			super();
-			addParameter("getdescriptions", getdescriptions);
-			addParameter("getmetadata", getmetadata);
-			addParameter("filterbytransport", filterbytransport);
-			addParameter("filter", filter);
-		}
-		@Override
-		protected UndefinedResult parseOne(ObjectNode node) {
-			return new UndefinedResult(node);
-		}
-		/**
-		 * <i>This class was generated automatically from XBMC's JSON-RPC introspect.</i>
-		 */
-		public static class GetreferencesIdType extends AbstractModel {
-			// field names
-			public static final String GETREFERENCES = "getreferences";
-			public static final String ID = "id";
-			public static final String TYPE = "type";
-			// class members
-			/**
-			 * Whether or not to print the schema for referenced types.
-			 */
-			public final Boolean getreferences;
-			/**
-			 * Name of a namespace, method or type.
-			 */
-			public final String id;
-			/**
-			 * Type of the given name.
-			 * One of: <tt>method</tt>, <tt>namespace</tt>, <tt>type</tt>, <tt>notification</tt>.
-			 */
-			public final String type;
-			/**
-			 * Construct object with native values for later serialization.
-			 * @param getreferences Whether or not to print the schema for referenced types 
-			 * @param id Name of a namespace, method or type 
-			 * @param type Type of the given name 
-			 */
-			public GetreferencesIdType(Boolean getreferences, String id, String type) {
-				this.getreferences = getreferences;
-				this.id = id;
-				this.type = type;
-			}
-			@Override
-			public ObjectNode toObjectNode() {
-				final ObjectNode node = OM.createObjectNode();
-				node.put(GETREFERENCES, getreferences);
-				node.put(ID, id);
-				node.put(TYPE, type);
-				return node;
-			}
-			/**
-			 * Flatten this object into a Parcel.
-			 * @param parcel the Parcel in which the object should be written
-			 * @param flags additional flags about how the object should be written
-			 */
-			@Override
-			public void writeToParcel(Parcel parcel, int flags) {
-				parcel.writeValue(getreferences);
-				parcel.writeValue(id);
-				parcel.writeValue(type);
-			}
-			@Override
-			public int describeContents() {
-				return 0;
-			}
-			/**
-			 * Construct via parcel
-			 */
-			protected GetreferencesIdType(Parcel parcel) {
-				getreferences = parcel.readInt() == 1;
-				id = parcel.readString();
-				type = parcel.readString();
-			}
-			/**
-			 * Generates instances of this Parcelable class from a Parcel.
-			 */
-			public static final Parcelable.Creator<GetreferencesIdType> CREATOR = new Parcelable.Creator<GetreferencesIdType>() {
-				@Override
-				public GetreferencesIdType createFromParcel(Parcel parcel) {
-					return new GetreferencesIdType(parcel);
-				}
-				@Override
-				public GetreferencesIdType[] newArray(int n) {
-					return new GetreferencesIdType[n];
-				}
-			};
-		}
-		@Override
-		public String getName() {
-			return PREFIX + NAME;
-		}
-		@Override
-		protected boolean returnsList() {
-			return false;
-		}
 		@Override
 		public void writeToParcel(Parcel parcel, int flags) {
 			super.writeToParcel(parcel, flags);
-				parcel.writeParcelable(mResult, flags);
-			}
+			parcel.writeValue(mResult);
+		}
+
 		/**
-		 * Construct via parcel
-		 */
-		protected Introspect(Parcel parcel) {
-			super(parcel);
-		}
-		/**
-		* Generates instances of this Parcelable class from a Parcel.
-		*/
-		public static final Parcelable.Creator<Introspect> CREATOR = new Parcelable.Creator<Introspect>() {
-			@Override
-			public Introspect createFromParcel(Parcel parcel) {
-				return new Introspect(parcel);
-			}
-			@Override
-			public Introspect[] newArray(int n) {
-				return new Introspect[n];
-			}
-		};
-}
-	/**
-	 * Notify all other connected clients
-	 * <p/>
-	 * API Name: <code>JSONRPC.NotifyAll</code>
-	 * <p/>
-	 * <i>This class was generated automatically from XBMC's JSON-RPC introspect.</i>
-	 */
-	public static class NotifyAll extends AbstractCall<String> { 
-		private static final String NAME = "NotifyAll";
-		/**
-		 * Notify all other connected clients
-		 * @param sender 
-		 * @param message 
-		 * @param data 
-		 */
-		public NotifyAll(String sender, String message, String data) {
-			super();
-			addParameter("sender", sender);
-			addParameter("message", message);
-			addParameter("data", data);
-		}
-		@Override
-		protected String parseOne(ObjectNode node) {
-			return node.getTextValue();
-		}
-		@Override
-		public String getName() {
-			return PREFIX + NAME;
-		}
-		@Override
-		protected boolean returnsList() {
-			return false;
-		}
-		@Override
-		public void writeToParcel(Parcel parcel, int flags) {
-			super.writeToParcel(parcel, flags);
-				parcel.writeValue(mResult);
-			}
-		/**
-		 * Construct via parcel
+		 * Construct via parcel.
 		 */
 		protected NotifyAll(Parcel parcel) {
 			super(parcel);
 		}
+
 		/**
-		* Generates instances of this Parcelable class from a Parcel.
-		*/
+		 * Generates instances of this Parcelable class from a Parcel.
+		 */
 		public static final Parcelable.Creator<NotifyAll> CREATOR = new Parcelable.Creator<NotifyAll>() {
 			@Override
 			public NotifyAll createFromParcel(Parcel parcel) {
@@ -229,89 +68,193 @@ public final class JSONRPC {
 				return new NotifyAll[n];
 			}
 		};
-}
+
+		/**
+		 * Notify all other connected clients.
+		 * @param sender
+		 * @param message
+		 * @param data
+		 */
+		public NotifyAll(String sender, String message, String data) {
+			super();
+			addParameter("sender", sender);
+			addParameter("message", message);
+			addParameter("data", data);
+		}
+
+		@Override
+		protected String parseOne(ObjectNode node) {
+			return node.getTextValue();
+		}
+
+		@Override
+		public String getName() {
+			return API_TYPE;
+		}
+
+		@Override
+		protected boolean returnsList() {
+			return false;
+		}
+	}
+
 	/**
-	 * Retrieve the clients permissions
+	 * Retrieve the clients permissions.
 	 * <p/>
-	 * API Name: <code>JSONRPC.Permission</code>
+	 * This class represents the API method <tt>JSONRPC.Permission</tt>
 	 * <p/>
 	 * <i>This class was generated automatically from XBMC's JSON-RPC introspect.</i>
 	 */
-	public static class Permission extends AbstractCall<Permission.PermissionResult> { 
-		private static final String NAME = "Permission";
+	public static class Permission extends AbstractCall<Permission.PermissionResult> {
+		public final static String API_TYPE = "JSONRPC.Permission";
+
+		@Override
+		public void writeToParcel(Parcel parcel, int flags) {
+			super.writeToParcel(parcel, flags);
+			parcel.writeParcelable(mResult, flags);
+		}
+
 		/**
-		 * Retrieve the clients permissions
+		 * Construct via parcel.
+		 */
+		protected Permission(Parcel parcel) {
+			super(parcel);
+		}
+
+		/**
+		 * Generates instances of this Parcelable class from a Parcel.
+		 */
+		public static final Parcelable.Creator<Permission> CREATOR = new Parcelable.Creator<Permission>() {
+			@Override
+			public Permission createFromParcel(Parcel parcel) {
+				return new Permission(parcel);
+			}
+			@Override
+			public Permission[] newArray(int n) {
+				return new Permission[n];
+			}
+		};
+
+		/**
+		 * Retrieve the clients permissions.
 		 */
 		public Permission() {
 			super();
 		}
+
 		@Override
-		protected Permission.PermissionResult parseOne(ObjectNode node) {
-			return new Permission.PermissionResult(node);
+		protected PermissionResult parseOne(ObjectNode node) {
+			return new PermissionResult(node);
 		}
+
+		@Override
+		public String getName() {
+			return API_TYPE;
+		}
+
+		@Override
+		protected boolean returnsList() {
+			return false;
+		}
+
 		/**
+		 * Note: This class is used as result only.<br/>
 		 * <i>This class was generated automatically from XBMC's JSON-RPC introspect.</i>
 		 */
 		public static class PermissionResult extends AbstractModel {
+
 			// field names
+			public static final String CONTROLGUI = "controlgui";
 			public static final String CONTROLNOTIFY = "controlnotify";
 			public static final String CONTROLPLAYBACK = "controlplayback";
 			public static final String CONTROLPOWER = "controlpower";
+			public static final String CONTROLPVR = "controlpvr";
+			public static final String CONTROLSYSTEM = "controlsystem";
+			public static final String EXECUTEADDON = "executeaddon";
+			public static final String MANAGEADDON = "manageaddon";
 			public static final String NAVIGATE = "navigate";
 			public static final String READDATA = "readdata";
 			public static final String REMOVEDATA = "removedata";
 			public static final String UPDATEDATA = "updatedata";
 			public static final String WRITEFILE = "writefile";
+
 			// class members
-			public final boolean controlnotify;
-			public final boolean controlplayback;
-			public final boolean controlpower;
-			public final boolean navigate;
-			public final boolean readdata;
-			public final boolean removedata;
-			public final boolean updatedata;
-			public final boolean writefile;
+			public final Boolean controlgui;
+			public final Boolean controlnotify;
+			public final Boolean controlplayback;
+			public final Boolean controlpower;
+			public final Boolean controlpvr;
+			public final Boolean controlsystem;
+			public final Boolean executeaddon;
+			public final Boolean manageaddon;
+			public final Boolean navigate;
+			public final Boolean readdata;
+			public final Boolean removedata;
+			public final Boolean updatedata;
+			public final Boolean writefile;
+
 			/**
-			 * Construct from JSON object.
-			 * @param obj JSON object representing a PermissionResult object
+			 * @param controlgui
+			 * @param controlnotify
+			 * @param controlplayback
+			 * @param controlpower
+			 * @param controlpvr
+			 * @param controlsystem
+			 * @param executeaddon
+			 * @param manageaddon
+			 * @param navigate
+			 * @param readdata
+			 * @param removedata
+			 * @param updatedata
+			 * @param writefile
 			 */
-			public PermissionResult(ObjectNode node) {
-				controlnotify = node.get(CONTROLNOTIFY).getBooleanValue();
-				controlplayback = node.get(CONTROLPLAYBACK).getBooleanValue();
-				controlpower = node.get(CONTROLPOWER).getBooleanValue();
-				navigate = node.get(NAVIGATE).getBooleanValue();
-				readdata = node.get(READDATA).getBooleanValue();
-				removedata = node.get(REMOVEDATA).getBooleanValue();
-				updatedata = node.get(UPDATEDATA).getBooleanValue();
-				writefile = node.get(WRITEFILE).getBooleanValue();
-			}
-			/**
-			 * Construct object with native values for later serialization.
-			 * @param controlnotify 
-			 * @param controlplayback 
-			 * @param controlpower 
-			 * @param navigate 
-			 * @param readdata 
-			 * @param removedata 
-			 * @param updatedata 
-			 * @param writefile 
-			 */
-			public PermissionResult(boolean controlnotify, boolean controlplayback, boolean controlpower, boolean navigate, boolean readdata, boolean removedata, boolean updatedata, boolean writefile) {
+			public PermissionResult(Boolean controlgui, Boolean controlnotify, Boolean controlplayback, Boolean controlpower, Boolean controlpvr, Boolean controlsystem, Boolean executeaddon, Boolean manageaddon, Boolean navigate, Boolean readdata, Boolean removedata, Boolean updatedata, Boolean writefile) {
+				this.controlgui = controlgui;
 				this.controlnotify = controlnotify;
 				this.controlplayback = controlplayback;
 				this.controlpower = controlpower;
+				this.controlpvr = controlpvr;
+				this.controlsystem = controlsystem;
+				this.executeaddon = executeaddon;
+				this.manageaddon = manageaddon;
 				this.navigate = navigate;
 				this.readdata = readdata;
 				this.removedata = removedata;
 				this.updatedata = updatedata;
 				this.writefile = writefile;
 			}
+
+			/**
+			 * Construct from JSON object.
+			 * @param node JSON object representing a PermissionResult object
+			 */
+			public PermissionResult(ObjectNode node) {
+				controlgui = node.get(CONTROLGUI).getBooleanValue(); // required value
+				controlnotify = node.get(CONTROLNOTIFY).getBooleanValue(); // required value
+				controlplayback = node.get(CONTROLPLAYBACK).getBooleanValue(); // required value
+				controlpower = node.get(CONTROLPOWER).getBooleanValue(); // required value
+				controlpvr = node.get(CONTROLPVR).getBooleanValue(); // required value
+				controlsystem = node.get(CONTROLSYSTEM).getBooleanValue(); // required value
+				executeaddon = node.get(EXECUTEADDON).getBooleanValue(); // required value
+				manageaddon = node.get(MANAGEADDON).getBooleanValue(); // required value
+				navigate = node.get(NAVIGATE).getBooleanValue(); // required value
+				readdata = node.get(READDATA).getBooleanValue(); // required value
+				removedata = node.get(REMOVEDATA).getBooleanValue(); // required value
+				updatedata = node.get(UPDATEDATA).getBooleanValue(); // required value
+				writefile = node.get(WRITEFILE).getBooleanValue(); // required value
+			}
+
 			@Override
-			public ObjectNode toObjectNode() {
+			public JsonNode toJsonNode() {
 				final ObjectNode node = OM.createObjectNode();
+				node.put(CONTROLGUI, controlgui);
 				node.put(CONTROLNOTIFY, controlnotify);
 				node.put(CONTROLPLAYBACK, controlplayback);
 				node.put(CONTROLPOWER, controlpower);
+				node.put(CONTROLPVR, controlpvr);
+				node.put(CONTROLSYSTEM, controlsystem);
+				node.put(EXECUTEADDON, executeaddon);
+				node.put(MANAGEADDON, manageaddon);
 				node.put(NAVIGATE, navigate);
 				node.put(READDATA, readdata);
 				node.put(REMOVEDATA, removedata);
@@ -319,15 +262,16 @@ public final class JSONRPC {
 				node.put(WRITEFILE, writefile);
 				return node;
 			}
+
 			/**
 			 * Extracts a list of {@link PermissionResult} objects from a JSON array.
-			 * @param obj ObjectNode containing the list of objects
-			 * @param key Key pointing to the node where the list is stored
+			 * @param obj ObjectNode containing the list of objects.
+			 * @param key Key pointing to the node where the list is stored.
 			 */
-			static ArrayList<PermissionResult> getPermissionResultList(ObjectNode node, String key) {
+			static List<PermissionResult> getJSONRPCPermissionResultList(ObjectNode node, String key) {
 				if (node.has(key)) {
 					final ArrayNode a = (ArrayNode)node.get(key);
-					final ArrayList<PermissionResult> l = new ArrayList<PermissionResult>(a.size());
+					final List<PermissionResult> l = new ArrayList<PermissionResult>(a.size());
 					for (int i = 0; i < a.size(); i++) {
 						l.add(new PermissionResult((ObjectNode)a.get(i)));
 					}
@@ -335,39 +279,48 @@ public final class JSONRPC {
 				}
 				return new ArrayList<PermissionResult>(0);
 			}
+
 			/**
 			 * Flatten this object into a Parcel.
-			 * @param parcel the Parcel in which the object should be written
-			 * @param flags additional flags about how the object should be written
+			 * @param parcel the Parcel in which the object should be written.
+			 * @param flags additional flags about how the object should be written.
 			 */
 			@Override
 			public void writeToParcel(Parcel parcel, int flags) {
-				parcel.writeValue(controlnotify);
-				parcel.writeValue(controlplayback);
-				parcel.writeValue(controlpower);
-				parcel.writeValue(navigate);
-				parcel.writeValue(readdata);
-				parcel.writeValue(removedata);
-				parcel.writeValue(updatedata);
-				parcel.writeValue(writefile);
+				parcel.writeInt(controlgui ? 1 : 0);
+				parcel.writeInt(controlnotify ? 1 : 0);
+				parcel.writeInt(controlplayback ? 1 : 0);
+				parcel.writeInt(controlpower ? 1 : 0);
+				parcel.writeInt(controlpvr ? 1 : 0);
+				parcel.writeInt(controlsystem ? 1 : 0);
+				parcel.writeInt(executeaddon ? 1 : 0);
+				parcel.writeInt(manageaddon ? 1 : 0);
+				parcel.writeInt(navigate ? 1 : 0);
+				parcel.writeInt(readdata ? 1 : 0);
+				parcel.writeInt(removedata ? 1 : 0);
+				parcel.writeInt(updatedata ? 1 : 0);
+				parcel.writeInt(writefile ? 1 : 0);
 			}
-			@Override
-			public int describeContents() {
-				return 0;
-			}
+
 			/**
-			 * Construct via parcel
+			 * Construct via parcel.
 			 */
 			protected PermissionResult(Parcel parcel) {
+				controlgui = parcel.readInt() == 1;
 				controlnotify = parcel.readInt() == 1;
 				controlplayback = parcel.readInt() == 1;
 				controlpower = parcel.readInt() == 1;
+				controlpvr = parcel.readInt() == 1;
+				controlsystem = parcel.readInt() == 1;
+				executeaddon = parcel.readInt() == 1;
+				manageaddon = parcel.readInt() == 1;
 				navigate = parcel.readInt() == 1;
 				readdata = parcel.readInt() == 1;
 				removedata = parcel.readInt() == 1;
 				updatedata = parcel.readInt() == 1;
 				writefile = parcel.readInt() == 1;
 			}
+
 			/**
 			 * Generates instances of this Parcelable class from a Parcel.
 			 */
@@ -381,81 +334,40 @@ public final class JSONRPC {
 					return new PermissionResult[n];
 				}
 			};
-		}
-		@Override
-		public String getName() {
-			return PREFIX + NAME;
-		}
-		@Override
-		protected boolean returnsList() {
-			return false;
-		}
-		@Override
-		public void writeToParcel(Parcel parcel, int flags) {
-			super.writeToParcel(parcel, flags);
-				parcel.writeParcelable(mResult, flags);
-			}
-		/**
-		 * Construct via parcel
-		 */
-		protected Permission(Parcel parcel) {
-			super(parcel);
-		}
-		/**
-		* Generates instances of this Parcelable class from a Parcel.
-		*/
-		public static final Parcelable.Creator<Permission> CREATOR = new Parcelable.Creator<Permission>() {
+
 			@Override
-			public Permission createFromParcel(Parcel parcel) {
-				return new Permission(parcel);
+			public int describeContents() {
+				return 0;
 			}
-			@Override
-			public Permission[] newArray(int n) {
-				return new Permission[n];
-			}
-		};
-}
+		}
+	}
+
 	/**
-	 * Ping responder
+	 * Ping responder.
 	 * <p/>
-	 * API Name: <code>JSONRPC.Ping</code>
+	 * This class represents the API method <tt>JSONRPC.Ping</tt>
 	 * <p/>
 	 * <i>This class was generated automatically from XBMC's JSON-RPC introspect.</i>
 	 */
-	public static class Ping extends AbstractCall<String> { 
-		private static final String NAME = "Ping";
-		/**
-		 * Ping responder
-		 */
-		public Ping() {
-			super();
-		}
-		@Override
-		protected String parseOne(ObjectNode node) {
-			return node.getTextValue();
-		}
-		@Override
-		public String getName() {
-			return PREFIX + NAME;
-		}
-		@Override
-		protected boolean returnsList() {
-			return false;
-		}
+	public static class Ping extends AbstractCall<String> {
+		public final static String API_TYPE = "JSONRPC.Ping";
+
 		@Override
 		public void writeToParcel(Parcel parcel, int flags) {
 			super.writeToParcel(parcel, flags);
-				parcel.writeValue(mResult);
-			}
+			parcel.writeValue(mResult);
+		}
+
 		/**
-		 * Construct via parcel
+		 * Construct via parcel.
 		 */
 		protected Ping(Parcel parcel) {
 			super(parcel);
 		}
+
 		/**
-		* Generates instances of this Parcelable class from a Parcel.
-		*/
+		 * Generates instances of this Parcelable class from a Parcel.
+		 */
 		public static final Parcelable.Creator<Ping> CREATOR = new Parcelable.Creator<Ping>() {
 			@Override
 			public Ping createFromParcel(Parcel parcel) {
@@ -466,48 +378,56 @@ public final class JSONRPC {
 				return new Ping[n];
 			}
 		};
-}
-	/**
-	 * Retrieve the jsonrpc protocol version
-	 * <p/>
-	 * API Name: <code>JSONRPC.Version</code>
-	 * <p/>
-	 * <i>This class was generated automatically from XBMC's JSON-RPC introspect.</i>
-	 */
-	public static class Version extends AbstractCall<String> { 
-		private static final String NAME = "Version";
+
 		/**
-		 * Retrieve the jsonrpc protocol version
+		 * Ping responder.
 		 */
-		public Version() {
+		public Ping() {
 			super();
 		}
+
 		@Override
 		protected String parseOne(ObjectNode node) {
 			return node.getTextValue();
 		}
+
 		@Override
 		public String getName() {
-			return PREFIX + NAME;
+			return API_TYPE;
 		}
+
 		@Override
 		protected boolean returnsList() {
 			return false;
 		}
+	}
+
+	/**
+	 * Retrieve the jsonrpc protocol version.
+	 * <p/>
+	 * This class represents the API method <tt>JSONRPC.Version</tt>
+	 * <p/>
+	 * <i>This class was generated automatically from XBMC's JSON-RPC introspect.</i>
+	 */
+	public static class Version extends AbstractCall<String> {
+		public final static String API_TYPE = "JSONRPC.Version";
+
 		@Override
 		public void writeToParcel(Parcel parcel, int flags) {
 			super.writeToParcel(parcel, flags);
-				parcel.writeValue(mResult);
-			}
+			parcel.writeValue(mResult);
+		}
+
 		/**
-		 * Construct via parcel
+		 * Construct via parcel.
 		 */
 		protected Version(Parcel parcel) {
 			super(parcel);
 		}
+
 		/**
-		* Generates instances of this Parcelable class from a Parcel.
-		*/
+		 * Generates instances of this Parcelable class from a Parcel.
+		 */
 		public static final Parcelable.Creator<Version> CREATOR = new Parcelable.Creator<Version>() {
 			@Override
 			public Version createFromParcel(Parcel parcel) {
@@ -518,5 +438,27 @@ public final class JSONRPC {
 				return new Version[n];
 			}
 		};
-}
+
+		/**
+		 * Retrieve the jsonrpc protocol version.
+		 */
+		public Version() {
+			super();
+		}
+
+		@Override
+		protected String parseOne(ObjectNode node) {
+			return node.getTextValue();
+		}
+
+		@Override
+		public String getName() {
+			return API_TYPE;
+		}
+
+		@Override
+		protected boolean returnsList() {
+			return false;
+		}
+	}
 }
