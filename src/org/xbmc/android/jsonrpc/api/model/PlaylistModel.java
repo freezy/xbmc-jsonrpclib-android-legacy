@@ -871,7 +871,7 @@ public final class PlaylistModel {
 		 * Construct from JSON object.
 		 * @param node JSON object representing a PropertyValue object
 		 */
-		public PropertyValue(ObjectNode node) {
+		public PropertyValue(JsonNode node) {
 			size = parseInt(node, SIZE);
 			type = parseString(node, TYPE);
 		}
@@ -889,12 +889,12 @@ public final class PlaylistModel {
 		 * @param obj ObjectNode containing the list of objects.
 		 * @param key Key pointing to the node where the list is stored.
 		 */
-		static List<PropertyValue> getPlaylistModelPropertyValueList(ObjectNode node, String key) {
+		static List<PropertyValue> getPlaylistModelPropertyValueList(JsonNode node, String key) {
 			if (node.has(key)) {
 				final ArrayNode a = (ArrayNode)node.get(key);
 				final List<PropertyValue> l = new ArrayList<PropertyValue>(a.size());
 				for (int i = 0; i < a.size(); i++) {
-					l.add(new PropertyValue((ObjectNode)a.get(i)));
+					l.add(new PropertyValue((JsonNode)a.get(i)));
 				}
 				return l;
 			}

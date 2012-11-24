@@ -137,7 +137,7 @@ public final class Player {
 			 * Construct from JSON object.
 			 * @param node JSON object representing a GetActivePlayersResult object
 			 */
-			public GetActivePlayersResult(ObjectNode node) {
+			public GetActivePlayersResult(JsonNode node) {
 				playerid = parseInt(node, PLAYERID);
 				type = parseString(node, TYPE);
 			}
@@ -155,12 +155,12 @@ public final class Player {
 			 * @param obj ObjectNode containing the list of objects.
 			 * @param key Key pointing to the node where the list is stored.
 			 */
-			static List<GetActivePlayersResult> getPlayerGetActivePlayersResultList(ObjectNode node, String key) {
+			static List<GetActivePlayersResult> getPlayerGetActivePlayersResultList(JsonNode node, String key) {
 				if (node.has(key)) {
 					final ArrayNode a = (ArrayNode)node.get(key);
 					final List<GetActivePlayersResult> l = new ArrayList<GetActivePlayersResult>(a.size());
 					for (int i = 0; i < a.size(); i++) {
-						l.add(new GetActivePlayersResult((ObjectNode)a.get(i)));
+						l.add(new GetActivePlayersResult((JsonNode)a.get(i)));
 					}
 					return l;
 				}
@@ -601,6 +601,58 @@ public final class Player {
 			super();
 			addParameter("item", item);
 			addParameter("options", options);
+		}
+
+		/**
+		 * Start playback of either the playlist with the given ID, a slideshow with the pictures from the given directory or a single file or an item from the database.
+		 */
+		public Open() {
+			super();
+		}
+
+		/**
+		 * Start playback of either the playlist with the given ID, a slideshow with the pictures from the given directory or a single file or an item from the database.
+		 * @param item
+		 */
+		public Open(ItemPlaylistIdPosition item) {
+			super();
+			addParameter("item", item);
+		}
+
+		/**
+		 * Start playback of either the playlist with the given ID, a slideshow with the pictures from the given directory or a single file or an item from the database.
+		 * @param item
+		 */
+		public Open(PlaylistModel.Item item) {
+			super();
+			addParameter("item", item);
+		}
+
+		/**
+		 * Start playback of either the playlist with the given ID, a slideshow with the pictures from the given directory or a single file or an item from the database.
+		 * @param item
+		 */
+		public Open(ItemPathRandomRecursive item) {
+			super();
+			addParameter("item", item);
+		}
+
+		/**
+		 * Start playback of either the playlist with the given ID, a slideshow with the pictures from the given directory or a single file or an item from the database.
+		 * @param item
+		 */
+		public Open(ItemPartymode item) {
+			super();
+			addParameter("item", item);
+		}
+
+		/**
+		 * Start playback of either the playlist with the given ID, a slideshow with the pictures from the given directory or a single file or an item from the database.
+		 * @param item
+		 */
+		public Open(ItemChannelId item) {
+			super();
+			addParameter("item", item);
 		}
 
 		@Override
@@ -1110,6 +1162,15 @@ public final class Player {
 			addParameter("play", play);
 		}
 
+		/**
+		 * Pauses or unpause playback and returns the new state.
+		 * @param playerid
+		 */
+		public PlayPause(Integer playerid) {
+			super();
+			addParameter("playerid", playerid);
+		}
+
 		@Override
 		protected PlayerModel.Speed parseOne(ObjectNode node) {
 			return new PlayerModel.Speed(node);
@@ -1172,6 +1233,15 @@ public final class Player {
 			super();
 			addParameter("playerid", playerid);
 			addParameter("value", value);
+		}
+
+		/**
+		 * Rotates current picture.
+		 * @param playerid
+		 */
+		public Rotate(Integer playerid) {
+			super();
+			addParameter("playerid", playerid);
 		}
 
 		@Override
@@ -1252,6 +1322,17 @@ public final class Player {
 		/**
 		 * Seek through the playing item.
 		 * @param playerid
+		 * @param valueTime to seek to.
+		 */
+		public Seek(Integer playerid, PlayerModel.PositionTime value) {
+			super();
+			addParameter("playerid", playerid);
+			addParameter("value", value);
+		}
+
+		/**
+		 * Seek through the playing item.
+		 * @param playerid
 		 * @param valueSeek by predefined jumps. One of: <tt>smallforward</tt>, <tt>smallbackward</tt>, <tt>bigforward</tt>, <tt>bigbackward</tt>. See constants at {@link Player.Seek.Value}.
 		 */
 		public Seek(Integer playerid, String value) {
@@ -1306,10 +1387,10 @@ public final class Player {
 			 * Construct from JSON object.
 			 * @param node JSON object representing a SeekResult object
 			 */
-			public SeekResult(ObjectNode node) {
+			public SeekResult(JsonNode node) {
 				percentage = parseDouble(node, PERCENTAGE);
-				time = node.has(TIME) ? new GlobalModel.Time((ObjectNode)node.get(TIME)) : null;
-				totaltime = node.has(TOTALTIME) ? new GlobalModel.Time((ObjectNode)node.get(TOTALTIME)) : null;
+				time = node.has(TIME) ? new GlobalModel.Time(node.get(TIME)) : null;
+				totaltime = node.has(TOTALTIME) ? new GlobalModel.Time(node.get(TOTALTIME)) : null;
 			}
 
 			@Override
@@ -1326,12 +1407,12 @@ public final class Player {
 			 * @param obj ObjectNode containing the list of objects.
 			 * @param key Key pointing to the node where the list is stored.
 			 */
-			static List<SeekResult> getPlayerSeekResultList(ObjectNode node, String key) {
+			static List<SeekResult> getPlayerSeekResultList(JsonNode node, String key) {
 				if (node.has(key)) {
 					final ArrayNode a = (ArrayNode)node.get(key);
 					final List<SeekResult> l = new ArrayList<SeekResult>(a.size());
 					for (int i = 0; i < a.size(); i++) {
-						l.add(new SeekResult((ObjectNode)a.get(i)));
+						l.add(new SeekResult((JsonNode)a.get(i)));
 					}
 					return l;
 				}
@@ -1719,17 +1800,6 @@ public final class Player {
 			addParameter("speed", speed);
 		}
 
-		/**
-		 * Set the speed of the current playback.
-		 * @param playerid
-		 * @param speed One of: <tt>increment</tt>, <tt>decrement</tt>. See constants at {@link GlobalModel.IncrementDecrement}.
-		 */
-		public SetSpeed(Integer playerid, String speed) {
-			super();
-			addParameter("playerid", playerid);
-			addParameter("speed", speed);
-		}
-
 		@Override
 		protected PlayerModel.Speed parseOne(ObjectNode node) {
 			return new PlayerModel.Speed(node);
@@ -1829,6 +1899,28 @@ public final class Player {
 			addParameter("playerid", playerid);
 			addParameter("subtitle", subtitle);
 			addParameter("enable", enable);
+		}
+
+		/**
+		 * Set the subtitle displayed by the player.
+		 * @param playerid
+		 * @param subtitle One of: <tt>previous</tt>, <tt>next</tt>, <tt>off</tt>, <tt>on</tt>. See constants at {@link Player.SetSubtitle.Subtitle}.
+		 */
+		public SetSubtitle(Integer playerid, String subtitle) {
+			super();
+			addParameter("playerid", playerid);
+			addParameter("subtitle", subtitle);
+		}
+
+		/**
+		 * Set the subtitle displayed by the player.
+		 * @param playerid
+		 * @param subtitleIndex of the subtitle to display.
+		 */
+		public SetSubtitle(Integer playerid, Integer subtitle) {
+			super();
+			addParameter("playerid", playerid);
+			addParameter("subtitle", subtitle);
 		}
 
 		@Override

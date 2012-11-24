@@ -2966,11 +2966,11 @@ public final class ListModel {
 		 * Construct from JSON object.
 		 * @param node JSON object representing a AllItems object
 		 */
-		public AllItems(ObjectNode node) {
+		public AllItems(JsonNode node) {
 			album = parseString(node, ALBUM);
 			albumartist = getStringArray(node, ALBUMARTIST);
 			albumid = parseInt(node, ALBUMID);
-			art = node.has(ART) ? new MediaModel.Artwork((ObjectNode)node.get(ART)) : null;
+			art = node.has(ART) ? new MediaModel.Artwork(node.get(ART)) : null;
 			artist = getStringArray(node, ARTIST);
 			cast = VideoModel.Cast.getVideoModelCastList(node, CAST);
 			channel = parseString(node, CHANNEL);
@@ -3007,7 +3007,7 @@ public final class ListModel {
 			premiered = parseString(node, PREMIERED);
 			productioncode = parseString(node, PRODUCTIONCODE);
 			rating = parseInt(node, RATING);
-			resume = node.has(RESUME) ? new VideoModel.Resume((ObjectNode)node.get(RESUME)) : null;
+			resume = node.has(RESUME) ? new VideoModel.Resume(node.get(RESUME)) : null;
 			runtime = parseString(node, RUNTIME);
 			season = parseInt(node, SEASON);
 			set = parseString(node, SET);
@@ -3015,7 +3015,7 @@ public final class ListModel {
 			showlink = getStringArray(node, SHOWLINK);
 			showtitle = parseString(node, SHOWTITLE);
 			starttime = parseString(node, STARTTIME);
-			streamdetails = node.has(STREAMDETAILS) ? new VideoModel.Streams((ObjectNode)node.get(STREAMDETAILS)) : null;
+			streamdetails = node.has(STREAMDETAILS) ? new VideoModel.Streams(node.get(STREAMDETAILS)) : null;
 			studio = getStringArray(node, STUDIO);
 			tag = getStringArray(node, TAG);
 			tagline = parseString(node, TAGLINE);
@@ -3146,12 +3146,12 @@ public final class ListModel {
 		 * @param obj ObjectNode containing the list of objects.
 		 * @param key Key pointing to the node where the list is stored.
 		 */
-		static List<AllItems> getListModelAllItemsList(ObjectNode node, String key) {
+		static List<AllItems> getListModelAllItemsList(JsonNode node, String key) {
 			if (node.has(key)) {
 				final ArrayNode a = (ArrayNode)node.get(key);
 				final List<AllItems> l = new ArrayList<AllItems>(a.size());
 				for (int i = 0; i < a.size(); i++) {
-					l.add(new AllItems((ObjectNode)a.get(i)));
+					l.add(new AllItems((JsonNode)a.get(i)));
 				}
 				return l;
 			}
@@ -3443,7 +3443,7 @@ public final class ListModel {
 		 * Construct from JSON object.
 		 * @param node JSON object representing a FileItem object
 		 */
-		public FileItem(ObjectNode node) {
+		public FileItem(JsonNode node) {
 			super(node);
 			file = node.get(FILE).getTextValue(); // required value
 			filetype = parseString(node, FILETYPE);
@@ -3468,12 +3468,12 @@ public final class ListModel {
 		 * @param obj ObjectNode containing the list of objects.
 		 * @param key Key pointing to the node where the list is stored.
 		 */
-		static List<FileItem> getListModelFileItemList(ObjectNode node, String key) {
+		static List<FileItem> getListModelFileItemList(JsonNode node, String key) {
 			if (node.has(key)) {
 				final ArrayNode a = (ArrayNode)node.get(key);
 				final List<FileItem> l = new ArrayList<FileItem>(a.size());
 				for (int i = 0; i < a.size(); i++) {
-					l.add(new FileItem((ObjectNode)a.get(i)));
+					l.add(new FileItem((JsonNode)a.get(i)));
 				}
 				return l;
 			}
@@ -3556,7 +3556,7 @@ public final class ListModel {
 		 * Construct from JSON object.
 		 * @param node JSON object representing a SourceItem object
 		 */
-		public SourceItem(ObjectNode node) {
+		public SourceItem(JsonNode node) {
 			super(node);
 			file = node.get(FILE).getTextValue(); // required value
 		}
@@ -3573,12 +3573,12 @@ public final class ListModel {
 		 * @param obj ObjectNode containing the list of objects.
 		 * @param key Key pointing to the node where the list is stored.
 		 */
-		static List<SourceItem> getListModelSourceItemList(ObjectNode node, String key) {
+		static List<SourceItem> getListModelSourceItemList(JsonNode node, String key) {
 			if (node.has(key)) {
 				final ArrayNode a = (ArrayNode)node.get(key);
 				final List<SourceItem> l = new ArrayList<SourceItem>(a.size());
 				for (int i = 0; i < a.size(); i++) {
-					l.add(new SourceItem((ObjectNode)a.get(i)));
+					l.add(new SourceItem((JsonNode)a.get(i)));
 				}
 				return l;
 			}
@@ -3731,7 +3731,7 @@ public final class ListModel {
 		 * Construct from JSON object.
 		 * @param node JSON object representing a LimitsReturned object
 		 */
-		public LimitsReturned(ObjectNode node) {
+		public LimitsReturned(JsonNode node) {
 			end = parseInt(node, END);
 			start = parseInt(node, START);
 			total = node.get(TOTAL).getIntValue(); // required value
@@ -3751,12 +3751,12 @@ public final class ListModel {
 		 * @param obj ObjectNode containing the list of objects.
 		 * @param key Key pointing to the node where the list is stored.
 		 */
-		static List<LimitsReturned> getListModelLimitsReturnedList(ObjectNode node, String key) {
+		static List<LimitsReturned> getListModelLimitsReturnedList(JsonNode node, String key) {
 			if (node.has(key)) {
 				final ArrayNode a = (ArrayNode)node.get(key);
 				final List<LimitsReturned> l = new ArrayList<LimitsReturned>(a.size());
 				for (int i = 0; i < a.size(); i++) {
-					l.add(new LimitsReturned((ObjectNode)a.get(i)));
+					l.add(new LimitsReturned((JsonNode)a.get(i)));
 				}
 				return l;
 			}

@@ -68,7 +68,7 @@ public final class PlayerModel {
 		 * Construct from JSON object.
 		 * @param node JSON object representing a AudioStream object
 		 */
-		public AudioStream(ObjectNode node) {
+		public AudioStream(JsonNode node) {
 			index = node.get(INDEX).getIntValue(); // required value
 			language = node.get(LANGUAGE).getTextValue(); // required value
 			name = node.get(NAME).getTextValue(); // required value
@@ -88,12 +88,12 @@ public final class PlayerModel {
 		 * @param obj ObjectNode containing the list of objects.
 		 * @param key Key pointing to the node where the list is stored.
 		 */
-		static List<AudioStream> getPlayerModelAudioStreamList(ObjectNode node, String key) {
+		static List<AudioStream> getPlayerModelAudioStreamList(JsonNode node, String key) {
 			if (node.has(key)) {
 				final ArrayNode a = (ArrayNode)node.get(key);
 				final List<AudioStream> l = new ArrayList<AudioStream>(a.size());
 				for (int i = 0; i < a.size(); i++) {
-					l.add(new AudioStream((ObjectNode)a.get(i)));
+					l.add(new AudioStream((JsonNode)a.get(i)));
 				}
 				return l;
 			}
@@ -164,7 +164,7 @@ public final class PlayerModel {
 		 * Construct from JSON object.
 		 * @param node JSON object representing a AudioStreamExtended object
 		 */
-		public AudioStreamExtended(ObjectNode node) {
+		public AudioStreamExtended(JsonNode node) {
 			super(node);
 			bitrate = node.get(BITRATE).getIntValue(); // required value
 			channels = node.get(CHANNELS).getIntValue(); // required value
@@ -185,12 +185,12 @@ public final class PlayerModel {
 		 * @param obj ObjectNode containing the list of objects.
 		 * @param key Key pointing to the node where the list is stored.
 		 */
-		static List<AudioStreamExtended> getPlayerModelAudioStreamExtendedList(ObjectNode node, String key) {
+		static List<AudioStreamExtended> getPlayerModelAudioStreamExtendedList(JsonNode node, String key) {
 			if (node.has(key)) {
 				final ArrayNode a = (ArrayNode)node.get(key);
 				final List<AudioStreamExtended> l = new ArrayList<AudioStreamExtended>(a.size());
 				for (int i = 0; i < a.size(); i++) {
-					l.add(new AudioStreamExtended((ObjectNode)a.get(i)));
+					l.add(new AudioStreamExtended((JsonNode)a.get(i)));
 				}
 				return l;
 			}
@@ -453,7 +453,7 @@ public final class PlayerModel {
 	}
 
 	/**
-	 * Time to start from.
+	 * Time to seek to.
 	 * <p/>
 	 * API Name: <tt>Player.Position.Time</tt>
 	 * <p/>
@@ -476,7 +476,7 @@ public final class PlayerModel {
 		public final Integer seconds;
 
 		/**
-		 * Time to start from.
+		 * Time to seek to.
 		 * @param hours
 		 * @param milliseconds
 		 * @param minutes
@@ -656,7 +656,7 @@ public final class PlayerModel {
 		 * Construct from JSON object.
 		 * @param node JSON object representing a PropertyValue object
 		 */
-		public PropertyValue(ObjectNode node) {
+		public PropertyValue(JsonNode node) {
 			audiostreams = AudioStream.getPlayerModelAudioStreamList(node, AUDIOSTREAMS);
 			canchangespeed = parseBoolean(node, CANCHANGESPEED);
 			canmove = parseBoolean(node, CANMOVE);
@@ -665,8 +665,8 @@ public final class PlayerModel {
 			canseek = parseBoolean(node, CANSEEK);
 			canshuffle = parseBoolean(node, CANSHUFFLE);
 			canzoom = parseBoolean(node, CANZOOM);
-			currentaudiostream = node.has(CURRENTAUDIOSTREAM) ? new AudioStreamExtended((ObjectNode)node.get(CURRENTAUDIOSTREAM)) : null;
-			currentsubtitle = node.has(CURRENTSUBTITLE) ? new Subtitle((ObjectNode)node.get(CURRENTSUBTITLE)) : null;
+			currentaudiostream = node.has(CURRENTAUDIOSTREAM) ? new AudioStreamExtended(node.get(CURRENTAUDIOSTREAM)) : null;
+			currentsubtitle = node.has(CURRENTSUBTITLE) ? new Subtitle(node.get(CURRENTSUBTITLE)) : null;
 			live = parseBoolean(node, LIVE);
 			partymode = parseBoolean(node, PARTYMODE);
 			percentage = parseDouble(node, PERCENTAGE);
@@ -677,8 +677,8 @@ public final class PlayerModel {
 			speed = parseInt(node, SPEED);
 			subtitleenabled = parseBoolean(node, SUBTITLEENABLED);
 			subtitles = Subtitle.getPlayerModelSubtitleList(node, SUBTITLES);
-			time = node.has(TIME) ? new GlobalModel.Time((ObjectNode)node.get(TIME)) : null;
-			totaltime = node.has(TOTALTIME) ? new GlobalModel.Time((ObjectNode)node.get(TOTALTIME)) : null;
+			time = node.has(TIME) ? new GlobalModel.Time(node.get(TIME)) : null;
+			totaltime = node.has(TOTALTIME) ? new GlobalModel.Time(node.get(TOTALTIME)) : null;
 			type = parseString(node, TYPE);
 		}
 
@@ -724,12 +724,12 @@ public final class PlayerModel {
 		 * @param obj ObjectNode containing the list of objects.
 		 * @param key Key pointing to the node where the list is stored.
 		 */
-		static List<PropertyValue> getPlayerModelPropertyValueList(ObjectNode node, String key) {
+		static List<PropertyValue> getPlayerModelPropertyValueList(JsonNode node, String key) {
 			if (node.has(key)) {
 				final ArrayNode a = (ArrayNode)node.get(key);
 				final List<PropertyValue> l = new ArrayList<PropertyValue>(a.size());
 				for (int i = 0; i < a.size(); i++) {
-					l.add(new PropertyValue((ObjectNode)a.get(i)));
+					l.add(new PropertyValue((JsonNode)a.get(i)));
 				}
 				return l;
 			}
@@ -881,7 +881,7 @@ public final class PlayerModel {
 		 * Construct from JSON object.
 		 * @param node JSON object representing a Speed object
 		 */
-		public Speed(ObjectNode node) {
+		public Speed(JsonNode node) {
 			speed = parseInt(node, SPEED);
 		}
 
@@ -897,12 +897,12 @@ public final class PlayerModel {
 		 * @param obj ObjectNode containing the list of objects.
 		 * @param key Key pointing to the node where the list is stored.
 		 */
-		static List<Speed> getPlayerModelSpeedList(ObjectNode node, String key) {
+		static List<Speed> getPlayerModelSpeedList(JsonNode node, String key) {
 			if (node.has(key)) {
 				final ArrayNode a = (ArrayNode)node.get(key);
 				final List<Speed> l = new ArrayList<Speed>(a.size());
 				for (int i = 0; i < a.size(); i++) {
-					l.add(new Speed((ObjectNode)a.get(i)));
+					l.add(new Speed((JsonNode)a.get(i)));
 				}
 				return l;
 			}
@@ -980,7 +980,7 @@ public final class PlayerModel {
 		 * Construct from JSON object.
 		 * @param node JSON object representing a Subtitle object
 		 */
-		public Subtitle(ObjectNode node) {
+		public Subtitle(JsonNode node) {
 			index = node.get(INDEX).getIntValue(); // required value
 			language = node.get(LANGUAGE).getTextValue(); // required value
 			name = node.get(NAME).getTextValue(); // required value
@@ -1000,12 +1000,12 @@ public final class PlayerModel {
 		 * @param obj ObjectNode containing the list of objects.
 		 * @param key Key pointing to the node where the list is stored.
 		 */
-		static List<Subtitle> getPlayerModelSubtitleList(ObjectNode node, String key) {
+		static List<Subtitle> getPlayerModelSubtitleList(JsonNode node, String key) {
 			if (node.has(key)) {
 				final ArrayNode a = (ArrayNode)node.get(key);
 				final List<Subtitle> l = new ArrayList<Subtitle>(a.size());
 				for (int i = 0; i < a.size(); i++) {
-					l.add(new Subtitle((ObjectNode)a.get(i)));
+					l.add(new Subtitle((JsonNode)a.get(i)));
 				}
 				return l;
 			}

@@ -157,7 +157,7 @@ public final class PVRModel {
 		 * Construct from JSON object.
 		 * @param node JSON object representing a ChannelDetail object
 		 */
-		public ChannelDetail(ObjectNode node) {
+		public ChannelDetail(JsonNode node) {
 			super(node);
 			channel = parseString(node, CHANNEL);
 			channelid = parseInt(node, CHANNELID);
@@ -186,12 +186,12 @@ public final class PVRModel {
 		 * @param obj ObjectNode containing the list of objects.
 		 * @param key Key pointing to the node where the list is stored.
 		 */
-		static List<ChannelDetail> getPVRModelChannelDetailList(ObjectNode node, String key) {
+		static List<ChannelDetail> getPVRModelChannelDetailList(JsonNode node, String key) {
 			if (node.has(key)) {
 				final ArrayNode a = (ArrayNode)node.get(key);
 				final List<ChannelDetail> l = new ArrayList<ChannelDetail>(a.size());
 				for (int i = 0; i < a.size(); i++) {
-					l.add(new ChannelDetail((ObjectNode)a.get(i)));
+					l.add(new ChannelDetail((JsonNode)a.get(i)));
 				}
 				return l;
 			}
@@ -281,7 +281,7 @@ public final class PVRModel {
 		 * Construct from JSON object.
 		 * @param node JSON object representing a ChannelGroupDetail object
 		 */
-		public ChannelGroupDetail(ObjectNode node) {
+		public ChannelGroupDetail(JsonNode node) {
 			super(node);
 			channelgroupid = parseInt(node, CHANNELGROUPID);
 			channeltype = parseString(node, CHANNELTYPE);
@@ -300,12 +300,12 @@ public final class PVRModel {
 		 * @param obj ObjectNode containing the list of objects.
 		 * @param key Key pointing to the node where the list is stored.
 		 */
-		static List<ChannelGroupDetail> getPVRModelChannelGroupDetailList(ObjectNode node, String key) {
+		static List<ChannelGroupDetail> getPVRModelChannelGroupDetailList(JsonNode node, String key) {
 			if (node.has(key)) {
 				final ArrayNode a = (ArrayNode)node.get(key);
 				final List<ChannelGroupDetail> l = new ArrayList<ChannelGroupDetail>(a.size());
 				for (int i = 0; i < a.size(); i++) {
-					l.add(new ChannelGroupDetail((ObjectNode)a.get(i)));
+					l.add(new ChannelGroupDetail((JsonNode)a.get(i)));
 				}
 				return l;
 			}
@@ -385,10 +385,10 @@ public final class PVRModel {
 		 * Construct from JSON object.
 		 * @param node JSON object representing a ChannelGroupExtendedDetail object
 		 */
-		public ChannelGroupExtendedDetail(ObjectNode node) {
+		public ChannelGroupExtendedDetail(JsonNode node) {
 			super(node);
 			channels = ChannelDetail.getPVRModelChannelDetailList(node, CHANNELS);
-			limits = node.has(LIMITS) ? new ListModel.LimitsReturned((ObjectNode)node.get(LIMITS)) : null;
+			limits = node.has(LIMITS) ? new ListModel.LimitsReturned(node.get(LIMITS)) : null;
 		}
 
 		@Override
@@ -408,12 +408,12 @@ public final class PVRModel {
 		 * @param obj ObjectNode containing the list of objects.
 		 * @param key Key pointing to the node where the list is stored.
 		 */
-		static List<ChannelGroupExtendedDetail> getPVRModelChannelGroupExtendedDetailList(ObjectNode node, String key) {
+		static List<ChannelGroupExtendedDetail> getPVRModelChannelGroupExtendedDetailList(JsonNode node, String key) {
 			if (node.has(key)) {
 				final ArrayNode a = (ArrayNode)node.get(key);
 				final List<ChannelGroupExtendedDetail> l = new ArrayList<ChannelGroupExtendedDetail>(a.size());
 				for (int i = 0; i < a.size(); i++) {
-					l.add(new ChannelGroupExtendedDetail((ObjectNode)a.get(i)));
+					l.add(new ChannelGroupExtendedDetail((JsonNode)a.get(i)));
 				}
 				return l;
 			}
@@ -502,7 +502,7 @@ public final class PVRModel {
 		 * Construct from JSON object.
 		 * @param node JSON object representing a PropertyValue object
 		 */
-		public PropertyValue(ObjectNode node) {
+		public PropertyValue(JsonNode node) {
 			available = parseBoolean(node, AVAILABLE);
 			recording = parseBoolean(node, RECORDING);
 			scanning = parseBoolean(node, SCANNING);
@@ -522,12 +522,12 @@ public final class PVRModel {
 		 * @param obj ObjectNode containing the list of objects.
 		 * @param key Key pointing to the node where the list is stored.
 		 */
-		static List<PropertyValue> getPVRModelPropertyValueList(ObjectNode node, String key) {
+		static List<PropertyValue> getPVRModelPropertyValueList(JsonNode node, String key) {
 			if (node.has(key)) {
 				final ArrayNode a = (ArrayNode)node.get(key);
 				final List<PropertyValue> l = new ArrayList<PropertyValue>(a.size());
 				for (int i = 0; i < a.size(); i++) {
-					l.add(new PropertyValue((ObjectNode)a.get(i)));
+					l.add(new PropertyValue((JsonNode)a.get(i)));
 				}
 				return l;
 			}

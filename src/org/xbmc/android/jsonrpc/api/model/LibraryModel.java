@@ -56,7 +56,7 @@ public final class LibraryModel {
 		 * Construct from JSON object.
 		 * @param node JSON object representing a GenreDetail object
 		 */
-		public GenreDetail(ObjectNode node) {
+		public GenreDetail(JsonNode node) {
 			super(node);
 			genreid = parseInt(node, GENREID);
 			thumbnail = parseString(node, THUMBNAIL);
@@ -77,12 +77,12 @@ public final class LibraryModel {
 		 * @param obj ObjectNode containing the list of objects.
 		 * @param key Key pointing to the node where the list is stored.
 		 */
-		static List<GenreDetail> getLibraryModelGenreDetailList(ObjectNode node, String key) {
+		static List<GenreDetail> getLibraryModelGenreDetailList(JsonNode node, String key) {
 			if (node.has(key)) {
 				final ArrayNode a = (ArrayNode)node.get(key);
 				final List<GenreDetail> l = new ArrayList<GenreDetail>(a.size());
 				for (int i = 0; i < a.size(); i++) {
-					l.add(new GenreDetail((ObjectNode)a.get(i)));
+					l.add(new GenreDetail((JsonNode)a.get(i)));
 				}
 				return l;
 			}

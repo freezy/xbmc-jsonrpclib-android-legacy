@@ -72,7 +72,7 @@ public final class SystemModel {
 		 * Construct from JSON object.
 		 * @param node JSON object representing a PropertyValue object
 		 */
-		public PropertyValue(ObjectNode node) {
+		public PropertyValue(JsonNode node) {
 			canhibernate = parseBoolean(node, CANHIBERNATE);
 			canreboot = parseBoolean(node, CANREBOOT);
 			canshutdown = parseBoolean(node, CANSHUTDOWN);
@@ -94,12 +94,12 @@ public final class SystemModel {
 		 * @param obj ObjectNode containing the list of objects.
 		 * @param key Key pointing to the node where the list is stored.
 		 */
-		static List<PropertyValue> getSystemModelPropertyValueList(ObjectNode node, String key) {
+		static List<PropertyValue> getSystemModelPropertyValueList(JsonNode node, String key) {
 			if (node.has(key)) {
 				final ArrayNode a = (ArrayNode)node.get(key);
 				final List<PropertyValue> l = new ArrayList<PropertyValue>(a.size());
 				for (int i = 0; i < a.size(); i++) {
-					l.add(new PropertyValue((ObjectNode)a.get(i)));
+					l.add(new PropertyValue((JsonNode)a.get(i)));
 				}
 				return l;
 			}

@@ -85,11 +85,11 @@ public final class AddonModel {
 		 * Construct from JSON object.
 		 * @param node JSON object representing a Detail object
 		 */
-		public Detail(ObjectNode node) {
+		public Detail(JsonNode node) {
 			super(node);
 			addonid = node.get(ADDONID).getTextValue(); // required value
 			author = parseString(node, AUTHOR);
-			broken = node.has(BROKEN) ? new Broken((ObjectNode)node.get(BROKEN)) : null;
+			broken = node.has(BROKEN) ? new Broken(node.get(BROKEN)) : null;
 			dependencies = Dependency.getAddonModelDependencyList(node, DEPENDENCIES);
 			description = parseString(node, DESCRIPTION);
 			disclaimer = parseString(node, DISCLAIMER);
@@ -140,12 +140,12 @@ public final class AddonModel {
 		 * @param obj ObjectNode containing the list of objects.
 		 * @param key Key pointing to the node where the list is stored.
 		 */
-		static List<Detail> getAddonModelDetailList(ObjectNode node, String key) {
+		static List<Detail> getAddonModelDetailList(JsonNode node, String key) {
 			if (node.has(key)) {
 				final ArrayNode a = (ArrayNode)node.get(key);
 				final List<Detail> l = new ArrayList<Detail>(a.size());
 				for (int i = 0; i < a.size(); i++) {
-					l.add(new Detail((ObjectNode)a.get(i)));
+					l.add(new Detail((JsonNode)a.get(i)));
 				}
 				return l;
 			}
@@ -264,7 +264,7 @@ public final class AddonModel {
 			 * Construct from JSON object.
 			 * @param node JSON object representing a Broken object
 			 */
-			public Broken(ObjectNode node) {
+			public Broken(JsonNode node) {
 				if (node.isBoolean()) {
 					booleanArg = node.getBooleanValue();
 					stringArg = null;
@@ -294,12 +294,12 @@ public final class AddonModel {
 			 * @param obj ObjectNode containing the list of objects.
 			 * @param key Key pointing to the node where the list is stored.
 			 */
-			static List<Broken> getAddonModelBrokenList(ObjectNode node, String key) {
+			static List<Broken> getAddonModelBrokenList(JsonNode node, String key) {
 				if (node.has(key)) {
 					final ArrayNode a = (ArrayNode)node.get(key);
 					final List<Broken> l = new ArrayList<Broken>(a.size());
 					for (int i = 0; i < a.size(); i++) {
-						l.add(new Broken((ObjectNode)a.get(i)));
+						l.add(new Broken((JsonNode)a.get(i)));
 					}
 					return l;
 				}
@@ -376,7 +376,7 @@ public final class AddonModel {
 			 * Construct from JSON object.
 			 * @param node JSON object representing a Dependency object
 			 */
-			public Dependency(ObjectNode node) {
+			public Dependency(JsonNode node) {
 				addonid = node.get(ADDONID).getTextValue(); // required value
 				optional = node.get(OPTIONAL).getBooleanValue(); // required value
 				version = node.get(VERSION).getTextValue(); // required value
@@ -396,12 +396,12 @@ public final class AddonModel {
 			 * @param obj ObjectNode containing the list of objects.
 			 * @param key Key pointing to the node where the list is stored.
 			 */
-			static List<Dependency> getAddonModelDependencyList(ObjectNode node, String key) {
+			static List<Dependency> getAddonModelDependencyList(JsonNode node, String key) {
 				if (node.has(key)) {
 					final ArrayNode a = (ArrayNode)node.get(key);
 					final List<Dependency> l = new ArrayList<Dependency>(a.size());
 					for (int i = 0; i < a.size(); i++) {
-						l.add(new Dependency((ObjectNode)a.get(i)));
+						l.add(new Dependency((JsonNode)a.get(i)));
 					}
 					return l;
 				}
@@ -476,7 +476,7 @@ public final class AddonModel {
 			 * Construct from JSON object.
 			 * @param node JSON object representing a Extrainfo object
 			 */
-			public Extrainfo(ObjectNode node) {
+			public Extrainfo(JsonNode node) {
 				key = node.get(KEY).getTextValue(); // required value
 				value = node.get(VALUE).getTextValue(); // required value
 			}
@@ -494,12 +494,12 @@ public final class AddonModel {
 			 * @param obj ObjectNode containing the list of objects.
 			 * @param key Key pointing to the node where the list is stored.
 			 */
-			static List<Extrainfo> getAddonModelExtrainfoList(ObjectNode node, String key) {
+			static List<Extrainfo> getAddonModelExtrainfoList(JsonNode node, String key) {
 				if (node.has(key)) {
 					final ArrayNode a = (ArrayNode)node.get(key);
 					final List<Extrainfo> l = new ArrayList<Extrainfo>(a.size());
 					for (int i = 0; i < a.size(); i++) {
-						l.add(new Extrainfo((ObjectNode)a.get(i)));
+						l.add(new Extrainfo((JsonNode)a.get(i)));
 					}
 					return l;
 				}
