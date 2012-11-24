@@ -72,11 +72,11 @@ public final class GUIModel {
 		 * Construct from JSON object.
 		 * @param node JSON object representing a PropertyValue object
 		 */
-		public PropertyValue(ObjectNode node) {
-			currentcontrol = node.has(CURRENTCONTROL) ? new Currentcontrol((ObjectNode)node.get(CURRENTCONTROL)) : null;
-			currentwindow = node.has(CURRENTWINDOW) ? new Currentwindow((ObjectNode)node.get(CURRENTWINDOW)) : null;
+		public PropertyValue(JsonNode node) {
+			currentcontrol = node.has(CURRENTCONTROL) ? new Currentcontrol(node.get(CURRENTCONTROL)) : null;
+			currentwindow = node.has(CURRENTWINDOW) ? new Currentwindow(node.get(CURRENTWINDOW)) : null;
 			fullscreen = parseBoolean(node, FULLSCREEN);
-			skin = node.has(SKIN) ? new Skin((ObjectNode)node.get(SKIN)) : null;
+			skin = node.has(SKIN) ? new Skin(node.get(SKIN)) : null;
 		}
 
 		@Override
@@ -94,12 +94,12 @@ public final class GUIModel {
 		 * @param obj ObjectNode containing the list of objects.
 		 * @param key Key pointing to the node where the list is stored.
 		 */
-		static List<PropertyValue> getGUIModelPropertyValueList(ObjectNode node, String key) {
+		static List<PropertyValue> getGUIModelPropertyValueList(JsonNode node, String key) {
 			if (node.has(key)) {
 				final ArrayNode a = (ArrayNode)node.get(key);
 				final List<PropertyValue> l = new ArrayList<PropertyValue>(a.size());
 				for (int i = 0; i < a.size(); i++) {
-					l.add(new PropertyValue((ObjectNode)a.get(i)));
+					l.add(new PropertyValue((JsonNode)a.get(i)));
 				}
 				return l;
 			}
@@ -175,7 +175,7 @@ public final class GUIModel {
 			 * Construct from JSON object.
 			 * @param node JSON object representing a Skin object
 			 */
-			public Skin(ObjectNode node) {
+			public Skin(JsonNode node) {
 				id = node.get(ID).getTextValue(); // required value
 				name = parseString(node, NAME);
 			}
@@ -193,12 +193,12 @@ public final class GUIModel {
 			 * @param obj ObjectNode containing the list of objects.
 			 * @param key Key pointing to the node where the list is stored.
 			 */
-			static List<Skin> getGUIModelSkinList(ObjectNode node, String key) {
+			static List<Skin> getGUIModelSkinList(JsonNode node, String key) {
 				if (node.has(key)) {
 					final ArrayNode a = (ArrayNode)node.get(key);
 					final List<Skin> l = new ArrayList<Skin>(a.size());
 					for (int i = 0; i < a.size(); i++) {
-						l.add(new Skin((ObjectNode)a.get(i)));
+						l.add(new Skin((JsonNode)a.get(i)));
 					}
 					return l;
 				}
@@ -271,7 +271,7 @@ public final class GUIModel {
 			 * Construct from JSON object.
 			 * @param node JSON object representing a Currentwindow object
 			 */
-			public Currentwindow(ObjectNode node) {
+			public Currentwindow(JsonNode node) {
 				id = node.get(ID).getIntValue(); // required value
 				label = node.get(LABEL).getTextValue(); // required value
 			}
@@ -289,12 +289,12 @@ public final class GUIModel {
 			 * @param obj ObjectNode containing the list of objects.
 			 * @param key Key pointing to the node where the list is stored.
 			 */
-			static List<Currentwindow> getGUIModelCurrentwindowList(ObjectNode node, String key) {
+			static List<Currentwindow> getGUIModelCurrentwindowList(JsonNode node, String key) {
 				if (node.has(key)) {
 					final ArrayNode a = (ArrayNode)node.get(key);
 					final List<Currentwindow> l = new ArrayList<Currentwindow>(a.size());
 					for (int i = 0; i < a.size(); i++) {
-						l.add(new Currentwindow((ObjectNode)a.get(i)));
+						l.add(new Currentwindow((JsonNode)a.get(i)));
 					}
 					return l;
 				}
@@ -363,7 +363,7 @@ public final class GUIModel {
 			 * Construct from JSON object.
 			 * @param node JSON object representing a Currentcontrol object
 			 */
-			public Currentcontrol(ObjectNode node) {
+			public Currentcontrol(JsonNode node) {
 				label = node.get(LABEL).getTextValue(); // required value
 			}
 
@@ -379,12 +379,12 @@ public final class GUIModel {
 			 * @param obj ObjectNode containing the list of objects.
 			 * @param key Key pointing to the node where the list is stored.
 			 */
-			static List<Currentcontrol> getGUIModelCurrentcontrolList(ObjectNode node, String key) {
+			static List<Currentcontrol> getGUIModelCurrentcontrolList(JsonNode node, String key) {
 				if (node.has(key)) {
 					final ArrayNode a = (ArrayNode)node.get(key);
 					final List<Currentcontrol> l = new ArrayList<Currentcontrol>(a.size());
 					for (int i = 0; i < a.size(); i++) {
-						l.add(new Currentcontrol((ObjectNode)a.get(i)));
+						l.add(new Currentcontrol((JsonNode)a.get(i)));
 					}
 					return l;
 				}

@@ -68,7 +68,7 @@ public final class VideoModel {
 		 * Construct from JSON object.
 		 * @param node JSON object representing a Cast object
 		 */
-		public Cast(ObjectNode node) {
+		public Cast(JsonNode node) {
 			name = node.get(NAME).getTextValue(); // required value
 			role = node.get(ROLE).getTextValue(); // required value
 			thumbnail = parseString(node, THUMBNAIL);
@@ -88,12 +88,12 @@ public final class VideoModel {
 		 * @param obj ObjectNode containing the list of objects.
 		 * @param key Key pointing to the node where the list is stored.
 		 */
-		static List<Cast> getVideoModelCastList(ObjectNode node, String key) {
+		static List<Cast> getVideoModelCastList(JsonNode node, String key) {
 			if (node.has(key)) {
 				final ArrayNode a = (ArrayNode)node.get(key);
 				final List<Cast> l = new ArrayList<Cast>(a.size());
 				for (int i = 0; i < a.size(); i++) {
-					l.add(new Cast((ObjectNode)a.get(i)));
+					l.add(new Cast((JsonNode)a.get(i)));
 				}
 				return l;
 			}
@@ -162,9 +162,9 @@ public final class VideoModel {
 		 * Construct from JSON object.
 		 * @param node JSON object representing a BaseDetail object
 		 */
-		public BaseDetail(ObjectNode node) {
+		public BaseDetail(JsonNode node) {
 			super(node);
-			art = node.has(ART) ? new MediaModel.Artwork((ObjectNode)node.get(ART)) : null;
+			art = node.has(ART) ? new MediaModel.Artwork(node.get(ART)) : null;
 			playcount = parseInt(node, PLAYCOUNT);
 		}
 
@@ -181,12 +181,12 @@ public final class VideoModel {
 		 * @param obj ObjectNode containing the list of objects.
 		 * @param key Key pointing to the node where the list is stored.
 		 */
-		static List<BaseDetail> getVideoModelBaseDetailList(ObjectNode node, String key) {
+		static List<BaseDetail> getVideoModelBaseDetailList(JsonNode node, String key) {
 			if (node.has(key)) {
 				final ArrayNode a = (ArrayNode)node.get(key);
 				final List<BaseDetail> l = new ArrayList<BaseDetail>(a.size());
 				for (int i = 0; i < a.size(); i++) {
-					l.add(new BaseDetail((ObjectNode)a.get(i)));
+					l.add(new BaseDetail((JsonNode)a.get(i)));
 				}
 				return l;
 			}
@@ -277,7 +277,7 @@ public final class VideoModel {
 		 * Construct from JSON object.
 		 * @param node JSON object representing a EpisodeDetail object
 		 */
-		public EpisodeDetail(ObjectNode node) {
+		public EpisodeDetail(JsonNode node) {
 			super(node);
 			cast = Cast.getVideoModelCastList(node, CAST);
 			episode = parseInt(node, EPISODE);
@@ -330,12 +330,12 @@ public final class VideoModel {
 		 * @param obj ObjectNode containing the list of objects.
 		 * @param key Key pointing to the node where the list is stored.
 		 */
-		static List<EpisodeDetail> getVideoModelEpisodeDetailList(ObjectNode node, String key) {
+		static List<EpisodeDetail> getVideoModelEpisodeDetailList(JsonNode node, String key) {
 			if (node.has(key)) {
 				final ArrayNode a = (ArrayNode)node.get(key);
 				final List<EpisodeDetail> l = new ArrayList<EpisodeDetail>(a.size());
 				for (int i = 0; i < a.size(); i++) {
-					l.add(new EpisodeDetail((ObjectNode)a.get(i)));
+					l.add(new EpisodeDetail((JsonNode)a.get(i)));
 				}
 				return l;
 			}
@@ -452,12 +452,12 @@ public final class VideoModel {
 		 * Construct from JSON object.
 		 * @param node JSON object representing a FileDetail object
 		 */
-		public FileDetail(ObjectNode node) {
+		public FileDetail(JsonNode node) {
 			super(node);
 			director = getStringArray(node, DIRECTOR);
-			resume = node.has(RESUME) ? new Resume((ObjectNode)node.get(RESUME)) : null;
+			resume = node.has(RESUME) ? new Resume(node.get(RESUME)) : null;
 			runtime = parseString(node, RUNTIME);
-			streamdetails = node.has(STREAMDETAILS) ? new Streams((ObjectNode)node.get(STREAMDETAILS)) : null;
+			streamdetails = node.has(STREAMDETAILS) ? new Streams(node.get(STREAMDETAILS)) : null;
 		}
 
 		@Override
@@ -479,12 +479,12 @@ public final class VideoModel {
 		 * @param obj ObjectNode containing the list of objects.
 		 * @param key Key pointing to the node where the list is stored.
 		 */
-		static List<FileDetail> getVideoModelFileDetailList(ObjectNode node, String key) {
+		static List<FileDetail> getVideoModelFileDetailList(JsonNode node, String key) {
 			if (node.has(key)) {
 				final ArrayNode a = (ArrayNode)node.get(key);
 				final List<FileDetail> l = new ArrayList<FileDetail>(a.size());
 				for (int i = 0; i < a.size(); i++) {
-					l.add(new FileDetail((ObjectNode)a.get(i)));
+					l.add(new FileDetail((JsonNode)a.get(i)));
 				}
 				return l;
 			}
@@ -568,7 +568,7 @@ public final class VideoModel {
 		 * Construct from JSON object.
 		 * @param node JSON object representing a ItemDetail object
 		 */
-		public ItemDetail(ObjectNode node) {
+		public ItemDetail(JsonNode node) {
 			super(node);
 			dateadded = parseString(node, DATEADDED);
 			file = parseString(node, FILE);
@@ -591,12 +591,12 @@ public final class VideoModel {
 		 * @param obj ObjectNode containing the list of objects.
 		 * @param key Key pointing to the node where the list is stored.
 		 */
-		static List<ItemDetail> getVideoModelItemDetailList(ObjectNode node, String key) {
+		static List<ItemDetail> getVideoModelItemDetailList(JsonNode node, String key) {
 			if (node.has(key)) {
 				final ArrayNode a = (ArrayNode)node.get(key);
 				final List<ItemDetail> l = new ArrayList<ItemDetail>(a.size());
 				for (int i = 0; i < a.size(); i++) {
-					l.add(new ItemDetail((ObjectNode)a.get(i)));
+					l.add(new ItemDetail((JsonNode)a.get(i)));
 				}
 				return l;
 			}
@@ -667,7 +667,7 @@ public final class VideoModel {
 		 * Construct from JSON object.
 		 * @param node JSON object representing a MediaDetail object
 		 */
-		public MediaDetail(ObjectNode node) {
+		public MediaDetail(JsonNode node) {
 			super(node);
 			title = parseString(node, TITLE);
 		}
@@ -684,12 +684,12 @@ public final class VideoModel {
 		 * @param obj ObjectNode containing the list of objects.
 		 * @param key Key pointing to the node where the list is stored.
 		 */
-		static List<MediaDetail> getVideoModelMediaDetailList(ObjectNode node, String key) {
+		static List<MediaDetail> getVideoModelMediaDetailList(JsonNode node, String key) {
 			if (node.has(key)) {
 				final ArrayNode a = (ArrayNode)node.get(key);
 				final List<MediaDetail> l = new ArrayList<MediaDetail>(a.size());
 				for (int i = 0; i < a.size(); i++) {
-					l.add(new MediaDetail((ObjectNode)a.get(i)));
+					l.add(new MediaDetail((JsonNode)a.get(i)));
 				}
 				return l;
 			}
@@ -794,7 +794,7 @@ public final class VideoModel {
 		 * Construct from JSON object.
 		 * @param node JSON object representing a MovieDetail object
 		 */
-		public MovieDetail(ObjectNode node) {
+		public MovieDetail(JsonNode node) {
 			super(node);
 			cast = Cast.getVideoModelCastList(node, CAST);
 			country = getStringArray(node, COUNTRY);
@@ -879,12 +879,12 @@ public final class VideoModel {
 		 * @param obj ObjectNode containing the list of objects.
 		 * @param key Key pointing to the node where the list is stored.
 		 */
-		static List<MovieDetail> getVideoModelMovieDetailList(ObjectNode node, String key) {
+		static List<MovieDetail> getVideoModelMovieDetailList(JsonNode node, String key) {
 			if (node.has(key)) {
 				final ArrayNode a = (ArrayNode)node.get(key);
 				final List<MovieDetail> l = new ArrayList<MovieDetail>(a.size());
 				for (int i = 0; i < a.size(); i++) {
-					l.add(new MovieDetail((ObjectNode)a.get(i)));
+					l.add(new MovieDetail((JsonNode)a.get(i)));
 				}
 				return l;
 			}
@@ -1038,7 +1038,7 @@ public final class VideoModel {
 		 * Construct from JSON object.
 		 * @param node JSON object representing a MovieSetDetail object
 		 */
-		public MovieSetDetail(ObjectNode node) {
+		public MovieSetDetail(JsonNode node) {
 			super(node);
 			setid = parseInt(node, SETID);
 		}
@@ -1055,12 +1055,12 @@ public final class VideoModel {
 		 * @param obj ObjectNode containing the list of objects.
 		 * @param key Key pointing to the node where the list is stored.
 		 */
-		static List<MovieSetDetail> getVideoModelMovieSetDetailList(ObjectNode node, String key) {
+		static List<MovieSetDetail> getVideoModelMovieSetDetailList(JsonNode node, String key) {
 			if (node.has(key)) {
 				final ArrayNode a = (ArrayNode)node.get(key);
 				final List<MovieSetDetail> l = new ArrayList<MovieSetDetail>(a.size());
 				for (int i = 0; i < a.size(); i++) {
-					l.add(new MovieSetDetail((ObjectNode)a.get(i)));
+					l.add(new MovieSetDetail((JsonNode)a.get(i)));
 				}
 				return l;
 			}
@@ -1127,9 +1127,9 @@ public final class VideoModel {
 		 * Construct from JSON object.
 		 * @param node JSON object representing a MovieSetExtendedDetail object
 		 */
-		public MovieSetExtendedDetail(ObjectNode node) {
+		public MovieSetExtendedDetail(JsonNode node) {
 			super(node);
-			limits = node.has(LIMITS) ? new ListModel.LimitsReturned((ObjectNode)node.get(LIMITS)) : null;
+			limits = node.has(LIMITS) ? new ListModel.LimitsReturned(node.get(LIMITS)) : null;
 			movies = MovieDetail.getVideoModelMovieDetailList(node, MOVIES);
 		}
 
@@ -1150,12 +1150,12 @@ public final class VideoModel {
 		 * @param obj ObjectNode containing the list of objects.
 		 * @param key Key pointing to the node where the list is stored.
 		 */
-		static List<MovieSetExtendedDetail> getVideoModelMovieSetExtendedDetailList(ObjectNode node, String key) {
+		static List<MovieSetExtendedDetail> getVideoModelMovieSetExtendedDetailList(JsonNode node, String key) {
 			if (node.has(key)) {
 				final ArrayNode a = (ArrayNode)node.get(key);
 				final List<MovieSetExtendedDetail> l = new ArrayList<MovieSetExtendedDetail>(a.size());
 				for (int i = 0; i < a.size(); i++) {
-					l.add(new MovieSetExtendedDetail((ObjectNode)a.get(i)));
+					l.add(new MovieSetExtendedDetail((JsonNode)a.get(i)));
 				}
 				return l;
 			}
@@ -1243,7 +1243,7 @@ public final class VideoModel {
 		 * Construct from JSON object.
 		 * @param node JSON object representing a MusicVideoDetail object
 		 */
-		public MusicVideoDetail(ObjectNode node) {
+		public MusicVideoDetail(JsonNode node) {
 			super(node);
 			album = parseString(node, ALBUM);
 			artist = getStringArray(node, ARTIST);
@@ -1290,12 +1290,12 @@ public final class VideoModel {
 		 * @param obj ObjectNode containing the list of objects.
 		 * @param key Key pointing to the node where the list is stored.
 		 */
-		static List<MusicVideoDetail> getVideoModelMusicVideoDetailList(ObjectNode node, String key) {
+		static List<MusicVideoDetail> getVideoModelMusicVideoDetailList(JsonNode node, String key) {
 			if (node.has(key)) {
 				final ArrayNode a = (ArrayNode)node.get(key);
 				final List<MusicVideoDetail> l = new ArrayList<MusicVideoDetail>(a.size());
 				for (int i = 0; i < a.size(); i++) {
-					l.add(new MusicVideoDetail((ObjectNode)a.get(i)));
+					l.add(new MusicVideoDetail((JsonNode)a.get(i)));
 				}
 				return l;
 			}
@@ -1410,7 +1410,7 @@ public final class VideoModel {
 		 * Construct from JSON object.
 		 * @param node JSON object representing a SeasonDetail object
 		 */
-		public SeasonDetail(ObjectNode node) {
+		public SeasonDetail(JsonNode node) {
 			super(node);
 			episode = parseInt(node, EPISODE);
 			season = node.get(SEASON).getIntValue(); // required value
@@ -1435,12 +1435,12 @@ public final class VideoModel {
 		 * @param obj ObjectNode containing the list of objects.
 		 * @param key Key pointing to the node where the list is stored.
 		 */
-		static List<SeasonDetail> getVideoModelSeasonDetailList(ObjectNode node, String key) {
+		static List<SeasonDetail> getVideoModelSeasonDetailList(JsonNode node, String key) {
 			if (node.has(key)) {
 				final ArrayNode a = (ArrayNode)node.get(key);
 				final List<SeasonDetail> l = new ArrayList<SeasonDetail>(a.size());
 				for (int i = 0; i < a.size(); i++) {
-					l.add(new SeasonDetail((ObjectNode)a.get(i)));
+					l.add(new SeasonDetail((JsonNode)a.get(i)));
 				}
 				return l;
 			}
@@ -1545,7 +1545,7 @@ public final class VideoModel {
 		 * Construct from JSON object.
 		 * @param node JSON object representing a TVShowDetail object
 		 */
-		public TVShowDetail(ObjectNode node) {
+		public TVShowDetail(JsonNode node) {
 			super(node);
 			cast = Cast.getVideoModelCastList(node, CAST);
 			episode = parseInt(node, EPISODE);
@@ -1610,12 +1610,12 @@ public final class VideoModel {
 		 * @param obj ObjectNode containing the list of objects.
 		 * @param key Key pointing to the node where the list is stored.
 		 */
-		static List<TVShowDetail> getVideoModelTVShowDetailList(ObjectNode node, String key) {
+		static List<TVShowDetail> getVideoModelTVShowDetailList(JsonNode node, String key) {
 			if (node.has(key)) {
 				final ArrayNode a = (ArrayNode)node.get(key);
 				final List<TVShowDetail> l = new ArrayList<TVShowDetail>(a.size());
 				for (int i = 0; i < a.size(); i++) {
-					l.add(new TVShowDetail((ObjectNode)a.get(i)));
+					l.add(new TVShowDetail((JsonNode)a.get(i)));
 				}
 				return l;
 			}
@@ -1751,7 +1751,7 @@ public final class VideoModel {
 		 * Construct from JSON object.
 		 * @param node JSON object representing a Resume object
 		 */
-		public Resume(ObjectNode node) {
+		public Resume(JsonNode node) {
 			position = parseDouble(node, POSITION);
 			total = parseDouble(node, TOTAL);
 		}
@@ -1769,12 +1769,12 @@ public final class VideoModel {
 		 * @param obj ObjectNode containing the list of objects.
 		 * @param key Key pointing to the node where the list is stored.
 		 */
-		static List<Resume> getVideoModelResumeList(ObjectNode node, String key) {
+		static List<Resume> getVideoModelResumeList(JsonNode node, String key) {
 			if (node.has(key)) {
 				final ArrayNode a = (ArrayNode)node.get(key);
 				final List<Resume> l = new ArrayList<Resume>(a.size());
 				for (int i = 0; i < a.size(); i++) {
-					l.add(new Resume((ObjectNode)a.get(i)));
+					l.add(new Resume((JsonNode)a.get(i)));
 				}
 				return l;
 			}
@@ -1854,7 +1854,7 @@ public final class VideoModel {
 		 * Construct from JSON object.
 		 * @param node JSON object representing a Streams object
 		 */
-		public Streams(ObjectNode node) {
+		public Streams(JsonNode node) {
 			audio = Audio.getVideoModelAudioList(node, AUDIO);
 			subtitle = Subtitle.getVideoModelSubtitleList(node, SUBTITLE);
 			video = Video.getVideoModelVideoList(node, VIDEO);
@@ -1886,12 +1886,12 @@ public final class VideoModel {
 		 * @param obj ObjectNode containing the list of objects.
 		 * @param key Key pointing to the node where the list is stored.
 		 */
-		static List<Streams> getVideoModelStreamsList(ObjectNode node, String key) {
+		static List<Streams> getVideoModelStreamsList(JsonNode node, String key) {
 			if (node.has(key)) {
 				final ArrayNode a = (ArrayNode)node.get(key);
 				final List<Streams> l = new ArrayList<Streams>(a.size());
 				for (int i = 0; i < a.size(); i++) {
-					l.add(new Streams((ObjectNode)a.get(i)));
+					l.add(new Streams((JsonNode)a.get(i)));
 				}
 				return l;
 			}
@@ -1990,7 +1990,7 @@ public final class VideoModel {
 			 * Construct from JSON object.
 			 * @param node JSON object representing a Audio object
 			 */
-			public Audio(ObjectNode node) {
+			public Audio(JsonNode node) {
 				channels = parseInt(node, CHANNELS);
 				codec = parseString(node, CODEC);
 				language = parseString(node, LANGUAGE);
@@ -2010,12 +2010,12 @@ public final class VideoModel {
 			 * @param obj ObjectNode containing the list of objects.
 			 * @param key Key pointing to the node where the list is stored.
 			 */
-			static List<Audio> getVideoModelAudioList(ObjectNode node, String key) {
+			static List<Audio> getVideoModelAudioList(JsonNode node, String key) {
 				if (node.has(key)) {
 					final ArrayNode a = (ArrayNode)node.get(key);
 					final List<Audio> l = new ArrayList<Audio>(a.size());
 					for (int i = 0; i < a.size(); i++) {
-						l.add(new Audio((ObjectNode)a.get(i)));
+						l.add(new Audio((JsonNode)a.get(i)));
 					}
 					return l;
 				}
@@ -2086,7 +2086,7 @@ public final class VideoModel {
 			 * Construct from JSON object.
 			 * @param node JSON object representing a Subtitle object
 			 */
-			public Subtitle(ObjectNode node) {
+			public Subtitle(JsonNode node) {
 				language = parseString(node, LANGUAGE);
 			}
 
@@ -2102,12 +2102,12 @@ public final class VideoModel {
 			 * @param obj ObjectNode containing the list of objects.
 			 * @param key Key pointing to the node where the list is stored.
 			 */
-			static List<Subtitle> getVideoModelSubtitleList(ObjectNode node, String key) {
+			static List<Subtitle> getVideoModelSubtitleList(JsonNode node, String key) {
 				if (node.has(key)) {
 					final ArrayNode a = (ArrayNode)node.get(key);
 					final List<Subtitle> l = new ArrayList<Subtitle>(a.size());
 					for (int i = 0; i < a.size(); i++) {
-						l.add(new Subtitle((ObjectNode)a.get(i)));
+						l.add(new Subtitle((JsonNode)a.get(i)));
 					}
 					return l;
 				}
@@ -2190,7 +2190,7 @@ public final class VideoModel {
 			 * Construct from JSON object.
 			 * @param node JSON object representing a Video object
 			 */
-			public Video(ObjectNode node) {
+			public Video(JsonNode node) {
 				aspect = parseDouble(node, ASPECT);
 				codec = parseString(node, CODEC);
 				duration = parseInt(node, DURATION);
@@ -2214,12 +2214,12 @@ public final class VideoModel {
 			 * @param obj ObjectNode containing the list of objects.
 			 * @param key Key pointing to the node where the list is stored.
 			 */
-			static List<Video> getVideoModelVideoList(ObjectNode node, String key) {
+			static List<Video> getVideoModelVideoList(JsonNode node, String key) {
 				if (node.has(key)) {
 					final ArrayNode a = (ArrayNode)node.get(key);
 					final List<Video> l = new ArrayList<Video>(a.size());
 					for (int i = 0; i < a.size(); i++) {
-						l.add(new Video((ObjectNode)a.get(i)));
+						l.add(new Video((JsonNode)a.get(i)));
 					}
 					return l;
 				}

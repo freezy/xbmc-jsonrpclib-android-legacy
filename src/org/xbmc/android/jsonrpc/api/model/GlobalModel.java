@@ -71,10 +71,18 @@ public final class GlobalModel {
 		}
 
 		/**
+		 * Returns the time in milliseconds
+		 * @return
+		 */
+		public long getMilliseconds() {
+			return hours * 3600000 + minutes * 60000 + seconds * 1000 + milliseconds;
+		}
+
+		/**
 		 * Construct from JSON object.
 		 * @param node JSON object representing a Time object
 		 */
-		public Time(ObjectNode node) {
+		public Time(JsonNode node) {
 			hours = node.get(HOURS).getIntValue(); // required value
 			milliseconds = node.get(MILLISECONDS).getIntValue(); // required value
 			minutes = node.get(MINUTES).getIntValue(); // required value
@@ -96,12 +104,12 @@ public final class GlobalModel {
 		 * @param obj ObjectNode containing the list of objects.
 		 * @param key Key pointing to the node where the list is stored.
 		 */
-		static List<Time> getGlobalModelTimeList(ObjectNode node, String key) {
+		static List<Time> getGlobalModelTimeList(JsonNode node, String key) {
 			if (node.has(key)) {
 				final ArrayNode a = (ArrayNode)node.get(key);
 				final List<Time> l = new ArrayList<Time>(a.size());
 				for (int i = 0; i < a.size(); i++) {
-					l.add(new Time((ObjectNode)a.get(i)));
+					l.add(new Time((JsonNode)a.get(i)));
 				}
 				return l;
 			}

@@ -82,6 +82,17 @@ public final class JSONRPC {
 			addParameter("data", data);
 		}
 
+		/**
+		 * Notify all other connected clients.
+		 * @param sender
+		 * @param message
+		 */
+		public NotifyAll(String sender, String message) {
+			super();
+			addParameter("sender", sender);
+			addParameter("message", message);
+		}
+
 		@Override
 		protected String parseOne(ObjectNode node) {
 			return node.getTextValue();
@@ -228,7 +239,7 @@ public final class JSONRPC {
 			 * Construct from JSON object.
 			 * @param node JSON object representing a PermissionResult object
 			 */
-			public PermissionResult(ObjectNode node) {
+			public PermissionResult(JsonNode node) {
 				controlgui = node.get(CONTROLGUI).getBooleanValue(); // required value
 				controlnotify = node.get(CONTROLNOTIFY).getBooleanValue(); // required value
 				controlplayback = node.get(CONTROLPLAYBACK).getBooleanValue(); // required value
@@ -268,12 +279,12 @@ public final class JSONRPC {
 			 * @param obj ObjectNode containing the list of objects.
 			 * @param key Key pointing to the node where the list is stored.
 			 */
-			static List<PermissionResult> getJSONRPCPermissionResultList(ObjectNode node, String key) {
+			static List<PermissionResult> getJSONRPCPermissionResultList(JsonNode node, String key) {
 				if (node.has(key)) {
 					final ArrayNode a = (ArrayNode)node.get(key);
 					final List<PermissionResult> l = new ArrayList<PermissionResult>(a.size());
 					for (int i = 0; i < a.size(); i++) {
-						l.add(new PermissionResult((ObjectNode)a.get(i)));
+						l.add(new PermissionResult((JsonNode)a.get(i)));
 					}
 					return l;
 				}

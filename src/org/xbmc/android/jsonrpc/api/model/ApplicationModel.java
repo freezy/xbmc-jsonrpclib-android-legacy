@@ -74,10 +74,10 @@ public final class ApplicationModel {
 		 * Construct from JSON object.
 		 * @param node JSON object representing a PropertyValue object
 		 */
-		public PropertyValue(ObjectNode node) {
+		public PropertyValue(JsonNode node) {
 			muted = parseBoolean(node, MUTED);
 			name = parseString(node, NAME);
-			version = node.has(VERSION) ? new Version((ObjectNode)node.get(VERSION)) : null;
+			version = node.has(VERSION) ? new Version(node.get(VERSION)) : null;
 			volume = parseInt(node, VOLUME);
 		}
 
@@ -96,12 +96,12 @@ public final class ApplicationModel {
 		 * @param obj ObjectNode containing the list of objects.
 		 * @param key Key pointing to the node where the list is stored.
 		 */
-		static List<PropertyValue> getApplicationModelPropertyValueList(ObjectNode node, String key) {
+		static List<PropertyValue> getApplicationModelPropertyValueList(JsonNode node, String key) {
 			if (node.has(key)) {
 				final ArrayNode a = (ArrayNode)node.get(key);
 				final List<PropertyValue> l = new ArrayList<PropertyValue>(a.size());
 				for (int i = 0; i < a.size(); i++) {
-					l.add(new PropertyValue((ObjectNode)a.get(i)));
+					l.add(new PropertyValue((JsonNode)a.get(i)));
 				}
 				return l;
 			}
@@ -185,10 +185,10 @@ public final class ApplicationModel {
 			 * Construct from JSON object.
 			 * @param node JSON object representing a Version object
 			 */
-			public Version(ObjectNode node) {
+			public Version(JsonNode node) {
 				major = node.get(MAJOR).getIntValue(); // required value
 				minor = node.get(MINOR).getIntValue(); // required value
-				revision = node.has(REVISION) ? new Revision((ObjectNode)node.get(REVISION)) : null;
+				revision = node.has(REVISION) ? new Revision(node.get(REVISION)) : null;
 				tag = parseString(node, TAG);
 			}
 
@@ -207,12 +207,12 @@ public final class ApplicationModel {
 			 * @param obj ObjectNode containing the list of objects.
 			 * @param key Key pointing to the node where the list is stored.
 			 */
-			static List<Version> getApplicationModelVersionList(ObjectNode node, String key) {
+			static List<Version> getApplicationModelVersionList(JsonNode node, String key) {
 				if (node.has(key)) {
 					final ArrayNode a = (ArrayNode)node.get(key);
 					final List<Version> l = new ArrayList<Version>(a.size());
 					for (int i = 0; i < a.size(); i++) {
-						l.add(new Version((ObjectNode)a.get(i)));
+						l.add(new Version((JsonNode)a.get(i)));
 					}
 					return l;
 				}
@@ -291,7 +291,7 @@ public final class ApplicationModel {
 				 * Construct from JSON object.
 				 * @param node JSON object representing a Revision object
 				 */
-				public Revision(ObjectNode node) {
+				public Revision(JsonNode node) {
 					if (node.isInt()) {
 						integerArg = node.getIntValue();
 						stringArg = null;
@@ -321,12 +321,12 @@ public final class ApplicationModel {
 				 * @param obj ObjectNode containing the list of objects.
 				 * @param key Key pointing to the node where the list is stored.
 				 */
-				static List<Revision> getApplicationModelRevisionList(ObjectNode node, String key) {
+				static List<Revision> getApplicationModelRevisionList(JsonNode node, String key) {
 					if (node.has(key)) {
 						final ArrayNode a = (ArrayNode)node.get(key);
 						final List<Revision> l = new ArrayList<Revision>(a.size());
 						for (int i = 0; i < a.size(); i++) {
-							l.add(new Revision((ObjectNode)a.get(i)));
+							l.add(new Revision((JsonNode)a.get(i)));
 						}
 						return l;
 					}

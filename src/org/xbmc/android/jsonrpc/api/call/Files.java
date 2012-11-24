@@ -89,6 +89,43 @@ public final class Files {
 			addParameter("properties", properties);
 		}
 
+		/**
+		 * Get the directories and files in the given directory.
+		 * @param directory
+		 * @param properties One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>director</tt>, <tt>trailer</tt>, <tt>tagline</tt>, <tt>plot</tt>, <tt>plotoutline</tt>, <tt>originaltitle</tt>, <tt>lastplayed</tt>, <tt>writer</tt>, <tt>studio</tt>, <tt>mpaa</tt>, <tt>cast</tt>, <tt>country</tt>, <tt>imdbnumber</tt>, <tt>premiered</tt>, <tt>productioncode</tt>, <tt>runtime</tt>, <tt>set</tt>, <tt>showlink</tt>, <tt>streamdetails</tt>, <tt>top250</tt>, <tt>votes</tt>, <tt>firstaired</tt>, <tt>season</tt>, <tt>episode</tt>, <tt>showtitle</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>resume</tt>, <tt>artistid</tt>, <tt>albumid</tt>, <tt>tvshowid</tt>, <tt>setid</tt>, <tt>size</tt>, <tt>lastmodified</tt>, <tt>mimetype</tt>, <tt>watchedepisodes</tt>, <tt>disc</tt>. See constants at {@link ListModel.FileFields}.
+		 */
+		public GetDirectory(String directory, String... properties) {
+			super();
+			addParameter("directory", directory);
+			addParameter("properties", properties);
+		}
+
+		/**
+		 * Get the directories and files in the given directory.
+		 * @param directory
+		 * @param media One of: <tt>video</tt>, <tt>music</tt>, <tt>pictures</tt>, <tt>files</tt>, <tt>programs</tt>. See constants at {@link FilesModel.Media}.
+		 * @param properties One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>director</tt>, <tt>trailer</tt>, <tt>tagline</tt>, <tt>plot</tt>, <tt>plotoutline</tt>, <tt>originaltitle</tt>, <tt>lastplayed</tt>, <tt>writer</tt>, <tt>studio</tt>, <tt>mpaa</tt>, <tt>cast</tt>, <tt>country</tt>, <tt>imdbnumber</tt>, <tt>premiered</tt>, <tt>productioncode</tt>, <tt>runtime</tt>, <tt>set</tt>, <tt>showlink</tt>, <tt>streamdetails</tt>, <tt>top250</tt>, <tt>votes</tt>, <tt>firstaired</tt>, <tt>season</tt>, <tt>episode</tt>, <tt>showtitle</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>resume</tt>, <tt>artistid</tt>, <tt>albumid</tt>, <tt>tvshowid</tt>, <tt>setid</tt>, <tt>size</tt>, <tt>lastmodified</tt>, <tt>mimetype</tt>, <tt>watchedepisodes</tt>, <tt>disc</tt>. See constants at {@link ListModel.FileFields}.
+		 */
+		public GetDirectory(String directory, String media, String... properties) {
+			super();
+			addParameter("directory", directory);
+			addParameter("media", media);
+			addParameter("properties", properties);
+		}
+
+		/**
+		 * Get the directories and files in the given directory.
+		 * @param directory
+		 * @param sort
+		 * @param properties One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>director</tt>, <tt>trailer</tt>, <tt>tagline</tt>, <tt>plot</tt>, <tt>plotoutline</tt>, <tt>originaltitle</tt>, <tt>lastplayed</tt>, <tt>writer</tt>, <tt>studio</tt>, <tt>mpaa</tt>, <tt>cast</tt>, <tt>country</tt>, <tt>imdbnumber</tt>, <tt>premiered</tt>, <tt>productioncode</tt>, <tt>runtime</tt>, <tt>set</tt>, <tt>showlink</tt>, <tt>streamdetails</tt>, <tt>top250</tt>, <tt>votes</tt>, <tt>firstaired</tt>, <tt>season</tt>, <tt>episode</tt>, <tt>showtitle</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>resume</tt>, <tt>artistid</tt>, <tt>albumid</tt>, <tt>tvshowid</tt>, <tt>setid</tt>, <tt>size</tt>, <tt>lastmodified</tt>, <tt>mimetype</tt>, <tt>watchedepisodes</tt>, <tt>disc</tt>. See constants at {@link ListModel.FileFields}.
+		 */
+		public GetDirectory(String directory, ListModel.Sort sort, String... properties) {
+			super();
+			addParameter("directory", directory);
+			addParameter("sort", sort);
+			addParameter("properties", properties);
+		}
+
 		@Override
 		protected ArrayList<ListModel.FileItem> parseMany(ObjectNode node) {
 			final ArrayNode files = parseResults(node, RESULT);
@@ -166,6 +203,17 @@ public final class Files {
 			addParameter("properties", properties);
 		}
 
+		/**
+		 * Get details for a specific file.
+		 * @param fileFull path to the file.
+		 * @param properties One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>director</tt>, <tt>trailer</tt>, <tt>tagline</tt>, <tt>plot</tt>, <tt>plotoutline</tt>, <tt>originaltitle</tt>, <tt>lastplayed</tt>, <tt>writer</tt>, <tt>studio</tt>, <tt>mpaa</tt>, <tt>cast</tt>, <tt>country</tt>, <tt>imdbnumber</tt>, <tt>premiered</tt>, <tt>productioncode</tt>, <tt>runtime</tt>, <tt>set</tt>, <tt>showlink</tt>, <tt>streamdetails</tt>, <tt>top250</tt>, <tt>votes</tt>, <tt>firstaired</tt>, <tt>season</tt>, <tt>episode</tt>, <tt>showtitle</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>resume</tt>, <tt>artistid</tt>, <tt>albumid</tt>, <tt>tvshowid</tt>, <tt>setid</tt>, <tt>size</tt>, <tt>lastmodified</tt>, <tt>mimetype</tt>, <tt>watchedepisodes</tt>, <tt>disc</tt>. See constants at {@link ListModel.FileFields}.
+		 */
+		public GetFileDetails(String file, String... properties) {
+			super();
+			addParameter("file", file);
+			addParameter("properties", properties);
+		}
+
 		@Override
 		protected ListModel.FileItem parseOne(ObjectNode node) {
 			return new ListModel.FileItem((ObjectNode)node.get(RESULT));
@@ -231,6 +279,26 @@ public final class Files {
 			addParameter("media", media);
 			addParameter("limits", limits);
 			addParameter("sort", sort);
+		}
+
+		/**
+		 * Get the sources of the media windows.
+		 * @param media One of: <tt>video</tt>, <tt>music</tt>, <tt>pictures</tt>, <tt>files</tt>, <tt>programs</tt>. See constants at {@link FilesModel.Media}.
+		 */
+		public GetSources(String media) {
+			super();
+			addParameter("media", media);
+		}
+
+		/**
+		 * Get the sources of the media windows.
+		 * @param media One of: <tt>video</tt>, <tt>music</tt>, <tt>pictures</tt>, <tt>files</tt>, <tt>programs</tt>. See constants at {@link FilesModel.Media}.
+		 * @param limits
+		 */
+		public GetSources(String media, ListModel.Limits limits) {
+			super();
+			addParameter("media", media);
+			addParameter("limits", limits);
 		}
 
 		@Override
@@ -351,7 +419,7 @@ public final class Files {
 			 * Construct from JSON object.
 			 * @param node JSON object representing a PrepareDownloadResult object
 			 */
-			public PrepareDownloadResult(ObjectNode node) {
+			public PrepareDownloadResult(JsonNode node) {
 				details = node.get(DETAILS).getTextValue(); // required value
 				mode = parseString(node, MODE);
 				protocol = parseString(node, PROTOCOL);
@@ -371,12 +439,12 @@ public final class Files {
 			 * @param obj ObjectNode containing the list of objects.
 			 * @param key Key pointing to the node where the list is stored.
 			 */
-			static List<PrepareDownloadResult> getFilesPrepareDownloadResultList(ObjectNode node, String key) {
+			static List<PrepareDownloadResult> getFilesPrepareDownloadResultList(JsonNode node, String key) {
 				if (node.has(key)) {
 					final ArrayNode a = (ArrayNode)node.get(key);
 					final List<PrepareDownloadResult> l = new ArrayList<PrepareDownloadResult>(a.size());
 					for (int i = 0; i < a.size(); i++) {
-						l.add(new PrepareDownloadResult((ObjectNode)a.get(i)));
+						l.add(new PrepareDownloadResult((JsonNode)a.get(i)));
 					}
 					return l;
 				}

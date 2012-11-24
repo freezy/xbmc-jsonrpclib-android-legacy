@@ -69,7 +69,7 @@ public final class MediaModel {
 		 * Construct from JSON object.
 		 * @param node JSON object representing a Artwork object
 		 */
-		public Artwork(ObjectNode node) {
+		public Artwork(JsonNode node) {
 			banner = parseString(node, BANNER);
 			fanart = parseString(node, FANART);
 			poster = parseString(node, POSTER);
@@ -91,12 +91,12 @@ public final class MediaModel {
 		 * @param obj ObjectNode containing the list of objects.
 		 * @param key Key pointing to the node where the list is stored.
 		 */
-		static List<Artwork> getMediaModelArtworkList(ObjectNode node, String key) {
+		static List<Artwork> getMediaModelArtworkList(JsonNode node, String key) {
 			if (node.has(key)) {
 				final ArrayNode a = (ArrayNode)node.get(key);
 				final List<Artwork> l = new ArrayList<Artwork>(a.size());
 				for (int i = 0; i < a.size(); i++) {
-					l.add(new Artwork((ObjectNode)a.get(i)));
+					l.add(new Artwork((JsonNode)a.get(i)));
 				}
 				return l;
 			}
@@ -167,7 +167,7 @@ public final class MediaModel {
 		 * Construct from JSON object.
 		 * @param node JSON object representing a BaseDetail object
 		 */
-		public BaseDetail(ObjectNode node) {
+		public BaseDetail(JsonNode node) {
 			super(node);
 			fanart = parseString(node, FANART);
 			thumbnail = parseString(node, THUMBNAIL);
@@ -186,12 +186,12 @@ public final class MediaModel {
 		 * @param obj ObjectNode containing the list of objects.
 		 * @param key Key pointing to the node where the list is stored.
 		 */
-		static List<BaseDetail> getMediaModelBaseDetailList(ObjectNode node, String key) {
+		static List<BaseDetail> getMediaModelBaseDetailList(JsonNode node, String key) {
 			if (node.has(key)) {
 				final ArrayNode a = (ArrayNode)node.get(key);
 				final List<BaseDetail> l = new ArrayList<BaseDetail>(a.size());
 				for (int i = 0; i < a.size(); i++) {
-					l.add(new BaseDetail((ObjectNode)a.get(i)));
+					l.add(new BaseDetail((JsonNode)a.get(i)));
 				}
 				return l;
 			}
