@@ -151,6 +151,15 @@ public final class PVR {
 			addParameter("channels", channels);
 		}
 
+		/**
+		 * Retrieves the details of a specific channel group.
+		 * @param channelgroupid
+		 */
+		public GetChannelGroupDetails(PVRModel.ChannelGroupId channelgroupid) {
+			super();
+			addParameter("channelgroupid", channelgroupid);
+		}
+
 		@Override
 		protected PVRModel.ChannelGroupExtendedDetail parseOne(ObjectNode node) {
 			return new PVRModel.ChannelGroupExtendedDetail((ObjectNode)node.get(RESULT));
@@ -301,6 +310,15 @@ public final class PVR {
 			addParameter("limits", limits);
 		}
 
+		/**
+		 * Retrieves the channel groups for the specified type.
+		 * @param channeltype One of: <tt>tv</tt>, <tt>radio</tt>. See constants at {@link PVRModel.ChannelType}.
+		 */
+		public GetChannelGroups(String channeltype) {
+			super();
+			addParameter("channeltype", channeltype);
+		}
+
 		@Override
 		protected ArrayList<PVRModel.ChannelGroupDetail> parseMany(ObjectNode node) {
 			final ArrayNode channelgroups = parseResults(node, RESULT);
@@ -375,6 +393,17 @@ public final class PVR {
 			super();
 			addParameter("channelgroupid", channelgroupid);
 			addParameter("limits", limits);
+			addParameter("properties", properties);
+		}
+
+		/**
+		 * Retrieves the channel list.
+		 * @param channelgroupid
+		 * @param properties One or more of: <tt>thumbnail</tt>, <tt>channeltype</tt>, <tt>hidden</tt>, <tt>locked</tt>, <tt>channel</tt>, <tt>lastplayed</tt>. See constants at {@link PVRModel.ChannelFields}.
+		 */
+		public GetChannels(PVRModel.ChannelGroupId channelgroupid, String... properties) {
+			super();
+			addParameter("channelgroupid", channelgroupid);
 			addParameter("properties", properties);
 		}
 
@@ -523,6 +552,22 @@ public final class PVR {
 			super();
 			addParameter("record", record);
 			addParameter("channel", channel);
+		}
+
+		/**
+		 * Toggle recording of a channel.
+		 */
+		public Record() {
+			super();
+		}
+
+		/**
+		 * Toggle recording of a channel.
+		 * @param record
+		 */
+		public Record(GlobalModel.Toggle record) {
+			super();
+			addParameter("record", record);
 		}
 
 		@Override

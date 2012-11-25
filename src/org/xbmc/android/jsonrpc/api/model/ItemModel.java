@@ -57,7 +57,7 @@ public final class ItemModel {
 		 * Construct from JSON object.
 		 * @param node JSON object representing a BaseDetail object
 		 */
-		public BaseDetail(ObjectNode node) {
+		public BaseDetail(JsonNode node) {
 			label = node.get(LABEL).getTextValue(); // required value
 		}
 
@@ -73,12 +73,12 @@ public final class ItemModel {
 		 * @param obj ObjectNode containing the list of objects.
 		 * @param key Key pointing to the node where the list is stored.
 		 */
-		static List<BaseDetail> getItemModelBaseDetailList(ObjectNode node, String key) {
+		static List<BaseDetail> getItemModelBaseDetailList(JsonNode node, String key) {
 			if (node.has(key)) {
 				final ArrayNode a = (ArrayNode)node.get(key);
 				final List<BaseDetail> l = new ArrayList<BaseDetail>(a.size());
 				for (int i = 0; i < a.size(); i++) {
-					l.add(new BaseDetail((ObjectNode)a.get(i)));
+					l.add(new BaseDetail((JsonNode)a.get(i)));
 				}
 				return l;
 			}

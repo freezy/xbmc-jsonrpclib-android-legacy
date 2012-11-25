@@ -617,6 +617,15 @@ public final class Input {
 			addParameter("done", done);
 		}
 
+		/**
+		 * Send a generic (unicode) text.
+		 * @param textUnicode text.
+		 */
+		public SendText(String text) {
+			super();
+			addParameter("text", text);
+		}
+
 		@Override
 		protected String parseOne(ObjectNode node) {
 			return node.getTextValue();

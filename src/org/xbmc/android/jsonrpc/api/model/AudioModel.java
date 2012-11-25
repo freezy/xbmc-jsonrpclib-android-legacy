@@ -66,7 +66,7 @@ public final class AudioModel {
 		 * Construct from JSON object.
 		 * @param node JSON object representing a AlbumDetail object
 		 */
-		public AlbumDetail(ObjectNode node) {
+		public AlbumDetail(JsonNode node) {
 			super(node);
 			albumid = parseInt(node, ALBUMID);
 			albumlabel = parseString(node, ALBUMLABEL);
@@ -109,12 +109,12 @@ public final class AudioModel {
 		 * @param obj ObjectNode containing the list of objects.
 		 * @param key Key pointing to the node where the list is stored.
 		 */
-		static List<AlbumDetail> getAudioModelAlbumDetailList(ObjectNode node, String key) {
+		static List<AlbumDetail> getAudioModelAlbumDetailList(JsonNode node, String key) {
 			if (node.has(key)) {
 				final ArrayNode a = (ArrayNode)node.get(key);
 				final List<AlbumDetail> l = new ArrayList<AlbumDetail>(a.size());
 				for (int i = 0; i < a.size(); i++) {
-					l.add(new AlbumDetail((ObjectNode)a.get(i)));
+					l.add(new AlbumDetail((JsonNode)a.get(i)));
 				}
 				return l;
 			}
@@ -236,7 +236,7 @@ public final class AudioModel {
 		 * Construct from JSON object.
 		 * @param node JSON object representing a ArtistDetail object
 		 */
-		public ArtistDetail(ObjectNode node) {
+		public ArtistDetail(JsonNode node) {
 			super(node);
 			artist = node.get(ARTIST).getTextValue(); // required value
 			artistid = parseInt(node, ARTISTID);
@@ -291,12 +291,12 @@ public final class AudioModel {
 		 * @param obj ObjectNode containing the list of objects.
 		 * @param key Key pointing to the node where the list is stored.
 		 */
-		static List<ArtistDetail> getAudioModelArtistDetailList(ObjectNode node, String key) {
+		static List<ArtistDetail> getAudioModelArtistDetailList(JsonNode node, String key) {
 			if (node.has(key)) {
 				final ArrayNode a = (ArrayNode)node.get(key);
 				final List<ArtistDetail> l = new ArrayList<ArtistDetail>(a.size());
 				for (int i = 0; i < a.size(); i++) {
-					l.add(new ArtistDetail((ObjectNode)a.get(i)));
+					l.add(new ArtistDetail((JsonNode)a.get(i)));
 				}
 				return l;
 			}
@@ -411,7 +411,7 @@ public final class AudioModel {
 		 * Construct from JSON object.
 		 * @param node JSON object representing a BaseDetail object
 		 */
-		public BaseDetail(ObjectNode node) {
+		public BaseDetail(JsonNode node) {
 			super(node);
 			genre = getStringArray(node, GENRE);
 		}
@@ -432,12 +432,12 @@ public final class AudioModel {
 		 * @param obj ObjectNode containing the list of objects.
 		 * @param key Key pointing to the node where the list is stored.
 		 */
-		static List<BaseDetail> getAudioModelBaseDetailList(ObjectNode node, String key) {
+		static List<BaseDetail> getAudioModelBaseDetailList(JsonNode node, String key) {
 			if (node.has(key)) {
 				final ArrayNode a = (ArrayNode)node.get(key);
 				final List<BaseDetail> l = new ArrayList<BaseDetail>(a.size());
 				for (int i = 0; i < a.size(); i++) {
-					l.add(new BaseDetail((ObjectNode)a.get(i)));
+					l.add(new BaseDetail((JsonNode)a.get(i)));
 				}
 				return l;
 			}
@@ -519,7 +519,7 @@ public final class AudioModel {
 		 * Construct from JSON object.
 		 * @param node JSON object representing a MediaDetail object
 		 */
-		public MediaDetail(ObjectNode node) {
+		public MediaDetail(JsonNode node) {
 			super(node);
 			artist = getStringArray(node, ARTIST);
 			musicbrainzalbumartistid = parseString(node, MUSICBRAINZALBUMARTISTID);
@@ -550,12 +550,12 @@ public final class AudioModel {
 		 * @param obj ObjectNode containing the list of objects.
 		 * @param key Key pointing to the node where the list is stored.
 		 */
-		static List<MediaDetail> getAudioModelMediaDetailList(ObjectNode node, String key) {
+		static List<MediaDetail> getAudioModelMediaDetailList(JsonNode node, String key) {
 			if (node.has(key)) {
 				final ArrayNode a = (ArrayNode)node.get(key);
 				final List<MediaDetail> l = new ArrayList<MediaDetail>(a.size());
 				for (int i = 0; i < a.size(); i++) {
-					l.add(new MediaDetail((ObjectNode)a.get(i)));
+					l.add(new MediaDetail((JsonNode)a.get(i)));
 				}
 				return l;
 			}
@@ -663,7 +663,7 @@ public final class AudioModel {
 		 * Construct from JSON object.
 		 * @param node JSON object representing a SongDetail object
 		 */
-		public SongDetail(ObjectNode node) {
+		public SongDetail(JsonNode node) {
 			super(node);
 			album = parseString(node, ALBUM);
 			albumartist = getStringArray(node, ALBUMARTIST);
@@ -710,12 +710,12 @@ public final class AudioModel {
 		 * @param obj ObjectNode containing the list of objects.
 		 * @param key Key pointing to the node where the list is stored.
 		 */
-		static List<SongDetail> getAudioModelSongDetailList(ObjectNode node, String key) {
+		static List<SongDetail> getAudioModelSongDetailList(JsonNode node, String key) {
 			if (node.has(key)) {
 				final ArrayNode a = (ArrayNode)node.get(key);
 				final List<SongDetail> l = new ArrayList<SongDetail>(a.size());
 				for (int i = 0; i < a.size(); i++) {
-					l.add(new SongDetail((ObjectNode)a.get(i)));
+					l.add(new SongDetail((JsonNode)a.get(i)));
 				}
 				return l;
 			}
