@@ -39,7 +39,7 @@ import org.xbmc.android.jsonrpc.api.model.VideoModel;
 public final class VideoLibrary {
 
 	/**
-	 * Cleans the video library from non-existent items.
+	 * Cleans the video library from non-existent items.
 	 * <p/>
 	 * This class represents the API method <tt>VideoLibrary.Clean</tt>
 	 * <p/>
@@ -76,7 +76,7 @@ public final class VideoLibrary {
 		};
 
 		/**
-		 * Cleans the video library from non-existent items.
+		 * Cleans the video library from non-existent items.
 		 */
 		public Clean() {
 			super();
@@ -99,7 +99,7 @@ public final class VideoLibrary {
 	}
 
 	/**
-	 * Exports all items from the video library.
+	 * Exports all items from the video library.
 	 * <p/>
 	 * This class represents the API method <tt>VideoLibrary.Export</tt>
 	 * <p/>
@@ -136,7 +136,7 @@ public final class VideoLibrary {
 		};
 
 		/**
-		 * Exports all items from the video library.
+		 * Exports all items from the video library.
 		 * @param options
 		 */
 		public Export(OptionsPath options) {
@@ -145,7 +145,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Exports all items from the video library.
+		 * Exports all items from the video library.
 		 * @param options
 		 */
 		public Export(OptionsActorthumbsImagesOverwrite options) {
@@ -310,7 +310,7 @@ public final class VideoLibrary {
 	}
 
 	/**
-	 * Retrieve details about a specific tv show episode.
+	 * Retrieve details about a specific tv show episode.
 	 * <p/>
 	 * This class represents the API method <tt>VideoLibrary.GetEpisodeDetails</tt>
 	 * <p/>
@@ -348,7 +348,7 @@ public final class VideoLibrary {
 		public final static String RESULT = "episodedetails";
 
 		/**
-		 * Retrieve details about a specific tv show episode.
+		 * Retrieve details about a specific tv show episode.
 		 * @param episodeid
 		 * @param properties One or more of: <tt>title</tt>, <tt>plot</tt>, <tt>votes</tt>, <tt>rating</tt>, <tt>writer</tt>, <tt>firstaired</tt>, <tt>playcount</tt>, <tt>runtime</tt>, <tt>director</tt>, <tt>productioncode</tt>, <tt>season</tt>, <tt>episode</tt>, <tt>originaltitle</tt>, <tt>showtitle</tt>, <tt>cast</tt>, <tt>streamdetails</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>resume</tt>, <tt>tvshowid</tt>, <tt>dateadded</tt>, <tt>uniqueid</tt>, <tt>art</tt>. See constants at {@link VideoModel.EpisodeFields}.
 		 */
@@ -375,7 +375,7 @@ public final class VideoLibrary {
 	}
 
 	/**
-	 * Retrieve all tv show episodes.
+	 * Retrieve all tv show episodes.
 	 * <p/>
 	 * This class represents the API method <tt>VideoLibrary.GetEpisodes</tt>
 	 * <p/>
@@ -413,7 +413,7 @@ public final class VideoLibrary {
 		public final static String RESULT = "episodes";
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param tvshowid
 		 * @param season
 		 * @param limits
@@ -432,7 +432,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param tvshowid
 		 * @param season
 		 * @param limits
@@ -451,7 +451,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param tvshowid
 		 * @param season
 		 * @param limits
@@ -470,7 +470,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param tvshowid
 		 * @param season
 		 * @param limits
@@ -489,7 +489,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param tvshowid
 		 * @param season
 		 * @param limits
@@ -508,7 +508,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param tvshowid
 		 * @param season
 		 * @param limits
@@ -527,7 +527,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param properties One or more of: <tt>title</tt>, <tt>plot</tt>, <tt>votes</tt>, <tt>rating</tt>, <tt>writer</tt>, <tt>firstaired</tt>, <tt>playcount</tt>, <tt>runtime</tt>, <tt>director</tt>, <tt>productioncode</tt>, <tt>season</tt>, <tt>episode</tt>, <tt>originaltitle</tt>, <tt>showtitle</tt>, <tt>cast</tt>, <tt>streamdetails</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>resume</tt>, <tt>tvshowid</tt>, <tt>dateadded</tt>, <tt>uniqueid</tt>, <tt>art</tt>. See constants at {@link VideoModel.EpisodeFields}.
 		 */
 		public GetEpisodes(String... properties) {
@@ -536,7 +536,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param tvshowid
 		 * @param properties One or more of: <tt>title</tt>, <tt>plot</tt>, <tt>votes</tt>, <tt>rating</tt>, <tt>writer</tt>, <tt>firstaired</tt>, <tt>playcount</tt>, <tt>runtime</tt>, <tt>director</tt>, <tt>productioncode</tt>, <tt>season</tt>, <tt>episode</tt>, <tt>originaltitle</tt>, <tt>showtitle</tt>, <tt>cast</tt>, <tt>streamdetails</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>resume</tt>, <tt>tvshowid</tt>, <tt>dateadded</tt>, <tt>uniqueid</tt>, <tt>art</tt>. See constants at {@link VideoModel.EpisodeFields}.
 		 */
@@ -547,7 +547,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param tvshowid
 		 * @param season
 		 * @param properties One or more of: <tt>title</tt>, <tt>plot</tt>, <tt>votes</tt>, <tt>rating</tt>, <tt>writer</tt>, <tt>firstaired</tt>, <tt>playcount</tt>, <tt>runtime</tt>, <tt>director</tt>, <tt>productioncode</tt>, <tt>season</tt>, <tt>episode</tt>, <tt>originaltitle</tt>, <tt>showtitle</tt>, <tt>cast</tt>, <tt>streamdetails</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>resume</tt>, <tt>tvshowid</tt>, <tt>dateadded</tt>, <tt>uniqueid</tt>, <tt>art</tt>. See constants at {@link VideoModel.EpisodeFields}.
@@ -560,7 +560,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param limits
 		 * @param properties One or more of: <tt>title</tt>, <tt>plot</tt>, <tt>votes</tt>, <tt>rating</tt>, <tt>writer</tt>, <tt>firstaired</tt>, <tt>playcount</tt>, <tt>runtime</tt>, <tt>director</tt>, <tt>productioncode</tt>, <tt>season</tt>, <tt>episode</tt>, <tt>originaltitle</tt>, <tt>showtitle</tt>, <tt>cast</tt>, <tt>streamdetails</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>resume</tt>, <tt>tvshowid</tt>, <tt>dateadded</tt>, <tt>uniqueid</tt>, <tt>art</tt>. See constants at {@link VideoModel.EpisodeFields}.
 		 */
@@ -571,7 +571,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param tvshowid
 		 * @param limits
 		 * @param properties One or more of: <tt>title</tt>, <tt>plot</tt>, <tt>votes</tt>, <tt>rating</tt>, <tt>writer</tt>, <tt>firstaired</tt>, <tt>playcount</tt>, <tt>runtime</tt>, <tt>director</tt>, <tt>productioncode</tt>, <tt>season</tt>, <tt>episode</tt>, <tt>originaltitle</tt>, <tt>showtitle</tt>, <tt>cast</tt>, <tt>streamdetails</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>resume</tt>, <tt>tvshowid</tt>, <tt>dateadded</tt>, <tt>uniqueid</tt>, <tt>art</tt>. See constants at {@link VideoModel.EpisodeFields}.
@@ -584,7 +584,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param tvshowid
 		 * @param season
 		 * @param limits
@@ -599,7 +599,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param sort
 		 * @param properties One or more of: <tt>title</tt>, <tt>plot</tt>, <tt>votes</tt>, <tt>rating</tt>, <tt>writer</tt>, <tt>firstaired</tt>, <tt>playcount</tt>, <tt>runtime</tt>, <tt>director</tt>, <tt>productioncode</tt>, <tt>season</tt>, <tt>episode</tt>, <tt>originaltitle</tt>, <tt>showtitle</tt>, <tt>cast</tt>, <tt>streamdetails</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>resume</tt>, <tt>tvshowid</tt>, <tt>dateadded</tt>, <tt>uniqueid</tt>, <tt>art</tt>. See constants at {@link VideoModel.EpisodeFields}.
 		 */
@@ -610,7 +610,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param tvshowid
 		 * @param sort
 		 * @param properties One or more of: <tt>title</tt>, <tt>plot</tt>, <tt>votes</tt>, <tt>rating</tt>, <tt>writer</tt>, <tt>firstaired</tt>, <tt>playcount</tt>, <tt>runtime</tt>, <tt>director</tt>, <tt>productioncode</tt>, <tt>season</tt>, <tt>episode</tt>, <tt>originaltitle</tt>, <tt>showtitle</tt>, <tt>cast</tt>, <tt>streamdetails</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>resume</tt>, <tt>tvshowid</tt>, <tt>dateadded</tt>, <tt>uniqueid</tt>, <tt>art</tt>. See constants at {@link VideoModel.EpisodeFields}.
@@ -623,7 +623,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param tvshowid
 		 * @param season
 		 * @param sort
@@ -638,7 +638,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param limits
 		 * @param sort
 		 * @param properties One or more of: <tt>title</tt>, <tt>plot</tt>, <tt>votes</tt>, <tt>rating</tt>, <tt>writer</tt>, <tt>firstaired</tt>, <tt>playcount</tt>, <tt>runtime</tt>, <tt>director</tt>, <tt>productioncode</tt>, <tt>season</tt>, <tt>episode</tt>, <tt>originaltitle</tt>, <tt>showtitle</tt>, <tt>cast</tt>, <tt>streamdetails</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>resume</tt>, <tt>tvshowid</tt>, <tt>dateadded</tt>, <tt>uniqueid</tt>, <tt>art</tt>. See constants at {@link VideoModel.EpisodeFields}.
@@ -651,7 +651,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param tvshowid
 		 * @param limits
 		 * @param sort
@@ -666,7 +666,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param tvshowid
 		 * @param season
 		 * @param limits
@@ -683,7 +683,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param filter
 		 * @param properties One or more of: <tt>title</tt>, <tt>plot</tt>, <tt>votes</tt>, <tt>rating</tt>, <tt>writer</tt>, <tt>firstaired</tt>, <tt>playcount</tt>, <tt>runtime</tt>, <tt>director</tt>, <tt>productioncode</tt>, <tt>season</tt>, <tt>episode</tt>, <tt>originaltitle</tt>, <tt>showtitle</tt>, <tt>cast</tt>, <tt>streamdetails</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>resume</tt>, <tt>tvshowid</tt>, <tt>dateadded</tt>, <tt>uniqueid</tt>, <tt>art</tt>. See constants at {@link VideoModel.EpisodeFields}.
 		 */
@@ -694,7 +694,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param tvshowid
 		 * @param filter
 		 * @param properties One or more of: <tt>title</tt>, <tt>plot</tt>, <tt>votes</tt>, <tt>rating</tt>, <tt>writer</tt>, <tt>firstaired</tt>, <tt>playcount</tt>, <tt>runtime</tt>, <tt>director</tt>, <tt>productioncode</tt>, <tt>season</tt>, <tt>episode</tt>, <tt>originaltitle</tt>, <tt>showtitle</tt>, <tt>cast</tt>, <tt>streamdetails</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>resume</tt>, <tt>tvshowid</tt>, <tt>dateadded</tt>, <tt>uniqueid</tt>, <tt>art</tt>. See constants at {@link VideoModel.EpisodeFields}.
@@ -707,7 +707,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param tvshowid
 		 * @param season
 		 * @param filter
@@ -722,7 +722,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param limits
 		 * @param filter
 		 * @param properties One or more of: <tt>title</tt>, <tt>plot</tt>, <tt>votes</tt>, <tt>rating</tt>, <tt>writer</tt>, <tt>firstaired</tt>, <tt>playcount</tt>, <tt>runtime</tt>, <tt>director</tt>, <tt>productioncode</tt>, <tt>season</tt>, <tt>episode</tt>, <tt>originaltitle</tt>, <tt>showtitle</tt>, <tt>cast</tt>, <tt>streamdetails</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>resume</tt>, <tt>tvshowid</tt>, <tt>dateadded</tt>, <tt>uniqueid</tt>, <tt>art</tt>. See constants at {@link VideoModel.EpisodeFields}.
@@ -735,7 +735,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param tvshowid
 		 * @param limits
 		 * @param filter
@@ -750,7 +750,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param tvshowid
 		 * @param season
 		 * @param limits
@@ -767,7 +767,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param sort
 		 * @param filter
 		 * @param properties One or more of: <tt>title</tt>, <tt>plot</tt>, <tt>votes</tt>, <tt>rating</tt>, <tt>writer</tt>, <tt>firstaired</tt>, <tt>playcount</tt>, <tt>runtime</tt>, <tt>director</tt>, <tt>productioncode</tt>, <tt>season</tt>, <tt>episode</tt>, <tt>originaltitle</tt>, <tt>showtitle</tt>, <tt>cast</tt>, <tt>streamdetails</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>resume</tt>, <tt>tvshowid</tt>, <tt>dateadded</tt>, <tt>uniqueid</tt>, <tt>art</tt>. See constants at {@link VideoModel.EpisodeFields}.
@@ -780,7 +780,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param tvshowid
 		 * @param sort
 		 * @param filter
@@ -795,7 +795,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param tvshowid
 		 * @param season
 		 * @param sort
@@ -812,7 +812,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param limits
 		 * @param sort
 		 * @param filter
@@ -827,7 +827,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param tvshowid
 		 * @param limits
 		 * @param sort
@@ -844,7 +844,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param filter
 		 * @param properties One or more of: <tt>title</tt>, <tt>plot</tt>, <tt>votes</tt>, <tt>rating</tt>, <tt>writer</tt>, <tt>firstaired</tt>, <tt>playcount</tt>, <tt>runtime</tt>, <tt>director</tt>, <tt>productioncode</tt>, <tt>season</tt>, <tt>episode</tt>, <tt>originaltitle</tt>, <tt>showtitle</tt>, <tt>cast</tt>, <tt>streamdetails</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>resume</tt>, <tt>tvshowid</tt>, <tt>dateadded</tt>, <tt>uniqueid</tt>, <tt>art</tt>. See constants at {@link VideoModel.EpisodeFields}.
 		 */
@@ -855,7 +855,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param tvshowid
 		 * @param filter
 		 * @param properties One or more of: <tt>title</tt>, <tt>plot</tt>, <tt>votes</tt>, <tt>rating</tt>, <tt>writer</tt>, <tt>firstaired</tt>, <tt>playcount</tt>, <tt>runtime</tt>, <tt>director</tt>, <tt>productioncode</tt>, <tt>season</tt>, <tt>episode</tt>, <tt>originaltitle</tt>, <tt>showtitle</tt>, <tt>cast</tt>, <tt>streamdetails</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>resume</tt>, <tt>tvshowid</tt>, <tt>dateadded</tt>, <tt>uniqueid</tt>, <tt>art</tt>. See constants at {@link VideoModel.EpisodeFields}.
@@ -868,7 +868,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param tvshowid
 		 * @param season
 		 * @param filter
@@ -883,7 +883,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param limits
 		 * @param filter
 		 * @param properties One or more of: <tt>title</tt>, <tt>plot</tt>, <tt>votes</tt>, <tt>rating</tt>, <tt>writer</tt>, <tt>firstaired</tt>, <tt>playcount</tt>, <tt>runtime</tt>, <tt>director</tt>, <tt>productioncode</tt>, <tt>season</tt>, <tt>episode</tt>, <tt>originaltitle</tt>, <tt>showtitle</tt>, <tt>cast</tt>, <tt>streamdetails</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>resume</tt>, <tt>tvshowid</tt>, <tt>dateadded</tt>, <tt>uniqueid</tt>, <tt>art</tt>. See constants at {@link VideoModel.EpisodeFields}.
@@ -896,7 +896,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param tvshowid
 		 * @param limits
 		 * @param filter
@@ -911,7 +911,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param tvshowid
 		 * @param season
 		 * @param limits
@@ -928,7 +928,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param sort
 		 * @param filter
 		 * @param properties One or more of: <tt>title</tt>, <tt>plot</tt>, <tt>votes</tt>, <tt>rating</tt>, <tt>writer</tt>, <tt>firstaired</tt>, <tt>playcount</tt>, <tt>runtime</tt>, <tt>director</tt>, <tt>productioncode</tt>, <tt>season</tt>, <tt>episode</tt>, <tt>originaltitle</tt>, <tt>showtitle</tt>, <tt>cast</tt>, <tt>streamdetails</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>resume</tt>, <tt>tvshowid</tt>, <tt>dateadded</tt>, <tt>uniqueid</tt>, <tt>art</tt>. See constants at {@link VideoModel.EpisodeFields}.
@@ -941,7 +941,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param tvshowid
 		 * @param sort
 		 * @param filter
@@ -956,7 +956,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param tvshowid
 		 * @param season
 		 * @param sort
@@ -973,7 +973,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param limits
 		 * @param sort
 		 * @param filter
@@ -988,7 +988,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param tvshowid
 		 * @param limits
 		 * @param sort
@@ -1005,7 +1005,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param filter
 		 * @param properties One or more of: <tt>title</tt>, <tt>plot</tt>, <tt>votes</tt>, <tt>rating</tt>, <tt>writer</tt>, <tt>firstaired</tt>, <tt>playcount</tt>, <tt>runtime</tt>, <tt>director</tt>, <tt>productioncode</tt>, <tt>season</tt>, <tt>episode</tt>, <tt>originaltitle</tt>, <tt>showtitle</tt>, <tt>cast</tt>, <tt>streamdetails</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>resume</tt>, <tt>tvshowid</tt>, <tt>dateadded</tt>, <tt>uniqueid</tt>, <tt>art</tt>. See constants at {@link VideoModel.EpisodeFields}.
 		 */
@@ -1016,7 +1016,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param tvshowid
 		 * @param filter
 		 * @param properties One or more of: <tt>title</tt>, <tt>plot</tt>, <tt>votes</tt>, <tt>rating</tt>, <tt>writer</tt>, <tt>firstaired</tt>, <tt>playcount</tt>, <tt>runtime</tt>, <tt>director</tt>, <tt>productioncode</tt>, <tt>season</tt>, <tt>episode</tt>, <tt>originaltitle</tt>, <tt>showtitle</tt>, <tt>cast</tt>, <tt>streamdetails</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>resume</tt>, <tt>tvshowid</tt>, <tt>dateadded</tt>, <tt>uniqueid</tt>, <tt>art</tt>. See constants at {@link VideoModel.EpisodeFields}.
@@ -1029,7 +1029,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param tvshowid
 		 * @param season
 		 * @param filter
@@ -1044,7 +1044,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param limits
 		 * @param filter
 		 * @param properties One or more of: <tt>title</tt>, <tt>plot</tt>, <tt>votes</tt>, <tt>rating</tt>, <tt>writer</tt>, <tt>firstaired</tt>, <tt>playcount</tt>, <tt>runtime</tt>, <tt>director</tt>, <tt>productioncode</tt>, <tt>season</tt>, <tt>episode</tt>, <tt>originaltitle</tt>, <tt>showtitle</tt>, <tt>cast</tt>, <tt>streamdetails</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>resume</tt>, <tt>tvshowid</tt>, <tt>dateadded</tt>, <tt>uniqueid</tt>, <tt>art</tt>. See constants at {@link VideoModel.EpisodeFields}.
@@ -1057,7 +1057,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param tvshowid
 		 * @param limits
 		 * @param filter
@@ -1072,7 +1072,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param tvshowid
 		 * @param season
 		 * @param limits
@@ -1089,7 +1089,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param sort
 		 * @param filter
 		 * @param properties One or more of: <tt>title</tt>, <tt>plot</tt>, <tt>votes</tt>, <tt>rating</tt>, <tt>writer</tt>, <tt>firstaired</tt>, <tt>playcount</tt>, <tt>runtime</tt>, <tt>director</tt>, <tt>productioncode</tt>, <tt>season</tt>, <tt>episode</tt>, <tt>originaltitle</tt>, <tt>showtitle</tt>, <tt>cast</tt>, <tt>streamdetails</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>resume</tt>, <tt>tvshowid</tt>, <tt>dateadded</tt>, <tt>uniqueid</tt>, <tt>art</tt>. See constants at {@link VideoModel.EpisodeFields}.
@@ -1102,7 +1102,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param tvshowid
 		 * @param sort
 		 * @param filter
@@ -1117,7 +1117,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param tvshowid
 		 * @param season
 		 * @param sort
@@ -1134,7 +1134,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param limits
 		 * @param sort
 		 * @param filter
@@ -1149,7 +1149,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param tvshowid
 		 * @param limits
 		 * @param sort
@@ -1166,7 +1166,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param filter
 		 * @param properties One or more of: <tt>title</tt>, <tt>plot</tt>, <tt>votes</tt>, <tt>rating</tt>, <tt>writer</tt>, <tt>firstaired</tt>, <tt>playcount</tt>, <tt>runtime</tt>, <tt>director</tt>, <tt>productioncode</tt>, <tt>season</tt>, <tt>episode</tt>, <tt>originaltitle</tt>, <tt>showtitle</tt>, <tt>cast</tt>, <tt>streamdetails</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>resume</tt>, <tt>tvshowid</tt>, <tt>dateadded</tt>, <tt>uniqueid</tt>, <tt>art</tt>. See constants at {@link VideoModel.EpisodeFields}.
 		 */
@@ -1177,7 +1177,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param tvshowid
 		 * @param filter
 		 * @param properties One or more of: <tt>title</tt>, <tt>plot</tt>, <tt>votes</tt>, <tt>rating</tt>, <tt>writer</tt>, <tt>firstaired</tt>, <tt>playcount</tt>, <tt>runtime</tt>, <tt>director</tt>, <tt>productioncode</tt>, <tt>season</tt>, <tt>episode</tt>, <tt>originaltitle</tt>, <tt>showtitle</tt>, <tt>cast</tt>, <tt>streamdetails</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>resume</tt>, <tt>tvshowid</tt>, <tt>dateadded</tt>, <tt>uniqueid</tt>, <tt>art</tt>. See constants at {@link VideoModel.EpisodeFields}.
@@ -1190,7 +1190,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param tvshowid
 		 * @param season
 		 * @param filter
@@ -1205,7 +1205,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param limits
 		 * @param filter
 		 * @param properties One or more of: <tt>title</tt>, <tt>plot</tt>, <tt>votes</tt>, <tt>rating</tt>, <tt>writer</tt>, <tt>firstaired</tt>, <tt>playcount</tt>, <tt>runtime</tt>, <tt>director</tt>, <tt>productioncode</tt>, <tt>season</tt>, <tt>episode</tt>, <tt>originaltitle</tt>, <tt>showtitle</tt>, <tt>cast</tt>, <tt>streamdetails</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>resume</tt>, <tt>tvshowid</tt>, <tt>dateadded</tt>, <tt>uniqueid</tt>, <tt>art</tt>. See constants at {@link VideoModel.EpisodeFields}.
@@ -1218,7 +1218,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param tvshowid
 		 * @param limits
 		 * @param filter
@@ -1233,7 +1233,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param tvshowid
 		 * @param season
 		 * @param limits
@@ -1250,7 +1250,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param sort
 		 * @param filter
 		 * @param properties One or more of: <tt>title</tt>, <tt>plot</tt>, <tt>votes</tt>, <tt>rating</tt>, <tt>writer</tt>, <tt>firstaired</tt>, <tt>playcount</tt>, <tt>runtime</tt>, <tt>director</tt>, <tt>productioncode</tt>, <tt>season</tt>, <tt>episode</tt>, <tt>originaltitle</tt>, <tt>showtitle</tt>, <tt>cast</tt>, <tt>streamdetails</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>resume</tt>, <tt>tvshowid</tt>, <tt>dateadded</tt>, <tt>uniqueid</tt>, <tt>art</tt>. See constants at {@link VideoModel.EpisodeFields}.
@@ -1263,7 +1263,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param tvshowid
 		 * @param sort
 		 * @param filter
@@ -1278,7 +1278,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param tvshowid
 		 * @param season
 		 * @param sort
@@ -1295,7 +1295,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param limits
 		 * @param sort
 		 * @param filter
@@ -1310,7 +1310,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param tvshowid
 		 * @param limits
 		 * @param sort
@@ -1327,7 +1327,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param filter
 		 * @param properties One or more of: <tt>title</tt>, <tt>plot</tt>, <tt>votes</tt>, <tt>rating</tt>, <tt>writer</tt>, <tt>firstaired</tt>, <tt>playcount</tt>, <tt>runtime</tt>, <tt>director</tt>, <tt>productioncode</tt>, <tt>season</tt>, <tt>episode</tt>, <tt>originaltitle</tt>, <tt>showtitle</tt>, <tt>cast</tt>, <tt>streamdetails</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>resume</tt>, <tt>tvshowid</tt>, <tt>dateadded</tt>, <tt>uniqueid</tt>, <tt>art</tt>. See constants at {@link VideoModel.EpisodeFields}.
 		 */
@@ -1338,7 +1338,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param tvshowid
 		 * @param filter
 		 * @param properties One or more of: <tt>title</tt>, <tt>plot</tt>, <tt>votes</tt>, <tt>rating</tt>, <tt>writer</tt>, <tt>firstaired</tt>, <tt>playcount</tt>, <tt>runtime</tt>, <tt>director</tt>, <tt>productioncode</tt>, <tt>season</tt>, <tt>episode</tt>, <tt>originaltitle</tt>, <tt>showtitle</tt>, <tt>cast</tt>, <tt>streamdetails</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>resume</tt>, <tt>tvshowid</tt>, <tt>dateadded</tt>, <tt>uniqueid</tt>, <tt>art</tt>. See constants at {@link VideoModel.EpisodeFields}.
@@ -1351,7 +1351,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param tvshowid
 		 * @param season
 		 * @param filter
@@ -1366,7 +1366,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param limits
 		 * @param filter
 		 * @param properties One or more of: <tt>title</tt>, <tt>plot</tt>, <tt>votes</tt>, <tt>rating</tt>, <tt>writer</tt>, <tt>firstaired</tt>, <tt>playcount</tt>, <tt>runtime</tt>, <tt>director</tt>, <tt>productioncode</tt>, <tt>season</tt>, <tt>episode</tt>, <tt>originaltitle</tt>, <tt>showtitle</tt>, <tt>cast</tt>, <tt>streamdetails</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>resume</tt>, <tt>tvshowid</tt>, <tt>dateadded</tt>, <tt>uniqueid</tt>, <tt>art</tt>. See constants at {@link VideoModel.EpisodeFields}.
@@ -1379,7 +1379,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param tvshowid
 		 * @param limits
 		 * @param filter
@@ -1394,7 +1394,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param tvshowid
 		 * @param season
 		 * @param limits
@@ -1411,7 +1411,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param sort
 		 * @param filter
 		 * @param properties One or more of: <tt>title</tt>, <tt>plot</tt>, <tt>votes</tt>, <tt>rating</tt>, <tt>writer</tt>, <tt>firstaired</tt>, <tt>playcount</tt>, <tt>runtime</tt>, <tt>director</tt>, <tt>productioncode</tt>, <tt>season</tt>, <tt>episode</tt>, <tt>originaltitle</tt>, <tt>showtitle</tt>, <tt>cast</tt>, <tt>streamdetails</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>resume</tt>, <tt>tvshowid</tt>, <tt>dateadded</tt>, <tt>uniqueid</tt>, <tt>art</tt>. See constants at {@link VideoModel.EpisodeFields}.
@@ -1424,7 +1424,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param tvshowid
 		 * @param sort
 		 * @param filter
@@ -1439,7 +1439,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param tvshowid
 		 * @param season
 		 * @param sort
@@ -1456,7 +1456,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param limits
 		 * @param sort
 		 * @param filter
@@ -1471,7 +1471,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param tvshowid
 		 * @param limits
 		 * @param sort
@@ -1488,7 +1488,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param filter
 		 * @param properties One or more of: <tt>title</tt>, <tt>plot</tt>, <tt>votes</tt>, <tt>rating</tt>, <tt>writer</tt>, <tt>firstaired</tt>, <tt>playcount</tt>, <tt>runtime</tt>, <tt>director</tt>, <tt>productioncode</tt>, <tt>season</tt>, <tt>episode</tt>, <tt>originaltitle</tt>, <tt>showtitle</tt>, <tt>cast</tt>, <tt>streamdetails</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>resume</tt>, <tt>tvshowid</tt>, <tt>dateadded</tt>, <tt>uniqueid</tt>, <tt>art</tt>. See constants at {@link VideoModel.EpisodeFields}.
 		 */
@@ -1499,7 +1499,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param tvshowid
 		 * @param filter
 		 * @param properties One or more of: <tt>title</tt>, <tt>plot</tt>, <tt>votes</tt>, <tt>rating</tt>, <tt>writer</tt>, <tt>firstaired</tt>, <tt>playcount</tt>, <tt>runtime</tt>, <tt>director</tt>, <tt>productioncode</tt>, <tt>season</tt>, <tt>episode</tt>, <tt>originaltitle</tt>, <tt>showtitle</tt>, <tt>cast</tt>, <tt>streamdetails</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>resume</tt>, <tt>tvshowid</tt>, <tt>dateadded</tt>, <tt>uniqueid</tt>, <tt>art</tt>. See constants at {@link VideoModel.EpisodeFields}.
@@ -1512,7 +1512,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param tvshowid
 		 * @param season
 		 * @param filter
@@ -1527,7 +1527,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param limits
 		 * @param filter
 		 * @param properties One or more of: <tt>title</tt>, <tt>plot</tt>, <tt>votes</tt>, <tt>rating</tt>, <tt>writer</tt>, <tt>firstaired</tt>, <tt>playcount</tt>, <tt>runtime</tt>, <tt>director</tt>, <tt>productioncode</tt>, <tt>season</tt>, <tt>episode</tt>, <tt>originaltitle</tt>, <tt>showtitle</tt>, <tt>cast</tt>, <tt>streamdetails</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>resume</tt>, <tt>tvshowid</tt>, <tt>dateadded</tt>, <tt>uniqueid</tt>, <tt>art</tt>. See constants at {@link VideoModel.EpisodeFields}.
@@ -1540,7 +1540,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param tvshowid
 		 * @param limits
 		 * @param filter
@@ -1555,7 +1555,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param tvshowid
 		 * @param season
 		 * @param limits
@@ -1572,7 +1572,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param sort
 		 * @param filter
 		 * @param properties One or more of: <tt>title</tt>, <tt>plot</tt>, <tt>votes</tt>, <tt>rating</tt>, <tt>writer</tt>, <tt>firstaired</tt>, <tt>playcount</tt>, <tt>runtime</tt>, <tt>director</tt>, <tt>productioncode</tt>, <tt>season</tt>, <tt>episode</tt>, <tt>originaltitle</tt>, <tt>showtitle</tt>, <tt>cast</tt>, <tt>streamdetails</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>resume</tt>, <tt>tvshowid</tt>, <tt>dateadded</tt>, <tt>uniqueid</tt>, <tt>art</tt>. See constants at {@link VideoModel.EpisodeFields}.
@@ -1585,7 +1585,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param tvshowid
 		 * @param sort
 		 * @param filter
@@ -1600,7 +1600,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param tvshowid
 		 * @param season
 		 * @param sort
@@ -1617,7 +1617,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param limits
 		 * @param sort
 		 * @param filter
@@ -1632,7 +1632,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv show episodes.
+		 * Retrieve all tv show episodes.
 		 * @param tvshowid
 		 * @param limits
 		 * @param sort
@@ -1990,7 +1990,7 @@ public final class VideoLibrary {
 	}
 
 	/**
-	 * Retrieve all genres.
+	 * Retrieve all genres.
 	 * <p/>
 	 * This class represents the API method <tt>VideoLibrary.GetGenres</tt>
 	 * <p/>
@@ -2028,7 +2028,7 @@ public final class VideoLibrary {
 		public final static String RESULT = "genres";
 
 		/**
-		 * Retrieve all genres.
+		 * Retrieve all genres.
 		 * @param type One of: <tt>movie</tt>, <tt>tvshow</tt>, <tt>musicvideo</tt>. See constants at {@link VideoLibrary.GetGenres.Type}.
 		 * @param limits
 		 * @param sort
@@ -2043,7 +2043,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all genres.
+		 * Retrieve all genres.
 		 * @param type One of: <tt>movie</tt>, <tt>tvshow</tt>, <tt>musicvideo</tt>. See constants at {@link VideoLibrary.GetGenres.Type}.
 		 * @param properties One or more of: <tt>title</tt>, <tt>thumbnail</tt>. See constants at {@link LibraryModel.GenreFields}.
 		 */
@@ -2054,7 +2054,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all genres.
+		 * Retrieve all genres.
 		 * @param type One of: <tt>movie</tt>, <tt>tvshow</tt>, <tt>musicvideo</tt>. See constants at {@link VideoLibrary.GetGenres.Type}.
 		 * @param limits
 		 * @param properties One or more of: <tt>title</tt>, <tt>thumbnail</tt>. See constants at {@link LibraryModel.GenreFields}.
@@ -2105,7 +2105,7 @@ public final class VideoLibrary {
 	}
 
 	/**
-	 * Retrieve details about a specific movie.
+	 * Retrieve details about a specific movie.
 	 * <p/>
 	 * This class represents the API method <tt>VideoLibrary.GetMovieDetails</tt>
 	 * <p/>
@@ -2143,7 +2143,7 @@ public final class VideoLibrary {
 		public final static String RESULT = "moviedetails";
 
 		/**
-		 * Retrieve details about a specific movie.
+		 * Retrieve details about a specific movie.
 		 * @param movieid
 		 * @param properties One or more of: <tt>title</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>director</tt>, <tt>trailer</tt>, <tt>tagline</tt>, <tt>plot</tt>, <tt>plotoutline</tt>, <tt>originaltitle</tt>, <tt>lastplayed</tt>, <tt>playcount</tt>, <tt>writer</tt>, <tt>studio</tt>, <tt>mpaa</tt>, <tt>cast</tt>, <tt>country</tt>, <tt>imdbnumber</tt>, <tt>runtime</tt>, <tt>set</tt>, <tt>showlink</tt>, <tt>streamdetails</tt>, <tt>top250</tt>, <tt>votes</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>sorttitle</tt>, <tt>resume</tt>, <tt>setid</tt>, <tt>dateadded</tt>, <tt>tag</tt>, <tt>art</tt>. See constants at {@link VideoModel.MovieFields}.
 		 */
@@ -2170,7 +2170,7 @@ public final class VideoLibrary {
 	}
 
 	/**
-	 * Retrieve details about a specific movie set.
+	 * Retrieve details about a specific movie set.
 	 * <p/>
 	 * This class represents the API method <tt>VideoLibrary.GetMovieSetDetails</tt>
 	 * <p/>
@@ -2208,7 +2208,7 @@ public final class VideoLibrary {
 		public final static String RESULT = "setdetails";
 
 		/**
-		 * Retrieve details about a specific movie set.
+		 * Retrieve details about a specific movie set.
 		 * @param setid
 		 * @param movies
 		 * @param properties One or more of: <tt>title</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>art</tt>. See constants at {@link VideoModel.MovieSetFields}.
@@ -2221,7 +2221,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve details about a specific movie set.
+		 * Retrieve details about a specific movie set.
 		 * @param setid
 		 * @param properties One or more of: <tt>title</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>art</tt>. See constants at {@link VideoModel.MovieSetFields}.
 		 */
@@ -2367,7 +2367,7 @@ public final class VideoLibrary {
 	}
 
 	/**
-	 * Retrieve all movie sets.
+	 * Retrieve all movie sets.
 	 * <p/>
 	 * This class represents the API method <tt>VideoLibrary.GetMovieSets</tt>
 	 * <p/>
@@ -2405,7 +2405,7 @@ public final class VideoLibrary {
 		public final static String RESULT = "sets";
 
 		/**
-		 * Retrieve all movie sets.
+		 * Retrieve all movie sets.
 		 * @param limits
 		 * @param sort
 		 * @param properties One or more of: <tt>title</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>art</tt>. See constants at {@link VideoModel.MovieSetFields}.
@@ -2418,7 +2418,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all movie sets.
+		 * Retrieve all movie sets.
 		 * @param properties One or more of: <tt>title</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>art</tt>. See constants at {@link VideoModel.MovieSetFields}.
 		 */
 		public GetMovieSets(String... properties) {
@@ -2427,7 +2427,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all movie sets.
+		 * Retrieve all movie sets.
 		 * @param limits
 		 * @param properties One or more of: <tt>title</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>art</tt>. See constants at {@link VideoModel.MovieSetFields}.
 		 */
@@ -2464,7 +2464,7 @@ public final class VideoLibrary {
 	}
 
 	/**
-	 * Retrieve all movies.
+	 * Retrieve all movies.
 	 * <p/>
 	 * This class represents the API method <tt>VideoLibrary.GetMovies</tt>
 	 * <p/>
@@ -2502,7 +2502,7 @@ public final class VideoLibrary {
 		public final static String RESULT = "movies";
 
 		/**
-		 * Retrieve all movies.
+		 * Retrieve all movies.
 		 * @param limits
 		 * @param sort
 		 * @param filter
@@ -2517,7 +2517,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all movies.
+		 * Retrieve all movies.
 		 * @param limits
 		 * @param sort
 		 * @param filter
@@ -2532,7 +2532,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all movies.
+		 * Retrieve all movies.
 		 * @param limits
 		 * @param sort
 		 * @param filter
@@ -2547,7 +2547,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all movies.
+		 * Retrieve all movies.
 		 * @param limits
 		 * @param sort
 		 * @param filter
@@ -2562,7 +2562,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all movies.
+		 * Retrieve all movies.
 		 * @param limits
 		 * @param sort
 		 * @param filter
@@ -2577,7 +2577,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all movies.
+		 * Retrieve all movies.
 		 * @param limits
 		 * @param sort
 		 * @param filter
@@ -2592,7 +2592,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all movies.
+		 * Retrieve all movies.
 		 * @param limits
 		 * @param sort
 		 * @param filter
@@ -2607,7 +2607,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all movies.
+		 * Retrieve all movies.
 		 * @param limits
 		 * @param sort
 		 * @param filter
@@ -2622,7 +2622,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all movies.
+		 * Retrieve all movies.
 		 * @param limits
 		 * @param sort
 		 * @param filter
@@ -2637,7 +2637,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all movies.
+		 * Retrieve all movies.
 		 * @param limits
 		 * @param sort
 		 * @param filter
@@ -2652,7 +2652,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all movies.
+		 * Retrieve all movies.
 		 * @param limits
 		 * @param sort
 		 * @param filter
@@ -2667,7 +2667,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all movies.
+		 * Retrieve all movies.
 		 * @param properties One or more of: <tt>title</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>director</tt>, <tt>trailer</tt>, <tt>tagline</tt>, <tt>plot</tt>, <tt>plotoutline</tt>, <tt>originaltitle</tt>, <tt>lastplayed</tt>, <tt>playcount</tt>, <tt>writer</tt>, <tt>studio</tt>, <tt>mpaa</tt>, <tt>cast</tt>, <tt>country</tt>, <tt>imdbnumber</tt>, <tt>runtime</tt>, <tt>set</tt>, <tt>showlink</tt>, <tt>streamdetails</tt>, <tt>top250</tt>, <tt>votes</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>sorttitle</tt>, <tt>resume</tt>, <tt>setid</tt>, <tt>dateadded</tt>, <tt>tag</tt>, <tt>art</tt>. See constants at {@link VideoModel.MovieFields}.
 		 */
 		public GetMovies(String... properties) {
@@ -2676,7 +2676,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all movies.
+		 * Retrieve all movies.
 		 * @param limits
 		 * @param properties One or more of: <tt>title</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>director</tt>, <tt>trailer</tt>, <tt>tagline</tt>, <tt>plot</tt>, <tt>plotoutline</tt>, <tt>originaltitle</tt>, <tt>lastplayed</tt>, <tt>playcount</tt>, <tt>writer</tt>, <tt>studio</tt>, <tt>mpaa</tt>, <tt>cast</tt>, <tt>country</tt>, <tt>imdbnumber</tt>, <tt>runtime</tt>, <tt>set</tt>, <tt>showlink</tt>, <tt>streamdetails</tt>, <tt>top250</tt>, <tt>votes</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>sorttitle</tt>, <tt>resume</tt>, <tt>setid</tt>, <tt>dateadded</tt>, <tt>tag</tt>, <tt>art</tt>. See constants at {@link VideoModel.MovieFields}.
 		 */
@@ -2687,7 +2687,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all movies.
+		 * Retrieve all movies.
 		 * @param sort
 		 * @param properties One or more of: <tt>title</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>director</tt>, <tt>trailer</tt>, <tt>tagline</tt>, <tt>plot</tt>, <tt>plotoutline</tt>, <tt>originaltitle</tt>, <tt>lastplayed</tt>, <tt>playcount</tt>, <tt>writer</tt>, <tt>studio</tt>, <tt>mpaa</tt>, <tt>cast</tt>, <tt>country</tt>, <tt>imdbnumber</tt>, <tt>runtime</tt>, <tt>set</tt>, <tt>showlink</tt>, <tt>streamdetails</tt>, <tt>top250</tt>, <tt>votes</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>sorttitle</tt>, <tt>resume</tt>, <tt>setid</tt>, <tt>dateadded</tt>, <tt>tag</tt>, <tt>art</tt>. See constants at {@link VideoModel.MovieFields}.
 		 */
@@ -2698,7 +2698,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all movies.
+		 * Retrieve all movies.
 		 * @param limits
 		 * @param sort
 		 * @param properties One or more of: <tt>title</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>director</tt>, <tt>trailer</tt>, <tt>tagline</tt>, <tt>plot</tt>, <tt>plotoutline</tt>, <tt>originaltitle</tt>, <tt>lastplayed</tt>, <tt>playcount</tt>, <tt>writer</tt>, <tt>studio</tt>, <tt>mpaa</tt>, <tt>cast</tt>, <tt>country</tt>, <tt>imdbnumber</tt>, <tt>runtime</tt>, <tt>set</tt>, <tt>showlink</tt>, <tt>streamdetails</tt>, <tt>top250</tt>, <tt>votes</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>sorttitle</tt>, <tt>resume</tt>, <tt>setid</tt>, <tt>dateadded</tt>, <tt>tag</tt>, <tt>art</tt>. See constants at {@link VideoModel.MovieFields}.
@@ -2711,7 +2711,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all movies.
+		 * Retrieve all movies.
 		 * @param filter
 		 * @param properties One or more of: <tt>title</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>director</tt>, <tt>trailer</tt>, <tt>tagline</tt>, <tt>plot</tt>, <tt>plotoutline</tt>, <tt>originaltitle</tt>, <tt>lastplayed</tt>, <tt>playcount</tt>, <tt>writer</tt>, <tt>studio</tt>, <tt>mpaa</tt>, <tt>cast</tt>, <tt>country</tt>, <tt>imdbnumber</tt>, <tt>runtime</tt>, <tt>set</tt>, <tt>showlink</tt>, <tt>streamdetails</tt>, <tt>top250</tt>, <tt>votes</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>sorttitle</tt>, <tt>resume</tt>, <tt>setid</tt>, <tt>dateadded</tt>, <tt>tag</tt>, <tt>art</tt>. See constants at {@link VideoModel.MovieFields}.
 		 */
@@ -2722,7 +2722,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all movies.
+		 * Retrieve all movies.
 		 * @param limits
 		 * @param filter
 		 * @param properties One or more of: <tt>title</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>director</tt>, <tt>trailer</tt>, <tt>tagline</tt>, <tt>plot</tt>, <tt>plotoutline</tt>, <tt>originaltitle</tt>, <tt>lastplayed</tt>, <tt>playcount</tt>, <tt>writer</tt>, <tt>studio</tt>, <tt>mpaa</tt>, <tt>cast</tt>, <tt>country</tt>, <tt>imdbnumber</tt>, <tt>runtime</tt>, <tt>set</tt>, <tt>showlink</tt>, <tt>streamdetails</tt>, <tt>top250</tt>, <tt>votes</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>sorttitle</tt>, <tt>resume</tt>, <tt>setid</tt>, <tt>dateadded</tt>, <tt>tag</tt>, <tt>art</tt>. See constants at {@link VideoModel.MovieFields}.
@@ -2735,7 +2735,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all movies.
+		 * Retrieve all movies.
 		 * @param filter
 		 * @param properties One or more of: <tt>title</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>director</tt>, <tt>trailer</tt>, <tt>tagline</tt>, <tt>plot</tt>, <tt>plotoutline</tt>, <tt>originaltitle</tt>, <tt>lastplayed</tt>, <tt>playcount</tt>, <tt>writer</tt>, <tt>studio</tt>, <tt>mpaa</tt>, <tt>cast</tt>, <tt>country</tt>, <tt>imdbnumber</tt>, <tt>runtime</tt>, <tt>set</tt>, <tt>showlink</tt>, <tt>streamdetails</tt>, <tt>top250</tt>, <tt>votes</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>sorttitle</tt>, <tt>resume</tt>, <tt>setid</tt>, <tt>dateadded</tt>, <tt>tag</tt>, <tt>art</tt>. See constants at {@link VideoModel.MovieFields}.
 		 */
@@ -2746,7 +2746,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all movies.
+		 * Retrieve all movies.
 		 * @param limits
 		 * @param filter
 		 * @param properties One or more of: <tt>title</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>director</tt>, <tt>trailer</tt>, <tt>tagline</tt>, <tt>plot</tt>, <tt>plotoutline</tt>, <tt>originaltitle</tt>, <tt>lastplayed</tt>, <tt>playcount</tt>, <tt>writer</tt>, <tt>studio</tt>, <tt>mpaa</tt>, <tt>cast</tt>, <tt>country</tt>, <tt>imdbnumber</tt>, <tt>runtime</tt>, <tt>set</tt>, <tt>showlink</tt>, <tt>streamdetails</tt>, <tt>top250</tt>, <tt>votes</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>sorttitle</tt>, <tt>resume</tt>, <tt>setid</tt>, <tt>dateadded</tt>, <tt>tag</tt>, <tt>art</tt>. See constants at {@link VideoModel.MovieFields}.
@@ -2759,7 +2759,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all movies.
+		 * Retrieve all movies.
 		 * @param filter
 		 * @param properties One or more of: <tt>title</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>director</tt>, <tt>trailer</tt>, <tt>tagline</tt>, <tt>plot</tt>, <tt>plotoutline</tt>, <tt>originaltitle</tt>, <tt>lastplayed</tt>, <tt>playcount</tt>, <tt>writer</tt>, <tt>studio</tt>, <tt>mpaa</tt>, <tt>cast</tt>, <tt>country</tt>, <tt>imdbnumber</tt>, <tt>runtime</tt>, <tt>set</tt>, <tt>showlink</tt>, <tt>streamdetails</tt>, <tt>top250</tt>, <tt>votes</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>sorttitle</tt>, <tt>resume</tt>, <tt>setid</tt>, <tt>dateadded</tt>, <tt>tag</tt>, <tt>art</tt>. See constants at {@link VideoModel.MovieFields}.
 		 */
@@ -2770,7 +2770,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all movies.
+		 * Retrieve all movies.
 		 * @param limits
 		 * @param filter
 		 * @param properties One or more of: <tt>title</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>director</tt>, <tt>trailer</tt>, <tt>tagline</tt>, <tt>plot</tt>, <tt>plotoutline</tt>, <tt>originaltitle</tt>, <tt>lastplayed</tt>, <tt>playcount</tt>, <tt>writer</tt>, <tt>studio</tt>, <tt>mpaa</tt>, <tt>cast</tt>, <tt>country</tt>, <tt>imdbnumber</tt>, <tt>runtime</tt>, <tt>set</tt>, <tt>showlink</tt>, <tt>streamdetails</tt>, <tt>top250</tt>, <tt>votes</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>sorttitle</tt>, <tt>resume</tt>, <tt>setid</tt>, <tt>dateadded</tt>, <tt>tag</tt>, <tt>art</tt>. See constants at {@link VideoModel.MovieFields}.
@@ -2783,7 +2783,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all movies.
+		 * Retrieve all movies.
 		 * @param filter
 		 * @param properties One or more of: <tt>title</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>director</tt>, <tt>trailer</tt>, <tt>tagline</tt>, <tt>plot</tt>, <tt>plotoutline</tt>, <tt>originaltitle</tt>, <tt>lastplayed</tt>, <tt>playcount</tt>, <tt>writer</tt>, <tt>studio</tt>, <tt>mpaa</tt>, <tt>cast</tt>, <tt>country</tt>, <tt>imdbnumber</tt>, <tt>runtime</tt>, <tt>set</tt>, <tt>showlink</tt>, <tt>streamdetails</tt>, <tt>top250</tt>, <tt>votes</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>sorttitle</tt>, <tt>resume</tt>, <tt>setid</tt>, <tt>dateadded</tt>, <tt>tag</tt>, <tt>art</tt>. See constants at {@link VideoModel.MovieFields}.
 		 */
@@ -2794,7 +2794,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all movies.
+		 * Retrieve all movies.
 		 * @param limits
 		 * @param filter
 		 * @param properties One or more of: <tt>title</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>director</tt>, <tt>trailer</tt>, <tt>tagline</tt>, <tt>plot</tt>, <tt>plotoutline</tt>, <tt>originaltitle</tt>, <tt>lastplayed</tt>, <tt>playcount</tt>, <tt>writer</tt>, <tt>studio</tt>, <tt>mpaa</tt>, <tt>cast</tt>, <tt>country</tt>, <tt>imdbnumber</tt>, <tt>runtime</tt>, <tt>set</tt>, <tt>showlink</tt>, <tt>streamdetails</tt>, <tt>top250</tt>, <tt>votes</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>sorttitle</tt>, <tt>resume</tt>, <tt>setid</tt>, <tt>dateadded</tt>, <tt>tag</tt>, <tt>art</tt>. See constants at {@link VideoModel.MovieFields}.
@@ -2807,7 +2807,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all movies.
+		 * Retrieve all movies.
 		 * @param filter
 		 * @param properties One or more of: <tt>title</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>director</tt>, <tt>trailer</tt>, <tt>tagline</tt>, <tt>plot</tt>, <tt>plotoutline</tt>, <tt>originaltitle</tt>, <tt>lastplayed</tt>, <tt>playcount</tt>, <tt>writer</tt>, <tt>studio</tt>, <tt>mpaa</tt>, <tt>cast</tt>, <tt>country</tt>, <tt>imdbnumber</tt>, <tt>runtime</tt>, <tt>set</tt>, <tt>showlink</tt>, <tt>streamdetails</tt>, <tt>top250</tt>, <tt>votes</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>sorttitle</tt>, <tt>resume</tt>, <tt>setid</tt>, <tt>dateadded</tt>, <tt>tag</tt>, <tt>art</tt>. See constants at {@link VideoModel.MovieFields}.
 		 */
@@ -2818,7 +2818,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all movies.
+		 * Retrieve all movies.
 		 * @param limits
 		 * @param filter
 		 * @param properties One or more of: <tt>title</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>director</tt>, <tt>trailer</tt>, <tt>tagline</tt>, <tt>plot</tt>, <tt>plotoutline</tt>, <tt>originaltitle</tt>, <tt>lastplayed</tt>, <tt>playcount</tt>, <tt>writer</tt>, <tt>studio</tt>, <tt>mpaa</tt>, <tt>cast</tt>, <tt>country</tt>, <tt>imdbnumber</tt>, <tt>runtime</tt>, <tt>set</tt>, <tt>showlink</tt>, <tt>streamdetails</tt>, <tt>top250</tt>, <tt>votes</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>sorttitle</tt>, <tt>resume</tt>, <tt>setid</tt>, <tt>dateadded</tt>, <tt>tag</tt>, <tt>art</tt>. See constants at {@link VideoModel.MovieFields}.
@@ -2831,7 +2831,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all movies.
+		 * Retrieve all movies.
 		 * @param filter
 		 * @param properties One or more of: <tt>title</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>director</tt>, <tt>trailer</tt>, <tt>tagline</tt>, <tt>plot</tt>, <tt>plotoutline</tt>, <tt>originaltitle</tt>, <tt>lastplayed</tt>, <tt>playcount</tt>, <tt>writer</tt>, <tt>studio</tt>, <tt>mpaa</tt>, <tt>cast</tt>, <tt>country</tt>, <tt>imdbnumber</tt>, <tt>runtime</tt>, <tt>set</tt>, <tt>showlink</tt>, <tt>streamdetails</tt>, <tt>top250</tt>, <tt>votes</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>sorttitle</tt>, <tt>resume</tt>, <tt>setid</tt>, <tt>dateadded</tt>, <tt>tag</tt>, <tt>art</tt>. See constants at {@link VideoModel.MovieFields}.
 		 */
@@ -2842,7 +2842,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all movies.
+		 * Retrieve all movies.
 		 * @param limits
 		 * @param filter
 		 * @param properties One or more of: <tt>title</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>director</tt>, <tt>trailer</tt>, <tt>tagline</tt>, <tt>plot</tt>, <tt>plotoutline</tt>, <tt>originaltitle</tt>, <tt>lastplayed</tt>, <tt>playcount</tt>, <tt>writer</tt>, <tt>studio</tt>, <tt>mpaa</tt>, <tt>cast</tt>, <tt>country</tt>, <tt>imdbnumber</tt>, <tt>runtime</tt>, <tt>set</tt>, <tt>showlink</tt>, <tt>streamdetails</tt>, <tt>top250</tt>, <tt>votes</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>sorttitle</tt>, <tt>resume</tt>, <tt>setid</tt>, <tt>dateadded</tt>, <tt>tag</tt>, <tt>art</tt>. See constants at {@link VideoModel.MovieFields}.
@@ -2855,7 +2855,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all movies.
+		 * Retrieve all movies.
 		 * @param filter
 		 * @param properties One or more of: <tt>title</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>director</tt>, <tt>trailer</tt>, <tt>tagline</tt>, <tt>plot</tt>, <tt>plotoutline</tt>, <tt>originaltitle</tt>, <tt>lastplayed</tt>, <tt>playcount</tt>, <tt>writer</tt>, <tt>studio</tt>, <tt>mpaa</tt>, <tt>cast</tt>, <tt>country</tt>, <tt>imdbnumber</tt>, <tt>runtime</tt>, <tt>set</tt>, <tt>showlink</tt>, <tt>streamdetails</tt>, <tt>top250</tt>, <tt>votes</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>sorttitle</tt>, <tt>resume</tt>, <tt>setid</tt>, <tt>dateadded</tt>, <tt>tag</tt>, <tt>art</tt>. See constants at {@link VideoModel.MovieFields}.
 		 */
@@ -2866,7 +2866,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all movies.
+		 * Retrieve all movies.
 		 * @param limits
 		 * @param filter
 		 * @param properties One or more of: <tt>title</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>director</tt>, <tt>trailer</tt>, <tt>tagline</tt>, <tt>plot</tt>, <tt>plotoutline</tt>, <tt>originaltitle</tt>, <tt>lastplayed</tt>, <tt>playcount</tt>, <tt>writer</tt>, <tt>studio</tt>, <tt>mpaa</tt>, <tt>cast</tt>, <tt>country</tt>, <tt>imdbnumber</tt>, <tt>runtime</tt>, <tt>set</tt>, <tt>showlink</tt>, <tt>streamdetails</tt>, <tt>top250</tt>, <tt>votes</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>sorttitle</tt>, <tt>resume</tt>, <tt>setid</tt>, <tt>dateadded</tt>, <tt>tag</tt>, <tt>art</tt>. See constants at {@link VideoModel.MovieFields}.
@@ -2879,7 +2879,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all movies.
+		 * Retrieve all movies.
 		 * @param filter
 		 * @param properties One or more of: <tt>title</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>director</tt>, <tt>trailer</tt>, <tt>tagline</tt>, <tt>plot</tt>, <tt>plotoutline</tt>, <tt>originaltitle</tt>, <tt>lastplayed</tt>, <tt>playcount</tt>, <tt>writer</tt>, <tt>studio</tt>, <tt>mpaa</tt>, <tt>cast</tt>, <tt>country</tt>, <tt>imdbnumber</tt>, <tt>runtime</tt>, <tt>set</tt>, <tt>showlink</tt>, <tt>streamdetails</tt>, <tt>top250</tt>, <tt>votes</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>sorttitle</tt>, <tt>resume</tt>, <tt>setid</tt>, <tt>dateadded</tt>, <tt>tag</tt>, <tt>art</tt>. See constants at {@link VideoModel.MovieFields}.
 		 */
@@ -2890,7 +2890,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all movies.
+		 * Retrieve all movies.
 		 * @param limits
 		 * @param filter
 		 * @param properties One or more of: <tt>title</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>director</tt>, <tt>trailer</tt>, <tt>tagline</tt>, <tt>plot</tt>, <tt>plotoutline</tt>, <tt>originaltitle</tt>, <tt>lastplayed</tt>, <tt>playcount</tt>, <tt>writer</tt>, <tt>studio</tt>, <tt>mpaa</tt>, <tt>cast</tt>, <tt>country</tt>, <tt>imdbnumber</tt>, <tt>runtime</tt>, <tt>set</tt>, <tt>showlink</tt>, <tt>streamdetails</tt>, <tt>top250</tt>, <tt>votes</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>sorttitle</tt>, <tt>resume</tt>, <tt>setid</tt>, <tt>dateadded</tt>, <tt>tag</tt>, <tt>art</tt>. See constants at {@link VideoModel.MovieFields}.
@@ -2903,7 +2903,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all movies.
+		 * Retrieve all movies.
 		 * @param filter
 		 * @param properties One or more of: <tt>title</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>director</tt>, <tt>trailer</tt>, <tt>tagline</tt>, <tt>plot</tt>, <tt>plotoutline</tt>, <tt>originaltitle</tt>, <tt>lastplayed</tt>, <tt>playcount</tt>, <tt>writer</tt>, <tt>studio</tt>, <tt>mpaa</tt>, <tt>cast</tt>, <tt>country</tt>, <tt>imdbnumber</tt>, <tt>runtime</tt>, <tt>set</tt>, <tt>showlink</tt>, <tt>streamdetails</tt>, <tt>top250</tt>, <tt>votes</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>sorttitle</tt>, <tt>resume</tt>, <tt>setid</tt>, <tt>dateadded</tt>, <tt>tag</tt>, <tt>art</tt>. See constants at {@link VideoModel.MovieFields}.
 		 */
@@ -2914,7 +2914,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all movies.
+		 * Retrieve all movies.
 		 * @param limits
 		 * @param filter
 		 * @param properties One or more of: <tt>title</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>director</tt>, <tt>trailer</tt>, <tt>tagline</tt>, <tt>plot</tt>, <tt>plotoutline</tt>, <tt>originaltitle</tt>, <tt>lastplayed</tt>, <tt>playcount</tt>, <tt>writer</tt>, <tt>studio</tt>, <tt>mpaa</tt>, <tt>cast</tt>, <tt>country</tt>, <tt>imdbnumber</tt>, <tt>runtime</tt>, <tt>set</tt>, <tt>showlink</tt>, <tt>streamdetails</tt>, <tt>top250</tt>, <tt>votes</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>sorttitle</tt>, <tt>resume</tt>, <tt>setid</tt>, <tt>dateadded</tt>, <tt>tag</tt>, <tt>art</tt>. See constants at {@link VideoModel.MovieFields}.
@@ -2927,7 +2927,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all movies.
+		 * Retrieve all movies.
 		 * @param filter
 		 * @param properties One or more of: <tt>title</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>director</tt>, <tt>trailer</tt>, <tt>tagline</tt>, <tt>plot</tt>, <tt>plotoutline</tt>, <tt>originaltitle</tt>, <tt>lastplayed</tt>, <tt>playcount</tt>, <tt>writer</tt>, <tt>studio</tt>, <tt>mpaa</tt>, <tt>cast</tt>, <tt>country</tt>, <tt>imdbnumber</tt>, <tt>runtime</tt>, <tt>set</tt>, <tt>showlink</tt>, <tt>streamdetails</tt>, <tt>top250</tt>, <tt>votes</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>sorttitle</tt>, <tt>resume</tt>, <tt>setid</tt>, <tt>dateadded</tt>, <tt>tag</tt>, <tt>art</tt>. See constants at {@link VideoModel.MovieFields}.
 		 */
@@ -2938,7 +2938,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all movies.
+		 * Retrieve all movies.
 		 * @param limits
 		 * @param filter
 		 * @param properties One or more of: <tt>title</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>director</tt>, <tt>trailer</tt>, <tt>tagline</tt>, <tt>plot</tt>, <tt>plotoutline</tt>, <tt>originaltitle</tt>, <tt>lastplayed</tt>, <tt>playcount</tt>, <tt>writer</tt>, <tt>studio</tt>, <tt>mpaa</tt>, <tt>cast</tt>, <tt>country</tt>, <tt>imdbnumber</tt>, <tt>runtime</tt>, <tt>set</tt>, <tt>showlink</tt>, <tt>streamdetails</tt>, <tt>top250</tt>, <tt>votes</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>sorttitle</tt>, <tt>resume</tt>, <tt>setid</tt>, <tt>dateadded</tt>, <tt>tag</tt>, <tt>art</tt>. See constants at {@link VideoModel.MovieFields}.
@@ -2951,7 +2951,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all movies.
+		 * Retrieve all movies.
 		 * @param filter
 		 * @param properties One or more of: <tt>title</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>director</tt>, <tt>trailer</tt>, <tt>tagline</tt>, <tt>plot</tt>, <tt>plotoutline</tt>, <tt>originaltitle</tt>, <tt>lastplayed</tt>, <tt>playcount</tt>, <tt>writer</tt>, <tt>studio</tt>, <tt>mpaa</tt>, <tt>cast</tt>, <tt>country</tt>, <tt>imdbnumber</tt>, <tt>runtime</tt>, <tt>set</tt>, <tt>showlink</tt>, <tt>streamdetails</tt>, <tt>top250</tt>, <tt>votes</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>sorttitle</tt>, <tt>resume</tt>, <tt>setid</tt>, <tt>dateadded</tt>, <tt>tag</tt>, <tt>art</tt>. See constants at {@link VideoModel.MovieFields}.
 		 */
@@ -2962,7 +2962,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all movies.
+		 * Retrieve all movies.
 		 * @param limits
 		 * @param filter
 		 * @param properties One or more of: <tt>title</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>director</tt>, <tt>trailer</tt>, <tt>tagline</tt>, <tt>plot</tt>, <tt>plotoutline</tt>, <tt>originaltitle</tt>, <tt>lastplayed</tt>, <tt>playcount</tt>, <tt>writer</tt>, <tt>studio</tt>, <tt>mpaa</tt>, <tt>cast</tt>, <tt>country</tt>, <tt>imdbnumber</tt>, <tt>runtime</tt>, <tt>set</tt>, <tt>showlink</tt>, <tt>streamdetails</tt>, <tt>top250</tt>, <tt>votes</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>sorttitle</tt>, <tt>resume</tt>, <tt>setid</tt>, <tt>dateadded</tt>, <tt>tag</tt>, <tt>art</tt>. See constants at {@link VideoModel.MovieFields}.
@@ -3631,7 +3631,7 @@ public final class VideoLibrary {
 	}
 
 	/**
-	 * Retrieve details about a specific music video.
+	 * Retrieve details about a specific music video.
 	 * <p/>
 	 * This class represents the API method <tt>VideoLibrary.GetMusicVideoDetails</tt>
 	 * <p/>
@@ -3669,7 +3669,7 @@ public final class VideoLibrary {
 		public final static String RESULT = "musicvideodetails";
 
 		/**
-		 * Retrieve details about a specific music video.
+		 * Retrieve details about a specific music video.
 		 * @param musicvideoid
 		 * @param properties One or more of: <tt>title</tt>, <tt>playcount</tt>, <tt>runtime</tt>, <tt>director</tt>, <tt>studio</tt>, <tt>year</tt>, <tt>plot</tt>, <tt>album</tt>, <tt>artist</tt>, <tt>genre</tt>, <tt>track</tt>, <tt>streamdetails</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>resume</tt>, <tt>dateadded</tt>, <tt>tag</tt>, <tt>art</tt>. See constants at {@link VideoModel.MusicVideoFields}.
 		 */
@@ -3696,7 +3696,7 @@ public final class VideoLibrary {
 	}
 
 	/**
-	 * Retrieve all music videos.
+	 * Retrieve all music videos.
 	 * <p/>
 	 * This class represents the API method <tt>VideoLibrary.GetMusicVideos</tt>
 	 * <p/>
@@ -3734,7 +3734,7 @@ public final class VideoLibrary {
 		public final static String RESULT = "musicvideos";
 
 		/**
-		 * Retrieve all music videos.
+		 * Retrieve all music videos.
 		 * @param limits
 		 * @param sort
 		 * @param filter
@@ -3749,7 +3749,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all music videos.
+		 * Retrieve all music videos.
 		 * @param limits
 		 * @param sort
 		 * @param filter
@@ -3764,7 +3764,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all music videos.
+		 * Retrieve all music videos.
 		 * @param limits
 		 * @param sort
 		 * @param filter
@@ -3779,7 +3779,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all music videos.
+		 * Retrieve all music videos.
 		 * @param limits
 		 * @param sort
 		 * @param filter
@@ -3794,7 +3794,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all music videos.
+		 * Retrieve all music videos.
 		 * @param limits
 		 * @param sort
 		 * @param filter
@@ -3809,7 +3809,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all music videos.
+		 * Retrieve all music videos.
 		 * @param limits
 		 * @param sort
 		 * @param filter
@@ -3824,7 +3824,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all music videos.
+		 * Retrieve all music videos.
 		 * @param limits
 		 * @param sort
 		 * @param filter
@@ -3839,7 +3839,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all music videos.
+		 * Retrieve all music videos.
 		 * @param limits
 		 * @param sort
 		 * @param filter
@@ -3854,7 +3854,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all music videos.
+		 * Retrieve all music videos.
 		 * @param properties One or more of: <tt>title</tt>, <tt>playcount</tt>, <tt>runtime</tt>, <tt>director</tt>, <tt>studio</tt>, <tt>year</tt>, <tt>plot</tt>, <tt>album</tt>, <tt>artist</tt>, <tt>genre</tt>, <tt>track</tt>, <tt>streamdetails</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>resume</tt>, <tt>dateadded</tt>, <tt>tag</tt>, <tt>art</tt>. See constants at {@link VideoModel.MusicVideoFields}.
 		 */
 		public GetMusicVideos(String... properties) {
@@ -3863,7 +3863,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all music videos.
+		 * Retrieve all music videos.
 		 * @param limits
 		 * @param properties One or more of: <tt>title</tt>, <tt>playcount</tt>, <tt>runtime</tt>, <tt>director</tt>, <tt>studio</tt>, <tt>year</tt>, <tt>plot</tt>, <tt>album</tt>, <tt>artist</tt>, <tt>genre</tt>, <tt>track</tt>, <tt>streamdetails</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>resume</tt>, <tt>dateadded</tt>, <tt>tag</tt>, <tt>art</tt>. See constants at {@link VideoModel.MusicVideoFields}.
 		 */
@@ -3874,7 +3874,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all music videos.
+		 * Retrieve all music videos.
 		 * @param sort
 		 * @param properties One or more of: <tt>title</tt>, <tt>playcount</tt>, <tt>runtime</tt>, <tt>director</tt>, <tt>studio</tt>, <tt>year</tt>, <tt>plot</tt>, <tt>album</tt>, <tt>artist</tt>, <tt>genre</tt>, <tt>track</tt>, <tt>streamdetails</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>resume</tt>, <tt>dateadded</tt>, <tt>tag</tt>, <tt>art</tt>. See constants at {@link VideoModel.MusicVideoFields}.
 		 */
@@ -3885,7 +3885,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all music videos.
+		 * Retrieve all music videos.
 		 * @param limits
 		 * @param sort
 		 * @param properties One or more of: <tt>title</tt>, <tt>playcount</tt>, <tt>runtime</tt>, <tt>director</tt>, <tt>studio</tt>, <tt>year</tt>, <tt>plot</tt>, <tt>album</tt>, <tt>artist</tt>, <tt>genre</tt>, <tt>track</tt>, <tt>streamdetails</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>resume</tt>, <tt>dateadded</tt>, <tt>tag</tt>, <tt>art</tt>. See constants at {@link VideoModel.MusicVideoFields}.
@@ -3898,7 +3898,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all music videos.
+		 * Retrieve all music videos.
 		 * @param filter
 		 * @param properties One or more of: <tt>title</tt>, <tt>playcount</tt>, <tt>runtime</tt>, <tt>director</tt>, <tt>studio</tt>, <tt>year</tt>, <tt>plot</tt>, <tt>album</tt>, <tt>artist</tt>, <tt>genre</tt>, <tt>track</tt>, <tt>streamdetails</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>resume</tt>, <tt>dateadded</tt>, <tt>tag</tt>, <tt>art</tt>. See constants at {@link VideoModel.MusicVideoFields}.
 		 */
@@ -3909,7 +3909,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all music videos.
+		 * Retrieve all music videos.
 		 * @param limits
 		 * @param filter
 		 * @param properties One or more of: <tt>title</tt>, <tt>playcount</tt>, <tt>runtime</tt>, <tt>director</tt>, <tt>studio</tt>, <tt>year</tt>, <tt>plot</tt>, <tt>album</tt>, <tt>artist</tt>, <tt>genre</tt>, <tt>track</tt>, <tt>streamdetails</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>resume</tt>, <tt>dateadded</tt>, <tt>tag</tt>, <tt>art</tt>. See constants at {@link VideoModel.MusicVideoFields}.
@@ -3922,7 +3922,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all music videos.
+		 * Retrieve all music videos.
 		 * @param filter
 		 * @param properties One or more of: <tt>title</tt>, <tt>playcount</tt>, <tt>runtime</tt>, <tt>director</tt>, <tt>studio</tt>, <tt>year</tt>, <tt>plot</tt>, <tt>album</tt>, <tt>artist</tt>, <tt>genre</tt>, <tt>track</tt>, <tt>streamdetails</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>resume</tt>, <tt>dateadded</tt>, <tt>tag</tt>, <tt>art</tt>. See constants at {@link VideoModel.MusicVideoFields}.
 		 */
@@ -3933,7 +3933,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all music videos.
+		 * Retrieve all music videos.
 		 * @param limits
 		 * @param filter
 		 * @param properties One or more of: <tt>title</tt>, <tt>playcount</tt>, <tt>runtime</tt>, <tt>director</tt>, <tt>studio</tt>, <tt>year</tt>, <tt>plot</tt>, <tt>album</tt>, <tt>artist</tt>, <tt>genre</tt>, <tt>track</tt>, <tt>streamdetails</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>resume</tt>, <tt>dateadded</tt>, <tt>tag</tt>, <tt>art</tt>. See constants at {@link VideoModel.MusicVideoFields}.
@@ -3946,7 +3946,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all music videos.
+		 * Retrieve all music videos.
 		 * @param filter
 		 * @param properties One or more of: <tt>title</tt>, <tt>playcount</tt>, <tt>runtime</tt>, <tt>director</tt>, <tt>studio</tt>, <tt>year</tt>, <tt>plot</tt>, <tt>album</tt>, <tt>artist</tt>, <tt>genre</tt>, <tt>track</tt>, <tt>streamdetails</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>resume</tt>, <tt>dateadded</tt>, <tt>tag</tt>, <tt>art</tt>. See constants at {@link VideoModel.MusicVideoFields}.
 		 */
@@ -3957,7 +3957,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all music videos.
+		 * Retrieve all music videos.
 		 * @param limits
 		 * @param filter
 		 * @param properties One or more of: <tt>title</tt>, <tt>playcount</tt>, <tt>runtime</tt>, <tt>director</tt>, <tt>studio</tt>, <tt>year</tt>, <tt>plot</tt>, <tt>album</tt>, <tt>artist</tt>, <tt>genre</tt>, <tt>track</tt>, <tt>streamdetails</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>resume</tt>, <tt>dateadded</tt>, <tt>tag</tt>, <tt>art</tt>. See constants at {@link VideoModel.MusicVideoFields}.
@@ -3970,7 +3970,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all music videos.
+		 * Retrieve all music videos.
 		 * @param filter
 		 * @param properties One or more of: <tt>title</tt>, <tt>playcount</tt>, <tt>runtime</tt>, <tt>director</tt>, <tt>studio</tt>, <tt>year</tt>, <tt>plot</tt>, <tt>album</tt>, <tt>artist</tt>, <tt>genre</tt>, <tt>track</tt>, <tt>streamdetails</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>resume</tt>, <tt>dateadded</tt>, <tt>tag</tt>, <tt>art</tt>. See constants at {@link VideoModel.MusicVideoFields}.
 		 */
@@ -3981,7 +3981,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all music videos.
+		 * Retrieve all music videos.
 		 * @param limits
 		 * @param filter
 		 * @param properties One or more of: <tt>title</tt>, <tt>playcount</tt>, <tt>runtime</tt>, <tt>director</tt>, <tt>studio</tt>, <tt>year</tt>, <tt>plot</tt>, <tt>album</tt>, <tt>artist</tt>, <tt>genre</tt>, <tt>track</tt>, <tt>streamdetails</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>resume</tt>, <tt>dateadded</tt>, <tt>tag</tt>, <tt>art</tt>. See constants at {@link VideoModel.MusicVideoFields}.
@@ -3994,7 +3994,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all music videos.
+		 * Retrieve all music videos.
 		 * @param filter
 		 * @param properties One or more of: <tt>title</tt>, <tt>playcount</tt>, <tt>runtime</tt>, <tt>director</tt>, <tt>studio</tt>, <tt>year</tt>, <tt>plot</tt>, <tt>album</tt>, <tt>artist</tt>, <tt>genre</tt>, <tt>track</tt>, <tt>streamdetails</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>resume</tt>, <tt>dateadded</tt>, <tt>tag</tt>, <tt>art</tt>. See constants at {@link VideoModel.MusicVideoFields}.
 		 */
@@ -4005,7 +4005,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all music videos.
+		 * Retrieve all music videos.
 		 * @param limits
 		 * @param filter
 		 * @param properties One or more of: <tt>title</tt>, <tt>playcount</tt>, <tt>runtime</tt>, <tt>director</tt>, <tt>studio</tt>, <tt>year</tt>, <tt>plot</tt>, <tt>album</tt>, <tt>artist</tt>, <tt>genre</tt>, <tt>track</tt>, <tt>streamdetails</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>resume</tt>, <tt>dateadded</tt>, <tt>tag</tt>, <tt>art</tt>. See constants at {@link VideoModel.MusicVideoFields}.
@@ -4018,7 +4018,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all music videos.
+		 * Retrieve all music videos.
 		 * @param filter
 		 * @param properties One or more of: <tt>title</tt>, <tt>playcount</tt>, <tt>runtime</tt>, <tt>director</tt>, <tt>studio</tt>, <tt>year</tt>, <tt>plot</tt>, <tt>album</tt>, <tt>artist</tt>, <tt>genre</tt>, <tt>track</tt>, <tt>streamdetails</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>resume</tt>, <tt>dateadded</tt>, <tt>tag</tt>, <tt>art</tt>. See constants at {@link VideoModel.MusicVideoFields}.
 		 */
@@ -4029,7 +4029,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all music videos.
+		 * Retrieve all music videos.
 		 * @param limits
 		 * @param filter
 		 * @param properties One or more of: <tt>title</tt>, <tt>playcount</tt>, <tt>runtime</tt>, <tt>director</tt>, <tt>studio</tt>, <tt>year</tt>, <tt>plot</tt>, <tt>album</tt>, <tt>artist</tt>, <tt>genre</tt>, <tt>track</tt>, <tt>streamdetails</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>resume</tt>, <tt>dateadded</tt>, <tt>tag</tt>, <tt>art</tt>. See constants at {@link VideoModel.MusicVideoFields}.
@@ -4042,7 +4042,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all music videos.
+		 * Retrieve all music videos.
 		 * @param filter
 		 * @param properties One or more of: <tt>title</tt>, <tt>playcount</tt>, <tt>runtime</tt>, <tt>director</tt>, <tt>studio</tt>, <tt>year</tt>, <tt>plot</tt>, <tt>album</tt>, <tt>artist</tt>, <tt>genre</tt>, <tt>track</tt>, <tt>streamdetails</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>resume</tt>, <tt>dateadded</tt>, <tt>tag</tt>, <tt>art</tt>. See constants at {@link VideoModel.MusicVideoFields}.
 		 */
@@ -4053,7 +4053,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all music videos.
+		 * Retrieve all music videos.
 		 * @param limits
 		 * @param filter
 		 * @param properties One or more of: <tt>title</tt>, <tt>playcount</tt>, <tt>runtime</tt>, <tt>director</tt>, <tt>studio</tt>, <tt>year</tt>, <tt>plot</tt>, <tt>album</tt>, <tt>artist</tt>, <tt>genre</tt>, <tt>track</tt>, <tt>streamdetails</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>resume</tt>, <tt>dateadded</tt>, <tt>tag</tt>, <tt>art</tt>. See constants at {@link VideoModel.MusicVideoFields}.
@@ -4066,7 +4066,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all music videos.
+		 * Retrieve all music videos.
 		 * @param filter
 		 * @param properties One or more of: <tt>title</tt>, <tt>playcount</tt>, <tt>runtime</tt>, <tt>director</tt>, <tt>studio</tt>, <tt>year</tt>, <tt>plot</tt>, <tt>album</tt>, <tt>artist</tt>, <tt>genre</tt>, <tt>track</tt>, <tt>streamdetails</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>resume</tt>, <tt>dateadded</tt>, <tt>tag</tt>, <tt>art</tt>. See constants at {@link VideoModel.MusicVideoFields}.
 		 */
@@ -4077,7 +4077,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all music videos.
+		 * Retrieve all music videos.
 		 * @param limits
 		 * @param filter
 		 * @param properties One or more of: <tt>title</tt>, <tt>playcount</tt>, <tt>runtime</tt>, <tt>director</tt>, <tt>studio</tt>, <tt>year</tt>, <tt>plot</tt>, <tt>album</tt>, <tt>artist</tt>, <tt>genre</tt>, <tt>track</tt>, <tt>streamdetails</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>resume</tt>, <tt>dateadded</tt>, <tt>tag</tt>, <tt>art</tt>. See constants at {@link VideoModel.MusicVideoFields}.
@@ -4557,7 +4557,7 @@ public final class VideoLibrary {
 	}
 
 	/**
-	 * Retrieve all recently added tv episodes.
+	 * Retrieve all recently added tv episodes.
 	 * <p/>
 	 * This class represents the API method <tt>VideoLibrary.GetRecentlyAddedEpisodes</tt>
 	 * <p/>
@@ -4595,7 +4595,7 @@ public final class VideoLibrary {
 		public final static String RESULT = "episodes";
 
 		/**
-		 * Retrieve all recently added tv episodes.
+		 * Retrieve all recently added tv episodes.
 		 * @param limits
 		 * @param sort
 		 * @param properties One or more of: <tt>title</tt>, <tt>plot</tt>, <tt>votes</tt>, <tt>rating</tt>, <tt>writer</tt>, <tt>firstaired</tt>, <tt>playcount</tt>, <tt>runtime</tt>, <tt>director</tt>, <tt>productioncode</tt>, <tt>season</tt>, <tt>episode</tt>, <tt>originaltitle</tt>, <tt>showtitle</tt>, <tt>cast</tt>, <tt>streamdetails</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>resume</tt>, <tt>tvshowid</tt>, <tt>dateadded</tt>, <tt>uniqueid</tt>, <tt>art</tt>. See constants at {@link VideoModel.EpisodeFields}.
@@ -4608,7 +4608,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all recently added tv episodes.
+		 * Retrieve all recently added tv episodes.
 		 * @param properties One or more of: <tt>title</tt>, <tt>plot</tt>, <tt>votes</tt>, <tt>rating</tt>, <tt>writer</tt>, <tt>firstaired</tt>, <tt>playcount</tt>, <tt>runtime</tt>, <tt>director</tt>, <tt>productioncode</tt>, <tt>season</tt>, <tt>episode</tt>, <tt>originaltitle</tt>, <tt>showtitle</tt>, <tt>cast</tt>, <tt>streamdetails</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>resume</tt>, <tt>tvshowid</tt>, <tt>dateadded</tt>, <tt>uniqueid</tt>, <tt>art</tt>. See constants at {@link VideoModel.EpisodeFields}.
 		 */
 		public GetRecentlyAddedEpisodes(String... properties) {
@@ -4617,7 +4617,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all recently added tv episodes.
+		 * Retrieve all recently added tv episodes.
 		 * @param limits
 		 * @param properties One or more of: <tt>title</tt>, <tt>plot</tt>, <tt>votes</tt>, <tt>rating</tt>, <tt>writer</tt>, <tt>firstaired</tt>, <tt>playcount</tt>, <tt>runtime</tt>, <tt>director</tt>, <tt>productioncode</tt>, <tt>season</tt>, <tt>episode</tt>, <tt>originaltitle</tt>, <tt>showtitle</tt>, <tt>cast</tt>, <tt>streamdetails</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>resume</tt>, <tt>tvshowid</tt>, <tt>dateadded</tt>, <tt>uniqueid</tt>, <tt>art</tt>. See constants at {@link VideoModel.EpisodeFields}.
 		 */
@@ -4654,7 +4654,7 @@ public final class VideoLibrary {
 	}
 
 	/**
-	 * Retrieve all recently added movies.
+	 * Retrieve all recently added movies.
 	 * <p/>
 	 * This class represents the API method <tt>VideoLibrary.GetRecentlyAddedMovies</tt>
 	 * <p/>
@@ -4692,7 +4692,7 @@ public final class VideoLibrary {
 		public final static String RESULT = "movies";
 
 		/**
-		 * Retrieve all recently added movies.
+		 * Retrieve all recently added movies.
 		 * @param limits
 		 * @param sort
 		 * @param properties One or more of: <tt>title</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>director</tt>, <tt>trailer</tt>, <tt>tagline</tt>, <tt>plot</tt>, <tt>plotoutline</tt>, <tt>originaltitle</tt>, <tt>lastplayed</tt>, <tt>playcount</tt>, <tt>writer</tt>, <tt>studio</tt>, <tt>mpaa</tt>, <tt>cast</tt>, <tt>country</tt>, <tt>imdbnumber</tt>, <tt>runtime</tt>, <tt>set</tt>, <tt>showlink</tt>, <tt>streamdetails</tt>, <tt>top250</tt>, <tt>votes</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>sorttitle</tt>, <tt>resume</tt>, <tt>setid</tt>, <tt>dateadded</tt>, <tt>tag</tt>, <tt>art</tt>. See constants at {@link VideoModel.MovieFields}.
@@ -4705,7 +4705,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all recently added movies.
+		 * Retrieve all recently added movies.
 		 * @param properties One or more of: <tt>title</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>director</tt>, <tt>trailer</tt>, <tt>tagline</tt>, <tt>plot</tt>, <tt>plotoutline</tt>, <tt>originaltitle</tt>, <tt>lastplayed</tt>, <tt>playcount</tt>, <tt>writer</tt>, <tt>studio</tt>, <tt>mpaa</tt>, <tt>cast</tt>, <tt>country</tt>, <tt>imdbnumber</tt>, <tt>runtime</tt>, <tt>set</tt>, <tt>showlink</tt>, <tt>streamdetails</tt>, <tt>top250</tt>, <tt>votes</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>sorttitle</tt>, <tt>resume</tt>, <tt>setid</tt>, <tt>dateadded</tt>, <tt>tag</tt>, <tt>art</tt>. See constants at {@link VideoModel.MovieFields}.
 		 */
 		public GetRecentlyAddedMovies(String... properties) {
@@ -4714,7 +4714,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all recently added movies.
+		 * Retrieve all recently added movies.
 		 * @param limits
 		 * @param properties One or more of: <tt>title</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>director</tt>, <tt>trailer</tt>, <tt>tagline</tt>, <tt>plot</tt>, <tt>plotoutline</tt>, <tt>originaltitle</tt>, <tt>lastplayed</tt>, <tt>playcount</tt>, <tt>writer</tt>, <tt>studio</tt>, <tt>mpaa</tt>, <tt>cast</tt>, <tt>country</tt>, <tt>imdbnumber</tt>, <tt>runtime</tt>, <tt>set</tt>, <tt>showlink</tt>, <tt>streamdetails</tt>, <tt>top250</tt>, <tt>votes</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>sorttitle</tt>, <tt>resume</tt>, <tt>setid</tt>, <tt>dateadded</tt>, <tt>tag</tt>, <tt>art</tt>. See constants at {@link VideoModel.MovieFields}.
 		 */
@@ -4751,7 +4751,7 @@ public final class VideoLibrary {
 	}
 
 	/**
-	 * Retrieve all recently added music videos.
+	 * Retrieve all recently added music videos.
 	 * <p/>
 	 * This class represents the API method <tt>VideoLibrary.GetRecentlyAddedMusicVideos</tt>
 	 * <p/>
@@ -4789,7 +4789,7 @@ public final class VideoLibrary {
 		public final static String RESULT = "musicvideos";
 
 		/**
-		 * Retrieve all recently added music videos.
+		 * Retrieve all recently added music videos.
 		 * @param limits
 		 * @param sort
 		 * @param properties One or more of: <tt>title</tt>, <tt>playcount</tt>, <tt>runtime</tt>, <tt>director</tt>, <tt>studio</tt>, <tt>year</tt>, <tt>plot</tt>, <tt>album</tt>, <tt>artist</tt>, <tt>genre</tt>, <tt>track</tt>, <tt>streamdetails</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>resume</tt>, <tt>dateadded</tt>, <tt>tag</tt>, <tt>art</tt>. See constants at {@link VideoModel.MusicVideoFields}.
@@ -4802,7 +4802,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all recently added music videos.
+		 * Retrieve all recently added music videos.
 		 * @param properties One or more of: <tt>title</tt>, <tt>playcount</tt>, <tt>runtime</tt>, <tt>director</tt>, <tt>studio</tt>, <tt>year</tt>, <tt>plot</tt>, <tt>album</tt>, <tt>artist</tt>, <tt>genre</tt>, <tt>track</tt>, <tt>streamdetails</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>resume</tt>, <tt>dateadded</tt>, <tt>tag</tt>, <tt>art</tt>. See constants at {@link VideoModel.MusicVideoFields}.
 		 */
 		public GetRecentlyAddedMusicVideos(String... properties) {
@@ -4811,7 +4811,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all recently added music videos.
+		 * Retrieve all recently added music videos.
 		 * @param limits
 		 * @param properties One or more of: <tt>title</tt>, <tt>playcount</tt>, <tt>runtime</tt>, <tt>director</tt>, <tt>studio</tt>, <tt>year</tt>, <tt>plot</tt>, <tt>album</tt>, <tt>artist</tt>, <tt>genre</tt>, <tt>track</tt>, <tt>streamdetails</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>resume</tt>, <tt>dateadded</tt>, <tt>tag</tt>, <tt>art</tt>. See constants at {@link VideoModel.MusicVideoFields}.
 		 */
@@ -4848,7 +4848,7 @@ public final class VideoLibrary {
 	}
 
 	/**
-	 * Retrieve all tv seasons.
+	 * Retrieve all tv seasons.
 	 * <p/>
 	 * This class represents the API method <tt>VideoLibrary.GetSeasons</tt>
 	 * <p/>
@@ -4886,7 +4886,7 @@ public final class VideoLibrary {
 		public final static String RESULT = "seasons";
 
 		/**
-		 * Retrieve all tv seasons.
+		 * Retrieve all tv seasons.
 		 * @param tvshowid
 		 * @param limits
 		 * @param sort
@@ -4901,7 +4901,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv seasons.
+		 * Retrieve all tv seasons.
 		 * @param tvshowid
 		 * @param properties One or more of: <tt>season</tt>, <tt>showtitle</tt>, <tt>playcount</tt>, <tt>episode</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>tvshowid</tt>, <tt>watchedepisodes</tt>, <tt>art</tt>. See constants at {@link VideoModel.SeasonFields}.
 		 */
@@ -4912,7 +4912,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv seasons.
+		 * Retrieve all tv seasons.
 		 * @param tvshowid
 		 * @param limits
 		 * @param properties One or more of: <tt>season</tt>, <tt>showtitle</tt>, <tt>playcount</tt>, <tt>episode</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>tvshowid</tt>, <tt>watchedepisodes</tt>, <tt>art</tt>. See constants at {@link VideoModel.SeasonFields}.
@@ -4925,7 +4925,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv seasons.
+		 * Retrieve all tv seasons.
 		 * @param tvshowid
 		 * @param sort
 		 * @param properties One or more of: <tt>season</tt>, <tt>showtitle</tt>, <tt>playcount</tt>, <tt>episode</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>tvshowid</tt>, <tt>watchedepisodes</tt>, <tt>art</tt>. See constants at {@link VideoModel.SeasonFields}.
@@ -4964,7 +4964,7 @@ public final class VideoLibrary {
 	}
 
 	/**
-	 * Retrieve details about a specific tv show.
+	 * Retrieve details about a specific tv show.
 	 * <p/>
 	 * This class represents the API method <tt>VideoLibrary.GetTVShowDetails</tt>
 	 * <p/>
@@ -5002,7 +5002,7 @@ public final class VideoLibrary {
 		public final static String RESULT = "tvshowdetails";
 
 		/**
-		 * Retrieve details about a specific tv show.
+		 * Retrieve details about a specific tv show.
 		 * @param tvshowid
 		 * @param properties One or more of: <tt>title</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>plot</tt>, <tt>studio</tt>, <tt>mpaa</tt>, <tt>cast</tt>, <tt>playcount</tt>, <tt>episode</tt>, <tt>imdbnumber</tt>, <tt>premiered</tt>, <tt>votes</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>originaltitle</tt>, <tt>sorttitle</tt>, <tt>episodeguide</tt>, <tt>season</tt>, <tt>watchedepisodes</tt>, <tt>dateadded</tt>, <tt>tag</tt>, <tt>art</tt>. See constants at {@link VideoModel.TVShowFields}.
 		 */
@@ -5029,7 +5029,7 @@ public final class VideoLibrary {
 	}
 
 	/**
-	 * Retrieve all tv shows.
+	 * Retrieve all tv shows.
 	 * <p/>
 	 * This class represents the API method <tt>VideoLibrary.GetTVShows</tt>
 	 * <p/>
@@ -5067,7 +5067,7 @@ public final class VideoLibrary {
 		public final static String RESULT = "tvshows";
 
 		/**
-		 * Retrieve all tv shows.
+		 * Retrieve all tv shows.
 		 * @param limits
 		 * @param sort
 		 * @param filter
@@ -5082,7 +5082,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv shows.
+		 * Retrieve all tv shows.
 		 * @param limits
 		 * @param sort
 		 * @param filter
@@ -5097,7 +5097,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv shows.
+		 * Retrieve all tv shows.
 		 * @param limits
 		 * @param sort
 		 * @param filter
@@ -5112,7 +5112,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv shows.
+		 * Retrieve all tv shows.
 		 * @param limits
 		 * @param sort
 		 * @param filter
@@ -5127,7 +5127,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv shows.
+		 * Retrieve all tv shows.
 		 * @param limits
 		 * @param sort
 		 * @param filter
@@ -5142,7 +5142,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv shows.
+		 * Retrieve all tv shows.
 		 * @param limits
 		 * @param sort
 		 * @param filter
@@ -5157,7 +5157,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv shows.
+		 * Retrieve all tv shows.
 		 * @param limits
 		 * @param sort
 		 * @param filter
@@ -5172,7 +5172,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv shows.
+		 * Retrieve all tv shows.
 		 * @param properties One or more of: <tt>title</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>plot</tt>, <tt>studio</tt>, <tt>mpaa</tt>, <tt>cast</tt>, <tt>playcount</tt>, <tt>episode</tt>, <tt>imdbnumber</tt>, <tt>premiered</tt>, <tt>votes</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>originaltitle</tt>, <tt>sorttitle</tt>, <tt>episodeguide</tt>, <tt>season</tt>, <tt>watchedepisodes</tt>, <tt>dateadded</tt>, <tt>tag</tt>, <tt>art</tt>. See constants at {@link VideoModel.TVShowFields}.
 		 */
 		public GetTVShows(String... properties) {
@@ -5181,7 +5181,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv shows.
+		 * Retrieve all tv shows.
 		 * @param limits
 		 * @param properties One or more of: <tt>title</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>plot</tt>, <tt>studio</tt>, <tt>mpaa</tt>, <tt>cast</tt>, <tt>playcount</tt>, <tt>episode</tt>, <tt>imdbnumber</tt>, <tt>premiered</tt>, <tt>votes</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>originaltitle</tt>, <tt>sorttitle</tt>, <tt>episodeguide</tt>, <tt>season</tt>, <tt>watchedepisodes</tt>, <tt>dateadded</tt>, <tt>tag</tt>, <tt>art</tt>. See constants at {@link VideoModel.TVShowFields}.
 		 */
@@ -5192,7 +5192,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv shows.
+		 * Retrieve all tv shows.
 		 * @param sort
 		 * @param properties One or more of: <tt>title</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>plot</tt>, <tt>studio</tt>, <tt>mpaa</tt>, <tt>cast</tt>, <tt>playcount</tt>, <tt>episode</tt>, <tt>imdbnumber</tt>, <tt>premiered</tt>, <tt>votes</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>originaltitle</tt>, <tt>sorttitle</tt>, <tt>episodeguide</tt>, <tt>season</tt>, <tt>watchedepisodes</tt>, <tt>dateadded</tt>, <tt>tag</tt>, <tt>art</tt>. See constants at {@link VideoModel.TVShowFields}.
 		 */
@@ -5203,7 +5203,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv shows.
+		 * Retrieve all tv shows.
 		 * @param limits
 		 * @param sort
 		 * @param properties One or more of: <tt>title</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>plot</tt>, <tt>studio</tt>, <tt>mpaa</tt>, <tt>cast</tt>, <tt>playcount</tt>, <tt>episode</tt>, <tt>imdbnumber</tt>, <tt>premiered</tt>, <tt>votes</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>originaltitle</tt>, <tt>sorttitle</tt>, <tt>episodeguide</tt>, <tt>season</tt>, <tt>watchedepisodes</tt>, <tt>dateadded</tt>, <tt>tag</tt>, <tt>art</tt>. See constants at {@link VideoModel.TVShowFields}.
@@ -5216,7 +5216,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv shows.
+		 * Retrieve all tv shows.
 		 * @param filter
 		 * @param properties One or more of: <tt>title</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>plot</tt>, <tt>studio</tt>, <tt>mpaa</tt>, <tt>cast</tt>, <tt>playcount</tt>, <tt>episode</tt>, <tt>imdbnumber</tt>, <tt>premiered</tt>, <tt>votes</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>originaltitle</tt>, <tt>sorttitle</tt>, <tt>episodeguide</tt>, <tt>season</tt>, <tt>watchedepisodes</tt>, <tt>dateadded</tt>, <tt>tag</tt>, <tt>art</tt>. See constants at {@link VideoModel.TVShowFields}.
 		 */
@@ -5227,7 +5227,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv shows.
+		 * Retrieve all tv shows.
 		 * @param limits
 		 * @param filter
 		 * @param properties One or more of: <tt>title</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>plot</tt>, <tt>studio</tt>, <tt>mpaa</tt>, <tt>cast</tt>, <tt>playcount</tt>, <tt>episode</tt>, <tt>imdbnumber</tt>, <tt>premiered</tt>, <tt>votes</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>originaltitle</tt>, <tt>sorttitle</tt>, <tt>episodeguide</tt>, <tt>season</tt>, <tt>watchedepisodes</tt>, <tt>dateadded</tt>, <tt>tag</tt>, <tt>art</tt>. See constants at {@link VideoModel.TVShowFields}.
@@ -5240,7 +5240,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv shows.
+		 * Retrieve all tv shows.
 		 * @param filter
 		 * @param properties One or more of: <tt>title</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>plot</tt>, <tt>studio</tt>, <tt>mpaa</tt>, <tt>cast</tt>, <tt>playcount</tt>, <tt>episode</tt>, <tt>imdbnumber</tt>, <tt>premiered</tt>, <tt>votes</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>originaltitle</tt>, <tt>sorttitle</tt>, <tt>episodeguide</tt>, <tt>season</tt>, <tt>watchedepisodes</tt>, <tt>dateadded</tt>, <tt>tag</tt>, <tt>art</tt>. See constants at {@link VideoModel.TVShowFields}.
 		 */
@@ -5251,7 +5251,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv shows.
+		 * Retrieve all tv shows.
 		 * @param limits
 		 * @param filter
 		 * @param properties One or more of: <tt>title</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>plot</tt>, <tt>studio</tt>, <tt>mpaa</tt>, <tt>cast</tt>, <tt>playcount</tt>, <tt>episode</tt>, <tt>imdbnumber</tt>, <tt>premiered</tt>, <tt>votes</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>originaltitle</tt>, <tt>sorttitle</tt>, <tt>episodeguide</tt>, <tt>season</tt>, <tt>watchedepisodes</tt>, <tt>dateadded</tt>, <tt>tag</tt>, <tt>art</tt>. See constants at {@link VideoModel.TVShowFields}.
@@ -5264,7 +5264,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv shows.
+		 * Retrieve all tv shows.
 		 * @param filter
 		 * @param properties One or more of: <tt>title</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>plot</tt>, <tt>studio</tt>, <tt>mpaa</tt>, <tt>cast</tt>, <tt>playcount</tt>, <tt>episode</tt>, <tt>imdbnumber</tt>, <tt>premiered</tt>, <tt>votes</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>originaltitle</tt>, <tt>sorttitle</tt>, <tt>episodeguide</tt>, <tt>season</tt>, <tt>watchedepisodes</tt>, <tt>dateadded</tt>, <tt>tag</tt>, <tt>art</tt>. See constants at {@link VideoModel.TVShowFields}.
 		 */
@@ -5275,7 +5275,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv shows.
+		 * Retrieve all tv shows.
 		 * @param limits
 		 * @param filter
 		 * @param properties One or more of: <tt>title</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>plot</tt>, <tt>studio</tt>, <tt>mpaa</tt>, <tt>cast</tt>, <tt>playcount</tt>, <tt>episode</tt>, <tt>imdbnumber</tt>, <tt>premiered</tt>, <tt>votes</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>originaltitle</tt>, <tt>sorttitle</tt>, <tt>episodeguide</tt>, <tt>season</tt>, <tt>watchedepisodes</tt>, <tt>dateadded</tt>, <tt>tag</tt>, <tt>art</tt>. See constants at {@link VideoModel.TVShowFields}.
@@ -5288,7 +5288,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv shows.
+		 * Retrieve all tv shows.
 		 * @param filter
 		 * @param properties One or more of: <tt>title</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>plot</tt>, <tt>studio</tt>, <tt>mpaa</tt>, <tt>cast</tt>, <tt>playcount</tt>, <tt>episode</tt>, <tt>imdbnumber</tt>, <tt>premiered</tt>, <tt>votes</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>originaltitle</tt>, <tt>sorttitle</tt>, <tt>episodeguide</tt>, <tt>season</tt>, <tt>watchedepisodes</tt>, <tt>dateadded</tt>, <tt>tag</tt>, <tt>art</tt>. See constants at {@link VideoModel.TVShowFields}.
 		 */
@@ -5299,7 +5299,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv shows.
+		 * Retrieve all tv shows.
 		 * @param limits
 		 * @param filter
 		 * @param properties One or more of: <tt>title</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>plot</tt>, <tt>studio</tt>, <tt>mpaa</tt>, <tt>cast</tt>, <tt>playcount</tt>, <tt>episode</tt>, <tt>imdbnumber</tt>, <tt>premiered</tt>, <tt>votes</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>originaltitle</tt>, <tt>sorttitle</tt>, <tt>episodeguide</tt>, <tt>season</tt>, <tt>watchedepisodes</tt>, <tt>dateadded</tt>, <tt>tag</tt>, <tt>art</tt>. See constants at {@link VideoModel.TVShowFields}.
@@ -5312,7 +5312,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv shows.
+		 * Retrieve all tv shows.
 		 * @param filter
 		 * @param properties One or more of: <tt>title</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>plot</tt>, <tt>studio</tt>, <tt>mpaa</tt>, <tt>cast</tt>, <tt>playcount</tt>, <tt>episode</tt>, <tt>imdbnumber</tt>, <tt>premiered</tt>, <tt>votes</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>originaltitle</tt>, <tt>sorttitle</tt>, <tt>episodeguide</tt>, <tt>season</tt>, <tt>watchedepisodes</tt>, <tt>dateadded</tt>, <tt>tag</tt>, <tt>art</tt>. See constants at {@link VideoModel.TVShowFields}.
 		 */
@@ -5323,7 +5323,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv shows.
+		 * Retrieve all tv shows.
 		 * @param limits
 		 * @param filter
 		 * @param properties One or more of: <tt>title</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>plot</tt>, <tt>studio</tt>, <tt>mpaa</tt>, <tt>cast</tt>, <tt>playcount</tt>, <tt>episode</tt>, <tt>imdbnumber</tt>, <tt>premiered</tt>, <tt>votes</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>originaltitle</tt>, <tt>sorttitle</tt>, <tt>episodeguide</tt>, <tt>season</tt>, <tt>watchedepisodes</tt>, <tt>dateadded</tt>, <tt>tag</tt>, <tt>art</tt>. See constants at {@link VideoModel.TVShowFields}.
@@ -5336,7 +5336,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv shows.
+		 * Retrieve all tv shows.
 		 * @param filter
 		 * @param properties One or more of: <tt>title</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>plot</tt>, <tt>studio</tt>, <tt>mpaa</tt>, <tt>cast</tt>, <tt>playcount</tt>, <tt>episode</tt>, <tt>imdbnumber</tt>, <tt>premiered</tt>, <tt>votes</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>originaltitle</tt>, <tt>sorttitle</tt>, <tt>episodeguide</tt>, <tt>season</tt>, <tt>watchedepisodes</tt>, <tt>dateadded</tt>, <tt>tag</tt>, <tt>art</tt>. See constants at {@link VideoModel.TVShowFields}.
 		 */
@@ -5347,7 +5347,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv shows.
+		 * Retrieve all tv shows.
 		 * @param limits
 		 * @param filter
 		 * @param properties One or more of: <tt>title</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>plot</tt>, <tt>studio</tt>, <tt>mpaa</tt>, <tt>cast</tt>, <tt>playcount</tt>, <tt>episode</tt>, <tt>imdbnumber</tt>, <tt>premiered</tt>, <tt>votes</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>originaltitle</tt>, <tt>sorttitle</tt>, <tt>episodeguide</tt>, <tt>season</tt>, <tt>watchedepisodes</tt>, <tt>dateadded</tt>, <tt>tag</tt>, <tt>art</tt>. See constants at {@link VideoModel.TVShowFields}.
@@ -5360,7 +5360,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv shows.
+		 * Retrieve all tv shows.
 		 * @param filter
 		 * @param properties One or more of: <tt>title</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>plot</tt>, <tt>studio</tt>, <tt>mpaa</tt>, <tt>cast</tt>, <tt>playcount</tt>, <tt>episode</tt>, <tt>imdbnumber</tt>, <tt>premiered</tt>, <tt>votes</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>originaltitle</tt>, <tt>sorttitle</tt>, <tt>episodeguide</tt>, <tt>season</tt>, <tt>watchedepisodes</tt>, <tt>dateadded</tt>, <tt>tag</tt>, <tt>art</tt>. See constants at {@link VideoModel.TVShowFields}.
 		 */
@@ -5371,7 +5371,7 @@ public final class VideoLibrary {
 		}
 
 		/**
-		 * Retrieve all tv shows.
+		 * Retrieve all tv shows.
 		 * @param limits
 		 * @param filter
 		 * @param properties One or more of: <tt>title</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>plot</tt>, <tt>studio</tt>, <tt>mpaa</tt>, <tt>cast</tt>, <tt>playcount</tt>, <tt>episode</tt>, <tt>imdbnumber</tt>, <tt>premiered</tt>, <tt>votes</tt>, <tt>lastplayed</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>originaltitle</tt>, <tt>sorttitle</tt>, <tt>episodeguide</tt>, <tt>season</tt>, <tt>watchedepisodes</tt>, <tt>dateadded</tt>, <tt>tag</tt>, <tt>art</tt>. See constants at {@link VideoModel.TVShowFields}.
@@ -5788,7 +5788,7 @@ public final class VideoLibrary {
 	}
 
 	/**
-	 * Removes the given episode from the library.
+	 * Removes the given episode from the library.
 	 * <p/>
 	 * This class represents the API method <tt>VideoLibrary.RemoveEpisode</tt>
 	 * <p/>
@@ -5825,7 +5825,7 @@ public final class VideoLibrary {
 		};
 
 		/**
-		 * Removes the given episode from the library.
+		 * Removes the given episode from the library.
 		 * @param episodeid
 		 */
 		public RemoveEpisode(Integer episodeid) {
@@ -5850,7 +5850,7 @@ public final class VideoLibrary {
 	}
 
 	/**
-	 * Removes the given movie from the library.
+	 * Removes the given movie from the library.
 	 * <p/>
 	 * This class represents the API method <tt>VideoLibrary.RemoveMovie</tt>
 	 * <p/>
@@ -5887,7 +5887,7 @@ public final class VideoLibrary {
 		};
 
 		/**
-		 * Removes the given movie from the library.
+		 * Removes the given movie from the library.
 		 * @param movieid
 		 */
 		public RemoveMovie(Integer movieid) {
@@ -5912,7 +5912,7 @@ public final class VideoLibrary {
 	}
 
 	/**
-	 * Removes the given music video from the library.
+	 * Removes the given music video from the library.
 	 * <p/>
 	 * This class represents the API method <tt>VideoLibrary.RemoveMusicVideo</tt>
 	 * <p/>
@@ -5949,7 +5949,7 @@ public final class VideoLibrary {
 		};
 
 		/**
-		 * Removes the given music video from the library.
+		 * Removes the given music video from the library.
 		 * @param musicvideoid
 		 */
 		public RemoveMusicVideo(Integer musicvideoid) {
@@ -5974,7 +5974,7 @@ public final class VideoLibrary {
 	}
 
 	/**
-	 * Removes the given tv show from the library.
+	 * Removes the given tv show from the library.
 	 * <p/>
 	 * This class represents the API method <tt>VideoLibrary.RemoveTVShow</tt>
 	 * <p/>
@@ -6011,7 +6011,7 @@ public final class VideoLibrary {
 		};
 
 		/**
-		 * Removes the given tv show from the library.
+		 * Removes the given tv show from the library.
 		 * @param tvshowid
 		 */
 		public RemoveTVShow(Integer tvshowid) {
@@ -6036,7 +6036,7 @@ public final class VideoLibrary {
 	}
 
 	/**
-	 * Scans the video sources for new library items.
+	 * Scans the video sources for new library items.
 	 * <p/>
 	 * This class represents the API method <tt>VideoLibrary.Scan</tt>
 	 * <p/>
@@ -6073,7 +6073,7 @@ public final class VideoLibrary {
 		};
 
 		/**
-		 * Scans the video sources for new library items.
+		 * Scans the video sources for new library items.
 		 * @param directory
 		 */
 		public Scan(String directory) {
@@ -6098,7 +6098,7 @@ public final class VideoLibrary {
 	}
 
 	/**
-	 * Update the given episode with the given details.
+	 * Update the given episode with the given details.
 	 * <p/>
 	 * This class represents the API method <tt>VideoLibrary.SetEpisodeDetails</tt>
 	 * <p/>
@@ -6135,11 +6135,11 @@ public final class VideoLibrary {
 		};
 
 		/**
-		 * Update the given episode with the given details.
+		 * Update the given episode with the given details.
 		 * @param episodeid
 		 * @param title
 		 * @param playcount
-		 * @param runtime
+		 * @param runtimeRuntime in seconds.
 		 * @param director
 		 * @param plot
 		 * @param rating
@@ -6155,7 +6155,7 @@ public final class VideoLibrary {
 		 * @param fanart
 		 * @param art
 		 */
-		public SetEpisodeDetails(Integer episodeid, String title, Integer playcount, String runtime, String[] director, String plot, Double rating, String votes, String lastplayed, String[] writer, String firstaired, String productioncode, Integer season, Integer episode, String originaltitle, String thumbnail, String fanart, MediaModel.Artwork art) {
+		public SetEpisodeDetails(Integer episodeid, String title, Integer playcount, Integer runtime, String[] director, String plot, Double rating, String votes, String lastplayed, String[] writer, String firstaired, String productioncode, Integer season, Integer episode, String originaltitle, String thumbnail, String fanart, MediaModel.Artwork art) {
 			super();
 			addParameter("episodeid", episodeid);
 			addParameter("title", title);
@@ -6194,7 +6194,7 @@ public final class VideoLibrary {
 	}
 
 	/**
-	 * Update the given movie with the given details.
+	 * Update the given movie with the given details.
 	 * <p/>
 	 * This class represents the API method <tt>VideoLibrary.SetMovieDetails</tt>
 	 * <p/>
@@ -6231,11 +6231,11 @@ public final class VideoLibrary {
 		};
 
 		/**
-		 * Update the given movie with the given details.
+		 * Update the given movie with the given details.
 		 * @param movieid
 		 * @param title
 		 * @param playcount
-		 * @param runtime
+		 * @param runtimeRuntime in seconds.
 		 * @param director
 		 * @param studio
 		 * @param year
@@ -6261,7 +6261,7 @@ public final class VideoLibrary {
 		 * @param tag
 		 * @param art
 		 */
-		public SetMovieDetails(Integer movieid, String title, Integer playcount, String runtime, String[] director, String[] studio, Integer year, String plot, String[] genre, Double rating, String mpaa, String imdbnumber, String votes, String lastplayed, String originaltitle, String trailer, String tagline, String plotoutline, String[] writer, String[] country, Integer top250, String sorttitle, String set, String[] showlink, String thumbnail, String fanart, String[] tag, MediaModel.Artwork art) {
+		public SetMovieDetails(Integer movieid, String title, Integer playcount, Integer runtime, String[] director, String[] studio, Integer year, String plot, String[] genre, Double rating, String mpaa, String imdbnumber, String votes, String lastplayed, String originaltitle, String trailer, String tagline, String plotoutline, String[] writer, String[] country, Integer top250, String sorttitle, String set, String[] showlink, String thumbnail, String fanart, String[] tag, MediaModel.Artwork art) {
 			super();
 			addParameter("movieid", movieid);
 			addParameter("title", title);
@@ -6310,7 +6310,7 @@ public final class VideoLibrary {
 	}
 
 	/**
-	 * Update the given music video with the given details.
+	 * Update the given music video with the given details.
 	 * <p/>
 	 * This class represents the API method <tt>VideoLibrary.SetMusicVideoDetails</tt>
 	 * <p/>
@@ -6347,11 +6347,11 @@ public final class VideoLibrary {
 		};
 
 		/**
-		 * Update the given music video with the given details.
+		 * Update the given music video with the given details.
 		 * @param musicvideoid
 		 * @param title
 		 * @param playcount
-		 * @param runtime
+		 * @param runtimeRuntime in seconds.
 		 * @param director
 		 * @param studio
 		 * @param year
@@ -6366,7 +6366,7 @@ public final class VideoLibrary {
 		 * @param tag
 		 * @param art
 		 */
-		public SetMusicVideoDetails(Integer musicvideoid, String title, Integer playcount, String runtime, String[] director, String[] studio, Integer year, String plot, String album, String[] artist, String[] genre, Integer track, String lastplayed, String thumbnail, String fanart, String[] tag, MediaModel.Artwork art) {
+		public SetMusicVideoDetails(Integer musicvideoid, String title, Integer playcount, Integer runtime, String[] director, String[] studio, Integer year, String plot, String album, String[] artist, String[] genre, Integer track, String lastplayed, String thumbnail, String fanart, String[] tag, MediaModel.Artwork art) {
 			super();
 			addParameter("musicvideoid", musicvideoid);
 			addParameter("title", title);
@@ -6404,7 +6404,7 @@ public final class VideoLibrary {
 	}
 
 	/**
-	 * Update the given tvshow with the given details.
+	 * Update the given tvshow with the given details.
 	 * <p/>
 	 * This class represents the API method <tt>VideoLibrary.SetTVShowDetails</tt>
 	 * <p/>
@@ -6441,7 +6441,7 @@ public final class VideoLibrary {
 		};
 
 		/**
-		 * Update the given tvshow with the given details.
+		 * Update the given tvshow with the given details.
 		 * @param tvshowid
 		 * @param title
 		 * @param playcount

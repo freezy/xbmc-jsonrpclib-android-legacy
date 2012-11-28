@@ -29,7 +29,7 @@ import org.xbmc.android.jsonrpc.api.model.SystemModel;
 public final class System {
 
 	/**
-	 * Ejects or closes the optical disc drive (if available).
+	 * Ejects or closes the optical disc drive (if available).
 	 * <p/>
 	 * This class represents the API method <tt>System.EjectOpticalDrive</tt>
 	 * <p/>
@@ -66,7 +66,7 @@ public final class System {
 		};
 
 		/**
-		 * Ejects or closes the optical disc drive (if available).
+		 * Ejects or closes the optical disc drive (if available).
 		 */
 		public EjectOpticalDrive() {
 			super();
@@ -89,7 +89,7 @@ public final class System {
 	}
 
 	/**
-	 * Retrieves the values of the given properties.
+	 * Retrieves the values of the given properties.
 	 * <p/>
 	 * This class represents the API method <tt>System.GetProperties</tt>
 	 * <p/>
@@ -126,7 +126,7 @@ public final class System {
 		};
 
 		/**
-		 * Retrieves the values of the given properties.
+		 * Retrieves the values of the given properties.
 		 * @param properties One or more of: <tt>canshutdown</tt>, <tt>cansuspend</tt>, <tt>canhibernate</tt>, <tt>canreboot</tt>. See constants at {@link SystemModel.PropertyName}.
 		 */
 		public GetProperties(String... properties) {
@@ -151,7 +151,7 @@ public final class System {
 	}
 
 	/**
-	 * Puts the system running XBMC into hibernate mode.
+	 * Puts the system running XBMC into hibernate mode.
 	 * <p/>
 	 * This class represents the API method <tt>System.Hibernate</tt>
 	 * <p/>
@@ -188,7 +188,7 @@ public final class System {
 		};
 
 		/**
-		 * Puts the system running XBMC into hibernate mode.
+		 * Puts the system running XBMC into hibernate mode.
 		 */
 		public Hibernate() {
 			super();
@@ -211,7 +211,7 @@ public final class System {
 	}
 
 	/**
-	 * Reboots the system running XBMC.
+	 * Reboots the system running XBMC.
 	 * <p/>
 	 * This class represents the API method <tt>System.Reboot</tt>
 	 * <p/>
@@ -248,7 +248,7 @@ public final class System {
 		};
 
 		/**
-		 * Reboots the system running XBMC.
+		 * Reboots the system running XBMC.
 		 */
 		public Reboot() {
 			super();
@@ -271,7 +271,7 @@ public final class System {
 	}
 
 	/**
-	 * Shuts the system running XBMC down.
+	 * Shuts the system running XBMC down.
 	 * <p/>
 	 * This class represents the API method <tt>System.Shutdown</tt>
 	 * <p/>
@@ -308,7 +308,7 @@ public final class System {
 		};
 
 		/**
-		 * Shuts the system running XBMC down.
+		 * Shuts the system running XBMC down.
 		 */
 		public Shutdown() {
 			super();
@@ -331,7 +331,7 @@ public final class System {
 	}
 
 	/**
-	 * Suspends the system running XBMC.
+	 * Suspends the system running XBMC.
 	 * <p/>
 	 * This class represents the API method <tt>System.Suspend</tt>
 	 * <p/>
@@ -368,7 +368,7 @@ public final class System {
 		};
 
 		/**
-		 * Suspends the system running XBMC.
+		 * Suspends the system running XBMC.
 		 */
 		public Suspend() {
 			super();

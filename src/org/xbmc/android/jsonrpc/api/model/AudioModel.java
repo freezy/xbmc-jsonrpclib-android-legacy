@@ -501,6 +501,9 @@ public final class AudioModel {
 
 		// field names
 		public static final String ARTIST = "artist";
+		public static final String ARTISTID = "artistid";
+		public static final String DISPLAYARTIST = "displayartist";
+		public static final String GENREID = "genreid";
 		public static final String MUSICBRAINZALBUMARTISTID = "musicbrainzalbumartistid";
 		public static final String MUSICBRAINZALBUMID = "musicbrainzalbumid";
 		public static final String RATING = "rating";
@@ -509,6 +512,9 @@ public final class AudioModel {
 
 		// class members
 		public final List<String> artist;
+		public final List<Integer> artistid;
+		public final String displayartist;
+		public final List<Integer> genreid;
 		public final String musicbrainzalbumartistid;
 		public final String musicbrainzalbumid;
 		public final Integer rating;
@@ -522,6 +528,9 @@ public final class AudioModel {
 		public MediaDetail(JsonNode node) {
 			super(node);
 			artist = getStringArray(node, ARTIST);
+			artistid = getIntegerArray(node, ARTISTID);
+			displayartist = parseString(node, DISPLAYARTIST);
+			genreid = getIntegerArray(node, GENREID);
 			musicbrainzalbumartistid = parseString(node, MUSICBRAINZALBUMARTISTID);
 			musicbrainzalbumid = parseString(node, MUSICBRAINZALBUMID);
 			rating = parseInt(node, RATING);
@@ -537,6 +546,17 @@ public final class AudioModel {
 				artistArray.add(item);
 			}
 			node.put(ARTIST, artistArray);
+			final ArrayNode artistidArray = OM.createArrayNode();
+			for (Integer item : artistid) {
+				artistidArray.add(item);
+			}
+			node.put(ARTISTID, artistidArray);
+			node.put(DISPLAYARTIST, displayartist);
+			final ArrayNode genreidArray = OM.createArrayNode();
+			for (Integer item : genreid) {
+				genreidArray.add(item);
+			}
+			node.put(GENREID, genreidArray);
 			node.put(MUSICBRAINZALBUMARTISTID, musicbrainzalbumartistid);
 			node.put(MUSICBRAINZALBUMID, musicbrainzalbumid);
 			node.put(RATING, rating);
@@ -574,6 +594,15 @@ public final class AudioModel {
 			for (String item : artist) {
 				parcel.writeValue(item);
 			}
+			parcel.writeInt(artistid.size());
+			for (Integer item : artistid) {
+				parcel.writeValue(item);
+			}
+			parcel.writeValue(displayartist);
+			parcel.writeInt(genreid.size());
+			for (Integer item : genreid) {
+				parcel.writeValue(item);
+			}
 			parcel.writeValue(musicbrainzalbumartistid);
 			parcel.writeValue(musicbrainzalbumid);
 			parcel.writeValue(rating);
@@ -590,6 +619,17 @@ public final class AudioModel {
 			artist = new ArrayList<String>(artistSize);
 			for (int i = 0; i < artistSize; i++) {
 				artist.add(parcel.readString());
+			}
+			final int artistidSize = parcel.readInt();
+			artistid = new ArrayList<Integer>(artistidSize);
+			for (int i = 0; i < artistidSize; i++) {
+				artistid.add(parcel.readInt());
+			}
+			displayartist = parcel.readString();
+			final int genreidSize = parcel.readInt();
+			genreid = new ArrayList<Integer>(genreidSize);
+			for (int i = 0; i < genreidSize; i++) {
+				genreid.add(parcel.readInt());
 			}
 			musicbrainzalbumartistid = parcel.readString();
 			musicbrainzalbumid = parcel.readString();
@@ -630,6 +670,7 @@ public final class AudioModel {
 		// field names
 		public static final String ALBUM = "album";
 		public static final String ALBUMARTIST = "albumartist";
+		public static final String ALBUMARTISTID = "albumartistid";
 		public static final String ALBUMID = "albumid";
 		public static final String COMMENT = "comment";
 		public static final String DISC = "disc";
@@ -646,6 +687,7 @@ public final class AudioModel {
 		// class members
 		public final String album;
 		public final List<String> albumartist;
+		public final List<Integer> albumartistid;
 		public final Integer albumid;
 		public final String comment;
 		public final Integer disc;
@@ -667,6 +709,7 @@ public final class AudioModel {
 			super(node);
 			album = parseString(node, ALBUM);
 			albumartist = getStringArray(node, ALBUMARTIST);
+			albumartistid = getIntegerArray(node, ALBUMARTISTID);
 			albumid = parseInt(node, ALBUMID);
 			comment = parseString(node, COMMENT);
 			disc = parseInt(node, DISC);
@@ -690,6 +733,11 @@ public final class AudioModel {
 				albumartistArray.add(item);
 			}
 			node.put(ALBUMARTIST, albumartistArray);
+			final ArrayNode albumartistidArray = OM.createArrayNode();
+			for (Integer item : albumartistid) {
+				albumartistidArray.add(item);
+			}
+			node.put(ALBUMARTISTID, albumartistidArray);
 			node.put(ALBUMID, albumid);
 			node.put(COMMENT, comment);
 			node.put(DISC, disc);
@@ -735,6 +783,10 @@ public final class AudioModel {
 			for (String item : albumartist) {
 				parcel.writeValue(item);
 			}
+			parcel.writeInt(albumartistid.size());
+			for (Integer item : albumartistid) {
+				parcel.writeValue(item);
+			}
 			parcel.writeValue(albumid);
 			parcel.writeValue(comment);
 			parcel.writeValue(disc);
@@ -759,6 +811,11 @@ public final class AudioModel {
 			albumartist = new ArrayList<String>(albumartistSize);
 			for (int i = 0; i < albumartistSize; i++) {
 				albumartist.add(parcel.readString());
+			}
+			final int albumartistidSize = parcel.readInt();
+			albumartistid = new ArrayList<Integer>(albumartistidSize);
+			for (int i = 0; i < albumartistidSize; i++) {
+				albumartistid.add(parcel.readInt());
 			}
 			albumid = parcel.readInt();
 			comment = parcel.readString();
@@ -815,8 +872,11 @@ public final class AudioModel {
 		public final String FANART = "fanart";
 		public final String THUMBNAIL = "thumbnail";
 		public final String PLAYCOUNT = "playcount";
+		public final String GENREID = "genreid";
+		public final String ARTISTID = "artistid";
+		public final String DISPLAYARTIST = "displayartist";
 
-		public final static Set<String> values = new HashSet<String>(Arrays.asList(TITLE, DESCRIPTION, ARTIST, GENRE, THEME, MOOD, STYLE, TYPE, ALBUMLABEL, RATING, YEAR, MUSICBRAINZALBUMID, MUSICBRAINZALBUMARTISTID, FANART, THUMBNAIL, PLAYCOUNT));
+		public final static Set<String> values = new HashSet<String>(Arrays.asList(TITLE, DESCRIPTION, ARTIST, GENRE, THEME, MOOD, STYLE, TYPE, ALBUMLABEL, RATING, YEAR, MUSICBRAINZALBUMID, MUSICBRAINZALBUMARTISTID, FANART, THUMBNAIL, PLAYCOUNT, GENREID, ARTISTID, DISPLAYARTIST));
 	}
 
 	/**
@@ -868,7 +928,11 @@ public final class AudioModel {
 		public final String ALBUMID = "albumid";
 		public final String LASTPLAYED = "lastplayed";
 		public final String DISC = "disc";
+		public final String GENREID = "genreid";
+		public final String ARTISTID = "artistid";
+		public final String DISPLAYARTIST = "displayartist";
+		public final String ALBUMARTISTID = "albumartistid";
 
-		public final static Set<String> values = new HashSet<String>(Arrays.asList(TITLE, ARTIST, ALBUMARTIST, GENRE, YEAR, RATING, ALBUM, TRACK, DURATION, COMMENT, LYRICS, MUSICBRAINZTRACKID, MUSICBRAINZARTISTID, MUSICBRAINZALBUMID, MUSICBRAINZALBUMARTISTID, PLAYCOUNT, FANART, THUMBNAIL, FILE, ALBUMID, LASTPLAYED, DISC));
+		public final static Set<String> values = new HashSet<String>(Arrays.asList(TITLE, ARTIST, ALBUMARTIST, GENRE, YEAR, RATING, ALBUM, TRACK, DURATION, COMMENT, LYRICS, MUSICBRAINZTRACKID, MUSICBRAINZARTISTID, MUSICBRAINZALBUMID, MUSICBRAINZALBUMARTISTID, PLAYCOUNT, FANART, THUMBNAIL, FILE, ALBUMID, LASTPLAYED, DISC, GENREID, ARTISTID, DISPLAYARTIST, ALBUMARTISTID));
 	}
 }

@@ -44,7 +44,7 @@ public class Version {
 	 */
 	public static Version get() {
 		if (VERSION == null) {
-			VERSION = new Version("9cdc29e", "2012-11-10 09:33:15 +0100", Branch.MASTER, Type.NIGHTLY);
+			VERSION = new Version("99fa6fb", "2012-11-28 08:57:45 +0100", Branch.MASTER, Type.NIGHTLY);
 		}
 		return VERSION;
 	}
