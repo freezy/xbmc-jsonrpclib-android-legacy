@@ -205,7 +205,6 @@ public final class AudioModel {
 		public final static String API_TYPE = "Audio.Details.Artist";
 
 		// field names
-		public static final String ARTIST = "artist";
 		public static final String ARTISTID = "artistid";
 		public static final String BORN = "born";
 		public static final String DESCRIPTION = "description";
@@ -213,13 +212,13 @@ public final class AudioModel {
 		public static final String DISBANDED = "disbanded";
 		public static final String FORMED = "formed";
 		public static final String INSTRUMENT = "instrument";
+		public static final String LABEL = "label";
 		public static final String MOOD = "mood";
 		public static final String MUSICBRAINZARTISTID = "musicbrainzartistid";
 		public static final String STYLE = "style";
 		public static final String YEARSACTIVE = "yearsactive";
 
 		// class members
-		public final String artist;
 		public final Integer artistid;
 		public final String born;
 		public final String description;
@@ -227,6 +226,7 @@ public final class AudioModel {
 		public final String disbanded;
 		public final String formed;
 		public final List<String> instrument;
+		public final String label;
 		public final List<String> mood;
 		public final String musicbrainzartistid;
 		public final List<String> style;
@@ -238,7 +238,6 @@ public final class AudioModel {
 		 */
 		public ArtistDetail(JsonNode node) {
 			super(node);
-			artist = node.get(ARTIST).getTextValue(); // required value
 			artistid = parseInt(node, ARTISTID);
 			born = parseString(node, BORN);
 			description = parseString(node, DESCRIPTION);
@@ -246,6 +245,7 @@ public final class AudioModel {
 			disbanded = parseString(node, DISBANDED);
 			formed = parseString(node, FORMED);
 			instrument = getStringArray(node, INSTRUMENT);
+			label = node.get(LABEL).getTextValue(); // required value
 			mood = getStringArray(node, MOOD);
 			musicbrainzartistid = parseString(node, MUSICBRAINZARTISTID);
 			style = getStringArray(node, STYLE);
@@ -255,7 +255,6 @@ public final class AudioModel {
 		@Override
 		public JsonNode toJsonNode() {
 			final ObjectNode node = (ObjectNode)super.toJsonNode();
-			node.put(ARTIST, artist);
 			node.put(ARTISTID, artistid);
 			node.put(BORN, born);
 			node.put(DESCRIPTION, description);
@@ -267,6 +266,7 @@ public final class AudioModel {
 				instrumentArray.add(item);
 			}
 			node.put(INSTRUMENT, instrumentArray);
+			node.put(LABEL, label);
 			final ArrayNode moodArray = OM.createArrayNode();
 			for (String item : mood) {
 				moodArray.add(item);
@@ -311,7 +311,6 @@ public final class AudioModel {
 		@Override
 		public void writeToParcel(Parcel parcel, int flags) {
 			super.writeToParcel(parcel, flags);
-			parcel.writeValue(artist);
 			parcel.writeValue(artistid);
 			parcel.writeValue(born);
 			parcel.writeValue(description);
@@ -322,6 +321,7 @@ public final class AudioModel {
 			for (String item : instrument) {
 				parcel.writeValue(item);
 			}
+			parcel.writeValue(label);
 			parcel.writeInt(mood.size());
 			for (String item : mood) {
 				parcel.writeValue(item);
@@ -342,7 +342,6 @@ public final class AudioModel {
 		 */
 		protected ArtistDetail(Parcel parcel) {
 			super(parcel);
-			artist = parcel.readString();
 			artistid = parcel.readInt();
 			born = parcel.readString();
 			description = parcel.readString();
@@ -354,6 +353,7 @@ public final class AudioModel {
 			for (int i = 0; i < instrumentSize; i++) {
 				instrument.add(parcel.readString());
 			}
+			label = parcel.readString();
 			final int moodSize = parcel.readInt();
 			mood = new ArrayList<String>(moodSize);
 			for (int i = 0; i < moodSize; i++) {
