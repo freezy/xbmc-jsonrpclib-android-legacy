@@ -86,7 +86,7 @@ public final class Playlist {
 		}
 
 		@Override
-		protected String parseOne(ObjectNode node) {
+		protected String parseOne(JsonNode node) {
 			return node.getTextValue();
 		}
 
@@ -148,7 +148,7 @@ public final class Playlist {
 		}
 
 		@Override
-		protected String parseOne(ObjectNode node) {
+		protected String parseOne(JsonNode node) {
 			return node.getTextValue();
 		}
 
@@ -254,7 +254,7 @@ public final class Playlist {
 		}
 
 		@Override
-		protected ArrayList<ListModel.AllItems> parseMany(ObjectNode node) {
+		protected ArrayList<ListModel.AllItems> parseMany(JsonNode node) {
 			final ArrayNode items = parseResults(node, RESULT);
 			if (items != null) {
 				final ArrayList<ListModel.AllItems> ret = new ArrayList<ListModel.AllItems>(items.size());
@@ -324,8 +324,8 @@ public final class Playlist {
 		}
 
 		@Override
-		protected ArrayList<GetPlaylistsResult> parseMany(ObjectNode node) {
-			final ArrayNode results = parseResults(node, RESULT);
+		protected ArrayList<GetPlaylistsResult> parseMany(JsonNode node) {
+			final ArrayNode results = (ArrayNode) node;
 			if (results != null) {
 				final ArrayList<GetPlaylistsResult> ret = new ArrayList<GetPlaylistsResult>(results.size());
 				for (int i = 0; i < results.size(); i++) {
@@ -508,7 +508,7 @@ public final class Playlist {
 		}
 
 		@Override
-		protected PlaylistModel.PropertyValue parseOne(ObjectNode node) {
+		protected PlaylistModel.PropertyValue parseOne(JsonNode node) {
 			return new PlaylistModel.PropertyValue(node);
 		}
 
@@ -574,7 +574,7 @@ public final class Playlist {
 		}
 
 		@Override
-		protected String parseOne(ObjectNode node) {
+		protected String parseOne(JsonNode node) {
 			return node.getTextValue();
 		}
 
@@ -638,7 +638,7 @@ public final class Playlist {
 		}
 
 		@Override
-		protected String parseOne(ObjectNode node) {
+		protected String parseOne(JsonNode node) {
 			return node.getTextValue();
 		}
 
@@ -704,7 +704,7 @@ public final class Playlist {
 		}
 
 		@Override
-		protected String parseOne(ObjectNode node) {
+		protected String parseOne(JsonNode node) {
 			return node.getTextValue();
 		}
 

@@ -27,6 +27,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
+import org.codehaus.jackson.JsonNode;
 import org.codehaus.jackson.node.ArrayNode;
 import org.codehaus.jackson.node.ObjectNode;
 import org.xbmc.android.jsonrpc.api.AbstractCall;
@@ -143,7 +144,7 @@ public final class Addons {
 		}
 
 		@Override
-		protected String parseOne(ObjectNode node) {
+		protected String parseOne(JsonNode node) {
 			return node.getTextValue();
 		}
 
@@ -208,7 +209,7 @@ public final class Addons {
 		}
 
 		@Override
-		protected AddonModel.Detail parseOne(ObjectNode node) {
+		protected AddonModel.Detail parseOne(JsonNode node) {
 			return new AddonModel.Detail((ObjectNode)node.get(RESULT));
 		}
 
@@ -362,7 +363,7 @@ public final class Addons {
 		}
 
 		@Override
-		protected ArrayList<AddonModel.Detail> parseMany(ObjectNode node) {
+		protected ArrayList<AddonModel.Detail> parseMany(JsonNode node) {
 			final ArrayNode addons = parseResults(node, RESULT);
 			if (addons != null) {
 				final ArrayList<AddonModel.Detail> ret = new ArrayList<AddonModel.Detail>(addons.size());
@@ -446,7 +447,7 @@ public final class Addons {
 		}
 
 		@Override
-		protected String parseOne(ObjectNode node) {
+		protected String parseOne(JsonNode node) {
 			return node.getTextValue();
 		}
 

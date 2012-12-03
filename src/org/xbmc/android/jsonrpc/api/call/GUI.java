@@ -22,6 +22,7 @@ package org.xbmc.android.jsonrpc.api.call;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import org.codehaus.jackson.JsonNode;
 import org.codehaus.jackson.node.ObjectNode;
 import org.xbmc.android.jsonrpc.api.AbstractCall;
 import org.xbmc.android.jsonrpc.api.model.GUIModel;
@@ -87,7 +88,7 @@ public final class GUI {
 		}
 
 		@Override
-		protected String parseOne(ObjectNode node) {
+		protected String parseOne(JsonNode node) {
 			return node.getTextValue();
 		}
 
@@ -149,7 +150,7 @@ public final class GUI {
 		}
 
 		@Override
-		protected GUIModel.PropertyValue parseOne(ObjectNode node) {
+		protected GUIModel.PropertyValue parseOne(JsonNode node) {
 			return new GUIModel.PropertyValue(node);
 		}
 
@@ -211,7 +212,7 @@ public final class GUI {
 		}
 
 		@Override
-		protected Boolean parseOne(ObjectNode node) {
+		protected Boolean parseOne(JsonNode node) {
 			return node.getBooleanValue();
 		}
 
@@ -316,7 +317,7 @@ public final class GUI {
 		}
 
 		@Override
-		protected String parseOne(ObjectNode node) {
+		protected String parseOne(JsonNode node) {
 			return node.getTextValue();
 		}
 

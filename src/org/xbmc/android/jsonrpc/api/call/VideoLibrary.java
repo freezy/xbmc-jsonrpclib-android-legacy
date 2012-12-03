@@ -83,7 +83,7 @@ public final class VideoLibrary {
 		}
 
 		@Override
-		protected String parseOne(ObjectNode node) {
+		protected String parseOne(JsonNode node) {
 			return node.getTextValue();
 		}
 
@@ -154,7 +154,7 @@ public final class VideoLibrary {
 		}
 
 		@Override
-		protected String parseOne(ObjectNode node) {
+		protected String parseOne(JsonNode node) {
 			return node.getTextValue();
 		}
 
@@ -359,7 +359,7 @@ public final class VideoLibrary {
 		}
 
 		@Override
-		protected VideoModel.EpisodeDetail parseOne(ObjectNode node) {
+		protected VideoModel.EpisodeDetail parseOne(JsonNode node) {
 			return new VideoModel.EpisodeDetail((ObjectNode)node.get(RESULT));
 		}
 
@@ -1649,7 +1649,7 @@ public final class VideoLibrary {
 		}
 
 		@Override
-		protected ArrayList<VideoModel.EpisodeDetail> parseMany(ObjectNode node) {
+		protected ArrayList<VideoModel.EpisodeDetail> parseMany(JsonNode node) {
 			final ArrayNode episodes = parseResults(node, RESULT);
 			if (episodes != null) {
 				final ArrayList<VideoModel.EpisodeDetail> ret = new ArrayList<VideoModel.EpisodeDetail>(episodes.size());
@@ -2067,7 +2067,7 @@ public final class VideoLibrary {
 		}
 
 		@Override
-		protected ArrayList<LibraryModel.GenreDetail> parseMany(ObjectNode node) {
+		protected ArrayList<LibraryModel.GenreDetail> parseMany(JsonNode node) {
 			final ArrayNode genres = parseResults(node, RESULT);
 			if (genres != null) {
 				final ArrayList<LibraryModel.GenreDetail> ret = new ArrayList<LibraryModel.GenreDetail>(genres.size());
@@ -2154,7 +2154,7 @@ public final class VideoLibrary {
 		}
 
 		@Override
-		protected VideoModel.MovieDetail parseOne(ObjectNode node) {
+		protected VideoModel.MovieDetail parseOne(JsonNode node) {
 			return new VideoModel.MovieDetail((ObjectNode)node.get(RESULT));
 		}
 
@@ -2232,7 +2232,7 @@ public final class VideoLibrary {
 		}
 
 		@Override
-		protected VideoModel.MovieSetExtendedDetail parseOne(ObjectNode node) {
+		protected VideoModel.MovieSetExtendedDetail parseOne(JsonNode node) {
 			return new VideoModel.MovieSetExtendedDetail((ObjectNode)node.get(RESULT));
 		}
 
@@ -2438,7 +2438,7 @@ public final class VideoLibrary {
 		}
 
 		@Override
-		protected ArrayList<VideoModel.MovieSetDetail> parseMany(ObjectNode node) {
+		protected ArrayList<VideoModel.MovieSetDetail> parseMany(JsonNode node) {
 			final ArrayNode sets = parseResults(node, RESULT);
 			if (sets != null) {
 				final ArrayList<VideoModel.MovieSetDetail> ret = new ArrayList<VideoModel.MovieSetDetail>(sets.size());
@@ -2975,7 +2975,7 @@ public final class VideoLibrary {
 		}
 
 		@Override
-		protected ArrayList<VideoModel.MovieDetail> parseMany(ObjectNode node) {
+		protected ArrayList<VideoModel.MovieDetail> parseMany(JsonNode node) {
 			final ArrayNode movies = parseResults(node, RESULT);
 			if (movies != null) {
 				final ArrayList<VideoModel.MovieDetail> ret = new ArrayList<VideoModel.MovieDetail>(movies.size());
@@ -3680,7 +3680,7 @@ public final class VideoLibrary {
 		}
 
 		@Override
-		protected VideoModel.MusicVideoDetail parseOne(ObjectNode node) {
+		protected VideoModel.MusicVideoDetail parseOne(JsonNode node) {
 			return new VideoModel.MusicVideoDetail((ObjectNode)node.get(RESULT));
 		}
 
@@ -4090,7 +4090,7 @@ public final class VideoLibrary {
 		}
 
 		@Override
-		protected ArrayList<VideoModel.MusicVideoDetail> parseMany(ObjectNode node) {
+		protected ArrayList<VideoModel.MusicVideoDetail> parseMany(JsonNode node) {
 			final ArrayNode musicvideos = parseResults(node, RESULT);
 			if (musicvideos != null) {
 				final ArrayList<VideoModel.MusicVideoDetail> ret = new ArrayList<VideoModel.MusicVideoDetail>(musicvideos.size());
@@ -4628,7 +4628,7 @@ public final class VideoLibrary {
 		}
 
 		@Override
-		protected ArrayList<VideoModel.EpisodeDetail> parseMany(ObjectNode node) {
+		protected ArrayList<VideoModel.EpisodeDetail> parseMany(JsonNode node) {
 			final ArrayNode episodes = parseResults(node, RESULT);
 			if (episodes != null) {
 				final ArrayList<VideoModel.EpisodeDetail> ret = new ArrayList<VideoModel.EpisodeDetail>(episodes.size());
@@ -4725,7 +4725,7 @@ public final class VideoLibrary {
 		}
 
 		@Override
-		protected ArrayList<VideoModel.MovieDetail> parseMany(ObjectNode node) {
+		protected ArrayList<VideoModel.MovieDetail> parseMany(JsonNode node) {
 			final ArrayNode movies = parseResults(node, RESULT);
 			if (movies != null) {
 				final ArrayList<VideoModel.MovieDetail> ret = new ArrayList<VideoModel.MovieDetail>(movies.size());
@@ -4822,7 +4822,7 @@ public final class VideoLibrary {
 		}
 
 		@Override
-		protected ArrayList<VideoModel.MusicVideoDetail> parseMany(ObjectNode node) {
+		protected ArrayList<VideoModel.MusicVideoDetail> parseMany(JsonNode node) {
 			final ArrayNode musicvideos = parseResults(node, RESULT);
 			if (musicvideos != null) {
 				final ArrayList<VideoModel.MusicVideoDetail> ret = new ArrayList<VideoModel.MusicVideoDetail>(musicvideos.size());
@@ -4938,7 +4938,7 @@ public final class VideoLibrary {
 		}
 
 		@Override
-		protected ArrayList<VideoModel.SeasonDetail> parseMany(ObjectNode node) {
+		protected ArrayList<VideoModel.SeasonDetail> parseMany(JsonNode node) {
 			final ArrayNode seasons = parseResults(node, RESULT);
 			if (seasons != null) {
 				final ArrayList<VideoModel.SeasonDetail> ret = new ArrayList<VideoModel.SeasonDetail>(seasons.size());
@@ -5013,7 +5013,7 @@ public final class VideoLibrary {
 		}
 
 		@Override
-		protected VideoModel.TVShowDetail parseOne(ObjectNode node) {
+		protected VideoModel.TVShowDetail parseOne(JsonNode node) {
 			return new VideoModel.TVShowDetail((ObjectNode)node.get(RESULT));
 		}
 
@@ -5384,7 +5384,7 @@ public final class VideoLibrary {
 		}
 
 		@Override
-		protected ArrayList<VideoModel.TVShowDetail> parseMany(ObjectNode node) {
+		protected ArrayList<VideoModel.TVShowDetail> parseMany(JsonNode node) {
 			final ArrayNode tvshows = parseResults(node, RESULT);
 			if (tvshows != null) {
 				final ArrayList<VideoModel.TVShowDetail> ret = new ArrayList<VideoModel.TVShowDetail>(tvshows.size());
@@ -5834,7 +5834,7 @@ public final class VideoLibrary {
 		}
 
 		@Override
-		protected String parseOne(ObjectNode node) {
+		protected String parseOne(JsonNode node) {
 			return node.getTextValue();
 		}
 
@@ -5896,7 +5896,7 @@ public final class VideoLibrary {
 		}
 
 		@Override
-		protected String parseOne(ObjectNode node) {
+		protected String parseOne(JsonNode node) {
 			return node.getTextValue();
 		}
 
@@ -5958,7 +5958,7 @@ public final class VideoLibrary {
 		}
 
 		@Override
-		protected String parseOne(ObjectNode node) {
+		protected String parseOne(JsonNode node) {
 			return node.getTextValue();
 		}
 
@@ -6020,7 +6020,7 @@ public final class VideoLibrary {
 		}
 
 		@Override
-		protected String parseOne(ObjectNode node) {
+		protected String parseOne(JsonNode node) {
 			return node.getTextValue();
 		}
 
@@ -6082,7 +6082,7 @@ public final class VideoLibrary {
 		}
 
 		@Override
-		protected String parseOne(ObjectNode node) {
+		protected String parseOne(JsonNode node) {
 			return node.getTextValue();
 		}
 
@@ -6178,7 +6178,7 @@ public final class VideoLibrary {
 		}
 
 		@Override
-		protected String parseOne(ObjectNode node) {
+		protected String parseOne(JsonNode node) {
 			return node.getTextValue();
 		}
 
@@ -6294,7 +6294,7 @@ public final class VideoLibrary {
 		}
 
 		@Override
-		protected String parseOne(ObjectNode node) {
+		protected String parseOne(JsonNode node) {
 			return node.getTextValue();
 		}
 
@@ -6388,7 +6388,7 @@ public final class VideoLibrary {
 		}
 
 		@Override
-		protected String parseOne(ObjectNode node) {
+		protected String parseOne(JsonNode node) {
 			return node.getTextValue();
 		}
 
@@ -6486,7 +6486,7 @@ public final class VideoLibrary {
 		}
 
 		@Override
-		protected String parseOne(ObjectNode node) {
+		protected String parseOne(JsonNode node) {
 			return node.getTextValue();
 		}
 

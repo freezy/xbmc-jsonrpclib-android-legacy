@@ -87,7 +87,7 @@ public final class PVR {
 		}
 
 		@Override
-		protected PVRModel.ChannelDetail parseOne(ObjectNode node) {
+		protected PVRModel.ChannelDetail parseOne(JsonNode node) {
 			return new PVRModel.ChannelDetail((ObjectNode)node.get(RESULT));
 		}
 
@@ -161,7 +161,7 @@ public final class PVR {
 		}
 
 		@Override
-		protected PVRModel.ChannelGroupExtendedDetail parseOne(ObjectNode node) {
+		protected PVRModel.ChannelGroupExtendedDetail parseOne(JsonNode node) {
 			return new PVRModel.ChannelGroupExtendedDetail((ObjectNode)node.get(RESULT));
 		}
 
@@ -320,7 +320,7 @@ public final class PVR {
 		}
 
 		@Override
-		protected ArrayList<PVRModel.ChannelGroupDetail> parseMany(ObjectNode node) {
+		protected ArrayList<PVRModel.ChannelGroupDetail> parseMany(JsonNode node) {
 			final ArrayNode channelgroups = parseResults(node, RESULT);
 			if (channelgroups != null) {
 				final ArrayList<PVRModel.ChannelGroupDetail> ret = new ArrayList<PVRModel.ChannelGroupDetail>(channelgroups.size());
@@ -408,7 +408,7 @@ public final class PVR {
 		}
 
 		@Override
-		protected ArrayList<PVRModel.ChannelDetail> parseMany(ObjectNode node) {
+		protected ArrayList<PVRModel.ChannelDetail> parseMany(JsonNode node) {
 			final ArrayNode channels = parseResults(node, RESULT);
 			if (channels != null) {
 				final ArrayList<PVRModel.ChannelDetail> ret = new ArrayList<PVRModel.ChannelDetail>(channels.size());
@@ -480,7 +480,7 @@ public final class PVR {
 		}
 
 		@Override
-		protected PVRModel.PropertyValue parseOne(ObjectNode node) {
+		protected PVRModel.PropertyValue parseOne(JsonNode node) {
 			return new PVRModel.PropertyValue(node);
 		}
 
@@ -571,7 +571,7 @@ public final class PVR {
 		}
 
 		@Override
-		protected String parseOne(ObjectNode node) {
+		protected String parseOne(JsonNode node) {
 			return node.getTextValue();
 		}
 
@@ -641,7 +641,7 @@ public final class PVR {
 		}
 
 		@Override
-		protected String parseOne(ObjectNode node) {
+		protected String parseOne(JsonNode node) {
 			return node.getTextValue();
 		}
 

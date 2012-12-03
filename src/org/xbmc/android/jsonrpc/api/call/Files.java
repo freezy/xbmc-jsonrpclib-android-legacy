@@ -127,7 +127,7 @@ public final class Files {
 		}
 
 		@Override
-		protected ArrayList<ListModel.FileItem> parseMany(ObjectNode node) {
+		protected ArrayList<ListModel.FileItem> parseMany(JsonNode node) {
 			final ArrayNode files = parseResults(node, RESULT);
 			if (files != null) {
 				final ArrayList<ListModel.FileItem> ret = new ArrayList<ListModel.FileItem>(files.size());
@@ -215,7 +215,7 @@ public final class Files {
 		}
 
 		@Override
-		protected ListModel.FileItem parseOne(ObjectNode node) {
+		protected ListModel.FileItem parseOne(JsonNode node) {
 			return new ListModel.FileItem((ObjectNode)node.get(RESULT));
 		}
 
@@ -302,7 +302,7 @@ public final class Files {
 		}
 
 		@Override
-		protected ArrayList<ListModel.SourceItem> parseMany(ObjectNode node) {
+		protected ArrayList<ListModel.SourceItem> parseMany(JsonNode node) {
 			final ArrayNode sources = parseResults(node, RESULT);
 			if (sources != null) {
 				final ArrayList<ListModel.SourceItem> ret = new ArrayList<ListModel.SourceItem>(sources.size());
@@ -374,7 +374,7 @@ public final class Files {
 		}
 
 		@Override
-		protected PrepareDownloadResult parseOne(ObjectNode node) {
+		protected PrepareDownloadResult parseOne(JsonNode node) {
 			return new PrepareDownloadResult(node);
 		}
 

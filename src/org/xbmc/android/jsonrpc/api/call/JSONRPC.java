@@ -94,7 +94,7 @@ public final class JSONRPC {
 		}
 
 		@Override
-		protected String parseOne(ObjectNode node) {
+		protected String parseOne(JsonNode node) {
 			return node.getTextValue();
 		}
 
@@ -154,7 +154,7 @@ public final class JSONRPC {
 		}
 
 		@Override
-		protected PermissionResult parseOne(ObjectNode node) {
+		protected PermissionResult parseOne(JsonNode node) {
 			return new PermissionResult(node);
 		}
 
@@ -398,7 +398,7 @@ public final class JSONRPC {
 		}
 
 		@Override
-		protected String parseOne(ObjectNode node) {
+		protected String parseOne(JsonNode node) {
 			return node.getTextValue();
 		}
 
@@ -414,19 +414,19 @@ public final class JSONRPC {
 	}
 
 	/**
-	 * Retrieve the jsonrpc protocol version.
+	 * Retrieve the JSON-RPC protocol version.
 	 * <p/>
 	 * This class represents the API method <tt>JSONRPC.Version</tt>
 	 * <p/>
 	 * <i>This class was generated automatically from XBMC's JSON-RPC introspect.</i>
 	 */
-	public static class Version extends AbstractCall<String> {
+	public static class Version extends AbstractCall<Version.VersionResult> {
 		public final static String API_TYPE = "JSONRPC.Version";
 
 		@Override
 		public void writeToParcel(Parcel parcel, int flags) {
 			super.writeToParcel(parcel, flags);
-			parcel.writeValue(mResult);
+			parcel.writeParcelable(mResult, flags);
 		}
 
 		/**
@@ -451,15 +451,15 @@ public final class JSONRPC {
 		};
 
 		/**
-		 * Retrieve the jsonrpc protocol version.
+		 * Retrieve the JSON-RPC protocol version.
 		 */
 		public Version() {
 			super();
 		}
 
 		@Override
-		protected String parseOne(ObjectNode node) {
-			return node.getTextValue();
+		protected VersionResult parseOne(JsonNode node) {
+			return new VersionResult(node);
 		}
 
 		@Override
@@ -470,6 +470,110 @@ public final class JSONRPC {
 		@Override
 		protected boolean returnsList() {
 			return false;
+		}
+
+		/**
+		 * Note: This class is used as result only.<br/>
+		 * <i>This class was generated automatically from XBMC's JSON-RPC introspect.</i>
+		 */
+		public static class VersionResult extends AbstractModel {
+
+			// field names
+			public static final String MAJOR = "major";
+			public static final String MINOR = "minor";
+			public static final String PATCH = "patch";
+
+			// class members
+			public final Integer major;
+			public final Integer minor;
+			public final Integer patch;
+
+			/**
+			 * @param major
+			 * @param minor
+			 * @param patch
+			 */
+			public VersionResult(Integer major, Integer minor, Integer patch) {
+				this.major = major;
+				this.minor = minor;
+				this.patch = patch;
+			}
+
+			/**
+			 * Construct from JSON object.
+			 * @param node JSON object representing a VersionResult object
+			 */
+			public VersionResult(JsonNode node) {
+				major = node.get(MAJOR).getIntValue(); // required value
+				minor = node.get(MINOR).getIntValue(); // required value
+				patch = node.get(PATCH).getIntValue(); // required value
+			}
+
+			@Override
+			public JsonNode toJsonNode() {
+				final ObjectNode node = OM.createObjectNode();
+				node.put(MAJOR, major);
+				node.put(MINOR, minor);
+				node.put(PATCH, patch);
+				return node;
+			}
+
+			/**
+			 * Extracts a list of {@link VersionResult} objects from a JSON array.
+			 * @param obj ObjectNode containing the list of objects.
+			 * @param key Key pointing to the node where the list is stored.
+			 */
+			static List<VersionResult> getJSONRPCVersionResultList(JsonNode node, String key) {
+				if (node.has(key)) {
+					final ArrayNode a = (ArrayNode)node.get(key);
+					final List<VersionResult> l = new ArrayList<VersionResult>(a.size());
+					for (int i = 0; i < a.size(); i++) {
+						l.add(new VersionResult((JsonNode)a.get(i)));
+					}
+					return l;
+				}
+				return new ArrayList<VersionResult>(0);
+			}
+
+			/**
+			 * Flatten this object into a Parcel.
+			 * @param parcel the Parcel in which the object should be written.
+			 * @param flags additional flags about how the object should be written.
+			 */
+			@Override
+			public void writeToParcel(Parcel parcel, int flags) {
+				parcel.writeValue(major);
+				parcel.writeValue(minor);
+				parcel.writeValue(patch);
+			}
+
+			/**
+			 * Construct via parcel.
+			 */
+			protected VersionResult(Parcel parcel) {
+				major = parcel.readInt();
+				minor = parcel.readInt();
+				patch = parcel.readInt();
+			}
+
+			/**
+			 * Generates instances of this Parcelable class from a Parcel.
+			 */
+			public static final Parcelable.Creator<VersionResult> CREATOR = new Parcelable.Creator<VersionResult>() {
+				@Override
+				public VersionResult createFromParcel(Parcel parcel) {
+					return new VersionResult(parcel);
+				}
+				@Override
+				public VersionResult[] newArray(int n) {
+					return new VersionResult[n];
+				}
+			};
+
+			@Override
+			public int describeContents() {
+				return 0;
+			}
 		}
 	}
 }

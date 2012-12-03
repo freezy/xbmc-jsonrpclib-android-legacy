@@ -86,8 +86,8 @@ public final class Player {
 		}
 
 		@Override
-		protected ArrayList<GetActivePlayersResult> parseMany(ObjectNode node) {
-			final ArrayNode results = parseResults(node, RESULT);
+		protected ArrayList<GetActivePlayersResult> parseMany(JsonNode node) {
+			final ArrayNode results = (ArrayNode) node;
 			if (results != null) {
 				final ArrayList<GetActivePlayersResult> ret = new ArrayList<GetActivePlayersResult>(results.size());
 				for (int i = 0; i < results.size(); i++) {
@@ -269,7 +269,7 @@ public final class Player {
 		}
 
 		@Override
-		protected ListModel.AllItems parseOne(ObjectNode node) {
+		protected ListModel.AllItems parseOne(JsonNode node) {
 			return new ListModel.AllItems((ObjectNode)node.get(RESULT));
 		}
 
@@ -333,7 +333,7 @@ public final class Player {
 		}
 
 		@Override
-		protected PlayerModel.PropertyValue parseOne(ObjectNode node) {
+		protected PlayerModel.PropertyValue parseOne(JsonNode node) {
 			return new PlayerModel.PropertyValue(node);
 		}
 
@@ -408,7 +408,7 @@ public final class Player {
 		}
 
 		@Override
-		protected String parseOne(ObjectNode node) {
+		protected String parseOne(JsonNode node) {
 			return node.getTextValue();
 		}
 
@@ -483,7 +483,7 @@ public final class Player {
 		}
 
 		@Override
-		protected String parseOne(ObjectNode node) {
+		protected String parseOne(JsonNode node) {
 			return node.getTextValue();
 		}
 
@@ -656,7 +656,7 @@ public final class Player {
 		}
 
 		@Override
-		protected String parseOne(ObjectNode node) {
+		protected String parseOne(JsonNode node) {
 			return node.getTextValue();
 		}
 
@@ -1172,7 +1172,7 @@ public final class Player {
 		}
 
 		@Override
-		protected PlayerModel.Speed parseOne(ObjectNode node) {
+		protected PlayerModel.Speed parseOne(JsonNode node) {
 			return new PlayerModel.Speed(node);
 		}
 
@@ -1245,7 +1245,7 @@ public final class Player {
 		}
 
 		@Override
-		protected String parseOne(ObjectNode node) {
+		protected String parseOne(JsonNode node) {
 			return node.getTextValue();
 		}
 
@@ -1342,7 +1342,7 @@ public final class Player {
 		}
 
 		@Override
-		protected SeekResult parseOne(ObjectNode node) {
+		protected SeekResult parseOne(JsonNode node) {
 			return new SeekResult(node);
 		}
 
@@ -1534,7 +1534,7 @@ public final class Player {
 		}
 
 		@Override
-		protected String parseOne(ObjectNode node) {
+		protected String parseOne(JsonNode node) {
 			return node.getTextValue();
 		}
 
@@ -1609,7 +1609,7 @@ public final class Player {
 		}
 
 		@Override
-		protected String parseOne(ObjectNode node) {
+		protected String parseOne(JsonNode node) {
 			return node.getTextValue();
 		}
 
@@ -1673,7 +1673,7 @@ public final class Player {
 		}
 
 		@Override
-		protected String parseOne(ObjectNode node) {
+		protected String parseOne(JsonNode node) {
 			return node.getTextValue();
 		}
 
@@ -1737,7 +1737,7 @@ public final class Player {
 		}
 
 		@Override
-		protected String parseOne(ObjectNode node) {
+		protected String parseOne(JsonNode node) {
 			return node.getTextValue();
 		}
 
@@ -1801,7 +1801,7 @@ public final class Player {
 		}
 
 		@Override
-		protected PlayerModel.Speed parseOne(ObjectNode node) {
+		protected PlayerModel.Speed parseOne(JsonNode node) {
 			return new PlayerModel.Speed(node);
 		}
 
@@ -1924,7 +1924,7 @@ public final class Player {
 		}
 
 		@Override
-		protected String parseOne(ObjectNode node) {
+		protected String parseOne(JsonNode node) {
 			return node.getTextValue();
 		}
 
@@ -1999,7 +1999,7 @@ public final class Player {
 		}
 
 		@Override
-		protected String parseOne(ObjectNode node) {
+		protected String parseOne(JsonNode node) {
 			return node.getTextValue();
 		}
 
@@ -2074,7 +2074,7 @@ public final class Player {
 		}
 
 		@Override
-		protected String parseOne(ObjectNode node) {
+		protected String parseOne(JsonNode node) {
 			return node.getTextValue();
 		}
 

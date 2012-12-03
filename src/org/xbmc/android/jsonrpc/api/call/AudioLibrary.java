@@ -79,7 +79,7 @@ public final class AudioLibrary {
 		}
 
 		@Override
-		protected String parseOne(ObjectNode node) {
+		protected String parseOne(JsonNode node) {
 			return node.getTextValue();
 		}
 
@@ -150,7 +150,7 @@ public final class AudioLibrary {
 		}
 
 		@Override
-		protected String parseOne(ObjectNode node) {
+		protected String parseOne(JsonNode node) {
 			return node.getTextValue();
 		}
 
@@ -348,7 +348,7 @@ public final class AudioLibrary {
 		}
 
 		@Override
-		protected AudioModel.AlbumDetail parseOne(ObjectNode node) {
+		protected AudioModel.AlbumDetail parseOne(JsonNode node) {
 			return new AudioModel.AlbumDetail((ObjectNode)node.get(RESULT));
 		}
 
@@ -641,7 +641,7 @@ public final class AudioLibrary {
 		}
 
 		@Override
-		protected ArrayList<AudioModel.AlbumDetail> parseMany(ObjectNode node) {
+		protected ArrayList<AudioModel.AlbumDetail> parseMany(JsonNode node) {
 			final ArrayNode albums = parseResults(node, RESULT);
 			if (albums != null) {
 				final ArrayList<AudioModel.AlbumDetail> ret = new ArrayList<AudioModel.AlbumDetail>(albums.size());
@@ -968,7 +968,7 @@ public final class AudioLibrary {
 		}
 
 		@Override
-		protected AudioModel.ArtistDetail parseOne(ObjectNode node) {
+		protected AudioModel.ArtistDetail parseOne(JsonNode node) {
 			return new AudioModel.ArtistDetail((ObjectNode)node.get(RESULT));
 		}
 
@@ -1700,7 +1700,7 @@ public final class AudioLibrary {
 		}
 
 		@Override
-		protected ArrayList<AudioModel.ArtistDetail> parseMany(ObjectNode node) {
+		protected ArrayList<AudioModel.ArtistDetail> parseMany(JsonNode node) {
 			final ArrayNode artists = parseResults(node, RESULT);
 			if (artists != null) {
 				final ArrayList<AudioModel.ArtistDetail> ret = new ArrayList<AudioModel.ArtistDetail>(artists.size());
@@ -2112,7 +2112,7 @@ public final class AudioLibrary {
 		}
 
 		@Override
-		protected ArrayList<LibraryModel.GenreDetail> parseMany(ObjectNode node) {
+		protected ArrayList<LibraryModel.GenreDetail> parseMany(JsonNode node) {
 			final ArrayNode genres = parseResults(node, RESULT);
 			if (genres != null) {
 				final ArrayList<LibraryModel.GenreDetail> ret = new ArrayList<LibraryModel.GenreDetail>(genres.size());
@@ -2209,7 +2209,7 @@ public final class AudioLibrary {
 		}
 
 		@Override
-		protected ArrayList<AudioModel.AlbumDetail> parseMany(ObjectNode node) {
+		protected ArrayList<AudioModel.AlbumDetail> parseMany(JsonNode node) {
 			final ArrayNode albums = parseResults(node, RESULT);
 			if (albums != null) {
 				final ArrayList<AudioModel.AlbumDetail> ret = new ArrayList<AudioModel.AlbumDetail>(albums.size());
@@ -2356,7 +2356,7 @@ public final class AudioLibrary {
 		}
 
 		@Override
-		protected ArrayList<AudioModel.SongDetail> parseMany(ObjectNode node) {
+		protected ArrayList<AudioModel.SongDetail> parseMany(JsonNode node) {
 			final ArrayNode songs = parseResults(node, RESULT);
 			if (songs != null) {
 				final ArrayList<AudioModel.SongDetail> ret = new ArrayList<AudioModel.SongDetail>(songs.size());
@@ -2453,7 +2453,7 @@ public final class AudioLibrary {
 		}
 
 		@Override
-		protected ArrayList<AudioModel.AlbumDetail> parseMany(ObjectNode node) {
+		protected ArrayList<AudioModel.AlbumDetail> parseMany(JsonNode node) {
 			final ArrayNode albums = parseResults(node, RESULT);
 			if (albums != null) {
 				final ArrayList<AudioModel.AlbumDetail> ret = new ArrayList<AudioModel.AlbumDetail>(albums.size());
@@ -2550,7 +2550,7 @@ public final class AudioLibrary {
 		}
 
 		@Override
-		protected ArrayList<AudioModel.SongDetail> parseMany(ObjectNode node) {
+		protected ArrayList<AudioModel.SongDetail> parseMany(JsonNode node) {
 			final ArrayNode songs = parseResults(node, RESULT);
 			if (songs != null) {
 				final ArrayList<AudioModel.SongDetail> ret = new ArrayList<AudioModel.SongDetail>(songs.size());
@@ -2625,7 +2625,7 @@ public final class AudioLibrary {
 		}
 
 		@Override
-		protected AudioModel.SongDetail parseOne(ObjectNode node) {
+		protected AudioModel.SongDetail parseOne(JsonNode node) {
 			return new AudioModel.SongDetail((ObjectNode)node.get(RESULT));
 		}
 
@@ -2996,7 +2996,7 @@ public final class AudioLibrary {
 		}
 
 		@Override
-		protected ArrayList<AudioModel.SongDetail> parseMany(ObjectNode node) {
+		protected ArrayList<AudioModel.SongDetail> parseMany(JsonNode node) {
 			final ArrayNode songs = parseResults(node, RESULT);
 			if (songs != null) {
 				final ArrayList<AudioModel.SongDetail> ret = new ArrayList<AudioModel.SongDetail>(songs.size());
@@ -3446,7 +3446,7 @@ public final class AudioLibrary {
 		}
 
 		@Override
-		protected String parseOne(ObjectNode node) {
+		protected String parseOne(JsonNode node) {
 			return node.getTextValue();
 		}
 
@@ -3530,7 +3530,7 @@ public final class AudioLibrary {
 		}
 
 		@Override
-		protected String parseOne(ObjectNode node) {
+		protected String parseOne(JsonNode node) {
 			return node.getTextValue();
 		}
 
@@ -3614,7 +3614,7 @@ public final class AudioLibrary {
 		}
 
 		@Override
-		protected String parseOne(ObjectNode node) {
+		protected String parseOne(JsonNode node) {
 			return node.getTextValue();
 		}
 
@@ -3706,7 +3706,7 @@ public final class AudioLibrary {
 		}
 
 		@Override
-		protected String parseOne(ObjectNode node) {
+		protected String parseOne(JsonNode node) {
 			return node.getTextValue();
 		}
 
