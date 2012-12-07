@@ -445,7 +445,7 @@ public final class VideoModel {
 		// class members
 		public final List<String> director;
 		public final Resume resume;
-		public final String runtime;
+		public final Integer runtime;
 		public final Streams streamdetails;
 
 		/**
@@ -456,7 +456,7 @@ public final class VideoModel {
 			super(node);
 			director = getStringArray(node, DIRECTOR);
 			resume = node.has(RESUME) ? new Resume(node.get(RESUME)) : null;
-			runtime = parseString(node, RUNTIME);
+			runtime = parseInt(node, RUNTIME);
 			streamdetails = node.has(STREAMDETAILS) ? new Streams(node.get(STREAMDETAILS)) : null;
 		}
 
@@ -519,7 +519,7 @@ public final class VideoModel {
 				director.add(parcel.readString());
 			}
 			resume = parcel.<Resume>readParcelable(Resume.class.getClassLoader());
-			runtime = parcel.readString();
+			runtime = parcel.readInt();
 			streamdetails = parcel.<Streams>readParcelable(Streams.class.getClassLoader());
 		}
 

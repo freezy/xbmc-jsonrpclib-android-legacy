@@ -22,6 +22,7 @@ package org.xbmc.android.jsonrpc.api.call;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import org.codehaus.jackson.JsonNode;
 import org.codehaus.jackson.node.ObjectNode;
 import org.xbmc.android.jsonrpc.api.AbstractCall;
 import org.xbmc.android.jsonrpc.api.model.GUIModel;
@@ -30,7 +31,7 @@ import org.xbmc.android.jsonrpc.api.model.GlobalModel;
 public final class GUI {
 
 	/**
-	 * Activates the given window.
+	 * Activates the given window.
 	 * <p/>
 	 * This class represents the API method <tt>GUI.ActivateWindow</tt>
 	 * <p/>
@@ -67,7 +68,7 @@ public final class GUI {
 		};
 
 		/**
-		 * Activates the given window.
+		 * Activates the given window.
 		 * @param window One of: <tt>home</tt>, <tt>programs</tt>, <tt>pictures</tt>, <tt>filemanager</tt>, <tt>files</tt>, <tt>settings</tt>, <tt>music</tt>, <tt>video</tt>, <tt>videos</tt>, <tt>tv</tt>, <tt>pvr</tt>, <tt>pvrguideinfo</tt>, <tt>pvrrecordinginfo</tt>, <tt>pvrtimersetting</tt>, <tt>pvrgroupmanager</tt>, <tt>pvrchannelmanager</tt>, <tt>pvrguidesearch</tt>, <tt>pvrchannelscan</tt>, <tt>pvrupdateprogress</tt>, <tt>pvrosdchannels</tt>, <tt>pvrosdguide</tt>, <tt>pvrosddirector</tt>, <tt>pvrosdcutter</tt>, <tt>pvrosdteletext</tt>, <tt>systeminfo</tt>, <tt>testpattern</tt>, <tt>screencalibration</tt>, <tt>guicalibration</tt>, <tt>picturessettings</tt>, <tt>programssettings</tt>, <tt>weathersettings</tt>, <tt>musicsettings</tt>, <tt>systemsettings</tt>, <tt>videossettings</tt>, <tt>networksettings</tt>, <tt>servicesettings</tt>, <tt>appearancesettings</tt>, <tt>pvrsettings</tt>, <tt>tvsettings</tt>, <tt>scripts</tt>, <tt>videofiles</tt>, <tt>videolibrary</tt>, <tt>videoplaylist</tt>, <tt>loginscreen</tt>, <tt>profiles</tt>, <tt>skinsettings</tt>, <tt>addonbrowser</tt>, <tt>yesnodialog</tt>, <tt>progressdialog</tt>, <tt>virtualkeyboard</tt>, <tt>volumebar</tt>, <tt>submenu</tt>, <tt>favourites</tt>, <tt>contextmenu</tt>, <tt>infodialog</tt>, <tt>numericinput</tt>, <tt>gamepadinput</tt>, <tt>shutdownmenu</tt>, <tt>mutebug</tt>, <tt>playercontrols</tt>, <tt>seekbar</tt>, <tt>musicosd</tt>, <tt>addonsettings</tt>, <tt>visualisationsettings</tt>, <tt>visualisationpresetlist</tt>, <tt>osdvideosettings</tt>, <tt>osdaudiosettings</tt>, <tt>videobookmarks</tt>, <tt>filebrowser</tt>, <tt>networksetup</tt>, <tt>mediasource</tt>, <tt>profilesettings</tt>, <tt>locksettings</tt>, <tt>contentsettings</tt>, <tt>songinformation</tt>, <tt>smartplaylisteditor</tt>, <tt>smartplaylistrule</tt>, <tt>busydialog</tt>, <tt>pictureinfo</tt>, <tt>accesspoints</tt>, <tt>fullscreeninfo</tt>, <tt>karaokeselector</tt>, <tt>karaokelargeselector</tt>, <tt>sliderdialog</tt>, <tt>addoninformation</tt>, <tt>musicplaylist</tt>, <tt>musicfiles</tt>, <tt>musiclibrary</tt>, <tt>musicplaylisteditor</tt>, <tt>teletext</tt>, <tt>selectdialog</tt>, <tt>musicinformation</tt>, <tt>okdialog</tt>, <tt>movieinformation</tt>, <tt>textviewer</tt>, <tt>fullscreenvideo</tt>, <tt>fullscreenlivetv</tt>, <tt>visualisation</tt>, <tt>slideshow</tt>, <tt>filestackingdialog</tt>, <tt>karaoke</tt>, <tt>weather</tt>, <tt>screensaver</tt>, <tt>videoosd</tt>, <tt>videomenu</tt>, <tt>videotimeseek</tt>, <tt>musicoverlay</tt>, <tt>videooverlay</tt>, <tt>startwindow</tt>, <tt>startup</tt>, <tt>peripherals</tt>, <tt>peripheralsettings</tt>, <tt>extendedprogressdialog</tt>, <tt>mediafilter</tt>. See constants at {@link GUIModel.Window}.
 		 * @param parameters
 		 */
@@ -78,7 +79,7 @@ public final class GUI {
 		}
 
 		/**
-		 * Activates the given window.
+		 * Activates the given window.
 		 * @param window One of: <tt>home</tt>, <tt>programs</tt>, <tt>pictures</tt>, <tt>filemanager</tt>, <tt>files</tt>, <tt>settings</tt>, <tt>music</tt>, <tt>video</tt>, <tt>videos</tt>, <tt>tv</tt>, <tt>pvr</tt>, <tt>pvrguideinfo</tt>, <tt>pvrrecordinginfo</tt>, <tt>pvrtimersetting</tt>, <tt>pvrgroupmanager</tt>, <tt>pvrchannelmanager</tt>, <tt>pvrguidesearch</tt>, <tt>pvrchannelscan</tt>, <tt>pvrupdateprogress</tt>, <tt>pvrosdchannels</tt>, <tt>pvrosdguide</tt>, <tt>pvrosddirector</tt>, <tt>pvrosdcutter</tt>, <tt>pvrosdteletext</tt>, <tt>systeminfo</tt>, <tt>testpattern</tt>, <tt>screencalibration</tt>, <tt>guicalibration</tt>, <tt>picturessettings</tt>, <tt>programssettings</tt>, <tt>weathersettings</tt>, <tt>musicsettings</tt>, <tt>systemsettings</tt>, <tt>videossettings</tt>, <tt>networksettings</tt>, <tt>servicesettings</tt>, <tt>appearancesettings</tt>, <tt>pvrsettings</tt>, <tt>tvsettings</tt>, <tt>scripts</tt>, <tt>videofiles</tt>, <tt>videolibrary</tt>, <tt>videoplaylist</tt>, <tt>loginscreen</tt>, <tt>profiles</tt>, <tt>skinsettings</tt>, <tt>addonbrowser</tt>, <tt>yesnodialog</tt>, <tt>progressdialog</tt>, <tt>virtualkeyboard</tt>, <tt>volumebar</tt>, <tt>submenu</tt>, <tt>favourites</tt>, <tt>contextmenu</tt>, <tt>infodialog</tt>, <tt>numericinput</tt>, <tt>gamepadinput</tt>, <tt>shutdownmenu</tt>, <tt>mutebug</tt>, <tt>playercontrols</tt>, <tt>seekbar</tt>, <tt>musicosd</tt>, <tt>addonsettings</tt>, <tt>visualisationsettings</tt>, <tt>visualisationpresetlist</tt>, <tt>osdvideosettings</tt>, <tt>osdaudiosettings</tt>, <tt>videobookmarks</tt>, <tt>filebrowser</tt>, <tt>networksetup</tt>, <tt>mediasource</tt>, <tt>profilesettings</tt>, <tt>locksettings</tt>, <tt>contentsettings</tt>, <tt>songinformation</tt>, <tt>smartplaylisteditor</tt>, <tt>smartplaylistrule</tt>, <tt>busydialog</tt>, <tt>pictureinfo</tt>, <tt>accesspoints</tt>, <tt>fullscreeninfo</tt>, <tt>karaokeselector</tt>, <tt>karaokelargeselector</tt>, <tt>sliderdialog</tt>, <tt>addoninformation</tt>, <tt>musicplaylist</tt>, <tt>musicfiles</tt>, <tt>musiclibrary</tt>, <tt>musicplaylisteditor</tt>, <tt>teletext</tt>, <tt>selectdialog</tt>, <tt>musicinformation</tt>, <tt>okdialog</tt>, <tt>movieinformation</tt>, <tt>textviewer</tt>, <tt>fullscreenvideo</tt>, <tt>fullscreenlivetv</tt>, <tt>visualisation</tt>, <tt>slideshow</tt>, <tt>filestackingdialog</tt>, <tt>karaoke</tt>, <tt>weather</tt>, <tt>screensaver</tt>, <tt>videoosd</tt>, <tt>videomenu</tt>, <tt>videotimeseek</tt>, <tt>musicoverlay</tt>, <tt>videooverlay</tt>, <tt>startwindow</tt>, <tt>startup</tt>, <tt>peripherals</tt>, <tt>peripheralsettings</tt>, <tt>extendedprogressdialog</tt>, <tt>mediafilter</tt>. See constants at {@link GUIModel.Window}.
 		 */
 		public ActivateWindow(String window) {
@@ -87,7 +88,7 @@ public final class GUI {
 		}
 
 		@Override
-		protected String parseOne(ObjectNode node) {
+		protected String parseOne(JsonNode node) {
 			return node.getTextValue();
 		}
 
@@ -103,7 +104,7 @@ public final class GUI {
 	}
 
 	/**
-	 * Retrieves the values of the given properties.
+	 * Retrieves the values of the given properties.
 	 * <p/>
 	 * This class represents the API method <tt>GUI.GetProperties</tt>
 	 * <p/>
@@ -140,7 +141,7 @@ public final class GUI {
 		};
 
 		/**
-		 * Retrieves the values of the given properties.
+		 * Retrieves the values of the given properties.
 		 * @param properties One or more of: <tt>currentwindow</tt>, <tt>currentcontrol</tt>, <tt>skin</tt>, <tt>fullscreen</tt>. See constants at {@link GUIModel.PropertyName}.
 		 */
 		public GetProperties(String... properties) {
@@ -149,7 +150,7 @@ public final class GUI {
 		}
 
 		@Override
-		protected GUIModel.PropertyValue parseOne(ObjectNode node) {
+		protected GUIModel.PropertyValue parseOne(JsonNode node) {
 			return new GUIModel.PropertyValue(node);
 		}
 
@@ -165,7 +166,7 @@ public final class GUI {
 	}
 
 	/**
-	 * Toggle fullscreen/GUI.
+	 * Toggle fullscreen/GUI.
 	 * <p/>
 	 * This class represents the API method <tt>GUI.SetFullscreen</tt>
 	 * <p/>
@@ -202,7 +203,7 @@ public final class GUI {
 		};
 
 		/**
-		 * Toggle fullscreen/GUI.
+		 * Toggle fullscreen/GUI.
 		 * @param fullscreen
 		 */
 		public SetFullscreen(GlobalModel.Toggle fullscreen) {
@@ -211,7 +212,7 @@ public final class GUI {
 		}
 
 		@Override
-		protected Boolean parseOne(ObjectNode node) {
+		protected Boolean parseOne(JsonNode node) {
 			return node.getBooleanValue();
 		}
 
@@ -227,7 +228,7 @@ public final class GUI {
 	}
 
 	/**
-	 * Shows a GUI notification.
+	 * Shows a GUI notification.
 	 * <p/>
 	 * This class represents the API method <tt>GUI.ShowNotification</tt>
 	 * <p/>
@@ -264,11 +265,11 @@ public final class GUI {
 		};
 
 		/**
-		 * Shows a GUI notification.
+		 * Shows a GUI notification.
 		 * @param title
 		 * @param message
 		 * @param image
-		 * @param displaytimeThe time in milliseconds the notification will be visible.
+		 * @param displaytimeThe time in milliseconds the notification will be visible.
 		 */
 		public ShowNotification(String title, String message, String image, Integer displaytime) {
 			super();
@@ -279,7 +280,7 @@ public final class GUI {
 		}
 
 		/**
-		 * Shows a GUI notification.
+		 * Shows a GUI notification.
 		 * @param title
 		 * @param message
 		 */
@@ -290,7 +291,7 @@ public final class GUI {
 		}
 
 		/**
-		 * Shows a GUI notification.
+		 * Shows a GUI notification.
 		 * @param title
 		 * @param message
 		 * @param image
@@ -303,10 +304,10 @@ public final class GUI {
 		}
 
 		/**
-		 * Shows a GUI notification.
+		 * Shows a GUI notification.
 		 * @param title
 		 * @param message
-		 * @param displaytimeThe time in milliseconds the notification will be visible.
+		 * @param displaytimeThe time in milliseconds the notification will be visible.
 		 */
 		public ShowNotification(String title, String message, Integer displaytime) {
 			super();
@@ -316,7 +317,7 @@ public final class GUI {
 		}
 
 		@Override
-		protected String parseOne(ObjectNode node) {
+		protected String parseOne(JsonNode node) {
 			return node.getTextValue();
 		}
 

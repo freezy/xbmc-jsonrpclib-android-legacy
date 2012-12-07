@@ -38,7 +38,7 @@ import org.xbmc.android.jsonrpc.api.model.PVRModel;
 public final class PVR {
 
 	/**
-	 * Retrieves the details of a specific channel.
+	 * Retrieves the details of a specific channel.
 	 * <p/>
 	 * This class represents the API method <tt>PVR.GetChannelDetails</tt>
 	 * <p/>
@@ -76,7 +76,7 @@ public final class PVR {
 		public final static String RESULT = "channeldetails";
 
 		/**
-		 * Retrieves the details of a specific channel.
+		 * Retrieves the details of a specific channel.
 		 * @param channelid
 		 * @param properties One or more of: <tt>thumbnail</tt>, <tt>channeltype</tt>, <tt>hidden</tt>, <tt>locked</tt>, <tt>channel</tt>, <tt>lastplayed</tt>. See constants at {@link PVRModel.ChannelFields}.
 		 */
@@ -87,7 +87,7 @@ public final class PVR {
 		}
 
 		@Override
-		protected PVRModel.ChannelDetail parseOne(ObjectNode node) {
+		protected PVRModel.ChannelDetail parseOne(JsonNode node) {
 			return new PVRModel.ChannelDetail((ObjectNode)node.get(RESULT));
 		}
 
@@ -103,7 +103,7 @@ public final class PVR {
 	}
 
 	/**
-	 * Retrieves the details of a specific channel group.
+	 * Retrieves the details of a specific channel group.
 	 * <p/>
 	 * This class represents the API method <tt>PVR.GetChannelGroupDetails</tt>
 	 * <p/>
@@ -141,7 +141,7 @@ public final class PVR {
 		public final static String RESULT = "channelgroupdetails";
 
 		/**
-		 * Retrieves the details of a specific channel group.
+		 * Retrieves the details of a specific channel group.
 		 * @param channelgroupid
 		 * @param channels
 		 */
@@ -152,7 +152,7 @@ public final class PVR {
 		}
 
 		/**
-		 * Retrieves the details of a specific channel group.
+		 * Retrieves the details of a specific channel group.
 		 * @param channelgroupid
 		 */
 		public GetChannelGroupDetails(PVRModel.ChannelGroupId channelgroupid) {
@@ -161,7 +161,7 @@ public final class PVR {
 		}
 
 		@Override
-		protected PVRModel.ChannelGroupExtendedDetail parseOne(ObjectNode node) {
+		protected PVRModel.ChannelGroupExtendedDetail parseOne(JsonNode node) {
 			return new PVRModel.ChannelGroupExtendedDetail((ObjectNode)node.get(RESULT));
 		}
 
@@ -262,7 +262,7 @@ public final class PVR {
 	}
 
 	/**
-	 * Retrieves the channel groups for the specified type.
+	 * Retrieves the channel groups for the specified type.
 	 * <p/>
 	 * This class represents the API method <tt>PVR.GetChannelGroups</tt>
 	 * <p/>
@@ -300,7 +300,7 @@ public final class PVR {
 		public final static String RESULT = "channelgroups";
 
 		/**
-		 * Retrieves the channel groups for the specified type.
+		 * Retrieves the channel groups for the specified type.
 		 * @param channeltype One of: <tt>tv</tt>, <tt>radio</tt>. See constants at {@link PVRModel.ChannelType}.
 		 * @param limits
 		 */
@@ -311,7 +311,7 @@ public final class PVR {
 		}
 
 		/**
-		 * Retrieves the channel groups for the specified type.
+		 * Retrieves the channel groups for the specified type.
 		 * @param channeltype One of: <tt>tv</tt>, <tt>radio</tt>. See constants at {@link PVRModel.ChannelType}.
 		 */
 		public GetChannelGroups(String channeltype) {
@@ -320,7 +320,7 @@ public final class PVR {
 		}
 
 		@Override
-		protected ArrayList<PVRModel.ChannelGroupDetail> parseMany(ObjectNode node) {
+		protected ArrayList<PVRModel.ChannelGroupDetail> parseMany(JsonNode node) {
 			final ArrayNode channelgroups = parseResults(node, RESULT);
 			if (channelgroups != null) {
 				final ArrayList<PVRModel.ChannelGroupDetail> ret = new ArrayList<PVRModel.ChannelGroupDetail>(channelgroups.size());
@@ -346,7 +346,7 @@ public final class PVR {
 	}
 
 	/**
-	 * Retrieves the channel list.
+	 * Retrieves the channel list.
 	 * <p/>
 	 * This class represents the API method <tt>PVR.GetChannels</tt>
 	 * <p/>
@@ -384,7 +384,7 @@ public final class PVR {
 		public final static String RESULT = "channels";
 
 		/**
-		 * Retrieves the channel list.
+		 * Retrieves the channel list.
 		 * @param channelgroupid
 		 * @param limits
 		 * @param properties One or more of: <tt>thumbnail</tt>, <tt>channeltype</tt>, <tt>hidden</tt>, <tt>locked</tt>, <tt>channel</tt>, <tt>lastplayed</tt>. See constants at {@link PVRModel.ChannelFields}.
@@ -397,7 +397,7 @@ public final class PVR {
 		}
 
 		/**
-		 * Retrieves the channel list.
+		 * Retrieves the channel list.
 		 * @param channelgroupid
 		 * @param properties One or more of: <tt>thumbnail</tt>, <tt>channeltype</tt>, <tt>hidden</tt>, <tt>locked</tt>, <tt>channel</tt>, <tt>lastplayed</tt>. See constants at {@link PVRModel.ChannelFields}.
 		 */
@@ -408,7 +408,7 @@ public final class PVR {
 		}
 
 		@Override
-		protected ArrayList<PVRModel.ChannelDetail> parseMany(ObjectNode node) {
+		protected ArrayList<PVRModel.ChannelDetail> parseMany(JsonNode node) {
 			final ArrayNode channels = parseResults(node, RESULT);
 			if (channels != null) {
 				final ArrayList<PVRModel.ChannelDetail> ret = new ArrayList<PVRModel.ChannelDetail>(channels.size());
@@ -434,7 +434,7 @@ public final class PVR {
 	}
 
 	/**
-	 * Retrieves the values of the given properties.
+	 * Retrieves the values of the given properties.
 	 * <p/>
 	 * This class represents the API method <tt>PVR.GetProperties</tt>
 	 * <p/>
@@ -471,7 +471,7 @@ public final class PVR {
 		};
 
 		/**
-		 * Retrieves the values of the given properties.
+		 * Retrieves the values of the given properties.
 		 * @param properties One or more of: <tt>available</tt>, <tt>recording</tt>, <tt>scanning</tt>. See constants at {@link PVRModel.PropertyName}.
 		 */
 		public GetProperties(String... properties) {
@@ -480,7 +480,7 @@ public final class PVR {
 		}
 
 		@Override
-		protected PVRModel.PropertyValue parseOne(ObjectNode node) {
+		protected PVRModel.PropertyValue parseOne(JsonNode node) {
 			return new PVRModel.PropertyValue(node);
 		}
 
@@ -496,7 +496,7 @@ public final class PVR {
 	}
 
 	/**
-	 * Toggle recording of a channel.
+	 * Toggle recording of a channel.
 	 * <p/>
 	 * This class represents the API method <tt>PVR.Record</tt>
 	 * <p/>
@@ -533,7 +533,7 @@ public final class PVR {
 		};
 
 		/**
-		 * Toggle recording of a channel.
+		 * Toggle recording of a channel.
 		 * @param record
 		 * @param channel One of: <tt>current</tt>. See constants at {@link PVR.Record.Channel}.
 		 */
@@ -544,7 +544,7 @@ public final class PVR {
 		}
 
 		/**
-		 * Toggle recording of a channel.
+		 * Toggle recording of a channel.
 		 * @param record
 		 * @param channel
 		 */
@@ -555,14 +555,14 @@ public final class PVR {
 		}
 
 		/**
-		 * Toggle recording of a channel.
+		 * Toggle recording of a channel.
 		 */
 		public Record() {
 			super();
 		}
 
 		/**
-		 * Toggle recording of a channel.
+		 * Toggle recording of a channel.
 		 * @param record
 		 */
 		public Record(GlobalModel.Toggle record) {
@@ -571,7 +571,7 @@ public final class PVR {
 		}
 
 		@Override
-		protected String parseOne(ObjectNode node) {
+		protected String parseOne(JsonNode node) {
 			return node.getTextValue();
 		}
 
@@ -597,7 +597,7 @@ public final class PVR {
 	}
 
 	/**
-	 * Starts a channel scan.
+	 * Starts a channel scan.
 	 * <p/>
 	 * This class represents the API method <tt>PVR.Scan</tt>
 	 * <p/>
@@ -634,14 +634,14 @@ public final class PVR {
 		};
 
 		/**
-		 * Starts a channel scan.
+		 * Starts a channel scan.
 		 */
 		public Scan() {
 			super();
 		}
 
 		@Override
-		protected String parseOne(ObjectNode node) {
+		protected String parseOne(JsonNode node) {
 			return node.getTextValue();
 		}
 

@@ -22,6 +22,7 @@ package org.xbmc.android.jsonrpc.api.call;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import org.codehaus.jackson.JsonNode;
 import org.codehaus.jackson.node.ObjectNode;
 import org.xbmc.android.jsonrpc.api.AbstractCall;
 import org.xbmc.android.jsonrpc.api.model.ApplicationModel;
@@ -30,7 +31,7 @@ import org.xbmc.android.jsonrpc.api.model.GlobalModel;
 public final class Application {
 
 	/**
-	 * Retrieves the values of the given properties.
+	 * Retrieves the values of the given properties.
 	 * <p/>
 	 * This class represents the API method <tt>Application.GetProperties</tt>
 	 * <p/>
@@ -67,7 +68,7 @@ public final class Application {
 		};
 
 		/**
-		 * Retrieves the values of the given properties.
+		 * Retrieves the values of the given properties.
 		 * @param properties One or more of: <tt>volume</tt>, <tt>muted</tt>, <tt>name</tt>, <tt>version</tt>. See constants at {@link ApplicationModel.PropertyName}.
 		 */
 		public GetProperties(String... properties) {
@@ -76,7 +77,7 @@ public final class Application {
 		}
 
 		@Override
-		protected ApplicationModel.PropertyValue parseOne(ObjectNode node) {
+		protected ApplicationModel.PropertyValue parseOne(JsonNode node) {
 			return new ApplicationModel.PropertyValue(node);
 		}
 
@@ -92,7 +93,7 @@ public final class Application {
 	}
 
 	/**
-	 * Quit application.
+	 * Quit application.
 	 * <p/>
 	 * This class represents the API method <tt>Application.Quit</tt>
 	 * <p/>
@@ -129,14 +130,14 @@ public final class Application {
 		};
 
 		/**
-		 * Quit application.
+		 * Quit application.
 		 */
 		public Quit() {
 			super();
 		}
 
 		@Override
-		protected String parseOne(ObjectNode node) {
+		protected String parseOne(JsonNode node) {
 			return node.getTextValue();
 		}
 
@@ -152,7 +153,7 @@ public final class Application {
 	}
 
 	/**
-	 * Toggle mute/unmute.
+	 * Toggle mute/unmute.
 	 * <p/>
 	 * This class represents the API method <tt>Application.SetMute</tt>
 	 * <p/>
@@ -189,7 +190,7 @@ public final class Application {
 		};
 
 		/**
-		 * Toggle mute/unmute.
+		 * Toggle mute/unmute.
 		 * @param mute
 		 */
 		public SetMute(GlobalModel.Toggle mute) {
@@ -198,7 +199,7 @@ public final class Application {
 		}
 
 		@Override
-		protected Boolean parseOne(ObjectNode node) {
+		protected Boolean parseOne(JsonNode node) {
 			return node.getBooleanValue();
 		}
 
@@ -214,7 +215,7 @@ public final class Application {
 	}
 
 	/**
-	 * Set the current volume.
+	 * Set the current volume.
 	 * <p/>
 	 * This class represents the API method <tt>Application.SetVolume</tt>
 	 * <p/>
@@ -251,7 +252,7 @@ public final class Application {
 		};
 
 		/**
-		 * Set the current volume.
+		 * Set the current volume.
 		 * @param volume
 		 */
 		public SetVolume(Integer volume) {
@@ -260,7 +261,7 @@ public final class Application {
 		}
 
 		/**
-		 * Set the current volume.
+		 * Set the current volume.
 		 * @param volume One of: <tt>increment</tt>, <tt>decrement</tt>. See constants at {@link GlobalModel.IncrementDecrement}.
 		 */
 		public SetVolume(String volume) {
@@ -269,7 +270,7 @@ public final class Application {
 		}
 
 		@Override
-		protected Integer parseOne(ObjectNode node) {
+		protected Integer parseOne(JsonNode node) {
 			return node.getIntValue();
 		}
 
