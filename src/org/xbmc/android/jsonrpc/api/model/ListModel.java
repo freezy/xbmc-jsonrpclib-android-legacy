@@ -24,6 +24,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -2638,38 +2639,174 @@ public final class ListModel {
 	 * Note: This class is used as result only.<br/>
 	 * <i>This class was generated automatically from XBMC's JSON-RPC introspect.</i>
 	 */
-	public static class AllItems extends AbstractModel {
+	public static class AllItems extends BaseItem {
 		public final static String API_TYPE = "List.Item.All";
+
+		// field names
+		public static final String CHANNEL = "channel";
+		public static final String CHANNELNUMBER = "channelnumber";
+		public static final String CHANNELTYPE = "channeltype";
+		public static final String ENDTIME = "endtime";
+		public static final String HIDDEN = "hidden";
+		public static final String LOCKED = "locked";
+		public static final String STARTTIME = "starttime";
+
+		// class members
+		public final String channel;
+		public final Integer channelnumber;
+		public final String channeltype;
+		public final String endtime;
+		public final Boolean hidden;
+		public final Boolean locked;
+		public final String starttime;
+
+		/**
+		 * Construct from JSON object.
+		 * @param node JSON object representing a AllItems object
+		 */
+		public AllItems(JsonNode node) {
+			super(node);
+			channel = parseString(node, CHANNEL);
+			channelnumber = parseInt(node, CHANNELNUMBER);
+			channeltype = parseString(node, CHANNELTYPE);
+			endtime = parseString(node, ENDTIME);
+			hidden = parseBoolean(node, HIDDEN);
+			locked = parseBoolean(node, LOCKED);
+			starttime = parseString(node, STARTTIME);
+		}
+
+		@Override
+		public JsonNode toJsonNode() {
+			final ObjectNode node = (ObjectNode)super.toJsonNode();
+			node.put(CHANNEL, channel);
+			node.put(CHANNELNUMBER, channelnumber);
+			node.put(CHANNELTYPE, channeltype); // enum
+			node.put(ENDTIME, endtime);
+			node.put(HIDDEN, hidden);
+			node.put(LOCKED, locked);
+			node.put(STARTTIME, starttime);
+			return node;
+		}
+
+		/**
+		 * Extracts a list of {@link AllItems} objects from a JSON array.
+		 * @param obj ObjectNode containing the list of objects.
+		 * @param key Key pointing to the node where the list is stored.
+		 */
+		static List<AllItems> getListModelAllItemsList(JsonNode node, String key) {
+			if (node.has(key)) {
+				final ArrayNode a = (ArrayNode)node.get(key);
+				final List<AllItems> l = new ArrayList<AllItems>(a.size());
+				for (int i = 0; i < a.size(); i++) {
+					l.add(new AllItems((JsonNode)a.get(i)));
+				}
+				return l;
+			}
+			return new ArrayList<AllItems>(0);
+		}
+
+		/**
+		 * Flatten this object into a Parcel.
+		 * @param parcel the Parcel in which the object should be written.
+		 * @param flags additional flags about how the object should be written.
+		 */
+		@Override
+		public void writeToParcel(Parcel parcel, int flags) {
+			super.writeToParcel(parcel, flags);
+			parcel.writeValue(channel);
+			parcel.writeValue(channelnumber);
+			parcel.writeValue(channeltype); // enum
+			parcel.writeValue(endtime);
+			parcel.writeInt(hidden ? 1 : 0);
+			parcel.writeInt(locked ? 1 : 0);
+			parcel.writeValue(starttime);
+		}
+
+		/**
+		 * Construct via parcel.
+		 */
+		protected AllItems(Parcel parcel) {
+			super(parcel);
+			channel = parcel.readString();
+			channelnumber = parcel.readInt();
+			channeltype = parcel.readString(); // enum
+			endtime = parcel.readString();
+			hidden = parcel.readInt() == 1;
+			locked = parcel.readInt() == 1;
+			starttime = parcel.readString();
+		}
+
+		/**
+		 * Generates instances of this Parcelable class from a Parcel.
+		 */
+		public static final Parcelable.Creator<AllItems> CREATOR = new Parcelable.Creator<AllItems>() {
+			@Override
+			public AllItems createFromParcel(Parcel parcel) {
+				return new AllItems(parcel);
+			}
+			@Override
+			public AllItems[] newArray(int n) {
+				return new AllItems[n];
+			}
+		};
+
+		@Override
+		public int describeContents() {
+			return 0;
+		}
+
+		/**
+		 * API Name: <tt>channeltype</tt>
+		 */
+		public interface Channeltype {
+
+			public final String TV = "tv";
+			public final String RADIO = "radio";
+
+			public final static Set<String> values = new HashSet<String>(Arrays.asList(TV, RADIO));
+		}
+	}
+
+	/**
+	 * API Name: <tt>List.Item.Base</tt>
+	 * <p/>
+	 * Note: This class is used as result only.<br/>
+	 * <i>This class was generated automatically from XBMC's JSON-RPC introspect.</i>
+	 */
+	public static class BaseItem extends AbstractModel {
+		public final static String API_TYPE = "List.Item.Base";
 
 		// field names
 		public static final String ALBUM = "album";
 		public static final String ALBUMARTIST = "albumartist";
+		public static final String ALBUMARTISTID = "albumartistid";
 		public static final String ALBUMID = "albumid";
+		public static final String ALBUMLABEL = "albumlabel";
 		public static final String ART = "art";
 		public static final String ARTIST = "artist";
+		public static final String ARTISTID = "artistid";
 		public static final String CAST = "cast";
-		public static final String CHANNEL = "channel";
-		public static final String CHANNELNUMBER = "channelnumber";
-		public static final String CHANNELTYPE = "channeltype";
 		public static final String COMMENT = "comment";
 		public static final String COUNTRY = "country";
 		public static final String DATEADDED = "dateadded";
+		public static final String DESCRIPTION = "description";
 		public static final String DIRECTOR = "director";
 		public static final String DISC = "disc";
+		public static final String DISPLAYARTIST = "displayartist";
 		public static final String DURATION = "duration";
-		public static final String ENDTIME = "endtime";
 		public static final String EPISODE = "episode";
+		public static final String EPISODEGUIDE = "episodeguide";
 		public static final String FANART = "fanart";
 		public static final String FILE = "file";
 		public static final String FIRSTAIRED = "firstaired";
 		public static final String GENRE = "genre";
-		public static final String HIDDEN = "hidden";
+		public static final String GENREID = "genreid";
 		public static final String ID = "id";
 		public static final String IMDBNUMBER = "imdbnumber";
 		public static final String LABEL = "label";
 		public static final String LASTPLAYED = "lastplayed";
-		public static final String LOCKED = "locked";
 		public static final String LYRICS = "lyrics";
+		public static final String MOOD = "mood";
 		public static final String MPAA = "mpaa";
 		public static final String MUSICBRAINZALBUMARTISTID = "musicbrainzalbumartistid";
 		public static final String MUSICBRAINZALBUMID = "musicbrainzalbumid";
@@ -2689,11 +2826,13 @@ public final class ListModel {
 		public static final String SETID = "setid";
 		public static final String SHOWLINK = "showlink";
 		public static final String SHOWTITLE = "showtitle";
-		public static final String STARTTIME = "starttime";
+		public static final String SORTTITLE = "sorttitle";
 		public static final String STREAMDETAILS = "streamdetails";
 		public static final String STUDIO = "studio";
+		public static final String STYLE = "style";
 		public static final String TAG = "tag";
 		public static final String TAGLINE = "tagline";
+		public static final String THEME = "theme";
 		public static final String THUMBNAIL = "thumbnail";
 		public static final String TITLE = "title";
 		public static final String TOP250 = "top250";
@@ -2701,6 +2840,7 @@ public final class ListModel {
 		public static final String TRAILER = "trailer";
 		public static final String TVSHOWID = "tvshowid";
 		public static final String TYPE = "type";
+		public static final String UNIQUEID = "uniqueid";
 		public static final String VOTES = "votes";
 		public static final String WATCHEDEPISODES = "watchedepisodes";
 		public static final String WRITER = "writer";
@@ -2709,7 +2849,9 @@ public final class ListModel {
 		// class members
 		public final String album;
 		public final List<String> albumartist;
+		public final List<Integer> albumartistid;
 		public final Integer albumid;
+		public final String albumlabel;
 		/**
 		 * Multiple inheritage: copied from <tt>Video.Details.Base</tt>.
 		 */
@@ -2718,24 +2860,30 @@ public final class ListModel {
 		 * Multiple inheritage: copied from <tt>Audio.Details.Media</tt>.
 		 */
 		public final List<String> artist;
+		/**
+		 * Multiple inheritage: copied from <tt>Audio.Details.Media</tt>.
+		 */
+		public final List<Integer> artistid;
 		public final List<VideoModel.Cast> cast;
-		public final String channel;
-		public final Integer channelnumber;
-		public final String channeltype;
 		public final String comment;
 		public final List<String> country;
 		/**
 		 * Multiple inheritage: copied from <tt>Video.Details.Item</tt>.
 		 */
 		public final String dateadded;
+		public final String description;
 		/**
 		 * Multiple inheritage: copied from <tt>Video.Details.File</tt>.
 		 */
 		public final List<String> director;
 		public final Integer disc;
+		/**
+		 * Multiple inheritage: copied from <tt>Audio.Details.Media</tt>.
+		 */
+		public final String displayartist;
 		public final Integer duration;
-		public final String endtime;
 		public final Integer episode;
+		public final String episodeguide;
 		/**
 		 * Multiple inheritage: copied from <tt>Media.Details.Base</tt>.
 		 */
@@ -2749,7 +2897,10 @@ public final class ListModel {
 		 * Multiple inheritage: copied from <tt>Audio.Details.Base</tt>.
 		 */
 		public final List<String> genre;
-		public final Boolean hidden;
+		/**
+		 * Multiple inheritage: copied from <tt>Audio.Details.Media</tt>.
+		 */
+		public final List<Integer> genreid;
 		public final Integer id;
 		public final String imdbnumber;
 		/**
@@ -2760,8 +2911,8 @@ public final class ListModel {
 		 * Multiple inheritage: copied from <tt>Video.Details.Item</tt>.
 		 */
 		public final String lastplayed;
-		public final Boolean locked;
 		public final String lyrics;
+		public final List<String> mood;
 		public final String mpaa;
 		/**
 		 * Multiple inheritage: copied from <tt>Audio.Details.Media</tt>.
@@ -2796,20 +2947,22 @@ public final class ListModel {
 		/**
 		 * Multiple inheritage: copied from <tt>Video.Details.File</tt>.
 		 */
-		public final String runtime;
+		public final Integer runtime;
 		public final Integer season;
 		public final String set;
 		public final Integer setid;
 		public final List<String> showlink;
 		public final String showtitle;
-		public final String starttime;
+		public final String sorttitle;
 		/**
 		 * Multiple inheritage: copied from <tt>Video.Details.File</tt>.
 		 */
 		public final VideoModel.Streams streamdetails;
 		public final List<String> studio;
+		public final List<String> style;
 		public final List<String> tag;
 		public final String tagline;
+		public final List<String> theme;
 		/**
 		 * Multiple inheritage: copied from <tt>Media.Details.Base</tt>.
 		 */
@@ -2823,6 +2976,7 @@ public final class ListModel {
 		public final String trailer;
 		public final Integer tvshowid;
 		public final String type;
+		public final HashMap<String, String> uniqueid;
 		public final String votes;
 		public final Integer watchedepisodes;
 		public final List<String> writer;
@@ -2834,32 +2988,34 @@ public final class ListModel {
 		/**
 		 * @param album
 		 * @param albumartist
+		 * @param albumartistid
 		 * @param albumid
+		 * @param albumlabel
 		 * @param art
 		 * @param artist
+		 * @param artistid
 		 * @param cast
-		 * @param channel
-		 * @param channelnumber
-		 * @param channeltype One of: <tt>tv</tt>, <tt>radio</tt>. See constants at {@link ListModel.AllItems.Channeltype}.
 		 * @param comment
 		 * @param country
 		 * @param dateadded
+		 * @param description
 		 * @param director
 		 * @param disc
+		 * @param displayartist
 		 * @param duration
-		 * @param endtime
 		 * @param episode
+		 * @param episodeguide
 		 * @param fanart
 		 * @param file
 		 * @param firstaired
 		 * @param genre
-		 * @param hidden
+		 * @param genreid
 		 * @param id
 		 * @param imdbnumber
 		 * @param label
 		 * @param lastplayed
-		 * @param locked
 		 * @param lyrics
+		 * @param mood
 		 * @param mpaa
 		 * @param musicbrainzalbumartistid
 		 * @param musicbrainzalbumid
@@ -2879,52 +3035,57 @@ public final class ListModel {
 		 * @param setid
 		 * @param showlink
 		 * @param showtitle
-		 * @param starttime
+		 * @param sorttitle
 		 * @param streamdetails
 		 * @param studio
+		 * @param style
 		 * @param tag
 		 * @param tagline
+		 * @param theme
 		 * @param thumbnail
 		 * @param title
 		 * @param top250
 		 * @param track
 		 * @param trailer
 		 * @param tvshowid
-		 * @param type One of: <tt>unknown</tt>, <tt>movie</tt>, <tt>episode</tt>, <tt>musicvideo</tt>, <tt>song</tt>, <tt>picture</tt>, <tt>channel</tt>. See constants at {@link ListModel.AllItems.Type}.
+		 * @param type One of: <tt>unknown</tt>, <tt>movie</tt>, <tt>episode</tt>, <tt>musicvideo</tt>, <tt>song</tt>, <tt>picture</tt>, <tt>channel</tt>. See constants at {@link ListModel.BaseItem.Type}.
+		 * @param uniqueid
 		 * @param votes
 		 * @param watchedepisodes
 		 * @param writer
 		 * @param year
 		 */
-		public AllItems(String album, List<String> albumartist, Integer albumid, MediaModel.Artwork art, List<String> artist, List<VideoModel.Cast> cast, String channel, Integer channelnumber, String channeltype, String comment, List<String> country, String dateadded, List<String> director, Integer disc, Integer duration, String endtime, Integer episode, String fanart, String file, String firstaired, List<String> genre, Boolean hidden, Integer id, String imdbnumber, String label, String lastplayed, Boolean locked, String lyrics, String mpaa, String musicbrainzalbumartistid, String musicbrainzalbumid, String musicbrainzartistid, String musicbrainztrackid, String originaltitle, Integer playcount, String plot, String plotoutline, String premiered, String productioncode, Integer rating, VideoModel.Resume resume, String runtime, Integer season, String set, Integer setid, List<String> showlink, String showtitle, String starttime, VideoModel.Streams streamdetails, List<String> studio, List<String> tag, String tagline, String thumbnail, String title, Integer top250, Integer track, String trailer, Integer tvshowid, String type, String votes, Integer watchedepisodes, List<String> writer, Integer year) {
+		public BaseItem(String album, List<String> albumartist, List<Integer> albumartistid, Integer albumid, String albumlabel, MediaModel.Artwork art, List<String> artist, List<Integer> artistid, List<VideoModel.Cast> cast, String comment, List<String> country, String dateadded, String description, List<String> director, Integer disc, String displayartist, Integer duration, Integer episode, String episodeguide, String fanart, String file, String firstaired, List<String> genre, List<Integer> genreid, Integer id, String imdbnumber, String label, String lastplayed, String lyrics, List<String> mood, String mpaa, String musicbrainzalbumartistid, String musicbrainzalbumid, String musicbrainzartistid, String musicbrainztrackid, String originaltitle, Integer playcount, String plot, String plotoutline, String premiered, String productioncode, Integer rating, VideoModel.Resume resume, Integer runtime, Integer season, String set, Integer setid, List<String> showlink, String showtitle, String sorttitle, VideoModel.Streams streamdetails, List<String> studio, List<String> style, List<String> tag, String tagline, List<String> theme, String thumbnail, String title, Integer top250, Integer track, String trailer, Integer tvshowid, String type, HashMap<String, String> uniqueid, String votes, Integer watchedepisodes, List<String> writer, Integer year) {
 			this.album = album;
 			this.albumartist = albumartist;
+			this.albumartistid = albumartistid;
 			this.albumid = albumid;
+			this.albumlabel = albumlabel;
 			this.art = art;
 			this.artist = artist;
+			this.artistid = artistid;
 			this.cast = cast;
-			this.channel = channel;
-			this.channelnumber = channelnumber;
-			this.channeltype = channeltype;
 			this.comment = comment;
 			this.country = country;
 			this.dateadded = dateadded;
+			this.description = description;
 			this.director = director;
 			this.disc = disc;
+			this.displayartist = displayartist;
 			this.duration = duration;
-			this.endtime = endtime;
 			this.episode = episode;
+			this.episodeguide = episodeguide;
 			this.fanart = fanart;
 			this.file = file;
 			this.firstaired = firstaired;
 			this.genre = genre;
-			this.hidden = hidden;
+			this.genreid = genreid;
 			this.id = id;
 			this.imdbnumber = imdbnumber;
 			this.label = label;
 			this.lastplayed = lastplayed;
-			this.locked = locked;
 			this.lyrics = lyrics;
+			this.mood = mood;
 			this.mpaa = mpaa;
 			this.musicbrainzalbumartistid = musicbrainzalbumartistid;
 			this.musicbrainzalbumid = musicbrainzalbumid;
@@ -2944,11 +3105,13 @@ public final class ListModel {
 			this.setid = setid;
 			this.showlink = showlink;
 			this.showtitle = showtitle;
-			this.starttime = starttime;
+			this.sorttitle = sorttitle;
 			this.streamdetails = streamdetails;
 			this.studio = studio;
+			this.style = style;
 			this.tag = tag;
 			this.tagline = tagline;
+			this.theme = theme;
 			this.thumbnail = thumbnail;
 			this.title = title;
 			this.top250 = top250;
@@ -2956,6 +3119,7 @@ public final class ListModel {
 			this.trailer = trailer;
 			this.tvshowid = tvshowid;
 			this.type = type;
+			this.uniqueid = uniqueid;
 			this.votes = votes;
 			this.watchedepisodes = watchedepisodes;
 			this.writer = writer;
@@ -2964,37 +3128,39 @@ public final class ListModel {
 
 		/**
 		 * Construct from JSON object.
-		 * @param node JSON object representing a AllItems object
+		 * @param node JSON object representing a BaseItem object
 		 */
-		public AllItems(JsonNode node) {
+		public BaseItem(JsonNode node) {
 			album = parseString(node, ALBUM);
 			albumartist = getStringArray(node, ALBUMARTIST);
+			albumartistid = getIntegerArray(node, ALBUMARTISTID);
 			albumid = parseInt(node, ALBUMID);
+			albumlabel = parseString(node, ALBUMLABEL);
 			art = node.has(ART) ? new MediaModel.Artwork(node.get(ART)) : null;
 			artist = getStringArray(node, ARTIST);
+			artistid = getIntegerArray(node, ARTISTID);
 			cast = VideoModel.Cast.getVideoModelCastList(node, CAST);
-			channel = parseString(node, CHANNEL);
-			channelnumber = parseInt(node, CHANNELNUMBER);
-			channeltype = parseString(node, CHANNELTYPE);
 			comment = parseString(node, COMMENT);
 			country = getStringArray(node, COUNTRY);
 			dateadded = parseString(node, DATEADDED);
+			description = parseString(node, DESCRIPTION);
 			director = getStringArray(node, DIRECTOR);
 			disc = parseInt(node, DISC);
+			displayartist = parseString(node, DISPLAYARTIST);
 			duration = parseInt(node, DURATION);
-			endtime = parseString(node, ENDTIME);
 			episode = parseInt(node, EPISODE);
+			episodeguide = parseString(node, EPISODEGUIDE);
 			fanart = parseString(node, FANART);
 			file = parseString(node, FILE);
 			firstaired = parseString(node, FIRSTAIRED);
 			genre = getStringArray(node, GENRE);
-			hidden = parseBoolean(node, HIDDEN);
+			genreid = getIntegerArray(node, GENREID);
 			id = parseInt(node, ID);
 			imdbnumber = parseString(node, IMDBNUMBER);
 			label = node.get(LABEL).getTextValue(); // required value
 			lastplayed = parseString(node, LASTPLAYED);
-			locked = parseBoolean(node, LOCKED);
 			lyrics = parseString(node, LYRICS);
+			mood = getStringArray(node, MOOD);
 			mpaa = parseString(node, MPAA);
 			musicbrainzalbumartistid = parseString(node, MUSICBRAINZALBUMARTISTID);
 			musicbrainzalbumid = parseString(node, MUSICBRAINZALBUMID);
@@ -3008,17 +3174,19 @@ public final class ListModel {
 			productioncode = parseString(node, PRODUCTIONCODE);
 			rating = parseInt(node, RATING);
 			resume = node.has(RESUME) ? new VideoModel.Resume(node.get(RESUME)) : null;
-			runtime = parseString(node, RUNTIME);
+			runtime = parseInt(node, RUNTIME);
 			season = parseInt(node, SEASON);
 			set = parseString(node, SET);
 			setid = parseInt(node, SETID);
 			showlink = getStringArray(node, SHOWLINK);
 			showtitle = parseString(node, SHOWTITLE);
-			starttime = parseString(node, STARTTIME);
+			sorttitle = parseString(node, SORTTITLE);
 			streamdetails = node.has(STREAMDETAILS) ? new VideoModel.Streams(node.get(STREAMDETAILS)) : null;
 			studio = getStringArray(node, STUDIO);
+			style = getStringArray(node, STYLE);
 			tag = getStringArray(node, TAG);
 			tagline = parseString(node, TAGLINE);
+			theme = getStringArray(node, THEME);
 			thumbnail = parseString(node, THUMBNAIL);
 			title = parseString(node, TITLE);
 			top250 = parseInt(node, TOP250);
@@ -3026,6 +3194,7 @@ public final class ListModel {
 			trailer = parseString(node, TRAILER);
 			tvshowid = parseInt(node, TVSHOWID);
 			type = parseString(node, TYPE);
+			uniqueid = getStringMap(node, UNIQUEID);
 			votes = parseString(node, VOTES);
 			watchedepisodes = parseInt(node, WATCHEDEPISODES);
 			writer = getStringArray(node, WRITER);
@@ -3041,21 +3210,29 @@ public final class ListModel {
 				albumartistArray.add(item);
 			}
 			node.put(ALBUMARTIST, albumartistArray);
+			final ArrayNode albumartistidArray = OM.createArrayNode();
+			for (Integer item : albumartistid) {
+				albumartistidArray.add(item);
+			}
+			node.put(ALBUMARTISTID, albumartistidArray);
 			node.put(ALBUMID, albumid);
+			node.put(ALBUMLABEL, albumlabel);
 			node.put(ART, art.toJsonNode());
 			final ArrayNode artistArray = OM.createArrayNode();
 			for (String item : artist) {
 				artistArray.add(item);
 			}
 			node.put(ARTIST, artistArray);
+			final ArrayNode artistidArray = OM.createArrayNode();
+			for (Integer item : artistid) {
+				artistidArray.add(item);
+			}
+			node.put(ARTISTID, artistidArray);
 			final ArrayNode castArray = OM.createArrayNode();
 			for (VideoModel.Cast item : cast) {
 				castArray.add(item.toJsonNode());
 			}
 			node.put(CAST, castArray);
-			node.put(CHANNEL, channel);
-			node.put(CHANNELNUMBER, channelnumber);
-			node.put(CHANNELTYPE, channeltype); // enum
 			node.put(COMMENT, comment);
 			final ArrayNode countryArray = OM.createArrayNode();
 			for (String item : country) {
@@ -3063,15 +3240,17 @@ public final class ListModel {
 			}
 			node.put(COUNTRY, countryArray);
 			node.put(DATEADDED, dateadded);
+			node.put(DESCRIPTION, description);
 			final ArrayNode directorArray = OM.createArrayNode();
 			for (String item : director) {
 				directorArray.add(item);
 			}
 			node.put(DIRECTOR, directorArray);
 			node.put(DISC, disc);
+			node.put(DISPLAYARTIST, displayartist);
 			node.put(DURATION, duration);
-			node.put(ENDTIME, endtime);
 			node.put(EPISODE, episode);
+			node.put(EPISODEGUIDE, episodeguide);
 			node.put(FANART, fanart);
 			node.put(FILE, file);
 			node.put(FIRSTAIRED, firstaired);
@@ -3080,13 +3259,21 @@ public final class ListModel {
 				genreArray.add(item);
 			}
 			node.put(GENRE, genreArray);
-			node.put(HIDDEN, hidden);
+			final ArrayNode genreidArray = OM.createArrayNode();
+			for (Integer item : genreid) {
+				genreidArray.add(item);
+			}
+			node.put(GENREID, genreidArray);
 			node.put(ID, id);
 			node.put(IMDBNUMBER, imdbnumber);
 			node.put(LABEL, label);
 			node.put(LASTPLAYED, lastplayed);
-			node.put(LOCKED, locked);
 			node.put(LYRICS, lyrics);
+			final ArrayNode moodArray = OM.createArrayNode();
+			for (String item : mood) {
+				moodArray.add(item);
+			}
+			node.put(MOOD, moodArray);
 			node.put(MPAA, mpaa);
 			node.put(MUSICBRAINZALBUMARTISTID, musicbrainzalbumartistid);
 			node.put(MUSICBRAINZALBUMID, musicbrainzalbumid);
@@ -3110,19 +3297,29 @@ public final class ListModel {
 			}
 			node.put(SHOWLINK, showlinkArray);
 			node.put(SHOWTITLE, showtitle);
-			node.put(STARTTIME, starttime);
+			node.put(SORTTITLE, sorttitle);
 			node.put(STREAMDETAILS, streamdetails.toJsonNode());
 			final ArrayNode studioArray = OM.createArrayNode();
 			for (String item : studio) {
 				studioArray.add(item);
 			}
 			node.put(STUDIO, studioArray);
+			final ArrayNode styleArray = OM.createArrayNode();
+			for (String item : style) {
+				styleArray.add(item);
+			}
+			node.put(STYLE, styleArray);
 			final ArrayNode tagArray = OM.createArrayNode();
 			for (String item : tag) {
 				tagArray.add(item);
 			}
 			node.put(TAG, tagArray);
 			node.put(TAGLINE, tagline);
+			final ArrayNode themeArray = OM.createArrayNode();
+			for (String item : theme) {
+				themeArray.add(item);
+			}
+			node.put(THEME, themeArray);
 			node.put(THUMBNAIL, thumbnail);
 			node.put(TITLE, title);
 			node.put(TOP250, top250);
@@ -3130,6 +3327,11 @@ public final class ListModel {
 			node.put(TRAILER, trailer);
 			node.put(TVSHOWID, tvshowid);
 			node.put(TYPE, type); // enum
+			final ObjectNode uniqueidMap = OM.createObjectNode();
+			for (String key : uniqueid.values()) {
+				uniqueidMap.put(key, uniqueid.get(key));
+			}
+			node.put(UNIQUEID, uniqueidMap);
 			node.put(VOTES, votes);
 			node.put(WATCHEDEPISODES, watchedepisodes);
 			final ArrayNode writerArray = OM.createArrayNode();
@@ -3142,20 +3344,20 @@ public final class ListModel {
 		}
 
 		/**
-		 * Extracts a list of {@link AllItems} objects from a JSON array.
+		 * Extracts a list of {@link BaseItem} objects from a JSON array.
 		 * @param obj ObjectNode containing the list of objects.
 		 * @param key Key pointing to the node where the list is stored.
 		 */
-		static List<AllItems> getListModelAllItemsList(JsonNode node, String key) {
+		static List<BaseItem> getListModelBaseItemList(JsonNode node, String key) {
 			if (node.has(key)) {
 				final ArrayNode a = (ArrayNode)node.get(key);
-				final List<AllItems> l = new ArrayList<AllItems>(a.size());
+				final List<BaseItem> l = new ArrayList<BaseItem>(a.size());
 				for (int i = 0; i < a.size(); i++) {
-					l.add(new AllItems((JsonNode)a.get(i)));
+					l.add(new BaseItem((JsonNode)a.get(i)));
 				}
 				return l;
 			}
-			return new ArrayList<AllItems>(0);
+			return new ArrayList<BaseItem>(0);
 		}
 
 		/**
@@ -3170,33 +3372,41 @@ public final class ListModel {
 			for (String item : albumartist) {
 				parcel.writeValue(item);
 			}
+			parcel.writeInt(albumartistid.size());
+			for (Integer item : albumartistid) {
+				parcel.writeValue(item);
+			}
 			parcel.writeValue(albumid);
+			parcel.writeValue(albumlabel);
 			parcel.writeValue(art);
 			parcel.writeInt(artist.size());
 			for (String item : artist) {
+				parcel.writeValue(item);
+			}
+			parcel.writeInt(artistid.size());
+			for (Integer item : artistid) {
 				parcel.writeValue(item);
 			}
 			parcel.writeInt(cast.size());
 			for (VideoModel.Cast item : cast) {
 				parcel.writeParcelable(item, flags);
 			}
-			parcel.writeValue(channel);
-			parcel.writeValue(channelnumber);
-			parcel.writeValue(channeltype); // enum
 			parcel.writeValue(comment);
 			parcel.writeInt(country.size());
 			for (String item : country) {
 				parcel.writeValue(item);
 			}
 			parcel.writeValue(dateadded);
+			parcel.writeValue(description);
 			parcel.writeInt(director.size());
 			for (String item : director) {
 				parcel.writeValue(item);
 			}
 			parcel.writeValue(disc);
+			parcel.writeValue(displayartist);
 			parcel.writeValue(duration);
-			parcel.writeValue(endtime);
 			parcel.writeValue(episode);
+			parcel.writeValue(episodeguide);
 			parcel.writeValue(fanart);
 			parcel.writeValue(file);
 			parcel.writeValue(firstaired);
@@ -3204,13 +3414,19 @@ public final class ListModel {
 			for (String item : genre) {
 				parcel.writeValue(item);
 			}
-			parcel.writeInt(hidden ? 1 : 0);
+			parcel.writeInt(genreid.size());
+			for (Integer item : genreid) {
+				parcel.writeValue(item);
+			}
 			parcel.writeValue(id);
 			parcel.writeValue(imdbnumber);
 			parcel.writeValue(label);
 			parcel.writeValue(lastplayed);
-			parcel.writeInt(locked ? 1 : 0);
 			parcel.writeValue(lyrics);
+			parcel.writeInt(mood.size());
+			for (String item : mood) {
+				parcel.writeValue(item);
+			}
 			parcel.writeValue(mpaa);
 			parcel.writeValue(musicbrainzalbumartistid);
 			parcel.writeValue(musicbrainzalbumid);
@@ -3233,10 +3449,14 @@ public final class ListModel {
 				parcel.writeValue(item);
 			}
 			parcel.writeValue(showtitle);
-			parcel.writeValue(starttime);
+			parcel.writeValue(sorttitle);
 			parcel.writeValue(streamdetails);
 			parcel.writeInt(studio.size());
 			for (String item : studio) {
+				parcel.writeValue(item);
+			}
+			parcel.writeInt(style.size());
+			for (String item : style) {
 				parcel.writeValue(item);
 			}
 			parcel.writeInt(tag.size());
@@ -3244,6 +3464,10 @@ public final class ListModel {
 				parcel.writeValue(item);
 			}
 			parcel.writeValue(tagline);
+			parcel.writeInt(theme.size());
+			for (String item : theme) {
+				parcel.writeValue(item);
+			}
 			parcel.writeValue(thumbnail);
 			parcel.writeValue(title);
 			parcel.writeValue(top250);
@@ -3251,6 +3475,11 @@ public final class ListModel {
 			parcel.writeValue(trailer);
 			parcel.writeValue(tvshowid);
 			parcel.writeValue(type); // enum
+			parcel.writeInt(uniqueid.size());
+			for (String key : uniqueid.values()) {
+				parcel.writeValue(key);
+				parcel.writeValue(uniqueid.get(key));
+			}
 			parcel.writeValue(votes);
 			parcel.writeValue(watchedepisodes);
 			parcel.writeInt(writer.size());
@@ -3263,28 +3492,36 @@ public final class ListModel {
 		/**
 		 * Construct via parcel.
 		 */
-		protected AllItems(Parcel parcel) {
+		protected BaseItem(Parcel parcel) {
 			album = parcel.readString();
 			final int albumartistSize = parcel.readInt();
 			albumartist = new ArrayList<String>(albumartistSize);
 			for (int i = 0; i < albumartistSize; i++) {
 				albumartist.add(parcel.readString());
 			}
+			final int albumartistidSize = parcel.readInt();
+			albumartistid = new ArrayList<Integer>(albumartistidSize);
+			for (int i = 0; i < albumartistidSize; i++) {
+				albumartistid.add(parcel.readInt());
+			}
 			albumid = parcel.readInt();
+			albumlabel = parcel.readString();
 			art = parcel.<MediaModel.Artwork>readParcelable(MediaModel.Artwork.class.getClassLoader());
 			final int artistSize = parcel.readInt();
 			artist = new ArrayList<String>(artistSize);
 			for (int i = 0; i < artistSize; i++) {
 				artist.add(parcel.readString());
 			}
+			final int artistidSize = parcel.readInt();
+			artistid = new ArrayList<Integer>(artistidSize);
+			for (int i = 0; i < artistidSize; i++) {
+				artistid.add(parcel.readInt());
+			}
 			final int castSize = parcel.readInt();
 			cast = new ArrayList<VideoModel.Cast>(castSize);
 			for (int i = 0; i < castSize; i++) {
 				cast.add(parcel.<VideoModel.Cast>readParcelable(VideoModel.Cast.class.getClassLoader()));
 			}
-			channel = parcel.readString();
-			channelnumber = parcel.readInt();
-			channeltype = parcel.readString(); // enum
 			comment = parcel.readString();
 			final int countrySize = parcel.readInt();
 			country = new ArrayList<String>(countrySize);
@@ -3292,15 +3529,17 @@ public final class ListModel {
 				country.add(parcel.readString());
 			}
 			dateadded = parcel.readString();
+			description = parcel.readString();
 			final int directorSize = parcel.readInt();
 			director = new ArrayList<String>(directorSize);
 			for (int i = 0; i < directorSize; i++) {
 				director.add(parcel.readString());
 			}
 			disc = parcel.readInt();
+			displayartist = parcel.readString();
 			duration = parcel.readInt();
-			endtime = parcel.readString();
 			episode = parcel.readInt();
+			episodeguide = parcel.readString();
 			fanart = parcel.readString();
 			file = parcel.readString();
 			firstaired = parcel.readString();
@@ -3309,13 +3548,21 @@ public final class ListModel {
 			for (int i = 0; i < genreSize; i++) {
 				genre.add(parcel.readString());
 			}
-			hidden = parcel.readInt() == 1;
+			final int genreidSize = parcel.readInt();
+			genreid = new ArrayList<Integer>(genreidSize);
+			for (int i = 0; i < genreidSize; i++) {
+				genreid.add(parcel.readInt());
+			}
 			id = parcel.readInt();
 			imdbnumber = parcel.readString();
 			label = parcel.readString();
 			lastplayed = parcel.readString();
-			locked = parcel.readInt() == 1;
 			lyrics = parcel.readString();
+			final int moodSize = parcel.readInt();
+			mood = new ArrayList<String>(moodSize);
+			for (int i = 0; i < moodSize; i++) {
+				mood.add(parcel.readString());
+			}
 			mpaa = parcel.readString();
 			musicbrainzalbumartistid = parcel.readString();
 			musicbrainzalbumid = parcel.readString();
@@ -3329,7 +3576,7 @@ public final class ListModel {
 			productioncode = parcel.readString();
 			rating = parcel.readInt();
 			resume = parcel.<VideoModel.Resume>readParcelable(VideoModel.Resume.class.getClassLoader());
-			runtime = parcel.readString();
+			runtime = parcel.readInt();
 			season = parcel.readInt();
 			set = parcel.readString();
 			setid = parcel.readInt();
@@ -3339,12 +3586,17 @@ public final class ListModel {
 				showlink.add(parcel.readString());
 			}
 			showtitle = parcel.readString();
-			starttime = parcel.readString();
+			sorttitle = parcel.readString();
 			streamdetails = parcel.<VideoModel.Streams>readParcelable(VideoModel.Streams.class.getClassLoader());
 			final int studioSize = parcel.readInt();
 			studio = new ArrayList<String>(studioSize);
 			for (int i = 0; i < studioSize; i++) {
 				studio.add(parcel.readString());
+			}
+			final int styleSize = parcel.readInt();
+			style = new ArrayList<String>(styleSize);
+			for (int i = 0; i < styleSize; i++) {
+				style.add(parcel.readString());
 			}
 			final int tagSize = parcel.readInt();
 			tag = new ArrayList<String>(tagSize);
@@ -3352,6 +3604,11 @@ public final class ListModel {
 				tag.add(parcel.readString());
 			}
 			tagline = parcel.readString();
+			final int themeSize = parcel.readInt();
+			theme = new ArrayList<String>(themeSize);
+			for (int i = 0; i < themeSize; i++) {
+				theme.add(parcel.readString());
+			}
 			thumbnail = parcel.readString();
 			title = parcel.readString();
 			top250 = parcel.readInt();
@@ -3359,6 +3616,11 @@ public final class ListModel {
 			trailer = parcel.readString();
 			tvshowid = parcel.readInt();
 			type = parcel.readString(); // enum
+			final int uniqueidSize = parcel.readInt();
+			uniqueid = new HashMap<String, String>();
+			for (int i = 0; i < uniqueidSize; i++) {
+				uniqueid.put(parcel.readString(), parcel.readString());
+			}
 			votes = parcel.readString();
 			watchedepisodes = parcel.readInt();
 			final int writerSize = parcel.readInt();
@@ -3372,14 +3634,14 @@ public final class ListModel {
 		/**
 		 * Generates instances of this Parcelable class from a Parcel.
 		 */
-		public static final Parcelable.Creator<AllItems> CREATOR = new Parcelable.Creator<AllItems>() {
+		public static final Parcelable.Creator<BaseItem> CREATOR = new Parcelable.Creator<BaseItem>() {
 			@Override
-			public AllItems createFromParcel(Parcel parcel) {
-				return new AllItems(parcel);
+			public BaseItem createFromParcel(Parcel parcel) {
+				return new BaseItem(parcel);
 			}
 			@Override
-			public AllItems[] newArray(int n) {
-				return new AllItems[n];
+			public BaseItem[] newArray(int n) {
+				return new BaseItem[n];
 			}
 		};
 
@@ -3403,17 +3665,6 @@ public final class ListModel {
 
 			public final static Set<String> values = new HashSet<String>(Arrays.asList(UNKNOWN, MOVIE, EPISODE, MUSICVIDEO, SONG, PICTURE, CHANNEL));
 		}
-
-		/**
-		 * API Name: <tt>channeltype</tt>
-		 */
-		public interface Channeltype {
-
-			public final String TV = "tv";
-			public final String RADIO = "radio";
-
-			public final static Set<String> values = new HashSet<String>(Arrays.asList(TV, RADIO));
-		}
 	}
 
 	/**
@@ -3422,7 +3673,7 @@ public final class ListModel {
 	 * Note: This class is used as result only.<br/>
 	 * <i>This class was generated automatically from XBMC's JSON-RPC introspect.</i>
 	 */
-	public static class FileItem extends AllItems {
+	public static class FileItem extends BaseItem {
 		public final static String API_TYPE = "List.Item.File";
 
 		// field names
@@ -3999,6 +4250,18 @@ public final class ListModel {
 		public final String DISC = "disc";
 		public final String TAG = "tag";
 		public final String ART = "art";
+		public final String GENREID = "genreid";
+		public final String DISPLAYARTIST = "displayartist";
+		public final String ALBUMARTISTID = "albumartistid";
+		public final String DESCRIPTION = "description";
+		public final String THEME = "theme";
+		public final String MOOD = "mood";
+		public final String STYLE = "style";
+		public final String ALBUMLABEL = "albumlabel";
+		public final String SORTTITLE = "sorttitle";
+		public final String EPISODEGUIDE = "episodeguide";
+		public final String UNIQUEID = "uniqueid";
+		public final String DATEADDED = "dateadded";
 		public final String CHANNEL = "channel";
 		public final String CHANNELTYPE = "channeltype";
 		public final String HIDDEN = "hidden";
@@ -4007,7 +4270,7 @@ public final class ListModel {
 		public final String STARTTIME = "starttime";
 		public final String ENDTIME = "endtime";
 
-		public final static Set<String> values = new HashSet<String>(Arrays.asList(TITLE, ARTIST, ALBUMARTIST, GENRE, YEAR, RATING, ALBUM, TRACK, DURATION, COMMENT, LYRICS, MUSICBRAINZTRACKID, MUSICBRAINZARTISTID, MUSICBRAINZALBUMID, MUSICBRAINZALBUMARTISTID, PLAYCOUNT, FANART, DIRECTOR, TRAILER, TAGLINE, PLOT, PLOTOUTLINE, ORIGINALTITLE, LASTPLAYED, WRITER, STUDIO, MPAA, CAST, COUNTRY, IMDBNUMBER, PREMIERED, PRODUCTIONCODE, RUNTIME, SET, SHOWLINK, STREAMDETAILS, TOP250, VOTES, FIRSTAIRED, SEASON, EPISODE, SHOWTITLE, THUMBNAIL, FILE, RESUME, ARTISTID, ALBUMID, TVSHOWID, SETID, WATCHEDEPISODES, DISC, TAG, ART, CHANNEL, CHANNELTYPE, HIDDEN, LOCKED, CHANNELNUMBER, STARTTIME, ENDTIME));
+		public final static Set<String> values = new HashSet<String>(Arrays.asList(TITLE, ARTIST, ALBUMARTIST, GENRE, YEAR, RATING, ALBUM, TRACK, DURATION, COMMENT, LYRICS, MUSICBRAINZTRACKID, MUSICBRAINZARTISTID, MUSICBRAINZALBUMID, MUSICBRAINZALBUMARTISTID, PLAYCOUNT, FANART, DIRECTOR, TRAILER, TAGLINE, PLOT, PLOTOUTLINE, ORIGINALTITLE, LASTPLAYED, WRITER, STUDIO, MPAA, CAST, COUNTRY, IMDBNUMBER, PREMIERED, PRODUCTIONCODE, RUNTIME, SET, SHOWLINK, STREAMDETAILS, TOP250, VOTES, FIRSTAIRED, SEASON, EPISODE, SHOWTITLE, THUMBNAIL, FILE, RESUME, ARTISTID, ALBUMID, TVSHOWID, SETID, WATCHEDEPISODES, DISC, TAG, ART, GENREID, DISPLAYARTIST, ALBUMARTISTID, DESCRIPTION, THEME, MOOD, STYLE, ALBUMLABEL, SORTTITLE, EPISODEGUIDE, UNIQUEID, DATEADDED, CHANNEL, CHANNELTYPE, HIDDEN, LOCKED, CHANNELNUMBER, STARTTIME, ENDTIME));
 	}
 
 	/**
@@ -4064,13 +4327,27 @@ public final class ListModel {
 		public final String ALBUMID = "albumid";
 		public final String TVSHOWID = "tvshowid";
 		public final String SETID = "setid";
+		public final String WATCHEDEPISODES = "watchedepisodes";
+		public final String DISC = "disc";
+		public final String TAG = "tag";
+		public final String ART = "art";
+		public final String GENREID = "genreid";
+		public final String DISPLAYARTIST = "displayartist";
+		public final String ALBUMARTISTID = "albumartistid";
+		public final String DESCRIPTION = "description";
+		public final String THEME = "theme";
+		public final String MOOD = "mood";
+		public final String STYLE = "style";
+		public final String ALBUMLABEL = "albumlabel";
+		public final String SORTTITLE = "sorttitle";
+		public final String EPISODEGUIDE = "episodeguide";
+		public final String UNIQUEID = "uniqueid";
+		public final String DATEADDED = "dateadded";
 		public final String SIZE = "size";
 		public final String LASTMODIFIED = "lastmodified";
 		public final String MIMETYPE = "mimetype";
-		public final String WATCHEDEPISODES = "watchedepisodes";
-		public final String DISC = "disc";
 
-		public final static Set<String> values = new HashSet<String>(Arrays.asList(TITLE, ARTIST, ALBUMARTIST, GENRE, YEAR, RATING, ALBUM, TRACK, DURATION, COMMENT, LYRICS, MUSICBRAINZTRACKID, MUSICBRAINZARTISTID, MUSICBRAINZALBUMID, MUSICBRAINZALBUMARTISTID, PLAYCOUNT, FANART, DIRECTOR, TRAILER, TAGLINE, PLOT, PLOTOUTLINE, ORIGINALTITLE, LASTPLAYED, WRITER, STUDIO, MPAA, CAST, COUNTRY, IMDBNUMBER, PREMIERED, PRODUCTIONCODE, RUNTIME, SET, SHOWLINK, STREAMDETAILS, TOP250, VOTES, FIRSTAIRED, SEASON, EPISODE, SHOWTITLE, THUMBNAIL, FILE, RESUME, ARTISTID, ALBUMID, TVSHOWID, SETID, SIZE, LASTMODIFIED, MIMETYPE, WATCHEDEPISODES, DISC));
+		public final static Set<String> values = new HashSet<String>(Arrays.asList(TITLE, ARTIST, ALBUMARTIST, GENRE, YEAR, RATING, ALBUM, TRACK, DURATION, COMMENT, LYRICS, MUSICBRAINZTRACKID, MUSICBRAINZARTISTID, MUSICBRAINZALBUMID, MUSICBRAINZALBUMARTISTID, PLAYCOUNT, FANART, DIRECTOR, TRAILER, TAGLINE, PLOT, PLOTOUTLINE, ORIGINALTITLE, LASTPLAYED, WRITER, STUDIO, MPAA, CAST, COUNTRY, IMDBNUMBER, PREMIERED, PRODUCTIONCODE, RUNTIME, SET, SHOWLINK, STREAMDETAILS, TOP250, VOTES, FIRSTAIRED, SEASON, EPISODE, SHOWTITLE, THUMBNAIL, FILE, RESUME, ARTISTID, ALBUMID, TVSHOWID, SETID, WATCHEDEPISODES, DISC, TAG, ART, GENREID, DISPLAYARTIST, ALBUMARTISTID, DESCRIPTION, THEME, MOOD, STYLE, ALBUMLABEL, SORTTITLE, EPISODEGUIDE, UNIQUEID, DATEADDED, SIZE, LASTMODIFIED, MIMETYPE));
 	}
 
 	/**
