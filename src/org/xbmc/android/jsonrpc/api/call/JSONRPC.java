@@ -33,7 +33,7 @@ import org.xbmc.android.jsonrpc.api.AbstractModel;
 public final class JSONRPC {
 
 	/**
-	 * NotifyÂ allÂ otherÂ connectedÂ clients.
+	 * Notify all other connected clients.
 	 * <p/>
 	 * This class represents the API method <tt>JSONRPC.NotifyAll</tt>
 	 * <p/>
@@ -70,7 +70,7 @@ public final class JSONRPC {
 		};
 
 		/**
-		 * NotifyÂ allÂ otherÂ connectedÂ clients.
+		 * Notify all other connected clients.
 		 * @param sender
 		 * @param message
 		 * @param data
@@ -83,7 +83,7 @@ public final class JSONRPC {
 		}
 
 		/**
-		 * NotifyÂ allÂ otherÂ connectedÂ clients.
+		 * Notify all other connected clients.
 		 * @param sender
 		 * @param message
 		 */
@@ -110,7 +110,7 @@ public final class JSONRPC {
 	}
 
 	/**
-	 * RetrieveÂ theÂ clientsÂ permissions.
+	 * Retrieve the clients permissions.
 	 * <p/>
 	 * This class represents the API method <tt>JSONRPC.Permission</tt>
 	 * <p/>
@@ -147,7 +147,7 @@ public final class JSONRPC {
 		};
 
 		/**
-		 * RetrieveÂ theÂ clientsÂ permissions.
+		 * Retrieve the clients permissions.
 		 */
 		public Permission() {
 			super();
@@ -354,7 +354,7 @@ public final class JSONRPC {
 	}
 
 	/**
-	 * PingÂ responder.
+	 * Ping responder.
 	 * <p/>
 	 * This class represents the API method <tt>JSONRPC.Ping</tt>
 	 * <p/>
@@ -391,7 +391,7 @@ public final class JSONRPC {
 		};
 
 		/**
-		 * PingÂ responder.
+		 * Ping responder.
 		 */
 		public Ping() {
 			super();
@@ -414,7 +414,7 @@ public final class JSONRPC {
 	}
 
 	/**
-	 * RetrieveÂ theÂ JSON-RPCÂ protocolÂ version.
+	 * Retrieve the JSON-RPC protocol version.
 	 * <p/>
 	 * This class represents the API method <tt>JSONRPC.Version</tt>
 	 * <p/>
@@ -451,7 +451,7 @@ public final class JSONRPC {
 		};
 
 		/**
-		 * RetrieveÂ theÂ JSON-RPCÂ protocolÂ version.
+		 * Retrieve the JSON-RPC protocol version.
 		 */
 		public Version() {
 			super();
@@ -497,6 +497,22 @@ public final class JSONRPC {
 				this.major = major;
 				this.minor = minor;
 				this.patch = patch;
+			}
+
+			@Override
+			public String toString() {
+				return major + "." + minor + "." + patch;
+			}
+
+			/**
+			 * Returns a comparable integer by multiplying and adding the
+			 * version parts. <br>
+			 * Example:
+			 * 	<tt>2.19.625</tt> becomes <tt>20190625</tt>
+			 * @return
+			 */
+			public int toInt() {
+				return patch + minor * 10000 + major * 10000000;
 			}
 
 			/**

@@ -31,7 +31,7 @@ import org.xbmc.android.jsonrpc.api.model.GlobalModel;
 public final class Application {
 
 	/**
-	 * RetrievesÂ theÂ valuesÂ ofÂ theÂ givenÂ properties.
+	 * Retrieves the values of the given properties.
 	 * <p/>
 	 * This class represents the API method <tt>Application.GetProperties</tt>
 	 * <p/>
@@ -68,7 +68,7 @@ public final class Application {
 		};
 
 		/**
-		 * RetrievesÂ theÂ valuesÂ ofÂ theÂ givenÂ properties.
+		 * Retrieves the values of the given properties.
 		 * @param properties One or more of: <tt>volume</tt>, <tt>muted</tt>, <tt>name</tt>, <tt>version</tt>. See constants at {@link ApplicationModel.PropertyName}.
 		 */
 		public GetProperties(String... properties) {
@@ -93,7 +93,7 @@ public final class Application {
 	}
 
 	/**
-	 * QuitÂ application.
+	 * Quit application.
 	 * <p/>
 	 * This class represents the API method <tt>Application.Quit</tt>
 	 * <p/>
@@ -130,7 +130,7 @@ public final class Application {
 		};
 
 		/**
-		 * QuitÂ application.
+		 * Quit application.
 		 */
 		public Quit() {
 			super();
@@ -153,7 +153,7 @@ public final class Application {
 	}
 
 	/**
-	 * ToggleÂ mute/unmute.
+	 * Toggle mute/unmute.
 	 * <p/>
 	 * This class represents the API method <tt>Application.SetMute</tt>
 	 * <p/>
@@ -190,7 +190,7 @@ public final class Application {
 		};
 
 		/**
-		 * ToggleÂ mute/unmute.
+		 * Toggle mute/unmute.
 		 * @param mute
 		 */
 		public SetMute(GlobalModel.Toggle mute) {
@@ -215,7 +215,7 @@ public final class Application {
 	}
 
 	/**
-	 * SetÂ theÂ currentÂ volume.
+	 * Set the current volume.
 	 * <p/>
 	 * This class represents the API method <tt>Application.SetVolume</tt>
 	 * <p/>
@@ -252,7 +252,7 @@ public final class Application {
 		};
 
 		/**
-		 * SetÂ theÂ currentÂ volume.
+		 * Set the current volume.
 		 * @param volume
 		 */
 		public SetVolume(Integer volume) {
@@ -261,7 +261,7 @@ public final class Application {
 		}
 
 		/**
-		 * SetÂ theÂ currentÂ volume.
+		 * Set the current volume.
 		 * @param volume One of: <tt>increment</tt>, <tt>decrement</tt>. See constants at {@link GlobalModel.IncrementDecrement}.
 		 */
 		public SetVolume(String volume) {

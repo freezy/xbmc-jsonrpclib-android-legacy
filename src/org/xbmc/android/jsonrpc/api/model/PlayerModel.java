@@ -453,7 +453,7 @@ public final class PlayerModel {
 	}
 
 	/**
-	 * TimeÂ toÂ seekÂ to.
+	 * Time to seek to.
 	 * <p/>
 	 * API Name: <tt>Player.Position.Time</tt>
 	 * <p/>
@@ -476,7 +476,7 @@ public final class PlayerModel {
 		public final Integer seconds;
 
 		/**
-		 * TimeÂ toÂ seekÂ to.
+		 * Time to seek to.
 		 * @param hours
 		 * @param milliseconds
 		 * @param minutes

@@ -242,7 +242,7 @@ public final class NotificationsModel {
 		}
 
 		/**
-		 * AnÂ unknownÂ itemÂ doesÂ notÂ haveÂ anyÂ additionalÂ information.
+		 * An unknown item does not have any additional information.
 		 * <p/>
 		 * Note: Seems this class isn't used yet in the API.<br/>
 		 * <i>This class was generated automatically from XBMC's JSON-RPC introspect.</i>
@@ -256,7 +256,7 @@ public final class NotificationsModel {
 			public final String type;
 
 			/**
-			 * AnÂ unknownÂ itemÂ doesÂ notÂ haveÂ anyÂ additionalÂ information.
+			 * An unknown item does not have any additional information.
 			 * @param type One of: <tt>unknown</tt>, <tt>movie</tt>, <tt>episode</tt>, <tt>musicvideo</tt>, <tt>song</tt>, <tt>picture</tt>, <tt>channel</tt>. See constants at {@link NotificationsModel.Type.TypeValue}.
 			 */
 			public Type(String type) {
@@ -324,7 +324,7 @@ public final class NotificationsModel {
 		}
 
 		/**
-		 * AnÂ itemÂ knownÂ toÂ theÂ databaseÂ hasÂ anÂ identification.
+		 * An item known to the database has an identification.
 		 * <p/>
 		 * Note: Seems this class isn't used yet in the API.<br/>
 		 * <i>This class was generated automatically from XBMC's JSON-RPC introspect.</i>
@@ -340,7 +340,7 @@ public final class NotificationsModel {
 			public final String type;
 
 			/**
-			 * AnÂ itemÂ knownÂ toÂ theÂ databaseÂ hasÂ anÂ identification.
+			 * An item known to the database has an identification.
 			 * @param id
 			 * @param type One of: <tt>unknown</tt>, <tt>movie</tt>, <tt>episode</tt>, <tt>musicvideo</tt>, <tt>song</tt>, <tt>picture</tt>, <tt>channel</tt>. See constants at {@link NotificationsModel.IdType.Type}.
 			 */
@@ -413,7 +413,7 @@ public final class NotificationsModel {
 		}
 
 		/**
-		 * AÂ movieÂ itemÂ hasÂ aÂ titleÂ andÂ mayÂ haveÂ aÂ releaseÂ year.
+		 * A movie item has a title and may have a release year.
 		 * <p/>
 		 * Note: Seems this class isn't used yet in the API.<br/>
 		 * <i>This class was generated automatically from XBMC's JSON-RPC introspect.</i>
@@ -431,7 +431,7 @@ public final class NotificationsModel {
 			public final Integer year;
 
 			/**
-			 * AÂ movieÂ itemÂ hasÂ aÂ titleÂ andÂ mayÂ haveÂ aÂ releaseÂ year.
+			 * A movie item has a title and may have a release year.
 			 * @param title
 			 * @param type One of: <tt>unknown</tt>, <tt>movie</tt>, <tt>episode</tt>, <tt>musicvideo</tt>, <tt>song</tt>, <tt>picture</tt>, <tt>channel</tt>. See constants at {@link NotificationsModel.TitleYearType.Type}.
 			 * @param year
@@ -509,7 +509,7 @@ public final class NotificationsModel {
 		}
 
 		/**
-		 * AÂ tvÂ episodeÂ hasÂ aÂ titleÂ andÂ mayÂ haveÂ anÂ episodeÂ number,Â seasonÂ numberÂ andÂ theÂ titleÂ ofÂ theÂ showÂ itÂ belongsÂ to.
+		 * A tv episode has a title and may have an episode number, season number and the title of the show it belongs to.
 		 * <p/>
 		 * Note: Seems this class isn't used yet in the API.<br/>
 		 * <i>This class was generated automatically from XBMC's JSON-RPC introspect.</i>
@@ -531,7 +531,7 @@ public final class NotificationsModel {
 			public final String type;
 
 			/**
-			 * AÂ tvÂ episodeÂ hasÂ aÂ titleÂ andÂ mayÂ haveÂ anÂ episodeÂ number,Â seasonÂ numberÂ andÂ theÂ titleÂ ofÂ theÂ showÂ itÂ belongsÂ to.
+			 * A tv episode has a title and may have an episode number, season number and the title of the show it belongs to.
 			 * @param episode
 			 * @param season
 			 * @param showtitle
@@ -619,7 +619,7 @@ public final class NotificationsModel {
 		}
 
 		/**
-		 * AÂ musicÂ videoÂ hasÂ aÂ titleÂ andÂ mayÂ haveÂ anÂ albumÂ andÂ anÂ artist.
+		 * A music video has a title and may have an album and an artist.
 		 * <p/>
 		 * Note: Seems this class isn't used yet in the API.<br/>
 		 * <i>This class was generated automatically from XBMC's JSON-RPC introspect.</i>
@@ -639,7 +639,7 @@ public final class NotificationsModel {
 			public final String type;
 
 			/**
-			 * AÂ musicÂ videoÂ hasÂ aÂ titleÂ andÂ mayÂ haveÂ anÂ albumÂ andÂ anÂ artist.
+			 * A music video has a title and may have an album and an artist.
 			 * @param album
 			 * @param artist
 			 * @param title
@@ -722,7 +722,7 @@ public final class NotificationsModel {
 		}
 
 		/**
-		 * AÂ songÂ hasÂ aÂ titleÂ andÂ mayÂ haveÂ anÂ album,Â anÂ artistÂ andÂ aÂ trackÂ number.
+		 * A song has a title and may have an album, an artist and a track number.
 		 * <p/>
 		 * Note: Seems this class isn't used yet in the API.<br/>
 		 * <i>This class was generated automatically from XBMC's JSON-RPC introspect.</i>
@@ -744,7 +744,7 @@ public final class NotificationsModel {
 			public final String type;
 
 			/**
-			 * AÂ songÂ hasÂ aÂ titleÂ andÂ mayÂ haveÂ anÂ album,Â anÂ artistÂ andÂ aÂ trackÂ number.
+			 * A song has a title and may have an album, an artist and a track number.
 			 * @param album
 			 * @param artist
 			 * @param title
@@ -832,7 +832,7 @@ public final class NotificationsModel {
 		}
 
 		/**
-		 * AÂ pictureÂ hasÂ aÂ fileÂ path.
+		 * A picture has a file path.
 		 * <p/>
 		 * Note: Seems this class isn't used yet in the API.<br/>
 		 * <i>This class was generated automatically from XBMC's JSON-RPC introspect.</i>
@@ -848,7 +848,7 @@ public final class NotificationsModel {
 			public final String type;
 
 			/**
-			 * AÂ pictureÂ hasÂ aÂ fileÂ path.
+			 * A picture has a file path.
 			 * @param file
 			 * @param type One of: <tt>unknown</tt>, <tt>movie</tt>, <tt>episode</tt>, <tt>musicvideo</tt>, <tt>song</tt>, <tt>picture</tt>, <tt>channel</tt>. See constants at {@link NotificationsModel.FileType.Type}.
 			 */
@@ -921,7 +921,7 @@ public final class NotificationsModel {
 		}
 
 		/**
-		 * AÂ PVRÂ channelÂ isÂ eitherÂ aÂ radioÂ orÂ tvÂ channelÂ andÂ hasÂ aÂ title.
+		 * A PVR channel is either a radio or tv channel and has a title.
 		 * <p/>
 		 * Note: Seems this class isn't used yet in the API.<br/>
 		 * <i>This class was generated automatically from XBMC's JSON-RPC introspect.</i>
@@ -941,7 +941,7 @@ public final class NotificationsModel {
 			public final String type;
 
 			/**
-			 * AÂ PVRÂ channelÂ isÂ eitherÂ aÂ radioÂ orÂ tvÂ channelÂ andÂ hasÂ aÂ title.
+			 * A PVR channel is either a radio or tv channel and has a title.
 			 * @param channeltype One of: <tt>tv</tt>, <tt>radio</tt>. See constants at {@link NotificationsModel.IdTitleChanneltypeType.Channeltype}.
 			 * @param id
 			 * @param title
