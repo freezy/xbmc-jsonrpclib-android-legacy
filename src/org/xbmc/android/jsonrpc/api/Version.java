@@ -23,10 +23,11 @@ package org.xbmc.android.jsonrpc.api;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 /**
  * A class containing version information about a specific XBMC build.
- * 
+ *
  * @author freezy <freezy@xbmc.org>
  */
 public class Version {
@@ -35,30 +36,30 @@ public class Version {
 	private final Date date;
 	private final Branch branch;
 	private final Type type;
-	
+
 	private static Version VERSION;
-	
+
 	/**
 	 * Returns the version of XBMC against which the JSON-RPC library was built.
 	 * @return XBMC version
 	 */
 	public static Version get() {
 		if (VERSION == null) {
-			VERSION = new Version("7f49891", "2012-12-09 07:19:22 -0800", Branch.MASTER, Type.NIGHTLY);
+			VERSION = new Version("72a7730", "2013-10-12 16:48:48 -0700", Branch.MASTER, Type.NIGHTLY);
 		}
 		return VERSION;
 	}
 
 	/**
 	 * Version definition
-	 * 
-	 * @param revision Revision hash
+	 *
+	 * @param hash Revision hash
 	 * @param date Date in format 2012-11-10 09:33:15 +0100
-	 * @param branch
-	 * @param type
+	 * @param branch XBMC branch name
+	 * @param type XBMC build name
 	 */
 	private Version(String hash, String date, Branch branch, Type type) {
-		final SimpleDateFormat sfd = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss Z");
+		final SimpleDateFormat sfd = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss Z", Locale.US);
 		this.hash = hash;
 		try {
 			this.date = sfd.parse(date);
@@ -71,7 +72,7 @@ public class Version {
 
 	/**
 	 * Returns the git hash of the commit the library was built against.
-	 * @return
+	 * @return Git hash of the XBMC build used to generate the library
 	 */
 	public String getHash() {
 		return hash;
@@ -79,7 +80,7 @@ public class Version {
 
 	/**
 	 * Returns the date of the XBMC build the library was built against.
-	 * @return
+	 * @return Date XBMC build used to generate the library
 	 */
 	public Date getDate() {
 		return date;
@@ -87,7 +88,7 @@ public class Version {
 
 	/**
 	 * Returns the branch of the XBMC build the library was built against.
-	 * @return
+	 * @return Branch name
 	 */
 	public Branch getBranch() {
 		return branch;
@@ -99,7 +100,7 @@ public class Version {
 
 	@Override
 	public String toString() {
-		return hash + " (" + branch.toString().toLowerCase() + ")";
+		return hash + " (" + branch.toString().toLowerCase(Locale.US) + ")";
 	}
 
 	/**
@@ -115,6 +116,6 @@ public class Version {
 	 * @author freezy <freezy@xbmc.org>
 	 */
 	public enum Type {
-		SNAPSHOT, NIGHTLY, RELEASE, BETA, RC, UNKNOWN;
+		SNAPSHOT, NIGHTLY, RELEASE, BETA, RC, UNKNOWN
 	}
 }

@@ -1,5 +1,5 @@
 /*
- *      Copyright (C) 2005-2012 Team XBMC
+ *      Copyright (C) 2005-2013 Team XBMC
  *      http://xbmc.org
  *
  *  This Program is free software; you can redistribute it and/or modify
@@ -85,7 +85,7 @@ public final class VideoModel {
 
 		/**
 		 * Extracts a list of {@link Cast} objects from a JSON array.
-		 * @param obj ObjectNode containing the list of objects.
+		 * @param node ObjectNode containing the list of objects.
 		 * @param key Key pointing to the node where the list is stored.
 		 */
 		static List<Cast> getVideoModelCastList(JsonNode node, String key) {
@@ -178,7 +178,7 @@ public final class VideoModel {
 
 		/**
 		 * Extracts a list of {@link BaseDetail} objects from a JSON array.
-		 * @param obj ObjectNode containing the list of objects.
+		 * @param node ObjectNode containing the list of objects.
 		 * @param key Key pointing to the node where the list is stored.
 		 */
 		static List<BaseDetail> getVideoModelBaseDetailList(JsonNode node, String key) {
@@ -327,7 +327,7 @@ public final class VideoModel {
 
 		/**
 		 * Extracts a list of {@link EpisodeDetail} objects from a JSON array.
-		 * @param obj ObjectNode containing the list of objects.
+		 * @param node ObjectNode containing the list of objects.
 		 * @param key Key pointing to the node where the list is stored.
 		 */
 		static List<EpisodeDetail> getVideoModelEpisodeDetailList(JsonNode node, String key) {
@@ -476,7 +476,7 @@ public final class VideoModel {
 
 		/**
 		 * Extracts a list of {@link FileDetail} objects from a JSON array.
-		 * @param obj ObjectNode containing the list of objects.
+		 * @param node ObjectNode containing the list of objects.
 		 * @param key Key pointing to the node where the list is stored.
 		 */
 		static List<FileDetail> getVideoModelFileDetailList(JsonNode node, String key) {
@@ -588,7 +588,7 @@ public final class VideoModel {
 
 		/**
 		 * Extracts a list of {@link ItemDetail} objects from a JSON array.
-		 * @param obj ObjectNode containing the list of objects.
+		 * @param node ObjectNode containing the list of objects.
 		 * @param key Key pointing to the node where the list is stored.
 		 */
 		static List<ItemDetail> getVideoModelItemDetailList(JsonNode node, String key) {
@@ -681,7 +681,7 @@ public final class VideoModel {
 
 		/**
 		 * Extracts a list of {@link MediaDetail} objects from a JSON array.
-		 * @param obj ObjectNode containing the list of objects.
+		 * @param node ObjectNode containing the list of objects.
 		 * @param key Key pointing to the node where the list is stored.
 		 */
 		static List<MediaDetail> getVideoModelMediaDetailList(JsonNode node, String key) {
@@ -876,7 +876,7 @@ public final class VideoModel {
 
 		/**
 		 * Extracts a list of {@link MovieDetail} objects from a JSON array.
-		 * @param obj ObjectNode containing the list of objects.
+		 * @param node ObjectNode containing the list of objects.
 		 * @param key Key pointing to the node where the list is stored.
 		 */
 		static List<MovieDetail> getVideoModelMovieDetailList(JsonNode node, String key) {
@@ -1052,7 +1052,7 @@ public final class VideoModel {
 
 		/**
 		 * Extracts a list of {@link MovieSetDetail} objects from a JSON array.
-		 * @param obj ObjectNode containing the list of objects.
+		 * @param node ObjectNode containing the list of objects.
 		 * @param key Key pointing to the node where the list is stored.
 		 */
 		static List<MovieSetDetail> getVideoModelMovieSetDetailList(JsonNode node, String key) {
@@ -1147,7 +1147,7 @@ public final class VideoModel {
 
 		/**
 		 * Extracts a list of {@link MovieSetExtendedDetail} objects from a JSON array.
-		 * @param obj ObjectNode containing the list of objects.
+		 * @param node ObjectNode containing the list of objects.
 		 * @param key Key pointing to the node where the list is stored.
 		 */
 		static List<MovieSetExtendedDetail> getVideoModelMovieSetExtendedDetailList(JsonNode node, String key) {
@@ -1287,7 +1287,7 @@ public final class VideoModel {
 
 		/**
 		 * Extracts a list of {@link MusicVideoDetail} objects from a JSON array.
-		 * @param obj ObjectNode containing the list of objects.
+		 * @param node ObjectNode containing the list of objects.
 		 * @param key Key pointing to the node where the list is stored.
 		 */
 		static List<MusicVideoDetail> getVideoModelMusicVideoDetailList(JsonNode node, String key) {
@@ -1432,7 +1432,7 @@ public final class VideoModel {
 
 		/**
 		 * Extracts a list of {@link SeasonDetail} objects from a JSON array.
-		 * @param obj ObjectNode containing the list of objects.
+		 * @param node ObjectNode containing the list of objects.
 		 * @param key Key pointing to the node where the list is stored.
 		 */
 		static List<SeasonDetail> getVideoModelSeasonDetailList(JsonNode node, String key) {
@@ -1607,7 +1607,7 @@ public final class VideoModel {
 
 		/**
 		 * Extracts a list of {@link TVShowDetail} objects from a JSON array.
-		 * @param obj ObjectNode containing the list of objects.
+		 * @param node ObjectNode containing the list of objects.
 		 * @param key Key pointing to the node where the list is stored.
 		 */
 		static List<TVShowDetail> getVideoModelTVShowDetailList(JsonNode node, String key) {
@@ -1724,7 +1724,7 @@ public final class VideoModel {
 	/**
 	 * API Name: <tt>Video.Resume</tt>
 	 * <p/>
-	 * Note: This class is used as result only.<br/>
+	 * Note: This class is used as parameter as well as result.<br/>
 	 * <i>This class was generated automatically from XBMC's JSON-RPC introspect.</i>
 	 */
 	public static class Resume extends AbstractModel {
@@ -1766,7 +1766,7 @@ public final class VideoModel {
 
 		/**
 		 * Extracts a list of {@link Resume} objects from a JSON array.
-		 * @param obj ObjectNode containing the list of objects.
+		 * @param node ObjectNode containing the list of objects.
 		 * @param key Key pointing to the node where the list is stored.
 		 */
 		static List<Resume> getVideoModelResumeList(JsonNode node, String key) {
@@ -1883,7 +1883,7 @@ public final class VideoModel {
 
 		/**
 		 * Extracts a list of {@link Streams} objects from a JSON array.
-		 * @param obj ObjectNode containing the list of objects.
+		 * @param node ObjectNode containing the list of objects.
 		 * @param key Key pointing to the node where the list is stored.
 		 */
 		static List<Streams> getVideoModelStreamsList(JsonNode node, String key) {
@@ -2007,7 +2007,7 @@ public final class VideoModel {
 
 			/**
 			 * Extracts a list of {@link Audio} objects from a JSON array.
-			 * @param obj ObjectNode containing the list of objects.
+			 * @param node ObjectNode containing the list of objects.
 			 * @param key Key pointing to the node where the list is stored.
 			 */
 			static List<Audio> getVideoModelAudioList(JsonNode node, String key) {
@@ -2099,7 +2099,7 @@ public final class VideoModel {
 
 			/**
 			 * Extracts a list of {@link Subtitle} objects from a JSON array.
-			 * @param obj ObjectNode containing the list of objects.
+			 * @param node ObjectNode containing the list of objects.
 			 * @param key Key pointing to the node where the list is stored.
 			 */
 			static List<Subtitle> getVideoModelSubtitleList(JsonNode node, String key) {
@@ -2211,7 +2211,7 @@ public final class VideoModel {
 
 			/**
 			 * Extracts a list of {@link Video} objects from a JSON array.
-			 * @param obj ObjectNode containing the list of objects.
+			 * @param node ObjectNode containing the list of objects.
 			 * @param key Key pointing to the node where the list is stored.
 			 */
 			static List<Video> getVideoModelVideoList(JsonNode node, String key) {

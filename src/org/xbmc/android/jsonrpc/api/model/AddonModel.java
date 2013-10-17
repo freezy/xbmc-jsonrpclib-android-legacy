@@ -1,5 +1,5 @@
 /*
- *      Copyright (C) 2005-2012 Team XBMC
+ *      Copyright (C) 2005-2013 Team XBMC
  *      http://xbmc.org
  *
  *  This Program is free software; you can redistribute it and/or modify
@@ -137,7 +137,7 @@ public final class AddonModel {
 
 		/**
 		 * Extracts a list of {@link Detail} objects from a JSON array.
-		 * @param obj ObjectNode containing the list of objects.
+		 * @param node ObjectNode containing the list of objects.
 		 * @param key Key pointing to the node where the list is stored.
 		 */
 		static List<Detail> getAddonModelDetailList(JsonNode node, String key) {
@@ -291,7 +291,7 @@ public final class AddonModel {
 
 			/**
 			 * Extracts a list of {@link Broken} objects from a JSON array.
-			 * @param obj ObjectNode containing the list of objects.
+			 * @param node ObjectNode containing the list of objects.
 			 * @param key Key pointing to the node where the list is stored.
 			 */
 			static List<Broken> getAddonModelBrokenList(JsonNode node, String key) {
@@ -393,7 +393,7 @@ public final class AddonModel {
 
 			/**
 			 * Extracts a list of {@link Dependency} objects from a JSON array.
-			 * @param obj ObjectNode containing the list of objects.
+			 * @param node ObjectNode containing the list of objects.
 			 * @param key Key pointing to the node where the list is stored.
 			 */
 			static List<Dependency> getAddonModelDependencyList(JsonNode node, String key) {
@@ -491,7 +491,7 @@ public final class AddonModel {
 
 			/**
 			 * Extracts a list of {@link Extrainfo} objects from a JSON array.
-			 * @param obj ObjectNode containing the list of objects.
+			 * @param node ObjectNode containing the list of objects.
 			 * @param key Key pointing to the node where the list is stored.
 			 */
 			static List<Extrainfo> getAddonModelExtrainfoList(JsonNode node, String key) {
@@ -565,13 +565,14 @@ public final class AddonModel {
 			public final String XBMC_PYTHON_LYRICS = "xbmc.python.lyrics";
 			public final String XBMC_GUI_SKIN = "xbmc.gui.skin";
 			public final String XBMC_GUI_WEBINTERFACE = "xbmc.gui.webinterface";
+			public final String XBMC_PVRCLIENT = "xbmc.pvrclient";
 			public final String XBMC_ADDON_VIDEO = "xbmc.addon.video";
 			public final String XBMC_ADDON_AUDIO = "xbmc.addon.audio";
 			public final String XBMC_ADDON_IMAGE = "xbmc.addon.image";
 			public final String XBMC_ADDON_EXECUTABLE = "xbmc.addon.executable";
 			public final String XBMC_SERVICE = "xbmc.service";
 
-			public final static Set<String> values = new HashSet<String>(Arrays.asList(UNKNOWN, XBMC_METADATA_SCRAPER_ALBUMS, XBMC_METADATA_SCRAPER_ARTISTS, XBMC_METADATA_SCRAPER_MOVIES, XBMC_METADATA_SCRAPER_MUSICVIDEOS, XBMC_METADATA_SCRAPER_TVSHOWS, XBMC_UI_SCREENSAVER, XBMC_PLAYER_MUSICVIZ, XBMC_PYTHON_PLUGINSOURCE, XBMC_PYTHON_SCRIPT, XBMC_PYTHON_WEATHER, XBMC_PYTHON_SUBTITLES, XBMC_PYTHON_LYRICS, XBMC_GUI_SKIN, XBMC_GUI_WEBINTERFACE, XBMC_ADDON_VIDEO, XBMC_ADDON_AUDIO, XBMC_ADDON_IMAGE, XBMC_ADDON_EXECUTABLE, XBMC_SERVICE));
+			public final static Set<String> values = new HashSet<String>(Arrays.asList(UNKNOWN, XBMC_METADATA_SCRAPER_ALBUMS, XBMC_METADATA_SCRAPER_ARTISTS, XBMC_METADATA_SCRAPER_MOVIES, XBMC_METADATA_SCRAPER_MUSICVIDEOS, XBMC_METADATA_SCRAPER_TVSHOWS, XBMC_UI_SCREENSAVER, XBMC_PLAYER_MUSICVIZ, XBMC_PYTHON_PLUGINSOURCE, XBMC_PYTHON_SCRIPT, XBMC_PYTHON_WEATHER, XBMC_PYTHON_SUBTITLES, XBMC_PYTHON_LYRICS, XBMC_GUI_SKIN, XBMC_GUI_WEBINTERFACE, XBMC_PVRCLIENT, XBMC_ADDON_VIDEO, XBMC_ADDON_AUDIO, XBMC_ADDON_IMAGE, XBMC_ADDON_EXECUTABLE, XBMC_SERVICE));
 		}
 	}
 
@@ -632,12 +633,13 @@ public final class AddonModel {
 		public final String XBMC_PYTHON_LYRICS = "xbmc.python.lyrics";
 		public final String XBMC_GUI_SKIN = "xbmc.gui.skin";
 		public final String XBMC_GUI_WEBINTERFACE = "xbmc.gui.webinterface";
+		public final String XBMC_PVRCLIENT = "xbmc.pvrclient";
 		public final String XBMC_ADDON_VIDEO = "xbmc.addon.video";
 		public final String XBMC_ADDON_AUDIO = "xbmc.addon.audio";
 		public final String XBMC_ADDON_IMAGE = "xbmc.addon.image";
 		public final String XBMC_ADDON_EXECUTABLE = "xbmc.addon.executable";
 		public final String XBMC_SERVICE = "xbmc.service";
 
-		public final static Set<String> values = new HashSet<String>(Arrays.asList(UNKNOWN, XBMC_METADATA_SCRAPER_ALBUMS, XBMC_METADATA_SCRAPER_ARTISTS, XBMC_METADATA_SCRAPER_MOVIES, XBMC_METADATA_SCRAPER_MUSICVIDEOS, XBMC_METADATA_SCRAPER_TVSHOWS, XBMC_UI_SCREENSAVER, XBMC_PLAYER_MUSICVIZ, XBMC_PYTHON_PLUGINSOURCE, XBMC_PYTHON_SCRIPT, XBMC_PYTHON_WEATHER, XBMC_PYTHON_SUBTITLES, XBMC_PYTHON_LYRICS, XBMC_GUI_SKIN, XBMC_GUI_WEBINTERFACE, XBMC_ADDON_VIDEO, XBMC_ADDON_AUDIO, XBMC_ADDON_IMAGE, XBMC_ADDON_EXECUTABLE, XBMC_SERVICE));
+		public final static Set<String> values = new HashSet<String>(Arrays.asList(UNKNOWN, XBMC_METADATA_SCRAPER_ALBUMS, XBMC_METADATA_SCRAPER_ARTISTS, XBMC_METADATA_SCRAPER_MOVIES, XBMC_METADATA_SCRAPER_MUSICVIDEOS, XBMC_METADATA_SCRAPER_TVSHOWS, XBMC_UI_SCREENSAVER, XBMC_PLAYER_MUSICVIZ, XBMC_PYTHON_PLUGINSOURCE, XBMC_PYTHON_SCRIPT, XBMC_PYTHON_WEATHER, XBMC_PYTHON_SUBTITLES, XBMC_PYTHON_LYRICS, XBMC_GUI_SKIN, XBMC_GUI_WEBINTERFACE, XBMC_PVRCLIENT, XBMC_ADDON_VIDEO, XBMC_ADDON_AUDIO, XBMC_ADDON_IMAGE, XBMC_ADDON_EXECUTABLE, XBMC_SERVICE));
 	}
 }

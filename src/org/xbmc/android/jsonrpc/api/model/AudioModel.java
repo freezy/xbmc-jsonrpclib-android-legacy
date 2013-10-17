@@ -1,5 +1,5 @@
 /*
- *      Copyright (C) 2005-2012 Team XBMC
+ *      Copyright (C) 2005-2013 Team XBMC
  *      http://xbmc.org
  *
  *  This Program is free software; you can redistribute it and/or modify
@@ -106,7 +106,7 @@ public final class AudioModel {
 
 		/**
 		 * Extracts a list of {@link AlbumDetail} objects from a JSON array.
-		 * @param obj ObjectNode containing the list of objects.
+		 * @param node ObjectNode containing the list of objects.
 		 * @param key Key pointing to the node where the list is stored.
 		 */
 		static List<AlbumDetail> getAudioModelAlbumDetailList(JsonNode node, String key) {
@@ -208,6 +208,7 @@ public final class AudioModel {
 		public static final String ARTIST = "artist";
 		public static final String ARTISTID = "artistid";
 		public static final String BORN = "born";
+		public static final String COMPILATIONARTIST = "compilationartist";
 		public static final String DESCRIPTION = "description";
 		public static final String DIED = "died";
 		public static final String DISBANDED = "disbanded";
@@ -222,6 +223,7 @@ public final class AudioModel {
 		public final String artist;
 		public final Integer artistid;
 		public final String born;
+		public final Boolean compilationartist;
 		public final String description;
 		public final String died;
 		public final String disbanded;
@@ -241,6 +243,7 @@ public final class AudioModel {
 			artist = node.get(ARTIST).getTextValue(); // required value
 			artistid = parseInt(node, ARTISTID);
 			born = parseString(node, BORN);
+			compilationartist = parseBoolean(node, COMPILATIONARTIST);
 			description = parseString(node, DESCRIPTION);
 			died = parseString(node, DIED);
 			disbanded = parseString(node, DISBANDED);
@@ -258,6 +261,7 @@ public final class AudioModel {
 			node.put(ARTIST, artist);
 			node.put(ARTISTID, artistid);
 			node.put(BORN, born);
+			node.put(COMPILATIONARTIST, compilationartist);
 			node.put(DESCRIPTION, description);
 			node.put(DIED, died);
 			node.put(DISBANDED, disbanded);
@@ -288,7 +292,7 @@ public final class AudioModel {
 
 		/**
 		 * Extracts a list of {@link ArtistDetail} objects from a JSON array.
-		 * @param obj ObjectNode containing the list of objects.
+		 * @param node ObjectNode containing the list of objects.
 		 * @param key Key pointing to the node where the list is stored.
 		 */
 		static List<ArtistDetail> getAudioModelArtistDetailList(JsonNode node, String key) {
@@ -314,6 +318,7 @@ public final class AudioModel {
 			parcel.writeValue(artist);
 			parcel.writeValue(artistid);
 			parcel.writeValue(born);
+			parcel.writeInt(compilationartist ? 1 : 0);
 			parcel.writeValue(description);
 			parcel.writeValue(died);
 			parcel.writeValue(disbanded);
@@ -345,6 +350,7 @@ public final class AudioModel {
 			artist = parcel.readString();
 			artistid = parcel.readInt();
 			born = parcel.readString();
+			compilationartist = parcel.readInt() == 1;
 			description = parcel.readString();
 			died = parcel.readString();
 			disbanded = parcel.readString();
@@ -429,7 +435,7 @@ public final class AudioModel {
 
 		/**
 		 * Extracts a list of {@link BaseDetail} objects from a JSON array.
-		 * @param obj ObjectNode containing the list of objects.
+		 * @param node ObjectNode containing the list of objects.
 		 * @param key Key pointing to the node where the list is stored.
 		 */
 		static List<BaseDetail> getAudioModelBaseDetailList(JsonNode node, String key) {
@@ -567,7 +573,7 @@ public final class AudioModel {
 
 		/**
 		 * Extracts a list of {@link MediaDetail} objects from a JSON array.
-		 * @param obj ObjectNode containing the list of objects.
+		 * @param node ObjectNode containing the list of objects.
 		 * @param key Key pointing to the node where the list is stored.
 		 */
 		static List<MediaDetail> getAudioModelMediaDetailList(JsonNode node, String key) {
@@ -755,7 +761,7 @@ public final class AudioModel {
 
 		/**
 		 * Extracts a list of {@link SongDetail} objects from a JSON array.
-		 * @param obj ObjectNode containing the list of objects.
+		 * @param node ObjectNode containing the list of objects.
 		 * @param key Key pointing to the node where the list is stored.
 		 */
 		static List<SongDetail> getAudioModelSongDetailList(JsonNode node, String key) {
@@ -897,8 +903,9 @@ public final class AudioModel {
 		public final String MUSICBRAINZARTISTID = "musicbrainzartistid";
 		public final String FANART = "fanart";
 		public final String THUMBNAIL = "thumbnail";
+		public final String COMPILATIONARTIST = "compilationartist";
 
-		public final static Set<String> values = new HashSet<String>(Arrays.asList(INSTRUMENT, STYLE, MOOD, BORN, FORMED, DESCRIPTION, GENRE, DIED, DISBANDED, YEARSACTIVE, MUSICBRAINZARTISTID, FANART, THUMBNAIL));
+		public final static Set<String> values = new HashSet<String>(Arrays.asList(INSTRUMENT, STYLE, MOOD, BORN, FORMED, DESCRIPTION, GENRE, DIED, DISBANDED, YEARSACTIVE, MUSICBRAINZARTISTID, FANART, THUMBNAIL, COMPILATIONARTIST));
 	}
 
 	/**

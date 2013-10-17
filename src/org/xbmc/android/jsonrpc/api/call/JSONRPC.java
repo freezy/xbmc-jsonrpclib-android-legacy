@@ -1,5 +1,5 @@
 /*
- *      Copyright (C) 2005-2012 Team XBMC
+ *      Copyright (C) 2005-2013 Team XBMC
  *      http://xbmc.org
  *
  *  This Program is free software; you can redistribute it and/or modify
@@ -71,9 +71,9 @@ public final class JSONRPC {
 
 		/**
 		 * Notify all other connected clients.
-		 * @param sender
-		 * @param message
-		 * @param data
+		 * @param sender 
+		 * @param message 
+		 * @param data 
 		 */
 		public NotifyAll(String sender, String message, String data) {
 			super();
@@ -84,8 +84,8 @@ public final class JSONRPC {
 
 		/**
 		 * Notify all other connected clients.
-		 * @param sender
-		 * @param message
+		 * @param sender 
+		 * @param message 
 		 */
 		public NotifyAll(String sender, String message) {
 			super();
@@ -276,7 +276,7 @@ public final class JSONRPC {
 
 			/**
 			 * Extracts a list of {@link PermissionResult} objects from a JSON array.
-			 * @param obj ObjectNode containing the list of objects.
+			 * @param node ObjectNode containing the list of objects.
 			 * @param key Key pointing to the node where the list is stored.
 			 */
 			static List<PermissionResult> getJSONRPCPermissionResultList(JsonNode node, String key) {
@@ -499,6 +499,22 @@ public final class JSONRPC {
 				this.patch = patch;
 			}
 
+			@Override
+			public String toString() {
+				return major + "." + minor + "." + patch;
+			}
+
+			/**
+			 * Returns a comparable integer by multiplying and adding the
+			 * version parts. <br>
+			 * Example:
+			 * 	<tt>2.19.625</tt> becomes <tt>20190625</tt>
+			 * @return
+			 */
+			public int toInt() {
+				return patch + minor * 10000 + major * 10000000;
+			}
+
 			/**
 			 * Construct from JSON object.
 			 * @param node JSON object representing a VersionResult object
@@ -520,7 +536,7 @@ public final class JSONRPC {
 
 			/**
 			 * Extracts a list of {@link VersionResult} objects from a JSON array.
-			 * @param obj ObjectNode containing the list of objects.
+			 * @param node ObjectNode containing the list of objects.
 			 * @param key Key pointing to the node where the list is stored.
 			 */
 			static List<VersionResult> getJSONRPCVersionResultList(JsonNode node, String key) {

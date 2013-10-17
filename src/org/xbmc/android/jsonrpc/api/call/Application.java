@@ -1,5 +1,5 @@
 /*
- *      Copyright (C) 2005-2012 Team XBMC
+ *      Copyright (C) 2005-2013 Team XBMC
  *      http://xbmc.org
  *
  *  This Program is free software; you can redistribute it and/or modify
@@ -22,6 +22,9 @@ package org.xbmc.android.jsonrpc.api.call;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 import org.codehaus.jackson.JsonNode;
 import org.codehaus.jackson.node.ObjectNode;
 import org.xbmc.android.jsonrpc.api.AbstractCall;
@@ -69,7 +72,7 @@ public final class Application {
 
 		/**
 		 * Retrieves the values of the given properties.
-		 * @param properties One or more of: <tt>volume</tt>, <tt>muted</tt>, <tt>name</tt>, <tt>version</tt>. See constants at {@link ApplicationModel.PropertyName}.
+		 * @param properties  One or more of: <tt>volume</tt>, <tt>muted</tt>, <tt>name</tt>, <tt>version</tt>. See constants at {@link ApplicationModel.PropertyName}.
 		 */
 		public GetProperties(String... properties) {
 			super();
@@ -191,7 +194,7 @@ public final class Application {
 
 		/**
 		 * Toggle mute/unmute.
-		 * @param mute
+		 * @param mute 
 		 */
 		public SetMute(GlobalModel.Toggle mute) {
 			super();
@@ -253,7 +256,7 @@ public final class Application {
 
 		/**
 		 * Set the current volume.
-		 * @param volume
+		 * @param volume 
 		 */
 		public SetVolume(Integer volume) {
 			super();
@@ -262,7 +265,7 @@ public final class Application {
 
 		/**
 		 * Set the current volume.
-		 * @param volume One of: <tt>increment</tt>, <tt>decrement</tt>. See constants at {@link GlobalModel.IncrementDecrement}.
+		 * @param volume  One of: <tt>increment</tt>, <tt>decrement</tt>. See constants at {@link GlobalModel.IncrementDecrement}.
 		 */
 		public SetVolume(String volume) {
 			super();

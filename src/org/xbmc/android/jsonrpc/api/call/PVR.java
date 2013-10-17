@@ -1,5 +1,5 @@
 /*
- *      Copyright (C) 2005-2012 Team XBMC
+ *      Copyright (C) 2005-2013 Team XBMC
  *      http://xbmc.org
  *
  *  This Program is free software; you can redistribute it and/or modify
@@ -25,6 +25,7 @@ import android.os.Parcelable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import org.codehaus.jackson.JsonNode;
 import org.codehaus.jackson.node.ArrayNode;
@@ -77,8 +78,8 @@ public final class PVR {
 
 		/**
 		 * Retrieves the details of a specific channel.
-		 * @param channelid
-		 * @param properties One or more of: <tt>thumbnail</tt>, <tt>channeltype</tt>, <tt>hidden</tt>, <tt>locked</tt>, <tt>channel</tt>, <tt>lastplayed</tt>. See constants at {@link PVRModel.ChannelFields}.
+		 * @param channelid 
+		 * @param properties  One or more of: <tt>thumbnail</tt>, <tt>channeltype</tt>, <tt>hidden</tt>, <tt>locked</tt>, <tt>channel</tt>, <tt>lastplayed</tt>. See constants at {@link PVRModel.ChannelFields}.
 		 */
 		public GetChannelDetails(Integer channelid, String... properties) {
 			super();
@@ -142,8 +143,8 @@ public final class PVR {
 
 		/**
 		 * Retrieves the details of a specific channel group.
-		 * @param channelgroupid
-		 * @param channels
+		 * @param channelgroupid 
+		 * @param channels 
 		 */
 		public GetChannelGroupDetails(PVRModel.ChannelGroupId channelgroupid, Channel channels) {
 			super();
@@ -153,7 +154,7 @@ public final class PVR {
 
 		/**
 		 * Retrieves the details of a specific channel group.
-		 * @param channelgroupid
+		 * @param channelgroupid 
 		 */
 		public GetChannelGroupDetails(PVRModel.ChannelGroupId channelgroupid) {
 			super();
@@ -301,8 +302,8 @@ public final class PVR {
 
 		/**
 		 * Retrieves the channel groups for the specified type.
-		 * @param channeltype One of: <tt>tv</tt>, <tt>radio</tt>. See constants at {@link PVRModel.ChannelType}.
-		 * @param limits
+		 * @param channeltype  One of: <tt>tv</tt>, <tt>radio</tt>. See constants at {@link PVRModel.ChannelType}.
+		 * @param limits 
 		 */
 		public GetChannelGroups(String channeltype, ListModel.Limits limits) {
 			super();
@@ -312,7 +313,7 @@ public final class PVR {
 
 		/**
 		 * Retrieves the channel groups for the specified type.
-		 * @param channeltype One of: <tt>tv</tt>, <tt>radio</tt>. See constants at {@link PVRModel.ChannelType}.
+		 * @param channeltype  One of: <tt>tv</tt>, <tt>radio</tt>. See constants at {@link PVRModel.ChannelType}.
 		 */
 		public GetChannelGroups(String channeltype) {
 			super();
@@ -385,9 +386,9 @@ public final class PVR {
 
 		/**
 		 * Retrieves the channel list.
-		 * @param channelgroupid
-		 * @param limits
-		 * @param properties One or more of: <tt>thumbnail</tt>, <tt>channeltype</tt>, <tt>hidden</tt>, <tt>locked</tt>, <tt>channel</tt>, <tt>lastplayed</tt>. See constants at {@link PVRModel.ChannelFields}.
+		 * @param channelgroupid 
+		 * @param limits 
+		 * @param properties  One or more of: <tt>thumbnail</tt>, <tt>channeltype</tt>, <tt>hidden</tt>, <tt>locked</tt>, <tt>channel</tt>, <tt>lastplayed</tt>. See constants at {@link PVRModel.ChannelFields}.
 		 */
 		public GetChannels(PVRModel.ChannelGroupId channelgroupid, ListModel.Limits limits, String... properties) {
 			super();
@@ -398,8 +399,8 @@ public final class PVR {
 
 		/**
 		 * Retrieves the channel list.
-		 * @param channelgroupid
-		 * @param properties One or more of: <tt>thumbnail</tt>, <tt>channeltype</tt>, <tt>hidden</tt>, <tt>locked</tt>, <tt>channel</tt>, <tt>lastplayed</tt>. See constants at {@link PVRModel.ChannelFields}.
+		 * @param channelgroupid 
+		 * @param properties  One or more of: <tt>thumbnail</tt>, <tt>channeltype</tt>, <tt>hidden</tt>, <tt>locked</tt>, <tt>channel</tt>, <tt>lastplayed</tt>. See constants at {@link PVRModel.ChannelFields}.
 		 */
 		public GetChannels(PVRModel.ChannelGroupId channelgroupid, String... properties) {
 			super();
@@ -472,7 +473,7 @@ public final class PVR {
 
 		/**
 		 * Retrieves the values of the given properties.
-		 * @param properties One or more of: <tt>available</tt>, <tt>recording</tt>, <tt>scanning</tt>. See constants at {@link PVRModel.PropertyName}.
+		 * @param properties  One or more of: <tt>available</tt>, <tt>recording</tt>, <tt>scanning</tt>. See constants at {@link PVRModel.PropertyName}.
 		 */
 		public GetProperties(String... properties) {
 			super();
@@ -534,8 +535,8 @@ public final class PVR {
 
 		/**
 		 * Toggle recording of a channel.
-		 * @param record
-		 * @param channel One of: <tt>current</tt>. See constants at {@link PVR.Record.Channel}.
+		 * @param record 
+		 * @param channel  One of: <tt>current</tt>. See constants at {@link PVR.Record.Channel}.
 		 */
 		public Record(GlobalModel.Toggle record, String channel) {
 			super();
@@ -545,8 +546,8 @@ public final class PVR {
 
 		/**
 		 * Toggle recording of a channel.
-		 * @param record
-		 * @param channel
+		 * @param record 
+		 * @param channel 
 		 */
 		public Record(GlobalModel.Toggle record, Integer channel) {
 			super();
@@ -563,7 +564,7 @@ public final class PVR {
 
 		/**
 		 * Toggle recording of a channel.
-		 * @param record
+		 * @param record 
 		 */
 		public Record(GlobalModel.Toggle record) {
 			super();

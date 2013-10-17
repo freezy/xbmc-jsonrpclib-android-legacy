@@ -1,5 +1,5 @@
 /*
- *      Copyright (C) 2005-2012 Team XBMC
+ *      Copyright (C) 2005-2013 Team XBMC
  *      http://xbmc.org
  *
  *  This Program is free software; you can redistribute it and/or modify
@@ -23,6 +23,7 @@ package org.xbmc.android.jsonrpc.api.call;
 import android.os.Parcel;
 import android.os.Parcelable;
 import java.util.ArrayList;
+import java.util.List;
 import org.codehaus.jackson.JsonNode;
 import org.codehaus.jackson.node.ArrayNode;
 import org.codehaus.jackson.node.ObjectNode;
@@ -133,7 +134,7 @@ public final class AudioLibrary {
 
 		/**
 		 * Exports all items from the audio library.
-		 * @param options
+		 * @param options 
 		 */
 		public Export(OptionsPath options) {
 			super();
@@ -142,7 +143,7 @@ public final class AudioLibrary {
 
 		/**
 		 * Exports all items from the audio library.
-		 * @param options
+		 * @param options 
 		 */
 		public Export(OptionsImagesOverwrite options) {
 			super();
@@ -338,8 +339,8 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve details about a specific album.
-		 * @param albumid
-		 * @param properties One or more of: <tt>title</tt>, <tt>description</tt>, <tt>artist</tt>, <tt>genre</tt>, <tt>theme</tt>, <tt>mood</tt>, <tt>style</tt>, <tt>type</tt>, <tt>albumlabel</tt>, <tt>rating</tt>, <tt>year</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>playcount</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>. See constants at {@link AudioModel.AlbumFields}.
+		 * @param albumid 
+		 * @param properties  One or more of: <tt>title</tt>, <tt>description</tt>, <tt>artist</tt>, <tt>genre</tt>, <tt>theme</tt>, <tt>mood</tt>, <tt>style</tt>, <tt>type</tt>, <tt>albumlabel</tt>, <tt>rating</tt>, <tt>year</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>playcount</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>. See constants at {@link AudioModel.AlbumFields}.
 		 */
 		public GetAlbumDetails(Integer albumid, String... properties) {
 			super();
@@ -403,10 +404,10 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all albums from specified artist or genre.
-		 * @param limits
-		 * @param sort
-		 * @param filter
-		 * @param properties One or more of: <tt>title</tt>, <tt>description</tt>, <tt>artist</tt>, <tt>genre</tt>, <tt>theme</tt>, <tt>mood</tt>, <tt>style</tt>, <tt>type</tt>, <tt>albumlabel</tt>, <tt>rating</tt>, <tt>year</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>playcount</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>. See constants at {@link AudioModel.AlbumFields}.
+		 * @param limits 
+		 * @param sort 
+		 * @param filter 
+		 * @param properties  One or more of: <tt>title</tt>, <tt>description</tt>, <tt>artist</tt>, <tt>genre</tt>, <tt>theme</tt>, <tt>mood</tt>, <tt>style</tt>, <tt>type</tt>, <tt>albumlabel</tt>, <tt>rating</tt>, <tt>year</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>playcount</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>. See constants at {@link AudioModel.AlbumFields}.
 		 */
 		public GetAlbums(ListModel.Limits limits, ListModel.Sort sort, FilterGenreId filter, String... properties) {
 			super();
@@ -418,10 +419,10 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all albums from specified artist or genre.
-		 * @param limits
-		 * @param sort
-		 * @param filter
-		 * @param properties One or more of: <tt>title</tt>, <tt>description</tt>, <tt>artist</tt>, <tt>genre</tt>, <tt>theme</tt>, <tt>mood</tt>, <tt>style</tt>, <tt>type</tt>, <tt>albumlabel</tt>, <tt>rating</tt>, <tt>year</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>playcount</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>. See constants at {@link AudioModel.AlbumFields}.
+		 * @param limits 
+		 * @param sort 
+		 * @param filter 
+		 * @param properties  One or more of: <tt>title</tt>, <tt>description</tt>, <tt>artist</tt>, <tt>genre</tt>, <tt>theme</tt>, <tt>mood</tt>, <tt>style</tt>, <tt>type</tt>, <tt>albumlabel</tt>, <tt>rating</tt>, <tt>year</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>playcount</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>. See constants at {@link AudioModel.AlbumFields}.
 		 */
 		public GetAlbums(ListModel.Limits limits, ListModel.Sort sort, FilterGenre filter, String... properties) {
 			super();
@@ -433,10 +434,10 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all albums from specified artist or genre.
-		 * @param limits
-		 * @param sort
-		 * @param filter
-		 * @param properties One or more of: <tt>title</tt>, <tt>description</tt>, <tt>artist</tt>, <tt>genre</tt>, <tt>theme</tt>, <tt>mood</tt>, <tt>style</tt>, <tt>type</tt>, <tt>albumlabel</tt>, <tt>rating</tt>, <tt>year</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>playcount</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>. See constants at {@link AudioModel.AlbumFields}.
+		 * @param limits 
+		 * @param sort 
+		 * @param filter 
+		 * @param properties  One or more of: <tt>title</tt>, <tt>description</tt>, <tt>artist</tt>, <tt>genre</tt>, <tt>theme</tt>, <tt>mood</tt>, <tt>style</tt>, <tt>type</tt>, <tt>albumlabel</tt>, <tt>rating</tt>, <tt>year</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>playcount</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>. See constants at {@link AudioModel.AlbumFields}.
 		 */
 		public GetAlbums(ListModel.Limits limits, ListModel.Sort sort, FilterArtistId filter, String... properties) {
 			super();
@@ -448,10 +449,10 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all albums from specified artist or genre.
-		 * @param limits
-		 * @param sort
-		 * @param filter
-		 * @param properties One or more of: <tt>title</tt>, <tt>description</tt>, <tt>artist</tt>, <tt>genre</tt>, <tt>theme</tt>, <tt>mood</tt>, <tt>style</tt>, <tt>type</tt>, <tt>albumlabel</tt>, <tt>rating</tt>, <tt>year</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>playcount</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>. See constants at {@link AudioModel.AlbumFields}.
+		 * @param limits 
+		 * @param sort 
+		 * @param filter 
+		 * @param properties  One or more of: <tt>title</tt>, <tt>description</tt>, <tt>artist</tt>, <tt>genre</tt>, <tt>theme</tt>, <tt>mood</tt>, <tt>style</tt>, <tt>type</tt>, <tt>albumlabel</tt>, <tt>rating</tt>, <tt>year</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>playcount</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>. See constants at {@link AudioModel.AlbumFields}.
 		 */
 		public GetAlbums(ListModel.Limits limits, ListModel.Sort sort, FilterArtist filter, String... properties) {
 			super();
@@ -463,10 +464,10 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all albums from specified artist or genre.
-		 * @param limits
-		 * @param sort
-		 * @param filter
-		 * @param properties One or more of: <tt>title</tt>, <tt>description</tt>, <tt>artist</tt>, <tt>genre</tt>, <tt>theme</tt>, <tt>mood</tt>, <tt>style</tt>, <tt>type</tt>, <tt>albumlabel</tt>, <tt>rating</tt>, <tt>year</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>playcount</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>. See constants at {@link AudioModel.AlbumFields}.
+		 * @param limits 
+		 * @param sort 
+		 * @param filter 
+		 * @param properties  One or more of: <tt>title</tt>, <tt>description</tt>, <tt>artist</tt>, <tt>genre</tt>, <tt>theme</tt>, <tt>mood</tt>, <tt>style</tt>, <tt>type</tt>, <tt>albumlabel</tt>, <tt>rating</tt>, <tt>year</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>playcount</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>. See constants at {@link AudioModel.AlbumFields}.
 		 */
 		public GetAlbums(ListModel.Limits limits, ListModel.Sort sort, ListModel.AlbumFilter filter, String... properties) {
 			super();
@@ -478,7 +479,7 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all albums from specified artist or genre.
-		 * @param properties One or more of: <tt>title</tt>, <tt>description</tt>, <tt>artist</tt>, <tt>genre</tt>, <tt>theme</tt>, <tt>mood</tt>, <tt>style</tt>, <tt>type</tt>, <tt>albumlabel</tt>, <tt>rating</tt>, <tt>year</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>playcount</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>. See constants at {@link AudioModel.AlbumFields}.
+		 * @param properties  One or more of: <tt>title</tt>, <tt>description</tt>, <tt>artist</tt>, <tt>genre</tt>, <tt>theme</tt>, <tt>mood</tt>, <tt>style</tt>, <tt>type</tt>, <tt>albumlabel</tt>, <tt>rating</tt>, <tt>year</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>playcount</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>. See constants at {@link AudioModel.AlbumFields}.
 		 */
 		public GetAlbums(String... properties) {
 			super();
@@ -487,8 +488,8 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all albums from specified artist or genre.
-		 * @param limits
-		 * @param properties One or more of: <tt>title</tt>, <tt>description</tt>, <tt>artist</tt>, <tt>genre</tt>, <tt>theme</tt>, <tt>mood</tt>, <tt>style</tt>, <tt>type</tt>, <tt>albumlabel</tt>, <tt>rating</tt>, <tt>year</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>playcount</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>. See constants at {@link AudioModel.AlbumFields}.
+		 * @param limits 
+		 * @param properties  One or more of: <tt>title</tt>, <tt>description</tt>, <tt>artist</tt>, <tt>genre</tt>, <tt>theme</tt>, <tt>mood</tt>, <tt>style</tt>, <tt>type</tt>, <tt>albumlabel</tt>, <tt>rating</tt>, <tt>year</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>playcount</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>. See constants at {@link AudioModel.AlbumFields}.
 		 */
 		public GetAlbums(ListModel.Limits limits, String... properties) {
 			super();
@@ -498,8 +499,8 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all albums from specified artist or genre.
-		 * @param sort
-		 * @param properties One or more of: <tt>title</tt>, <tt>description</tt>, <tt>artist</tt>, <tt>genre</tt>, <tt>theme</tt>, <tt>mood</tt>, <tt>style</tt>, <tt>type</tt>, <tt>albumlabel</tt>, <tt>rating</tt>, <tt>year</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>playcount</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>. See constants at {@link AudioModel.AlbumFields}.
+		 * @param sort 
+		 * @param properties  One or more of: <tt>title</tt>, <tt>description</tt>, <tt>artist</tt>, <tt>genre</tt>, <tt>theme</tt>, <tt>mood</tt>, <tt>style</tt>, <tt>type</tt>, <tt>albumlabel</tt>, <tt>rating</tt>, <tt>year</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>playcount</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>. See constants at {@link AudioModel.AlbumFields}.
 		 */
 		public GetAlbums(ListModel.Sort sort, String... properties) {
 			super();
@@ -509,9 +510,9 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all albums from specified artist or genre.
-		 * @param limits
-		 * @param sort
-		 * @param properties One or more of: <tt>title</tt>, <tt>description</tt>, <tt>artist</tt>, <tt>genre</tt>, <tt>theme</tt>, <tt>mood</tt>, <tt>style</tt>, <tt>type</tt>, <tt>albumlabel</tt>, <tt>rating</tt>, <tt>year</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>playcount</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>. See constants at {@link AudioModel.AlbumFields}.
+		 * @param limits 
+		 * @param sort 
+		 * @param properties  One or more of: <tt>title</tt>, <tt>description</tt>, <tt>artist</tt>, <tt>genre</tt>, <tt>theme</tt>, <tt>mood</tt>, <tt>style</tt>, <tt>type</tt>, <tt>albumlabel</tt>, <tt>rating</tt>, <tt>year</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>playcount</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>. See constants at {@link AudioModel.AlbumFields}.
 		 */
 		public GetAlbums(ListModel.Limits limits, ListModel.Sort sort, String... properties) {
 			super();
@@ -522,8 +523,8 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all albums from specified artist or genre.
-		 * @param filter
-		 * @param properties One or more of: <tt>title</tt>, <tt>description</tt>, <tt>artist</tt>, <tt>genre</tt>, <tt>theme</tt>, <tt>mood</tt>, <tt>style</tt>, <tt>type</tt>, <tt>albumlabel</tt>, <tt>rating</tt>, <tt>year</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>playcount</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>. See constants at {@link AudioModel.AlbumFields}.
+		 * @param filter 
+		 * @param properties  One or more of: <tt>title</tt>, <tt>description</tt>, <tt>artist</tt>, <tt>genre</tt>, <tt>theme</tt>, <tt>mood</tt>, <tt>style</tt>, <tt>type</tt>, <tt>albumlabel</tt>, <tt>rating</tt>, <tt>year</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>playcount</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>. See constants at {@link AudioModel.AlbumFields}.
 		 */
 		public GetAlbums(FilterGenreId filter, String... properties) {
 			super();
@@ -533,9 +534,9 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all albums from specified artist or genre.
-		 * @param limits
-		 * @param filter
-		 * @param properties One or more of: <tt>title</tt>, <tt>description</tt>, <tt>artist</tt>, <tt>genre</tt>, <tt>theme</tt>, <tt>mood</tt>, <tt>style</tt>, <tt>type</tt>, <tt>albumlabel</tt>, <tt>rating</tt>, <tt>year</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>playcount</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>. See constants at {@link AudioModel.AlbumFields}.
+		 * @param limits 
+		 * @param filter 
+		 * @param properties  One or more of: <tt>title</tt>, <tt>description</tt>, <tt>artist</tt>, <tt>genre</tt>, <tt>theme</tt>, <tt>mood</tt>, <tt>style</tt>, <tt>type</tt>, <tt>albumlabel</tt>, <tt>rating</tt>, <tt>year</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>playcount</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>. See constants at {@link AudioModel.AlbumFields}.
 		 */
 		public GetAlbums(ListModel.Limits limits, FilterGenreId filter, String... properties) {
 			super();
@@ -546,8 +547,8 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all albums from specified artist or genre.
-		 * @param filter
-		 * @param properties One or more of: <tt>title</tt>, <tt>description</tt>, <tt>artist</tt>, <tt>genre</tt>, <tt>theme</tt>, <tt>mood</tt>, <tt>style</tt>, <tt>type</tt>, <tt>albumlabel</tt>, <tt>rating</tt>, <tt>year</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>playcount</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>. See constants at {@link AudioModel.AlbumFields}.
+		 * @param filter 
+		 * @param properties  One or more of: <tt>title</tt>, <tt>description</tt>, <tt>artist</tt>, <tt>genre</tt>, <tt>theme</tt>, <tt>mood</tt>, <tt>style</tt>, <tt>type</tt>, <tt>albumlabel</tt>, <tt>rating</tt>, <tt>year</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>playcount</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>. See constants at {@link AudioModel.AlbumFields}.
 		 */
 		public GetAlbums(FilterGenre filter, String... properties) {
 			super();
@@ -557,9 +558,9 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all albums from specified artist or genre.
-		 * @param limits
-		 * @param filter
-		 * @param properties One or more of: <tt>title</tt>, <tt>description</tt>, <tt>artist</tt>, <tt>genre</tt>, <tt>theme</tt>, <tt>mood</tt>, <tt>style</tt>, <tt>type</tt>, <tt>albumlabel</tt>, <tt>rating</tt>, <tt>year</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>playcount</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>. See constants at {@link AudioModel.AlbumFields}.
+		 * @param limits 
+		 * @param filter 
+		 * @param properties  One or more of: <tt>title</tt>, <tt>description</tt>, <tt>artist</tt>, <tt>genre</tt>, <tt>theme</tt>, <tt>mood</tt>, <tt>style</tt>, <tt>type</tt>, <tt>albumlabel</tt>, <tt>rating</tt>, <tt>year</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>playcount</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>. See constants at {@link AudioModel.AlbumFields}.
 		 */
 		public GetAlbums(ListModel.Limits limits, FilterGenre filter, String... properties) {
 			super();
@@ -570,8 +571,8 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all albums from specified artist or genre.
-		 * @param filter
-		 * @param properties One or more of: <tt>title</tt>, <tt>description</tt>, <tt>artist</tt>, <tt>genre</tt>, <tt>theme</tt>, <tt>mood</tt>, <tt>style</tt>, <tt>type</tt>, <tt>albumlabel</tt>, <tt>rating</tt>, <tt>year</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>playcount</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>. See constants at {@link AudioModel.AlbumFields}.
+		 * @param filter 
+		 * @param properties  One or more of: <tt>title</tt>, <tt>description</tt>, <tt>artist</tt>, <tt>genre</tt>, <tt>theme</tt>, <tt>mood</tt>, <tt>style</tt>, <tt>type</tt>, <tt>albumlabel</tt>, <tt>rating</tt>, <tt>year</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>playcount</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>. See constants at {@link AudioModel.AlbumFields}.
 		 */
 		public GetAlbums(FilterArtistId filter, String... properties) {
 			super();
@@ -581,9 +582,9 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all albums from specified artist or genre.
-		 * @param limits
-		 * @param filter
-		 * @param properties One or more of: <tt>title</tt>, <tt>description</tt>, <tt>artist</tt>, <tt>genre</tt>, <tt>theme</tt>, <tt>mood</tt>, <tt>style</tt>, <tt>type</tt>, <tt>albumlabel</tt>, <tt>rating</tt>, <tt>year</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>playcount</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>. See constants at {@link AudioModel.AlbumFields}.
+		 * @param limits 
+		 * @param filter 
+		 * @param properties  One or more of: <tt>title</tt>, <tt>description</tt>, <tt>artist</tt>, <tt>genre</tt>, <tt>theme</tt>, <tt>mood</tt>, <tt>style</tt>, <tt>type</tt>, <tt>albumlabel</tt>, <tt>rating</tt>, <tt>year</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>playcount</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>. See constants at {@link AudioModel.AlbumFields}.
 		 */
 		public GetAlbums(ListModel.Limits limits, FilterArtistId filter, String... properties) {
 			super();
@@ -594,8 +595,8 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all albums from specified artist or genre.
-		 * @param filter
-		 * @param properties One or more of: <tt>title</tt>, <tt>description</tt>, <tt>artist</tt>, <tt>genre</tt>, <tt>theme</tt>, <tt>mood</tt>, <tt>style</tt>, <tt>type</tt>, <tt>albumlabel</tt>, <tt>rating</tt>, <tt>year</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>playcount</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>. See constants at {@link AudioModel.AlbumFields}.
+		 * @param filter 
+		 * @param properties  One or more of: <tt>title</tt>, <tt>description</tt>, <tt>artist</tt>, <tt>genre</tt>, <tt>theme</tt>, <tt>mood</tt>, <tt>style</tt>, <tt>type</tt>, <tt>albumlabel</tt>, <tt>rating</tt>, <tt>year</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>playcount</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>. See constants at {@link AudioModel.AlbumFields}.
 		 */
 		public GetAlbums(FilterArtist filter, String... properties) {
 			super();
@@ -605,9 +606,9 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all albums from specified artist or genre.
-		 * @param limits
-		 * @param filter
-		 * @param properties One or more of: <tt>title</tt>, <tt>description</tt>, <tt>artist</tt>, <tt>genre</tt>, <tt>theme</tt>, <tt>mood</tt>, <tt>style</tt>, <tt>type</tt>, <tt>albumlabel</tt>, <tt>rating</tt>, <tt>year</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>playcount</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>. See constants at {@link AudioModel.AlbumFields}.
+		 * @param limits 
+		 * @param filter 
+		 * @param properties  One or more of: <tt>title</tt>, <tt>description</tt>, <tt>artist</tt>, <tt>genre</tt>, <tt>theme</tt>, <tt>mood</tt>, <tt>style</tt>, <tt>type</tt>, <tt>albumlabel</tt>, <tt>rating</tt>, <tt>year</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>playcount</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>. See constants at {@link AudioModel.AlbumFields}.
 		 */
 		public GetAlbums(ListModel.Limits limits, FilterArtist filter, String... properties) {
 			super();
@@ -618,8 +619,8 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all albums from specified artist or genre.
-		 * @param filter
-		 * @param properties One or more of: <tt>title</tt>, <tt>description</tt>, <tt>artist</tt>, <tt>genre</tt>, <tt>theme</tt>, <tt>mood</tt>, <tt>style</tt>, <tt>type</tt>, <tt>albumlabel</tt>, <tt>rating</tt>, <tt>year</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>playcount</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>. See constants at {@link AudioModel.AlbumFields}.
+		 * @param filter 
+		 * @param properties  One or more of: <tt>title</tt>, <tt>description</tt>, <tt>artist</tt>, <tt>genre</tt>, <tt>theme</tt>, <tt>mood</tt>, <tt>style</tt>, <tt>type</tt>, <tt>albumlabel</tt>, <tt>rating</tt>, <tt>year</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>playcount</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>. See constants at {@link AudioModel.AlbumFields}.
 		 */
 		public GetAlbums(ListModel.AlbumFilter filter, String... properties) {
 			super();
@@ -629,9 +630,9 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all albums from specified artist or genre.
-		 * @param limits
-		 * @param filter
-		 * @param properties One or more of: <tt>title</tt>, <tt>description</tt>, <tt>artist</tt>, <tt>genre</tt>, <tt>theme</tt>, <tt>mood</tt>, <tt>style</tt>, <tt>type</tt>, <tt>albumlabel</tt>, <tt>rating</tt>, <tt>year</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>playcount</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>. See constants at {@link AudioModel.AlbumFields}.
+		 * @param limits 
+		 * @param filter 
+		 * @param properties  One or more of: <tt>title</tt>, <tt>description</tt>, <tt>artist</tt>, <tt>genre</tt>, <tt>theme</tt>, <tt>mood</tt>, <tt>style</tt>, <tt>type</tt>, <tt>albumlabel</tt>, <tt>rating</tt>, <tt>year</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>playcount</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>. See constants at {@link AudioModel.AlbumFields}.
 		 */
 		public GetAlbums(ListModel.Limits limits, ListModel.AlbumFilter filter, String... properties) {
 			super();
@@ -958,8 +959,8 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve details about a specific artist.
-		 * @param artistid
-		 * @param properties One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param artistid 
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtistDetails(Integer artistid, String... properties) {
 			super();
@@ -1023,11 +1024,11 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all artists.
-		 * @param albumartistsonlyWhether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
-		 * @param limits
-		 * @param sort
-		 * @param filter
-		 * @param properties One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param albumartistsonly Whether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
+		 * @param limits 
+		 * @param sort 
+		 * @param filter 
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(Boolean albumartistsonly, ListModel.Limits limits, ListModel.Sort sort, FilterGenreId filter, String... properties) {
 			super();
@@ -1040,11 +1041,11 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all artists.
-		 * @param albumartistsonlyWhether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
-		 * @param limits
-		 * @param sort
-		 * @param filter
-		 * @param properties One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param albumartistsonly Whether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
+		 * @param limits 
+		 * @param sort 
+		 * @param filter 
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(Boolean albumartistsonly, ListModel.Limits limits, ListModel.Sort sort, FilterGenre filter, String... properties) {
 			super();
@@ -1057,11 +1058,11 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all artists.
-		 * @param albumartistsonlyWhether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
-		 * @param limits
-		 * @param sort
-		 * @param filter
-		 * @param properties One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param albumartistsonly Whether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
+		 * @param limits 
+		 * @param sort 
+		 * @param filter 
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(Boolean albumartistsonly, ListModel.Limits limits, ListModel.Sort sort, FilterAlbumId filter, String... properties) {
 			super();
@@ -1074,11 +1075,11 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all artists.
-		 * @param albumartistsonlyWhether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
-		 * @param limits
-		 * @param sort
-		 * @param filter
-		 * @param properties One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param albumartistsonly Whether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
+		 * @param limits 
+		 * @param sort 
+		 * @param filter 
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(Boolean albumartistsonly, ListModel.Limits limits, ListModel.Sort sort, FilterAlbum filter, String... properties) {
 			super();
@@ -1091,11 +1092,11 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all artists.
-		 * @param albumartistsonlyWhether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
-		 * @param limits
-		 * @param sort
-		 * @param filter
-		 * @param properties One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param albumartistsonly Whether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
+		 * @param limits 
+		 * @param sort 
+		 * @param filter 
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(Boolean albumartistsonly, ListModel.Limits limits, ListModel.Sort sort, FilterSongId filter, String... properties) {
 			super();
@@ -1108,11 +1109,11 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all artists.
-		 * @param albumartistsonlyWhether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
-		 * @param limits
-		 * @param sort
-		 * @param filter
-		 * @param properties One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param albumartistsonly Whether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
+		 * @param limits 
+		 * @param sort 
+		 * @param filter 
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(Boolean albumartistsonly, ListModel.Limits limits, ListModel.Sort sort, ListModel.ArtistFilter filter, String... properties) {
 			super();
@@ -1125,7 +1126,7 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all artists.
-		 * @param properties One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(String... properties) {
 			super();
@@ -1134,8 +1135,8 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all artists.
-		 * @param albumartistsonlyWhether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
-		 * @param properties One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param albumartistsonly Whether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(Boolean albumartistsonly, String... properties) {
 			super();
@@ -1145,8 +1146,8 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all artists.
-		 * @param limits
-		 * @param properties One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param limits 
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(ListModel.Limits limits, String... properties) {
 			super();
@@ -1156,9 +1157,9 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all artists.
-		 * @param albumartistsonlyWhether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
-		 * @param limits
-		 * @param properties One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param albumartistsonly Whether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
+		 * @param limits 
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(Boolean albumartistsonly, ListModel.Limits limits, String... properties) {
 			super();
@@ -1169,8 +1170,8 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all artists.
-		 * @param sort
-		 * @param properties One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param sort 
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(ListModel.Sort sort, String... properties) {
 			super();
@@ -1180,9 +1181,9 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all artists.
-		 * @param albumartistsonlyWhether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
-		 * @param sort
-		 * @param properties One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param albumartistsonly Whether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
+		 * @param sort 
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(Boolean albumartistsonly, ListModel.Sort sort, String... properties) {
 			super();
@@ -1193,9 +1194,9 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all artists.
-		 * @param limits
-		 * @param sort
-		 * @param properties One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param limits 
+		 * @param sort 
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(ListModel.Limits limits, ListModel.Sort sort, String... properties) {
 			super();
@@ -1206,10 +1207,10 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all artists.
-		 * @param albumartistsonlyWhether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
-		 * @param limits
-		 * @param sort
-		 * @param properties One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param albumartistsonly Whether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
+		 * @param limits 
+		 * @param sort 
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(Boolean albumartistsonly, ListModel.Limits limits, ListModel.Sort sort, String... properties) {
 			super();
@@ -1221,8 +1222,8 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all artists.
-		 * @param filter
-		 * @param properties One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param filter 
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(FilterGenreId filter, String... properties) {
 			super();
@@ -1232,9 +1233,9 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all artists.
-		 * @param albumartistsonlyWhether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
-		 * @param filter
-		 * @param properties One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param albumartistsonly Whether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
+		 * @param filter 
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(Boolean albumartistsonly, FilterGenreId filter, String... properties) {
 			super();
@@ -1245,9 +1246,9 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all artists.
-		 * @param limits
-		 * @param filter
-		 * @param properties One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param limits 
+		 * @param filter 
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(ListModel.Limits limits, FilterGenreId filter, String... properties) {
 			super();
@@ -1258,10 +1259,10 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all artists.
-		 * @param albumartistsonlyWhether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
-		 * @param limits
-		 * @param filter
-		 * @param properties One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param albumartistsonly Whether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
+		 * @param limits 
+		 * @param filter 
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(Boolean albumartistsonly, ListModel.Limits limits, FilterGenreId filter, String... properties) {
 			super();
@@ -1273,9 +1274,9 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all artists.
-		 * @param sort
-		 * @param filter
-		 * @param properties One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param sort 
+		 * @param filter 
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(ListModel.Sort sort, FilterGenreId filter, String... properties) {
 			super();
@@ -1286,10 +1287,10 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all artists.
-		 * @param albumartistsonlyWhether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
-		 * @param sort
-		 * @param filter
-		 * @param properties One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param albumartistsonly Whether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
+		 * @param sort 
+		 * @param filter 
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(Boolean albumartistsonly, ListModel.Sort sort, FilterGenreId filter, String... properties) {
 			super();
@@ -1301,8 +1302,8 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all artists.
-		 * @param filter
-		 * @param properties One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param filter 
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(FilterGenre filter, String... properties) {
 			super();
@@ -1312,9 +1313,9 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all artists.
-		 * @param albumartistsonlyWhether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
-		 * @param filter
-		 * @param properties One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param albumartistsonly Whether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
+		 * @param filter 
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(Boolean albumartistsonly, FilterGenre filter, String... properties) {
 			super();
@@ -1325,9 +1326,9 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all artists.
-		 * @param limits
-		 * @param filter
-		 * @param properties One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param limits 
+		 * @param filter 
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(ListModel.Limits limits, FilterGenre filter, String... properties) {
 			super();
@@ -1338,10 +1339,10 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all artists.
-		 * @param albumartistsonlyWhether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
-		 * @param limits
-		 * @param filter
-		 * @param properties One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param albumartistsonly Whether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
+		 * @param limits 
+		 * @param filter 
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(Boolean albumartistsonly, ListModel.Limits limits, FilterGenre filter, String... properties) {
 			super();
@@ -1353,9 +1354,9 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all artists.
-		 * @param sort
-		 * @param filter
-		 * @param properties One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param sort 
+		 * @param filter 
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(ListModel.Sort sort, FilterGenre filter, String... properties) {
 			super();
@@ -1366,10 +1367,10 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all artists.
-		 * @param albumartistsonlyWhether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
-		 * @param sort
-		 * @param filter
-		 * @param properties One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param albumartistsonly Whether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
+		 * @param sort 
+		 * @param filter 
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(Boolean albumartistsonly, ListModel.Sort sort, FilterGenre filter, String... properties) {
 			super();
@@ -1381,8 +1382,8 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all artists.
-		 * @param filter
-		 * @param properties One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param filter 
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(FilterAlbumId filter, String... properties) {
 			super();
@@ -1392,9 +1393,9 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all artists.
-		 * @param albumartistsonlyWhether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
-		 * @param filter
-		 * @param properties One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param albumartistsonly Whether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
+		 * @param filter 
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(Boolean albumartistsonly, FilterAlbumId filter, String... properties) {
 			super();
@@ -1405,9 +1406,9 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all artists.
-		 * @param limits
-		 * @param filter
-		 * @param properties One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param limits 
+		 * @param filter 
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(ListModel.Limits limits, FilterAlbumId filter, String... properties) {
 			super();
@@ -1418,10 +1419,10 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all artists.
-		 * @param albumartistsonlyWhether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
-		 * @param limits
-		 * @param filter
-		 * @param properties One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param albumartistsonly Whether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
+		 * @param limits 
+		 * @param filter 
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(Boolean albumartistsonly, ListModel.Limits limits, FilterAlbumId filter, String... properties) {
 			super();
@@ -1433,9 +1434,9 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all artists.
-		 * @param sort
-		 * @param filter
-		 * @param properties One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param sort 
+		 * @param filter 
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(ListModel.Sort sort, FilterAlbumId filter, String... properties) {
 			super();
@@ -1446,10 +1447,10 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all artists.
-		 * @param albumartistsonlyWhether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
-		 * @param sort
-		 * @param filter
-		 * @param properties One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param albumartistsonly Whether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
+		 * @param sort 
+		 * @param filter 
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(Boolean albumartistsonly, ListModel.Sort sort, FilterAlbumId filter, String... properties) {
 			super();
@@ -1461,8 +1462,8 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all artists.
-		 * @param filter
-		 * @param properties One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param filter 
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(FilterAlbum filter, String... properties) {
 			super();
@@ -1472,9 +1473,9 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all artists.
-		 * @param albumartistsonlyWhether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
-		 * @param filter
-		 * @param properties One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param albumartistsonly Whether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
+		 * @param filter 
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(Boolean albumartistsonly, FilterAlbum filter, String... properties) {
 			super();
@@ -1485,9 +1486,9 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all artists.
-		 * @param limits
-		 * @param filter
-		 * @param properties One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param limits 
+		 * @param filter 
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(ListModel.Limits limits, FilterAlbum filter, String... properties) {
 			super();
@@ -1498,10 +1499,10 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all artists.
-		 * @param albumartistsonlyWhether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
-		 * @param limits
-		 * @param filter
-		 * @param properties One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param albumartistsonly Whether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
+		 * @param limits 
+		 * @param filter 
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(Boolean albumartistsonly, ListModel.Limits limits, FilterAlbum filter, String... properties) {
 			super();
@@ -1513,9 +1514,9 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all artists.
-		 * @param sort
-		 * @param filter
-		 * @param properties One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param sort 
+		 * @param filter 
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(ListModel.Sort sort, FilterAlbum filter, String... properties) {
 			super();
@@ -1526,10 +1527,10 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all artists.
-		 * @param albumartistsonlyWhether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
-		 * @param sort
-		 * @param filter
-		 * @param properties One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param albumartistsonly Whether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
+		 * @param sort 
+		 * @param filter 
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(Boolean albumartistsonly, ListModel.Sort sort, FilterAlbum filter, String... properties) {
 			super();
@@ -1541,8 +1542,8 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all artists.
-		 * @param filter
-		 * @param properties One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param filter 
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(FilterSongId filter, String... properties) {
 			super();
@@ -1552,9 +1553,9 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all artists.
-		 * @param albumartistsonlyWhether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
-		 * @param filter
-		 * @param properties One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param albumartistsonly Whether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
+		 * @param filter 
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(Boolean albumartistsonly, FilterSongId filter, String... properties) {
 			super();
@@ -1565,9 +1566,9 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all artists.
-		 * @param limits
-		 * @param filter
-		 * @param properties One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param limits 
+		 * @param filter 
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(ListModel.Limits limits, FilterSongId filter, String... properties) {
 			super();
@@ -1578,10 +1579,10 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all artists.
-		 * @param albumartistsonlyWhether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
-		 * @param limits
-		 * @param filter
-		 * @param properties One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param albumartistsonly Whether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
+		 * @param limits 
+		 * @param filter 
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(Boolean albumartistsonly, ListModel.Limits limits, FilterSongId filter, String... properties) {
 			super();
@@ -1593,9 +1594,9 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all artists.
-		 * @param sort
-		 * @param filter
-		 * @param properties One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param sort 
+		 * @param filter 
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(ListModel.Sort sort, FilterSongId filter, String... properties) {
 			super();
@@ -1606,10 +1607,10 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all artists.
-		 * @param albumartistsonlyWhether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
-		 * @param sort
-		 * @param filter
-		 * @param properties One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param albumartistsonly Whether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
+		 * @param sort 
+		 * @param filter 
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(Boolean albumartistsonly, ListModel.Sort sort, FilterSongId filter, String... properties) {
 			super();
@@ -1621,8 +1622,8 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all artists.
-		 * @param filter
-		 * @param properties One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param filter 
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(ListModel.ArtistFilter filter, String... properties) {
 			super();
@@ -1632,9 +1633,9 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all artists.
-		 * @param albumartistsonlyWhether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
-		 * @param filter
-		 * @param properties One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param albumartistsonly Whether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
+		 * @param filter 
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(Boolean albumartistsonly, ListModel.ArtistFilter filter, String... properties) {
 			super();
@@ -1645,9 +1646,9 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all artists.
-		 * @param limits
-		 * @param filter
-		 * @param properties One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param limits 
+		 * @param filter 
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(ListModel.Limits limits, ListModel.ArtistFilter filter, String... properties) {
 			super();
@@ -1658,10 +1659,10 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all artists.
-		 * @param albumartistsonlyWhether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
-		 * @param limits
-		 * @param filter
-		 * @param properties One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param albumartistsonly Whether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
+		 * @param limits 
+		 * @param filter 
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(Boolean albumartistsonly, ListModel.Limits limits, ListModel.ArtistFilter filter, String... properties) {
 			super();
@@ -1673,9 +1674,9 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all artists.
-		 * @param sort
-		 * @param filter
-		 * @param properties One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param sort 
+		 * @param filter 
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(ListModel.Sort sort, ListModel.ArtistFilter filter, String... properties) {
 			super();
@@ -1686,10 +1687,10 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all artists.
-		 * @param albumartistsonlyWhether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
-		 * @param sort
-		 * @param filter
-		 * @param properties One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param albumartistsonly Whether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
+		 * @param sort 
+		 * @param filter 
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(Boolean albumartistsonly, ListModel.Sort sort, ListModel.ArtistFilter filter, String... properties) {
 			super();
@@ -2080,9 +2081,9 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all genres.
-		 * @param limits
-		 * @param sort
-		 * @param properties One or more of: <tt>title</tt>, <tt>thumbnail</tt>. See constants at {@link LibraryModel.GenreFields}.
+		 * @param limits 
+		 * @param sort 
+		 * @param properties  One or more of: <tt>title</tt>, <tt>thumbnail</tt>. See constants at {@link LibraryModel.GenreFields}.
 		 */
 		public GetGenres(ListModel.Limits limits, ListModel.Sort sort, String... properties) {
 			super();
@@ -2093,7 +2094,7 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all genres.
-		 * @param properties One or more of: <tt>title</tt>, <tt>thumbnail</tt>. See constants at {@link LibraryModel.GenreFields}.
+		 * @param properties  One or more of: <tt>title</tt>, <tt>thumbnail</tt>. See constants at {@link LibraryModel.GenreFields}.
 		 */
 		public GetGenres(String... properties) {
 			super();
@@ -2102,8 +2103,8 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all genres.
-		 * @param limits
-		 * @param properties One or more of: <tt>title</tt>, <tt>thumbnail</tt>. See constants at {@link LibraryModel.GenreFields}.
+		 * @param limits 
+		 * @param properties  One or more of: <tt>title</tt>, <tt>thumbnail</tt>. See constants at {@link LibraryModel.GenreFields}.
 		 */
 		public GetGenres(ListModel.Limits limits, String... properties) {
 			super();
@@ -2177,9 +2178,9 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve recently added albums.
-		 * @param limits
-		 * @param sort
-		 * @param properties One or more of: <tt>title</tt>, <tt>description</tt>, <tt>artist</tt>, <tt>genre</tt>, <tt>theme</tt>, <tt>mood</tt>, <tt>style</tt>, <tt>type</tt>, <tt>albumlabel</tt>, <tt>rating</tt>, <tt>year</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>playcount</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>. See constants at {@link AudioModel.AlbumFields}.
+		 * @param limits 
+		 * @param sort 
+		 * @param properties  One or more of: <tt>title</tt>, <tt>description</tt>, <tt>artist</tt>, <tt>genre</tt>, <tt>theme</tt>, <tt>mood</tt>, <tt>style</tt>, <tt>type</tt>, <tt>albumlabel</tt>, <tt>rating</tt>, <tt>year</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>playcount</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>. See constants at {@link AudioModel.AlbumFields}.
 		 */
 		public GetRecentlyAddedAlbums(ListModel.Limits limits, ListModel.Sort sort, String... properties) {
 			super();
@@ -2190,7 +2191,7 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve recently added albums.
-		 * @param properties One or more of: <tt>title</tt>, <tt>description</tt>, <tt>artist</tt>, <tt>genre</tt>, <tt>theme</tt>, <tt>mood</tt>, <tt>style</tt>, <tt>type</tt>, <tt>albumlabel</tt>, <tt>rating</tt>, <tt>year</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>playcount</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>. See constants at {@link AudioModel.AlbumFields}.
+		 * @param properties  One or more of: <tt>title</tt>, <tt>description</tt>, <tt>artist</tt>, <tt>genre</tt>, <tt>theme</tt>, <tt>mood</tt>, <tt>style</tt>, <tt>type</tt>, <tt>albumlabel</tt>, <tt>rating</tt>, <tt>year</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>playcount</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>. See constants at {@link AudioModel.AlbumFields}.
 		 */
 		public GetRecentlyAddedAlbums(String... properties) {
 			super();
@@ -2199,8 +2200,8 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve recently added albums.
-		 * @param limits
-		 * @param properties One or more of: <tt>title</tt>, <tt>description</tt>, <tt>artist</tt>, <tt>genre</tt>, <tt>theme</tt>, <tt>mood</tt>, <tt>style</tt>, <tt>type</tt>, <tt>albumlabel</tt>, <tt>rating</tt>, <tt>year</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>playcount</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>. See constants at {@link AudioModel.AlbumFields}.
+		 * @param limits 
+		 * @param properties  One or more of: <tt>title</tt>, <tt>description</tt>, <tt>artist</tt>, <tt>genre</tt>, <tt>theme</tt>, <tt>mood</tt>, <tt>style</tt>, <tt>type</tt>, <tt>albumlabel</tt>, <tt>rating</tt>, <tt>year</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>playcount</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>. See constants at {@link AudioModel.AlbumFields}.
 		 */
 		public GetRecentlyAddedAlbums(ListModel.Limits limits, String... properties) {
 			super();
@@ -2274,10 +2275,10 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve recently added songs.
-		 * @param albumlimitThe amount of recently added albums from which to return the songs.
-		 * @param limits
-		 * @param sort
-		 * @param properties One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>albumid</tt>, <tt>lastplayed</tt>, <tt>disc</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>, <tt>albumartistid</tt>. See constants at {@link AudioModel.SongFields}.
+		 * @param albumlimit The amount of recently added albums from which to return the songs.
+		 * @param limits 
+		 * @param sort 
+		 * @param properties  One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>albumid</tt>, <tt>lastplayed</tt>, <tt>disc</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>, <tt>albumartistid</tt>. See constants at {@link AudioModel.SongFields}.
 		 */
 		public GetRecentlyAddedSongs(Integer albumlimit, ListModel.Limits limits, ListModel.Sort sort, String... properties) {
 			super();
@@ -2289,7 +2290,7 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve recently added songs.
-		 * @param properties One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>albumid</tt>, <tt>lastplayed</tt>, <tt>disc</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>, <tt>albumartistid</tt>. See constants at {@link AudioModel.SongFields}.
+		 * @param properties  One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>albumid</tt>, <tt>lastplayed</tt>, <tt>disc</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>, <tt>albumartistid</tt>. See constants at {@link AudioModel.SongFields}.
 		 */
 		public GetRecentlyAddedSongs(String... properties) {
 			super();
@@ -2298,8 +2299,8 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve recently added songs.
-		 * @param albumlimitThe amount of recently added albums from which to return the songs.
-		 * @param properties One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>albumid</tt>, <tt>lastplayed</tt>, <tt>disc</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>, <tt>albumartistid</tt>. See constants at {@link AudioModel.SongFields}.
+		 * @param albumlimit The amount of recently added albums from which to return the songs.
+		 * @param properties  One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>albumid</tt>, <tt>lastplayed</tt>, <tt>disc</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>, <tt>albumartistid</tt>. See constants at {@link AudioModel.SongFields}.
 		 */
 		public GetRecentlyAddedSongs(Integer albumlimit, String... properties) {
 			super();
@@ -2309,8 +2310,8 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve recently added songs.
-		 * @param limits
-		 * @param properties One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>albumid</tt>, <tt>lastplayed</tt>, <tt>disc</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>, <tt>albumartistid</tt>. See constants at {@link AudioModel.SongFields}.
+		 * @param limits 
+		 * @param properties  One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>albumid</tt>, <tt>lastplayed</tt>, <tt>disc</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>, <tt>albumartistid</tt>. See constants at {@link AudioModel.SongFields}.
 		 */
 		public GetRecentlyAddedSongs(ListModel.Limits limits, String... properties) {
 			super();
@@ -2320,9 +2321,9 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve recently added songs.
-		 * @param albumlimitThe amount of recently added albums from which to return the songs.
-		 * @param limits
-		 * @param properties One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>albumid</tt>, <tt>lastplayed</tt>, <tt>disc</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>, <tt>albumartistid</tt>. See constants at {@link AudioModel.SongFields}.
+		 * @param albumlimit The amount of recently added albums from which to return the songs.
+		 * @param limits 
+		 * @param properties  One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>albumid</tt>, <tt>lastplayed</tt>, <tt>disc</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>, <tt>albumartistid</tt>. See constants at {@link AudioModel.SongFields}.
 		 */
 		public GetRecentlyAddedSongs(Integer albumlimit, ListModel.Limits limits, String... properties) {
 			super();
@@ -2333,8 +2334,8 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve recently added songs.
-		 * @param sort
-		 * @param properties One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>albumid</tt>, <tt>lastplayed</tt>, <tt>disc</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>, <tt>albumartistid</tt>. See constants at {@link AudioModel.SongFields}.
+		 * @param sort 
+		 * @param properties  One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>albumid</tt>, <tt>lastplayed</tt>, <tt>disc</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>, <tt>albumartistid</tt>. See constants at {@link AudioModel.SongFields}.
 		 */
 		public GetRecentlyAddedSongs(ListModel.Sort sort, String... properties) {
 			super();
@@ -2344,9 +2345,9 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve recently added songs.
-		 * @param albumlimitThe amount of recently added albums from which to return the songs.
-		 * @param sort
-		 * @param properties One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>albumid</tt>, <tt>lastplayed</tt>, <tt>disc</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>, <tt>albumartistid</tt>. See constants at {@link AudioModel.SongFields}.
+		 * @param albumlimit The amount of recently added albums from which to return the songs.
+		 * @param sort 
+		 * @param properties  One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>albumid</tt>, <tt>lastplayed</tt>, <tt>disc</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>, <tt>albumartistid</tt>. See constants at {@link AudioModel.SongFields}.
 		 */
 		public GetRecentlyAddedSongs(Integer albumlimit, ListModel.Sort sort, String... properties) {
 			super();
@@ -2421,9 +2422,9 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve recently played albums.
-		 * @param limits
-		 * @param sort
-		 * @param properties One or more of: <tt>title</tt>, <tt>description</tt>, <tt>artist</tt>, <tt>genre</tt>, <tt>theme</tt>, <tt>mood</tt>, <tt>style</tt>, <tt>type</tt>, <tt>albumlabel</tt>, <tt>rating</tt>, <tt>year</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>playcount</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>. See constants at {@link AudioModel.AlbumFields}.
+		 * @param limits 
+		 * @param sort 
+		 * @param properties  One or more of: <tt>title</tt>, <tt>description</tt>, <tt>artist</tt>, <tt>genre</tt>, <tt>theme</tt>, <tt>mood</tt>, <tt>style</tt>, <tt>type</tt>, <tt>albumlabel</tt>, <tt>rating</tt>, <tt>year</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>playcount</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>. See constants at {@link AudioModel.AlbumFields}.
 		 */
 		public GetRecentlyPlayedAlbums(ListModel.Limits limits, ListModel.Sort sort, String... properties) {
 			super();
@@ -2434,7 +2435,7 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve recently played albums.
-		 * @param properties One or more of: <tt>title</tt>, <tt>description</tt>, <tt>artist</tt>, <tt>genre</tt>, <tt>theme</tt>, <tt>mood</tt>, <tt>style</tt>, <tt>type</tt>, <tt>albumlabel</tt>, <tt>rating</tt>, <tt>year</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>playcount</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>. See constants at {@link AudioModel.AlbumFields}.
+		 * @param properties  One or more of: <tt>title</tt>, <tt>description</tt>, <tt>artist</tt>, <tt>genre</tt>, <tt>theme</tt>, <tt>mood</tt>, <tt>style</tt>, <tt>type</tt>, <tt>albumlabel</tt>, <tt>rating</tt>, <tt>year</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>playcount</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>. See constants at {@link AudioModel.AlbumFields}.
 		 */
 		public GetRecentlyPlayedAlbums(String... properties) {
 			super();
@@ -2443,8 +2444,8 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve recently played albums.
-		 * @param limits
-		 * @param properties One or more of: <tt>title</tt>, <tt>description</tt>, <tt>artist</tt>, <tt>genre</tt>, <tt>theme</tt>, <tt>mood</tt>, <tt>style</tt>, <tt>type</tt>, <tt>albumlabel</tt>, <tt>rating</tt>, <tt>year</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>playcount</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>. See constants at {@link AudioModel.AlbumFields}.
+		 * @param limits 
+		 * @param properties  One or more of: <tt>title</tt>, <tt>description</tt>, <tt>artist</tt>, <tt>genre</tt>, <tt>theme</tt>, <tt>mood</tt>, <tt>style</tt>, <tt>type</tt>, <tt>albumlabel</tt>, <tt>rating</tt>, <tt>year</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>playcount</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>. See constants at {@link AudioModel.AlbumFields}.
 		 */
 		public GetRecentlyPlayedAlbums(ListModel.Limits limits, String... properties) {
 			super();
@@ -2518,9 +2519,9 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve recently played songs.
-		 * @param limits
-		 * @param sort
-		 * @param properties One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>albumid</tt>, <tt>lastplayed</tt>, <tt>disc</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>, <tt>albumartistid</tt>. See constants at {@link AudioModel.SongFields}.
+		 * @param limits 
+		 * @param sort 
+		 * @param properties  One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>albumid</tt>, <tt>lastplayed</tt>, <tt>disc</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>, <tt>albumartistid</tt>. See constants at {@link AudioModel.SongFields}.
 		 */
 		public GetRecentlyPlayedSongs(ListModel.Limits limits, ListModel.Sort sort, String... properties) {
 			super();
@@ -2531,7 +2532,7 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve recently played songs.
-		 * @param properties One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>albumid</tt>, <tt>lastplayed</tt>, <tt>disc</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>, <tt>albumartistid</tt>. See constants at {@link AudioModel.SongFields}.
+		 * @param properties  One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>albumid</tt>, <tt>lastplayed</tt>, <tt>disc</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>, <tt>albumartistid</tt>. See constants at {@link AudioModel.SongFields}.
 		 */
 		public GetRecentlyPlayedSongs(String... properties) {
 			super();
@@ -2540,8 +2541,8 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve recently played songs.
-		 * @param limits
-		 * @param properties One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>albumid</tt>, <tt>lastplayed</tt>, <tt>disc</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>, <tt>albumartistid</tt>. See constants at {@link AudioModel.SongFields}.
+		 * @param limits 
+		 * @param properties  One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>albumid</tt>, <tt>lastplayed</tt>, <tt>disc</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>, <tt>albumartistid</tt>. See constants at {@link AudioModel.SongFields}.
 		 */
 		public GetRecentlyPlayedSongs(ListModel.Limits limits, String... properties) {
 			super();
@@ -2615,8 +2616,8 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve details about a specific song.
-		 * @param songid
-		 * @param properties One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>albumid</tt>, <tt>lastplayed</tt>, <tt>disc</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>, <tt>albumartistid</tt>. See constants at {@link AudioModel.SongFields}.
+		 * @param songid 
+		 * @param properties  One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>albumid</tt>, <tt>lastplayed</tt>, <tt>disc</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>, <tt>albumartistid</tt>. See constants at {@link AudioModel.SongFields}.
 		 */
 		public GetSongDetails(Integer songid, String... properties) {
 			super();
@@ -2680,10 +2681,10 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all songs from specified album, artist or genre.
-		 * @param limits
-		 * @param sort
-		 * @param filter
-		 * @param properties One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>albumid</tt>, <tt>lastplayed</tt>, <tt>disc</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>, <tt>albumartistid</tt>. See constants at {@link AudioModel.SongFields}.
+		 * @param limits 
+		 * @param sort 
+		 * @param filter 
+		 * @param properties  One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>albumid</tt>, <tt>lastplayed</tt>, <tt>disc</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>, <tt>albumartistid</tt>. See constants at {@link AudioModel.SongFields}.
 		 */
 		public GetSongs(ListModel.Limits limits, ListModel.Sort sort, FilterGenreId filter, String... properties) {
 			super();
@@ -2695,10 +2696,10 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all songs from specified album, artist or genre.
-		 * @param limits
-		 * @param sort
-		 * @param filter
-		 * @param properties One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>albumid</tt>, <tt>lastplayed</tt>, <tt>disc</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>, <tt>albumartistid</tt>. See constants at {@link AudioModel.SongFields}.
+		 * @param limits 
+		 * @param sort 
+		 * @param filter 
+		 * @param properties  One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>albumid</tt>, <tt>lastplayed</tt>, <tt>disc</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>, <tt>albumartistid</tt>. See constants at {@link AudioModel.SongFields}.
 		 */
 		public GetSongs(ListModel.Limits limits, ListModel.Sort sort, FilterGenre filter, String... properties) {
 			super();
@@ -2710,10 +2711,10 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all songs from specified album, artist or genre.
-		 * @param limits
-		 * @param sort
-		 * @param filter
-		 * @param properties One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>albumid</tt>, <tt>lastplayed</tt>, <tt>disc</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>, <tt>albumartistid</tt>. See constants at {@link AudioModel.SongFields}.
+		 * @param limits 
+		 * @param sort 
+		 * @param filter 
+		 * @param properties  One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>albumid</tt>, <tt>lastplayed</tt>, <tt>disc</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>, <tt>albumartistid</tt>. See constants at {@link AudioModel.SongFields}.
 		 */
 		public GetSongs(ListModel.Limits limits, ListModel.Sort sort, FilterArtistId filter, String... properties) {
 			super();
@@ -2725,10 +2726,10 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all songs from specified album, artist or genre.
-		 * @param limits
-		 * @param sort
-		 * @param filter
-		 * @param properties One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>albumid</tt>, <tt>lastplayed</tt>, <tt>disc</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>, <tt>albumartistid</tt>. See constants at {@link AudioModel.SongFields}.
+		 * @param limits 
+		 * @param sort 
+		 * @param filter 
+		 * @param properties  One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>albumid</tt>, <tt>lastplayed</tt>, <tt>disc</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>, <tt>albumartistid</tt>. See constants at {@link AudioModel.SongFields}.
 		 */
 		public GetSongs(ListModel.Limits limits, ListModel.Sort sort, FilterArtist filter, String... properties) {
 			super();
@@ -2740,10 +2741,10 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all songs from specified album, artist or genre.
-		 * @param limits
-		 * @param sort
-		 * @param filter
-		 * @param properties One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>albumid</tt>, <tt>lastplayed</tt>, <tt>disc</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>, <tt>albumartistid</tt>. See constants at {@link AudioModel.SongFields}.
+		 * @param limits 
+		 * @param sort 
+		 * @param filter 
+		 * @param properties  One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>albumid</tt>, <tt>lastplayed</tt>, <tt>disc</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>, <tt>albumartistid</tt>. See constants at {@link AudioModel.SongFields}.
 		 */
 		public GetSongs(ListModel.Limits limits, ListModel.Sort sort, FilterAlbumId filter, String... properties) {
 			super();
@@ -2755,10 +2756,10 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all songs from specified album, artist or genre.
-		 * @param limits
-		 * @param sort
-		 * @param filter
-		 * @param properties One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>albumid</tt>, <tt>lastplayed</tt>, <tt>disc</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>, <tt>albumartistid</tt>. See constants at {@link AudioModel.SongFields}.
+		 * @param limits 
+		 * @param sort 
+		 * @param filter 
+		 * @param properties  One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>albumid</tt>, <tt>lastplayed</tt>, <tt>disc</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>, <tt>albumartistid</tt>. See constants at {@link AudioModel.SongFields}.
 		 */
 		public GetSongs(ListModel.Limits limits, ListModel.Sort sort, FilterAlbum filter, String... properties) {
 			super();
@@ -2770,10 +2771,10 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all songs from specified album, artist or genre.
-		 * @param limits
-		 * @param sort
-		 * @param filter
-		 * @param properties One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>albumid</tt>, <tt>lastplayed</tt>, <tt>disc</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>, <tt>albumartistid</tt>. See constants at {@link AudioModel.SongFields}.
+		 * @param limits 
+		 * @param sort 
+		 * @param filter 
+		 * @param properties  One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>albumid</tt>, <tt>lastplayed</tt>, <tt>disc</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>, <tt>albumartistid</tt>. See constants at {@link AudioModel.SongFields}.
 		 */
 		public GetSongs(ListModel.Limits limits, ListModel.Sort sort, ListModel.SongFilter filter, String... properties) {
 			super();
@@ -2785,7 +2786,7 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all songs from specified album, artist or genre.
-		 * @param properties One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>albumid</tt>, <tt>lastplayed</tt>, <tt>disc</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>, <tt>albumartistid</tt>. See constants at {@link AudioModel.SongFields}.
+		 * @param properties  One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>albumid</tt>, <tt>lastplayed</tt>, <tt>disc</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>, <tt>albumartistid</tt>. See constants at {@link AudioModel.SongFields}.
 		 */
 		public GetSongs(String... properties) {
 			super();
@@ -2794,8 +2795,8 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all songs from specified album, artist or genre.
-		 * @param limits
-		 * @param properties One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>albumid</tt>, <tt>lastplayed</tt>, <tt>disc</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>, <tt>albumartistid</tt>. See constants at {@link AudioModel.SongFields}.
+		 * @param limits 
+		 * @param properties  One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>albumid</tt>, <tt>lastplayed</tt>, <tt>disc</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>, <tt>albumartistid</tt>. See constants at {@link AudioModel.SongFields}.
 		 */
 		public GetSongs(ListModel.Limits limits, String... properties) {
 			super();
@@ -2805,8 +2806,8 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all songs from specified album, artist or genre.
-		 * @param sort
-		 * @param properties One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>albumid</tt>, <tt>lastplayed</tt>, <tt>disc</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>, <tt>albumartistid</tt>. See constants at {@link AudioModel.SongFields}.
+		 * @param sort 
+		 * @param properties  One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>albumid</tt>, <tt>lastplayed</tt>, <tt>disc</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>, <tt>albumartistid</tt>. See constants at {@link AudioModel.SongFields}.
 		 */
 		public GetSongs(ListModel.Sort sort, String... properties) {
 			super();
@@ -2816,9 +2817,9 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all songs from specified album, artist or genre.
-		 * @param limits
-		 * @param sort
-		 * @param properties One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>albumid</tt>, <tt>lastplayed</tt>, <tt>disc</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>, <tt>albumartistid</tt>. See constants at {@link AudioModel.SongFields}.
+		 * @param limits 
+		 * @param sort 
+		 * @param properties  One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>albumid</tt>, <tt>lastplayed</tt>, <tt>disc</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>, <tt>albumartistid</tt>. See constants at {@link AudioModel.SongFields}.
 		 */
 		public GetSongs(ListModel.Limits limits, ListModel.Sort sort, String... properties) {
 			super();
@@ -2829,8 +2830,8 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all songs from specified album, artist or genre.
-		 * @param filter
-		 * @param properties One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>albumid</tt>, <tt>lastplayed</tt>, <tt>disc</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>, <tt>albumartistid</tt>. See constants at {@link AudioModel.SongFields}.
+		 * @param filter 
+		 * @param properties  One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>albumid</tt>, <tt>lastplayed</tt>, <tt>disc</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>, <tt>albumartistid</tt>. See constants at {@link AudioModel.SongFields}.
 		 */
 		public GetSongs(FilterGenreId filter, String... properties) {
 			super();
@@ -2840,9 +2841,9 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all songs from specified album, artist or genre.
-		 * @param limits
-		 * @param filter
-		 * @param properties One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>albumid</tt>, <tt>lastplayed</tt>, <tt>disc</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>, <tt>albumartistid</tt>. See constants at {@link AudioModel.SongFields}.
+		 * @param limits 
+		 * @param filter 
+		 * @param properties  One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>albumid</tt>, <tt>lastplayed</tt>, <tt>disc</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>, <tt>albumartistid</tt>. See constants at {@link AudioModel.SongFields}.
 		 */
 		public GetSongs(ListModel.Limits limits, FilterGenreId filter, String... properties) {
 			super();
@@ -2853,8 +2854,8 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all songs from specified album, artist or genre.
-		 * @param filter
-		 * @param properties One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>albumid</tt>, <tt>lastplayed</tt>, <tt>disc</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>, <tt>albumartistid</tt>. See constants at {@link AudioModel.SongFields}.
+		 * @param filter 
+		 * @param properties  One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>albumid</tt>, <tt>lastplayed</tt>, <tt>disc</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>, <tt>albumartistid</tt>. See constants at {@link AudioModel.SongFields}.
 		 */
 		public GetSongs(FilterGenre filter, String... properties) {
 			super();
@@ -2864,9 +2865,9 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all songs from specified album, artist or genre.
-		 * @param limits
-		 * @param filter
-		 * @param properties One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>albumid</tt>, <tt>lastplayed</tt>, <tt>disc</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>, <tt>albumartistid</tt>. See constants at {@link AudioModel.SongFields}.
+		 * @param limits 
+		 * @param filter 
+		 * @param properties  One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>albumid</tt>, <tt>lastplayed</tt>, <tt>disc</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>, <tt>albumartistid</tt>. See constants at {@link AudioModel.SongFields}.
 		 */
 		public GetSongs(ListModel.Limits limits, FilterGenre filter, String... properties) {
 			super();
@@ -2877,8 +2878,8 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all songs from specified album, artist or genre.
-		 * @param filter
-		 * @param properties One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>albumid</tt>, <tt>lastplayed</tt>, <tt>disc</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>, <tt>albumartistid</tt>. See constants at {@link AudioModel.SongFields}.
+		 * @param filter 
+		 * @param properties  One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>albumid</tt>, <tt>lastplayed</tt>, <tt>disc</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>, <tt>albumartistid</tt>. See constants at {@link AudioModel.SongFields}.
 		 */
 		public GetSongs(FilterArtistId filter, String... properties) {
 			super();
@@ -2888,9 +2889,9 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all songs from specified album, artist or genre.
-		 * @param limits
-		 * @param filter
-		 * @param properties One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>albumid</tt>, <tt>lastplayed</tt>, <tt>disc</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>, <tt>albumartistid</tt>. See constants at {@link AudioModel.SongFields}.
+		 * @param limits 
+		 * @param filter 
+		 * @param properties  One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>albumid</tt>, <tt>lastplayed</tt>, <tt>disc</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>, <tt>albumartistid</tt>. See constants at {@link AudioModel.SongFields}.
 		 */
 		public GetSongs(ListModel.Limits limits, FilterArtistId filter, String... properties) {
 			super();
@@ -2901,8 +2902,8 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all songs from specified album, artist or genre.
-		 * @param filter
-		 * @param properties One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>albumid</tt>, <tt>lastplayed</tt>, <tt>disc</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>, <tt>albumartistid</tt>. See constants at {@link AudioModel.SongFields}.
+		 * @param filter 
+		 * @param properties  One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>albumid</tt>, <tt>lastplayed</tt>, <tt>disc</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>, <tt>albumartistid</tt>. See constants at {@link AudioModel.SongFields}.
 		 */
 		public GetSongs(FilterArtist filter, String... properties) {
 			super();
@@ -2912,9 +2913,9 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all songs from specified album, artist or genre.
-		 * @param limits
-		 * @param filter
-		 * @param properties One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>albumid</tt>, <tt>lastplayed</tt>, <tt>disc</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>, <tt>albumartistid</tt>. See constants at {@link AudioModel.SongFields}.
+		 * @param limits 
+		 * @param filter 
+		 * @param properties  One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>albumid</tt>, <tt>lastplayed</tt>, <tt>disc</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>, <tt>albumartistid</tt>. See constants at {@link AudioModel.SongFields}.
 		 */
 		public GetSongs(ListModel.Limits limits, FilterArtist filter, String... properties) {
 			super();
@@ -2925,8 +2926,8 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all songs from specified album, artist or genre.
-		 * @param filter
-		 * @param properties One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>albumid</tt>, <tt>lastplayed</tt>, <tt>disc</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>, <tt>albumartistid</tt>. See constants at {@link AudioModel.SongFields}.
+		 * @param filter 
+		 * @param properties  One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>albumid</tt>, <tt>lastplayed</tt>, <tt>disc</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>, <tt>albumartistid</tt>. See constants at {@link AudioModel.SongFields}.
 		 */
 		public GetSongs(FilterAlbumId filter, String... properties) {
 			super();
@@ -2936,9 +2937,9 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all songs from specified album, artist or genre.
-		 * @param limits
-		 * @param filter
-		 * @param properties One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>albumid</tt>, <tt>lastplayed</tt>, <tt>disc</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>, <tt>albumartistid</tt>. See constants at {@link AudioModel.SongFields}.
+		 * @param limits 
+		 * @param filter 
+		 * @param properties  One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>albumid</tt>, <tt>lastplayed</tt>, <tt>disc</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>, <tt>albumartistid</tt>. See constants at {@link AudioModel.SongFields}.
 		 */
 		public GetSongs(ListModel.Limits limits, FilterAlbumId filter, String... properties) {
 			super();
@@ -2949,8 +2950,8 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all songs from specified album, artist or genre.
-		 * @param filter
-		 * @param properties One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>albumid</tt>, <tt>lastplayed</tt>, <tt>disc</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>, <tt>albumartistid</tt>. See constants at {@link AudioModel.SongFields}.
+		 * @param filter 
+		 * @param properties  One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>albumid</tt>, <tt>lastplayed</tt>, <tt>disc</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>, <tt>albumartistid</tt>. See constants at {@link AudioModel.SongFields}.
 		 */
 		public GetSongs(FilterAlbum filter, String... properties) {
 			super();
@@ -2960,9 +2961,9 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all songs from specified album, artist or genre.
-		 * @param limits
-		 * @param filter
-		 * @param properties One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>albumid</tt>, <tt>lastplayed</tt>, <tt>disc</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>, <tt>albumartistid</tt>. See constants at {@link AudioModel.SongFields}.
+		 * @param limits 
+		 * @param filter 
+		 * @param properties  One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>albumid</tt>, <tt>lastplayed</tt>, <tt>disc</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>, <tt>albumartistid</tt>. See constants at {@link AudioModel.SongFields}.
 		 */
 		public GetSongs(ListModel.Limits limits, FilterAlbum filter, String... properties) {
 			super();
@@ -2973,8 +2974,8 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all songs from specified album, artist or genre.
-		 * @param filter
-		 * @param properties One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>albumid</tt>, <tt>lastplayed</tt>, <tt>disc</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>, <tt>albumartistid</tt>. See constants at {@link AudioModel.SongFields}.
+		 * @param filter 
+		 * @param properties  One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>albumid</tt>, <tt>lastplayed</tt>, <tt>disc</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>, <tt>albumartistid</tt>. See constants at {@link AudioModel.SongFields}.
 		 */
 		public GetSongs(ListModel.SongFilter filter, String... properties) {
 			super();
@@ -2984,9 +2985,9 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all songs from specified album, artist or genre.
-		 * @param limits
-		 * @param filter
-		 * @param properties One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>albumid</tt>, <tt>lastplayed</tt>, <tt>disc</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>, <tt>albumartistid</tt>. See constants at {@link AudioModel.SongFields}.
+		 * @param limits 
+		 * @param filter 
+		 * @param properties  One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>albumid</tt>, <tt>lastplayed</tt>, <tt>disc</tt>, <tt>genreid</tt>, <tt>artistid</tt>, <tt>displayartist</tt>, <tt>albumartistid</tt>. See constants at {@link AudioModel.SongFields}.
 		 */
 		public GetSongs(ListModel.Limits limits, ListModel.SongFilter filter, String... properties) {
 			super();
@@ -3438,7 +3439,7 @@ public final class AudioLibrary {
 
 		/**
 		 * Scans the audio sources for new library items.
-		 * @param directory
+		 * @param directory 
 		 */
 		public Scan(String directory) {
 			super();
@@ -3500,18 +3501,18 @@ public final class AudioLibrary {
 
 		/**
 		 * Update the given album with the given details.
-		 * @param albumid
-		 * @param title
-		 * @param artist
-		 * @param description
-		 * @param genre
-		 * @param theme
-		 * @param mood
-		 * @param style
-		 * @param type
-		 * @param albumlabel
-		 * @param rating
-		 * @param year
+		 * @param albumid 
+		 * @param title 
+		 * @param artist 
+		 * @param description 
+		 * @param genre 
+		 * @param theme 
+		 * @param mood 
+		 * @param style 
+		 * @param type 
+		 * @param albumlabel 
+		 * @param rating 
+		 * @param year 
 		 */
 		public SetAlbumDetails(Integer albumid, String title, String[] artist, String description, String[] genre, String[] theme, String[] mood, String[] style, String type, String albumlabel, Integer rating, Integer year) {
 			super();
@@ -3584,18 +3585,18 @@ public final class AudioLibrary {
 
 		/**
 		 * Update the given artist with the given details.
-		 * @param artistid
-		 * @param artist
-		 * @param instrument
-		 * @param style
-		 * @param mood
-		 * @param born
-		 * @param formed
-		 * @param description
-		 * @param genre
-		 * @param died
-		 * @param disbanded
-		 * @param yearsactive
+		 * @param artistid 
+		 * @param artist 
+		 * @param instrument 
+		 * @param style 
+		 * @param mood 
+		 * @param born 
+		 * @param formed 
+		 * @param description 
+		 * @param genre 
+		 * @param died 
+		 * @param disbanded 
+		 * @param yearsactive 
 		 */
 		public SetArtistDetails(Integer artistid, String artist, String[] instrument, String[] style, String[] mood, String born, String formed, String description, String[] genre, String died, String disbanded, String... yearsactive) {
 			super();
@@ -3668,22 +3669,22 @@ public final class AudioLibrary {
 
 		/**
 		 * Update the given song with the given details.
-		 * @param songid
-		 * @param title
-		 * @param artist
-		 * @param albumartist
-		 * @param genre
-		 * @param year
-		 * @param rating
-		 * @param album
-		 * @param track
-		 * @param disc
-		 * @param duration
-		 * @param comment
-		 * @param musicbrainztrackid
-		 * @param musicbrainzartistid
-		 * @param musicbrainzalbumid
-		 * @param musicbrainzalbumartistid
+		 * @param songid 
+		 * @param title 
+		 * @param artist 
+		 * @param albumartist 
+		 * @param genre 
+		 * @param year 
+		 * @param rating 
+		 * @param album 
+		 * @param track 
+		 * @param disc 
+		 * @param duration 
+		 * @param comment 
+		 * @param musicbrainztrackid 
+		 * @param musicbrainzartistid 
+		 * @param musicbrainzalbumid 
+		 * @param musicbrainzalbumartistid 
 		 */
 		public SetSongDetails(Integer songid, String title, String[] artist, String[] albumartist, String[] genre, Integer year, Integer rating, String album, Integer track, Integer disc, Integer duration, String comment, String musicbrainztrackid, String musicbrainzartistid, String musicbrainzalbumid, String musicbrainzalbumartistid) {
 			super();

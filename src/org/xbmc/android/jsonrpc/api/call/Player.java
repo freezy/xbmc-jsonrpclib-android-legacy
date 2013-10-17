@@ -1,5 +1,5 @@
 /*
- *      Copyright (C) 2005-2012 Team XBMC
+ *      Copyright (C) 2005-2013 Team XBMC
  *      http://xbmc.org
  *
  *  This Program is free software; you can redistribute it and/or modify
@@ -152,7 +152,7 @@ public final class Player {
 
 			/**
 			 * Extracts a list of {@link GetActivePlayersResult} objects from a JSON array.
-			 * @param obj ObjectNode containing the list of objects.
+			 * @param node ObjectNode containing the list of objects.
 			 * @param key Key pointing to the node where the list is stored.
 			 */
 			static List<GetActivePlayersResult> getPlayerGetActivePlayersResultList(JsonNode node, String key) {
@@ -259,8 +259,8 @@ public final class Player {
 
 		/**
 		 * Retrieves the currently played item.
-		 * @param playerid
-		 * @param properties One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>director</tt>, <tt>trailer</tt>, <tt>tagline</tt>, <tt>plot</tt>, <tt>plotoutline</tt>, <tt>originaltitle</tt>, <tt>lastplayed</tt>, <tt>writer</tt>, <tt>studio</tt>, <tt>mpaa</tt>, <tt>cast</tt>, <tt>country</tt>, <tt>imdbnumber</tt>, <tt>premiered</tt>, <tt>productioncode</tt>, <tt>runtime</tt>, <tt>set</tt>, <tt>showlink</tt>, <tt>streamdetails</tt>, <tt>top250</tt>, <tt>votes</tt>, <tt>firstaired</tt>, <tt>season</tt>, <tt>episode</tt>, <tt>showtitle</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>resume</tt>, <tt>artistid</tt>, <tt>albumid</tt>, <tt>tvshowid</tt>, <tt>setid</tt>, <tt>watchedepisodes</tt>, <tt>disc</tt>, <tt>tag</tt>, <tt>art</tt>, <tt>genreid</tt>, <tt>displayartist</tt>, <tt>albumartistid</tt>, <tt>description</tt>, <tt>theme</tt>, <tt>mood</tt>, <tt>style</tt>, <tt>albumlabel</tt>, <tt>sorttitle</tt>, <tt>episodeguide</tt>, <tt>uniqueid</tt>, <tt>dateadded</tt>, <tt>channel</tt>, <tt>channeltype</tt>, <tt>hidden</tt>, <tt>locked</tt>, <tt>channelnumber</tt>, <tt>starttime</tt>, <tt>endtime</tt>. See constants at {@link ListModel.AllFields}.
+		 * @param playerid 
+		 * @param properties  One or more of: <tt>title</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>rating</tt>, <tt>album</tt>, <tt>track</tt>, <tt>duration</tt>, <tt>comment</tt>, <tt>lyrics</tt>, <tt>musicbrainztrackid</tt>, <tt>musicbrainzartistid</tt>, <tt>musicbrainzalbumid</tt>, <tt>musicbrainzalbumartistid</tt>, <tt>playcount</tt>, <tt>fanart</tt>, <tt>director</tt>, <tt>trailer</tt>, <tt>tagline</tt>, <tt>plot</tt>, <tt>plotoutline</tt>, <tt>originaltitle</tt>, <tt>lastplayed</tt>, <tt>writer</tt>, <tt>studio</tt>, <tt>mpaa</tt>, <tt>cast</tt>, <tt>country</tt>, <tt>imdbnumber</tt>, <tt>premiered</tt>, <tt>productioncode</tt>, <tt>runtime</tt>, <tt>set</tt>, <tt>showlink</tt>, <tt>streamdetails</tt>, <tt>top250</tt>, <tt>votes</tt>, <tt>firstaired</tt>, <tt>season</tt>, <tt>episode</tt>, <tt>showtitle</tt>, <tt>thumbnail</tt>, <tt>file</tt>, <tt>resume</tt>, <tt>artistid</tt>, <tt>albumid</tt>, <tt>tvshowid</tt>, <tt>setid</tt>, <tt>watchedepisodes</tt>, <tt>disc</tt>, <tt>tag</tt>, <tt>art</tt>, <tt>genreid</tt>, <tt>displayartist</tt>, <tt>albumartistid</tt>, <tt>description</tt>, <tt>theme</tt>, <tt>mood</tt>, <tt>style</tt>, <tt>albumlabel</tt>, <tt>sorttitle</tt>, <tt>episodeguide</tt>, <tt>uniqueid</tt>, <tt>dateadded</tt>, <tt>channel</tt>, <tt>channeltype</tt>, <tt>hidden</tt>, <tt>locked</tt>, <tt>channelnumber</tt>, <tt>starttime</tt>, <tt>endtime</tt>. See constants at {@link ListModel.AllFields}.
 		 */
 		public GetItem(Integer playerid, String... properties) {
 			super();
@@ -323,8 +323,8 @@ public final class Player {
 
 		/**
 		 * Retrieves the values of the given properties.
-		 * @param playerid
-		 * @param properties One or more of: <tt>type</tt>, <tt>partymode</tt>, <tt>speed</tt>, <tt>time</tt>, <tt>percentage</tt>, <tt>totaltime</tt>, <tt>playlistid</tt>, <tt>position</tt>, <tt>repeat</tt>, <tt>shuffled</tt>, <tt>canseek</tt>, <tt>canchangespeed</tt>, <tt>canmove</tt>, <tt>canzoom</tt>, <tt>canrotate</tt>, <tt>canshuffle</tt>, <tt>canrepeat</tt>, <tt>currentaudiostream</tt>, <tt>audiostreams</tt>, <tt>subtitleenabled</tt>, <tt>currentsubtitle</tt>, <tt>subtitles</tt>, <tt>live</tt>. See constants at {@link PlayerModel.PropertyName}.
+		 * @param playerid 
+		 * @param properties  One or more of: <tt>type</tt>, <tt>partymode</tt>, <tt>speed</tt>, <tt>time</tt>, <tt>percentage</tt>, <tt>totaltime</tt>, <tt>playlistid</tt>, <tt>position</tt>, <tt>repeat</tt>, <tt>shuffled</tt>, <tt>canseek</tt>, <tt>canchangespeed</tt>, <tt>canmove</tt>, <tt>canzoom</tt>, <tt>canrotate</tt>, <tt>canshuffle</tt>, <tt>canrepeat</tt>, <tt>currentaudiostream</tt>, <tt>audiostreams</tt>, <tt>subtitleenabled</tt>, <tt>currentsubtitle</tt>, <tt>subtitles</tt>, <tt>live</tt>. See constants at {@link PlayerModel.PropertyName}.
 		 */
 		public GetProperties(Integer playerid, String... properties) {
 			super();
@@ -387,8 +387,8 @@ public final class Player {
 
 		/**
 		 * Go to previous/next/specific item in the playlist.
-		 * @param playerid
-		 * @param to One of: <tt>previous</tt>, <tt>next</tt>. See constants at {@link Player.GoTo.To}.
+		 * @param playerid 
+		 * @param to  One of: <tt>previous</tt>, <tt>next</tt>. See constants at {@link Player.GoTo.To}.
 		 */
 		public GoTo(Integer playerid, String to) {
 			super();
@@ -398,8 +398,8 @@ public final class Player {
 
 		/**
 		 * Go to previous/next/specific item in the playlist.
-		 * @param playerid
-		 * @param toposition in playlist.
+		 * @param playerid 
+		 * @param to position in playlist.
 		 */
 		public GoTo(Integer playerid, Integer to) {
 			super();
@@ -473,8 +473,8 @@ public final class Player {
 
 		/**
 		 * If picture is zoomed move viewport left/right/up/down otherwise skip previous/next.
-		 * @param playerid
-		 * @param direction One of: <tt>left</tt>, <tt>right</tt>, <tt>up</tt>, <tt>down</tt>. See constants at {@link Player.Move.Direction}.
+		 * @param playerid 
+		 * @param direction  One of: <tt>left</tt>, <tt>right</tt>, <tt>up</tt>, <tt>down</tt>. See constants at {@link Player.Move.Direction}.
 		 */
 		public Move(Integer playerid, String direction) {
 			super();
@@ -550,8 +550,8 @@ public final class Player {
 
 		/**
 		 * Start playback of either the playlist with the given ID, a slideshow with the pictures from the given directory or a single file or an item from the database.
-		 * @param item
-		 * @param options
+		 * @param item 
+		 * @param options 
 		 */
 		public Open(ItemPlaylistIdPosition item, Option options) {
 			super();
@@ -561,8 +561,8 @@ public final class Player {
 
 		/**
 		 * Start playback of either the playlist with the given ID, a slideshow with the pictures from the given directory or a single file or an item from the database.
-		 * @param item
-		 * @param options
+		 * @param item 
+		 * @param options 
 		 */
 		public Open(PlaylistModel.Item item, Option options) {
 			super();
@@ -572,8 +572,8 @@ public final class Player {
 
 		/**
 		 * Start playback of either the playlist with the given ID, a slideshow with the pictures from the given directory or a single file or an item from the database.
-		 * @param item
-		 * @param options
+		 * @param item 
+		 * @param options 
 		 */
 		public Open(ItemPathRandomRecursive item, Option options) {
 			super();
@@ -583,8 +583,8 @@ public final class Player {
 
 		/**
 		 * Start playback of either the playlist with the given ID, a slideshow with the pictures from the given directory or a single file or an item from the database.
-		 * @param item
-		 * @param options
+		 * @param item 
+		 * @param options 
 		 */
 		public Open(ItemPartymode item, Option options) {
 			super();
@@ -594,8 +594,8 @@ public final class Player {
 
 		/**
 		 * Start playback of either the playlist with the given ID, a slideshow with the pictures from the given directory or a single file or an item from the database.
-		 * @param item
-		 * @param options
+		 * @param item 
+		 * @param options 
 		 */
 		public Open(ItemChannelId item, Option options) {
 			super();
@@ -612,7 +612,7 @@ public final class Player {
 
 		/**
 		 * Start playback of either the playlist with the given ID, a slideshow with the pictures from the given directory or a single file or an item from the database.
-		 * @param item
+		 * @param item 
 		 */
 		public Open(ItemPlaylistIdPosition item) {
 			super();
@@ -621,7 +621,7 @@ public final class Player {
 
 		/**
 		 * Start playback of either the playlist with the given ID, a slideshow with the pictures from the given directory or a single file or an item from the database.
-		 * @param item
+		 * @param item 
 		 */
 		public Open(PlaylistModel.Item item) {
 			super();
@@ -630,7 +630,7 @@ public final class Player {
 
 		/**
 		 * Start playback of either the playlist with the given ID, a slideshow with the pictures from the given directory or a single file or an item from the database.
-		 * @param item
+		 * @param item 
 		 */
 		public Open(ItemPathRandomRecursive item) {
 			super();
@@ -639,7 +639,7 @@ public final class Player {
 
 		/**
 		 * Start playback of either the playlist with the given ID, a slideshow with the pictures from the given directory or a single file or an item from the database.
-		 * @param item
+		 * @param item 
 		 */
 		public Open(ItemPartymode item) {
 			super();
@@ -648,7 +648,7 @@ public final class Player {
 
 		/**
 		 * Start playback of either the playlist with the given ID, a slideshow with the pictures from the given directory or a single file or an item from the database.
-		 * @param item
+		 * @param item 
 		 */
 		public Open(ItemChannelId item) {
 			super();
@@ -1153,8 +1153,8 @@ public final class Player {
 
 		/**
 		 * Pauses or unpause playback and returns the new state.
-		 * @param playerid
-		 * @param play
+		 * @param playerid 
+		 * @param play 
 		 */
 		public PlayPause(Integer playerid, GlobalModel.Toggle play) {
 			super();
@@ -1164,7 +1164,7 @@ public final class Player {
 
 		/**
 		 * Pauses or unpause playback and returns the new state.
-		 * @param playerid
+		 * @param playerid 
 		 */
 		public PlayPause(Integer playerid) {
 			super();
@@ -1226,8 +1226,8 @@ public final class Player {
 
 		/**
 		 * Rotates current picture.
-		 * @param playerid
-		 * @param value One of: <tt>clockwise</tt>, <tt>counterclockwise</tt>. See constants at {@link Player.Rotate.Value}.
+		 * @param playerid 
+		 * @param value  One of: <tt>clockwise</tt>, <tt>counterclockwise</tt>. See constants at {@link Player.Rotate.Value}.
 		 */
 		public Rotate(Integer playerid, String value) {
 			super();
@@ -1237,7 +1237,7 @@ public final class Player {
 
 		/**
 		 * Rotates current picture.
-		 * @param playerid
+		 * @param playerid 
 		 */
 		public Rotate(Integer playerid) {
 			super();
@@ -1310,8 +1310,8 @@ public final class Player {
 
 		/**
 		 * Seek through the playing item.
-		 * @param playerid
-		 * @param valuePercentage value to seek to.
+		 * @param playerid 
+		 * @param value Percentage value to seek to.
 		 */
 		public Seek(Integer playerid, Double value) {
 			super();
@@ -1321,8 +1321,8 @@ public final class Player {
 
 		/**
 		 * Seek through the playing item.
-		 * @param playerid
-		 * @param valueTime to seek to.
+		 * @param playerid 
+		 * @param value Time to seek to.
 		 */
 		public Seek(Integer playerid, PlayerModel.PositionTime value) {
 			super();
@@ -1332,8 +1332,8 @@ public final class Player {
 
 		/**
 		 * Seek through the playing item.
-		 * @param playerid
-		 * @param valueSeek by predefined jumps. One of: <tt>smallforward</tt>, <tt>smallbackward</tt>, <tt>bigforward</tt>, <tt>bigbackward</tt>. See constants at {@link Player.Seek.Value}.
+		 * @param playerid 
+		 * @param value Seek by predefined jumps. One of: <tt>smallforward</tt>, <tt>smallbackward</tt>, <tt>bigforward</tt>, <tt>bigbackward</tt>. See constants at {@link Player.Seek.Value}.
 		 */
 		public Seek(Integer playerid, String value) {
 			super();
@@ -1404,7 +1404,7 @@ public final class Player {
 
 			/**
 			 * Extracts a list of {@link SeekResult} objects from a JSON array.
-			 * @param obj ObjectNode containing the list of objects.
+			 * @param node ObjectNode containing the list of objects.
 			 * @param key Key pointing to the node where the list is stored.
 			 */
 			static List<SeekResult> getPlayerSeekResultList(JsonNode node, String key) {
@@ -1513,8 +1513,8 @@ public final class Player {
 
 		/**
 		 * Set the audio stream played by the player.
-		 * @param playerid
-		 * @param stream One of: <tt>previous</tt>, <tt>next</tt>. See constants at {@link Player.SetAudioStream.Stream}.
+		 * @param playerid 
+		 * @param stream  One of: <tt>previous</tt>, <tt>next</tt>. See constants at {@link Player.SetAudioStream.Stream}.
 		 */
 		public SetAudioStream(Integer playerid, String stream) {
 			super();
@@ -1524,8 +1524,8 @@ public final class Player {
 
 		/**
 		 * Set the audio stream played by the player.
-		 * @param playerid
-		 * @param streamIndex of the audio stream to play.
+		 * @param playerid 
+		 * @param stream Index of the audio stream to play.
 		 */
 		public SetAudioStream(Integer playerid, Integer stream) {
 			super();
@@ -1599,8 +1599,8 @@ public final class Player {
 
 		/**
 		 * Turn partymode on or off.
-		 * @param playerid
-		 * @param partymode
+		 * @param playerid 
+		 * @param partymode 
 		 */
 		public SetPartymode(Integer playerid, GlobalModel.Toggle partymode) {
 			super();
@@ -1663,8 +1663,8 @@ public final class Player {
 
 		/**
 		 * Set the repeat mode of the player.
-		 * @param playerid
-		 * @param repeat
+		 * @param playerid 
+		 * @param repeat 
 		 */
 		public SetRepeat(Integer playerid, String repeat) {
 			super();
@@ -1727,8 +1727,8 @@ public final class Player {
 
 		/**
 		 * Shuffle/Unshuffle items in the player.
-		 * @param playerid
-		 * @param shuffle
+		 * @param playerid 
+		 * @param shuffle 
 		 */
 		public SetShuffle(Integer playerid, GlobalModel.Toggle shuffle) {
 			super();
@@ -1791,8 +1791,8 @@ public final class Player {
 
 		/**
 		 * Set the speed of the current playback.
-		 * @param playerid
-		 * @param speed One of: <tt>-32</tt>, <tt>-16</tt>, <tt>-8</tt>, <tt>-4</tt>, <tt>-2</tt>, <tt>-1</tt>, <tt>0</tt>, <tt>1</tt>, <tt>2</tt>, <tt>4</tt>, <tt>8</tt>, <tt>16</tt>, <tt>32</tt>. See constants at {@link Player.SetSpeed.Speed}.
+		 * @param playerid 
+		 * @param speed  One of: <tt>-32</tt>, <tt>-16</tt>, <tt>-8</tt>, <tt>-4</tt>, <tt>-2</tt>, <tt>-1</tt>, <tt>0</tt>, <tt>1</tt>, <tt>2</tt>, <tt>4</tt>, <tt>8</tt>, <tt>16</tt>, <tt>32</tt>. See constants at {@link Player.SetSpeed.Speed}.
 		 */
 		public SetSpeed(Integer playerid, Integer speed) {
 			super();
@@ -1877,9 +1877,9 @@ public final class Player {
 
 		/**
 		 * Set the subtitle displayed by the player.
-		 * @param playerid
-		 * @param subtitle One of: <tt>previous</tt>, <tt>next</tt>, <tt>off</tt>, <tt>on</tt>. See constants at {@link Player.SetSubtitle.Subtitle}.
-		 * @param enableWhether to enable subtitles to be displayed after setting the new subtitle.
+		 * @param playerid 
+		 * @param subtitle  One of: <tt>previous</tt>, <tt>next</tt>, <tt>off</tt>, <tt>on</tt>. See constants at {@link Player.SetSubtitle.Subtitle}.
+		 * @param enable Whether to enable subtitles to be displayed after setting the new subtitle.
 		 */
 		public SetSubtitle(Integer playerid, String subtitle, Boolean enable) {
 			super();
@@ -1890,9 +1890,9 @@ public final class Player {
 
 		/**
 		 * Set the subtitle displayed by the player.
-		 * @param playerid
-		 * @param subtitleIndex of the subtitle to display.
-		 * @param enableWhether to enable subtitles to be displayed after setting the new subtitle.
+		 * @param playerid 
+		 * @param subtitle Index of the subtitle to display.
+		 * @param enable Whether to enable subtitles to be displayed after setting the new subtitle.
 		 */
 		public SetSubtitle(Integer playerid, Integer subtitle, Boolean enable) {
 			super();
@@ -1903,8 +1903,8 @@ public final class Player {
 
 		/**
 		 * Set the subtitle displayed by the player.
-		 * @param playerid
-		 * @param subtitle One of: <tt>previous</tt>, <tt>next</tt>, <tt>off</tt>, <tt>on</tt>. See constants at {@link Player.SetSubtitle.Subtitle}.
+		 * @param playerid 
+		 * @param subtitle  One of: <tt>previous</tt>, <tt>next</tt>, <tt>off</tt>, <tt>on</tt>. See constants at {@link Player.SetSubtitle.Subtitle}.
 		 */
 		public SetSubtitle(Integer playerid, String subtitle) {
 			super();
@@ -1914,8 +1914,8 @@ public final class Player {
 
 		/**
 		 * Set the subtitle displayed by the player.
-		 * @param playerid
-		 * @param subtitleIndex of the subtitle to display.
+		 * @param playerid 
+		 * @param subtitle Index of the subtitle to display.
 		 */
 		public SetSubtitle(Integer playerid, Integer subtitle) {
 			super();
@@ -1991,7 +1991,7 @@ public final class Player {
 
 		/**
 		 * Stops playback.
-		 * @param playerid
+		 * @param playerid 
 		 */
 		public Stop(Integer playerid) {
 			super();
@@ -2053,8 +2053,8 @@ public final class Player {
 
 		/**
 		 * Zoom current picture.
-		 * @param playerid
-		 * @param zoom One of: <tt>in</tt>, <tt>out</tt>. See constants at {@link Player.Zoom.ZoomValue}.
+		 * @param playerid 
+		 * @param zoom  One of: <tt>in</tt>, <tt>out</tt>. See constants at {@link Player.Zoom.ZoomValue}.
 		 */
 		public Zoom(Integer playerid, String zoom) {
 			super();
@@ -2064,8 +2064,8 @@ public final class Player {
 
 		/**
 		 * Zoom current picture.
-		 * @param playerid
-		 * @param zoomzoom level.
+		 * @param playerid 
+		 * @param zoom zoom level.
 		 */
 		public Zoom(Integer playerid, Integer zoom) {
 			super();

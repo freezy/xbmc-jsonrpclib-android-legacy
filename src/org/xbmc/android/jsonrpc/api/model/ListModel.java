@@ -1,5 +1,5 @@
 /*
- *      Copyright (C) 2005-2012 Team XBMC
+ *      Copyright (C) 2005-2013 Team XBMC
  *      http://xbmc.org
  *
  *  This Program is free software; you can redistribute it and/or modify
@@ -1458,7 +1458,7 @@ public final class ListModel {
 		/**
 		 * @param operator One of: <tt>contains</tt>, <tt>doesnotcontain</tt>, <tt>is</tt>, <tt>isnot</tt>, <tt>startswith</tt>, <tt>endswith</tt>, <tt>greaterthan</tt>, <tt>lessthan</tt>, <tt>after</tt>, <tt>before</tt>, <tt>inthelast</tt>, <tt>notinthelast</tt>, <tt>true</tt>, <tt>false</tt>, <tt>between</tt>. See constants at {@link ListModel.FilterRule.Operator}.
 		 * @param value
-		 * @param field One of: <tt>genre</tt>, <tt>album</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>year</tt>, <tt>review</tt>, <tt>themes</tt>, <tt>moods</tt>, <tt>styles</tt>, <tt>type</tt>, <tt>label</tt>, <tt>rating</tt>, <tt>playcount</tt>, <tt>playlist</tt>. See constants at {@link ListModel.AlbumFilterRule.Field}.
+		 * @param field One of: <tt>genre</tt>, <tt>album</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>year</tt>, <tt>review</tt>, <tt>themes</tt>, <tt>moods</tt>, <tt>styles</tt>, <tt>type</tt>, <tt>label</tt>, <tt>rating</tt>, <tt>playcount</tt>, <tt>playlist</tt>, <tt>virtualfolder</tt>. See constants at {@link ListModel.AlbumFilterRule.Field}.
 		 */
 		public AlbumFilterRule(String operator, Value value, String field) {
 			super(operator, value);
@@ -1529,8 +1529,9 @@ public final class ListModel {
 			public final String RATING = "rating";
 			public final String PLAYCOUNT = "playcount";
 			public final String PLAYLIST = "playlist";
+			public final String VIRTUALFOLDER = "virtualfolder";
 
-			public final static Set<String> values = new HashSet<String>(Arrays.asList(GENRE, ALBUM, ARTIST, ALBUMARTIST, YEAR, REVIEW, THEMES, MOODS, STYLES, TYPE, LABEL, RATING, PLAYCOUNT, PLAYLIST));
+			public final static Set<String> values = new HashSet<String>(Arrays.asList(GENRE, ALBUM, ARTIST, ALBUMARTIST, YEAR, REVIEW, THEMES, MOODS, STYLES, TYPE, LABEL, RATING, PLAYCOUNT, PLAYLIST, VIRTUALFOLDER));
 		}
 	}
 
@@ -1552,7 +1553,7 @@ public final class ListModel {
 		/**
 		 * @param operator One of: <tt>contains</tt>, <tt>doesnotcontain</tt>, <tt>is</tt>, <tt>isnot</tt>, <tt>startswith</tt>, <tt>endswith</tt>, <tt>greaterthan</tt>, <tt>lessthan</tt>, <tt>after</tt>, <tt>before</tt>, <tt>inthelast</tt>, <tt>notinthelast</tt>, <tt>true</tt>, <tt>false</tt>, <tt>between</tt>. See constants at {@link ListModel.FilterRule.Operator}.
 		 * @param value
-		 * @param field One of: <tt>artist</tt>, <tt>genre</tt>, <tt>moods</tt>, <tt>styles</tt>, <tt>instruments</tt>, <tt>biography</tt>, <tt>born</tt>, <tt>bandformed</tt>, <tt>disbanded</tt>, <tt>died</tt>, <tt>playlist</tt>. See constants at {@link ListModel.ArtistFilterRule.Field}.
+		 * @param field One of: <tt>artist</tt>, <tt>genre</tt>, <tt>moods</tt>, <tt>styles</tt>, <tt>instruments</tt>, <tt>biography</tt>, <tt>born</tt>, <tt>bandformed</tt>, <tt>disbanded</tt>, <tt>died</tt>, <tt>playlist</tt>, <tt>virtualfolder</tt>. See constants at {@link ListModel.ArtistFilterRule.Field}.
 		 */
 		public ArtistFilterRule(String operator, Value value, String field) {
 			super(operator, value);
@@ -1620,8 +1621,9 @@ public final class ListModel {
 			public final String DISBANDED = "disbanded";
 			public final String DIED = "died";
 			public final String PLAYLIST = "playlist";
+			public final String VIRTUALFOLDER = "virtualfolder";
 
-			public final static Set<String> values = new HashSet<String>(Arrays.asList(ARTIST, GENRE, MOODS, STYLES, INSTRUMENTS, BIOGRAPHY, BORN, BANDFORMED, DISBANDED, DIED, PLAYLIST));
+			public final static Set<String> values = new HashSet<String>(Arrays.asList(ARTIST, GENRE, MOODS, STYLES, INSTRUMENTS, BIOGRAPHY, BORN, BANDFORMED, DISBANDED, DIED, PLAYLIST, VIRTUALFOLDER));
 		}
 	}
 
@@ -1643,7 +1645,7 @@ public final class ListModel {
 		/**
 		 * @param operator One of: <tt>contains</tt>, <tt>doesnotcontain</tt>, <tt>is</tt>, <tt>isnot</tt>, <tt>startswith</tt>, <tt>endswith</tt>, <tt>greaterthan</tt>, <tt>lessthan</tt>, <tt>after</tt>, <tt>before</tt>, <tt>inthelast</tt>, <tt>notinthelast</tt>, <tt>true</tt>, <tt>false</tt>, <tt>between</tt>. See constants at {@link ListModel.FilterRule.Operator}.
 		 * @param value
-		 * @param field One of: <tt>title</tt>, <tt>tvshow</tt>, <tt>plot</tt>, <tt>votes</tt>, <tt>rating</tt>, <tt>time</tt>, <tt>writers</tt>, <tt>airdate</tt>, <tt>playcount</tt>, <tt>lastplayed</tt>, <tt>inprogress</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>director</tt>, <tt>actor</tt>, <tt>episode</tt>, <tt>season</tt>, <tt>filename</tt>, <tt>path</tt>, <tt>studio</tt>, <tt>mpaarating</tt>, <tt>dateadded</tt>, <tt>videoresolution</tt>, <tt>audiochannels</tt>, <tt>videocodec</tt>, <tt>audiocodec</tt>, <tt>audiolanguage</tt>, <tt>subtitlelanguage</tt>, <tt>videoaspect</tt>, <tt>playlist</tt>. See constants at {@link ListModel.EpisodeFilterRule.Field}.
+		 * @param field One of: <tt>title</tt>, <tt>tvshow</tt>, <tt>plot</tt>, <tt>votes</tt>, <tt>rating</tt>, <tt>time</tt>, <tt>writers</tt>, <tt>airdate</tt>, <tt>playcount</tt>, <tt>lastplayed</tt>, <tt>inprogress</tt>, <tt>genre</tt>, <tt>year</tt>, <tt>director</tt>, <tt>actor</tt>, <tt>episode</tt>, <tt>season</tt>, <tt>filename</tt>, <tt>path</tt>, <tt>studio</tt>, <tt>mpaarating</tt>, <tt>dateadded</tt>, <tt>videoresolution</tt>, <tt>audiochannels</tt>, <tt>videocodec</tt>, <tt>audiocodec</tt>, <tt>audiolanguage</tt>, <tt>subtitlelanguage</tt>, <tt>videoaspect</tt>, <tt>playlist</tt>, <tt>virtualfolder</tt>. See constants at {@link ListModel.EpisodeFilterRule.Field}.
 		 */
 		public EpisodeFilterRule(String operator, Value value, String field) {
 			super(operator, value);
@@ -1730,8 +1732,9 @@ public final class ListModel {
 			public final String SUBTITLELANGUAGE = "subtitlelanguage";
 			public final String VIDEOASPECT = "videoaspect";
 			public final String PLAYLIST = "playlist";
+			public final String VIRTUALFOLDER = "virtualfolder";
 
-			public final static Set<String> values = new HashSet<String>(Arrays.asList(TITLE, TVSHOW, PLOT, VOTES, RATING, TIME, WRITERS, AIRDATE, PLAYCOUNT, LASTPLAYED, INPROGRESS, GENRE, YEAR, DIRECTOR, ACTOR, EPISODE, SEASON, FILENAME, PATH, STUDIO, MPAARATING, DATEADDED, VIDEORESOLUTION, AUDIOCHANNELS, VIDEOCODEC, AUDIOCODEC, AUDIOLANGUAGE, SUBTITLELANGUAGE, VIDEOASPECT, PLAYLIST));
+			public final static Set<String> values = new HashSet<String>(Arrays.asList(TITLE, TVSHOW, PLOT, VOTES, RATING, TIME, WRITERS, AIRDATE, PLAYCOUNT, LASTPLAYED, INPROGRESS, GENRE, YEAR, DIRECTOR, ACTOR, EPISODE, SEASON, FILENAME, PATH, STUDIO, MPAARATING, DATEADDED, VIDEORESOLUTION, AUDIOCHANNELS, VIDEOCODEC, AUDIOCODEC, AUDIOLANGUAGE, SUBTITLELANGUAGE, VIDEOASPECT, PLAYLIST, VIRTUALFOLDER));
 		}
 	}
 
@@ -1753,7 +1756,7 @@ public final class ListModel {
 		/**
 		 * @param operator One of: <tt>contains</tt>, <tt>doesnotcontain</tt>, <tt>is</tt>, <tt>isnot</tt>, <tt>startswith</tt>, <tt>endswith</tt>, <tt>greaterthan</tt>, <tt>lessthan</tt>, <tt>after</tt>, <tt>before</tt>, <tt>inthelast</tt>, <tt>notinthelast</tt>, <tt>true</tt>, <tt>false</tt>, <tt>between</tt>. See constants at {@link ListModel.FilterRule.Operator}.
 		 * @param value
-		 * @param field One of: <tt>title</tt>, <tt>plot</tt>, <tt>plotoutline</tt>, <tt>tagline</tt>, <tt>votes</tt>, <tt>rating</tt>, <tt>time</tt>, <tt>writers</tt>, <tt>playcount</tt>, <tt>lastplayed</tt>, <tt>inprogress</tt>, <tt>genre</tt>, <tt>country</tt>, <tt>year</tt>, <tt>director</tt>, <tt>actor</tt>, <tt>mpaarating</tt>, <tt>top250</tt>, <tt>studio</tt>, <tt>hastrailer</tt>, <tt>filename</tt>, <tt>path</tt>, <tt>set</tt>, <tt>tag</tt>, <tt>dateadded</tt>, <tt>videoresolution</tt>, <tt>audiochannels</tt>, <tt>videocodec</tt>, <tt>audiocodec</tt>, <tt>audiolanguage</tt>, <tt>subtitlelanguage</tt>, <tt>videoaspect</tt>, <tt>playlist</tt>. See constants at {@link ListModel.MovieFilterRule.Field}.
+		 * @param field One of: <tt>title</tt>, <tt>plot</tt>, <tt>plotoutline</tt>, <tt>tagline</tt>, <tt>votes</tt>, <tt>rating</tt>, <tt>time</tt>, <tt>writers</tt>, <tt>playcount</tt>, <tt>lastplayed</tt>, <tt>inprogress</tt>, <tt>genre</tt>, <tt>country</tt>, <tt>year</tt>, <tt>director</tt>, <tt>actor</tt>, <tt>mpaarating</tt>, <tt>top250</tt>, <tt>studio</tt>, <tt>hastrailer</tt>, <tt>filename</tt>, <tt>path</tt>, <tt>set</tt>, <tt>tag</tt>, <tt>dateadded</tt>, <tt>videoresolution</tt>, <tt>audiochannels</tt>, <tt>videocodec</tt>, <tt>audiocodec</tt>, <tt>audiolanguage</tt>, <tt>subtitlelanguage</tt>, <tt>videoaspect</tt>, <tt>playlist</tt>, <tt>virtualfolder</tt>. See constants at {@link ListModel.MovieFilterRule.Field}.
 		 */
 		public MovieFilterRule(String operator, Value value, String field) {
 			super(operator, value);
@@ -1843,8 +1846,9 @@ public final class ListModel {
 			public final String SUBTITLELANGUAGE = "subtitlelanguage";
 			public final String VIDEOASPECT = "videoaspect";
 			public final String PLAYLIST = "playlist";
+			public final String VIRTUALFOLDER = "virtualfolder";
 
-			public final static Set<String> values = new HashSet<String>(Arrays.asList(TITLE, PLOT, PLOTOUTLINE, TAGLINE, VOTES, RATING, TIME, WRITERS, PLAYCOUNT, LASTPLAYED, INPROGRESS, GENRE, COUNTRY, YEAR, DIRECTOR, ACTOR, MPAARATING, TOP250, STUDIO, HASTRAILER, FILENAME, PATH, SET, TAG, DATEADDED, VIDEORESOLUTION, AUDIOCHANNELS, VIDEOCODEC, AUDIOCODEC, AUDIOLANGUAGE, SUBTITLELANGUAGE, VIDEOASPECT, PLAYLIST));
+			public final static Set<String> values = new HashSet<String>(Arrays.asList(TITLE, PLOT, PLOTOUTLINE, TAGLINE, VOTES, RATING, TIME, WRITERS, PLAYCOUNT, LASTPLAYED, INPROGRESS, GENRE, COUNTRY, YEAR, DIRECTOR, ACTOR, MPAARATING, TOP250, STUDIO, HASTRAILER, FILENAME, PATH, SET, TAG, DATEADDED, VIDEORESOLUTION, AUDIOCHANNELS, VIDEOCODEC, AUDIOCODEC, AUDIOLANGUAGE, SUBTITLELANGUAGE, VIDEOASPECT, PLAYLIST, VIRTUALFOLDER));
 		}
 	}
 
@@ -1866,7 +1870,7 @@ public final class ListModel {
 		/**
 		 * @param operator One of: <tt>contains</tt>, <tt>doesnotcontain</tt>, <tt>is</tt>, <tt>isnot</tt>, <tt>startswith</tt>, <tt>endswith</tt>, <tt>greaterthan</tt>, <tt>lessthan</tt>, <tt>after</tt>, <tt>before</tt>, <tt>inthelast</tt>, <tt>notinthelast</tt>, <tt>true</tt>, <tt>false</tt>, <tt>between</tt>. See constants at {@link ListModel.FilterRule.Operator}.
 		 * @param value
-		 * @param field One of: <tt>title</tt>, <tt>genre</tt>, <tt>album</tt>, <tt>year</tt>, <tt>artist</tt>, <tt>filename</tt>, <tt>path</tt>, <tt>playcount</tt>, <tt>lastplayed</tt>, <tt>time</tt>, <tt>director</tt>, <tt>studio</tt>, <tt>plot</tt>, <tt>dateadded</tt>, <tt>videoresolution</tt>, <tt>audiochannels</tt>, <tt>videocodec</tt>, <tt>audiocodec</tt>, <tt>audiolanguage</tt>, <tt>subtitlelanguage</tt>, <tt>videoaspect</tt>, <tt>playlist</tt>. See constants at {@link ListModel.MusicVideoFilterRule.Field}.
+		 * @param field One of: <tt>title</tt>, <tt>genre</tt>, <tt>album</tt>, <tt>year</tt>, <tt>artist</tt>, <tt>filename</tt>, <tt>path</tt>, <tt>playcount</tt>, <tt>lastplayed</tt>, <tt>time</tt>, <tt>director</tt>, <tt>studio</tt>, <tt>plot</tt>, <tt>tag</tt>, <tt>dateadded</tt>, <tt>videoresolution</tt>, <tt>audiochannels</tt>, <tt>videocodec</tt>, <tt>audiocodec</tt>, <tt>audiolanguage</tt>, <tt>subtitlelanguage</tt>, <tt>videoaspect</tt>, <tt>playlist</tt>, <tt>virtualfolder</tt>. See constants at {@link ListModel.MusicVideoFilterRule.Field}.
 		 */
 		public MusicVideoFilterRule(String operator, Value value, String field) {
 			super(operator, value);
@@ -1936,6 +1940,7 @@ public final class ListModel {
 			public final String DIRECTOR = "director";
 			public final String STUDIO = "studio";
 			public final String PLOT = "plot";
+			public final String TAG = "tag";
 			public final String DATEADDED = "dateadded";
 			public final String VIDEORESOLUTION = "videoresolution";
 			public final String AUDIOCHANNELS = "audiochannels";
@@ -1945,8 +1950,9 @@ public final class ListModel {
 			public final String SUBTITLELANGUAGE = "subtitlelanguage";
 			public final String VIDEOASPECT = "videoaspect";
 			public final String PLAYLIST = "playlist";
+			public final String VIRTUALFOLDER = "virtualfolder";
 
-			public final static Set<String> values = new HashSet<String>(Arrays.asList(TITLE, GENRE, ALBUM, YEAR, ARTIST, FILENAME, PATH, PLAYCOUNT, LASTPLAYED, TIME, DIRECTOR, STUDIO, PLOT, DATEADDED, VIDEORESOLUTION, AUDIOCHANNELS, VIDEOCODEC, AUDIOCODEC, AUDIOLANGUAGE, SUBTITLELANGUAGE, VIDEOASPECT, PLAYLIST));
+			public final static Set<String> values = new HashSet<String>(Arrays.asList(TITLE, GENRE, ALBUM, YEAR, ARTIST, FILENAME, PATH, PLAYCOUNT, LASTPLAYED, TIME, DIRECTOR, STUDIO, PLOT, TAG, DATEADDED, VIDEORESOLUTION, AUDIOCHANNELS, VIDEOCODEC, AUDIOCODEC, AUDIOLANGUAGE, SUBTITLELANGUAGE, VIDEOASPECT, PLAYLIST, VIRTUALFOLDER));
 		}
 	}
 
@@ -1968,7 +1974,7 @@ public final class ListModel {
 		/**
 		 * @param operator One of: <tt>contains</tt>, <tt>doesnotcontain</tt>, <tt>is</tt>, <tt>isnot</tt>, <tt>startswith</tt>, <tt>endswith</tt>, <tt>greaterthan</tt>, <tt>lessthan</tt>, <tt>after</tt>, <tt>before</tt>, <tt>inthelast</tt>, <tt>notinthelast</tt>, <tt>true</tt>, <tt>false</tt>, <tt>between</tt>. See constants at {@link ListModel.FilterRule.Operator}.
 		 * @param value
-		 * @param field One of: <tt>genre</tt>, <tt>album</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>title</tt>, <tt>year</tt>, <tt>time</tt>, <tt>tracknumber</tt>, <tt>filename</tt>, <tt>path</tt>, <tt>playcount</tt>, <tt>lastplayed</tt>, <tt>rating</tt>, <tt>comment</tt>, <tt>dateadded</tt>, <tt>playlist</tt>. See constants at {@link ListModel.SongFilterRule.Field}.
+		 * @param field One of: <tt>genre</tt>, <tt>album</tt>, <tt>artist</tt>, <tt>albumartist</tt>, <tt>title</tt>, <tt>year</tt>, <tt>time</tt>, <tt>tracknumber</tt>, <tt>filename</tt>, <tt>path</tt>, <tt>playcount</tt>, <tt>lastplayed</tt>, <tt>rating</tt>, <tt>comment</tt>, <tt>playlist</tt>, <tt>virtualfolder</tt>. See constants at {@link ListModel.SongFilterRule.Field}.
 		 */
 		public SongFilterRule(String operator, Value value, String field) {
 			super(operator, value);
@@ -2039,10 +2045,10 @@ public final class ListModel {
 			public final String LASTPLAYED = "lastplayed";
 			public final String RATING = "rating";
 			public final String COMMENT = "comment";
-			public final String DATEADDED = "dateadded";
 			public final String PLAYLIST = "playlist";
+			public final String VIRTUALFOLDER = "virtualfolder";
 
-			public final static Set<String> values = new HashSet<String>(Arrays.asList(GENRE, ALBUM, ARTIST, ALBUMARTIST, TITLE, YEAR, TIME, TRACKNUMBER, FILENAME, PATH, PLAYCOUNT, LASTPLAYED, RATING, COMMENT, DATEADDED, PLAYLIST));
+			public final static Set<String> values = new HashSet<String>(Arrays.asList(GENRE, ALBUM, ARTIST, ALBUMARTIST, TITLE, YEAR, TIME, TRACKNUMBER, FILENAME, PATH, PLAYCOUNT, LASTPLAYED, RATING, COMMENT, PLAYLIST, VIRTUALFOLDER));
 		}
 	}
 
@@ -2064,7 +2070,7 @@ public final class ListModel {
 		/**
 		 * @param operator One of: <tt>contains</tt>, <tt>doesnotcontain</tt>, <tt>is</tt>, <tt>isnot</tt>, <tt>startswith</tt>, <tt>endswith</tt>, <tt>greaterthan</tt>, <tt>lessthan</tt>, <tt>after</tt>, <tt>before</tt>, <tt>inthelast</tt>, <tt>notinthelast</tt>, <tt>true</tt>, <tt>false</tt>, <tt>between</tt>. See constants at {@link ListModel.FilterRule.Operator}.
 		 * @param value
-		 * @param field One of: <tt>title</tt>, <tt>plot</tt>, <tt>status</tt>, <tt>votes</tt>, <tt>rating</tt>, <tt>year</tt>, <tt>genre</tt>, <tt>director</tt>, <tt>actor</tt>, <tt>numepisodes</tt>, <tt>numwatched</tt>, <tt>playcount</tt>, <tt>path</tt>, <tt>studio</tt>, <tt>mpaarating</tt>, <tt>dateadded</tt>, <tt>lastplayed</tt>, <tt>inprogress</tt>, <tt>playlist</tt>. See constants at {@link ListModel.TVShowFilterRule.Field}.
+		 * @param field One of: <tt>title</tt>, <tt>plot</tt>, <tt>status</tt>, <tt>votes</tt>, <tt>rating</tt>, <tt>year</tt>, <tt>genre</tt>, <tt>director</tt>, <tt>actor</tt>, <tt>numepisodes</tt>, <tt>numwatched</tt>, <tt>playcount</tt>, <tt>path</tt>, <tt>studio</tt>, <tt>mpaarating</tt>, <tt>dateadded</tt>, <tt>lastplayed</tt>, <tt>inprogress</tt>, <tt>tag</tt>, <tt>playlist</tt>, <tt>virtualfolder</tt>. See constants at {@link ListModel.TVShowFilterRule.Field}.
 		 */
 		public TVShowFilterRule(String operator, Value value, String field) {
 			super(operator, value);
@@ -2139,9 +2145,11 @@ public final class ListModel {
 			public final String DATEADDED = "dateadded";
 			public final String LASTPLAYED = "lastplayed";
 			public final String INPROGRESS = "inprogress";
+			public final String TAG = "tag";
 			public final String PLAYLIST = "playlist";
+			public final String VIRTUALFOLDER = "virtualfolder";
 
-			public final static Set<String> values = new HashSet<String>(Arrays.asList(TITLE, PLOT, STATUS, VOTES, RATING, YEAR, GENRE, DIRECTOR, ACTOR, NUMEPISODES, NUMWATCHED, PLAYCOUNT, PATH, STUDIO, MPAARATING, DATEADDED, LASTPLAYED, INPROGRESS, PLAYLIST));
+			public final static Set<String> values = new HashSet<String>(Arrays.asList(TITLE, PLOT, STATUS, VOTES, RATING, YEAR, GENRE, DIRECTOR, ACTOR, NUMEPISODES, NUMWATCHED, PLAYCOUNT, PATH, STUDIO, MPAARATING, DATEADDED, LASTPLAYED, INPROGRESS, TAG, PLAYLIST, VIRTUALFOLDER));
 		}
 	}
 
@@ -2690,7 +2698,7 @@ public final class ListModel {
 
 		/**
 		 * Extracts a list of {@link AllItems} objects from a JSON array.
-		 * @param obj ObjectNode containing the list of objects.
+		 * @param node ObjectNode containing the list of objects.
 		 * @param key Key pointing to the node where the list is stored.
 		 */
 		static List<AllItems> getListModelAllItemsList(JsonNode node, String key) {
@@ -3345,7 +3353,7 @@ public final class ListModel {
 
 		/**
 		 * Extracts a list of {@link BaseItem} objects from a JSON array.
-		 * @param obj ObjectNode containing the list of objects.
+		 * @param node ObjectNode containing the list of objects.
 		 * @param key Key pointing to the node where the list is stored.
 		 */
 		static List<BaseItem> getListModelBaseItemList(JsonNode node, String key) {
@@ -3716,7 +3724,7 @@ public final class ListModel {
 
 		/**
 		 * Extracts a list of {@link FileItem} objects from a JSON array.
-		 * @param obj ObjectNode containing the list of objects.
+		 * @param node ObjectNode containing the list of objects.
 		 * @param key Key pointing to the node where the list is stored.
 		 */
 		static List<FileItem> getListModelFileItemList(JsonNode node, String key) {
@@ -3821,7 +3829,7 @@ public final class ListModel {
 
 		/**
 		 * Extracts a list of {@link SourceItem} objects from a JSON array.
-		 * @param obj ObjectNode containing the list of objects.
+		 * @param node ObjectNode containing the list of objects.
 		 * @param key Key pointing to the node where the list is stored.
 		 */
 		static List<SourceItem> getListModelSourceItemList(JsonNode node, String key) {
@@ -3876,6 +3884,8 @@ public final class ListModel {
 	}
 
 	/**
+	 * Limits are applied after getting the directory content thus retrieval is not faster when they are applied.
+	 * <p/>
 	 * API Name: <tt>List.Limits</tt>
 	 * <p/>
 	 * Note: This class is used as parameter only.<br/>
@@ -3893,6 +3903,7 @@ public final class ListModel {
 		public final Integer start;
 
 		/**
+		 * Limits are applied after getting the directory content thus retrieval is not faster when they are applied.
 		 * @param end
 		 * @param start
 		 */
@@ -3999,7 +4010,7 @@ public final class ListModel {
 
 		/**
 		 * Extracts a list of {@link LimitsReturned} objects from a JSON array.
-		 * @param obj ObjectNode containing the list of objects.
+		 * @param node ObjectNode containing the list of objects.
 		 * @param key Key pointing to the node where the list is stored.
 		 */
 		static List<LimitsReturned> getListModelLimitsReturnedList(JsonNode node, String key) {
@@ -4369,8 +4380,9 @@ public final class ListModel {
 		public final String RATING = "rating";
 		public final String PLAYCOUNT = "playcount";
 		public final String PLAYLIST = "playlist";
+		public final String VIRTUALFOLDER = "virtualfolder";
 
-		public final static Set<String> values = new HashSet<String>(Arrays.asList(GENRE, ALBUM, ARTIST, ALBUMARTIST, YEAR, REVIEW, THEMES, MOODS, STYLES, TYPE, LABEL, RATING, PLAYCOUNT, PLAYLIST));
+		public final static Set<String> values = new HashSet<String>(Arrays.asList(GENRE, ALBUM, ARTIST, ALBUMARTIST, YEAR, REVIEW, THEMES, MOODS, STYLES, TYPE, LABEL, RATING, PLAYCOUNT, PLAYLIST, VIRTUALFOLDER));
 	}
 
 	/**
@@ -4389,8 +4401,9 @@ public final class ListModel {
 		public final String DISBANDED = "disbanded";
 		public final String DIED = "died";
 		public final String PLAYLIST = "playlist";
+		public final String VIRTUALFOLDER = "virtualfolder";
 
-		public final static Set<String> values = new HashSet<String>(Arrays.asList(ARTIST, GENRE, MOODS, STYLES, INSTRUMENTS, BIOGRAPHY, BORN, BANDFORMED, DISBANDED, DIED, PLAYLIST));
+		public final static Set<String> values = new HashSet<String>(Arrays.asList(ARTIST, GENRE, MOODS, STYLES, INSTRUMENTS, BIOGRAPHY, BORN, BANDFORMED, DISBANDED, DIED, PLAYLIST, VIRTUALFOLDER));
 	}
 
 	/**
@@ -4428,8 +4441,9 @@ public final class ListModel {
 		public final String SUBTITLELANGUAGE = "subtitlelanguage";
 		public final String VIDEOASPECT = "videoaspect";
 		public final String PLAYLIST = "playlist";
+		public final String VIRTUALFOLDER = "virtualfolder";
 
-		public final static Set<String> values = new HashSet<String>(Arrays.asList(TITLE, TVSHOW, PLOT, VOTES, RATING, TIME, WRITERS, AIRDATE, PLAYCOUNT, LASTPLAYED, INPROGRESS, GENRE, YEAR, DIRECTOR, ACTOR, EPISODE, SEASON, FILENAME, PATH, STUDIO, MPAARATING, DATEADDED, VIDEORESOLUTION, AUDIOCHANNELS, VIDEOCODEC, AUDIOCODEC, AUDIOLANGUAGE, SUBTITLELANGUAGE, VIDEOASPECT, PLAYLIST));
+		public final static Set<String> values = new HashSet<String>(Arrays.asList(TITLE, TVSHOW, PLOT, VOTES, RATING, TIME, WRITERS, AIRDATE, PLAYCOUNT, LASTPLAYED, INPROGRESS, GENRE, YEAR, DIRECTOR, ACTOR, EPISODE, SEASON, FILENAME, PATH, STUDIO, MPAARATING, DATEADDED, VIDEORESOLUTION, AUDIOCHANNELS, VIDEOCODEC, AUDIOCODEC, AUDIOLANGUAGE, SUBTITLELANGUAGE, VIDEOASPECT, PLAYLIST, VIRTUALFOLDER));
 	}
 
 	/**
@@ -4470,8 +4484,9 @@ public final class ListModel {
 		public final String SUBTITLELANGUAGE = "subtitlelanguage";
 		public final String VIDEOASPECT = "videoaspect";
 		public final String PLAYLIST = "playlist";
+		public final String VIRTUALFOLDER = "virtualfolder";
 
-		public final static Set<String> values = new HashSet<String>(Arrays.asList(TITLE, PLOT, PLOTOUTLINE, TAGLINE, VOTES, RATING, TIME, WRITERS, PLAYCOUNT, LASTPLAYED, INPROGRESS, GENRE, COUNTRY, YEAR, DIRECTOR, ACTOR, MPAARATING, TOP250, STUDIO, HASTRAILER, FILENAME, PATH, SET, TAG, DATEADDED, VIDEORESOLUTION, AUDIOCHANNELS, VIDEOCODEC, AUDIOCODEC, AUDIOLANGUAGE, SUBTITLELANGUAGE, VIDEOASPECT, PLAYLIST));
+		public final static Set<String> values = new HashSet<String>(Arrays.asList(TITLE, PLOT, PLOTOUTLINE, TAGLINE, VOTES, RATING, TIME, WRITERS, PLAYCOUNT, LASTPLAYED, INPROGRESS, GENRE, COUNTRY, YEAR, DIRECTOR, ACTOR, MPAARATING, TOP250, STUDIO, HASTRAILER, FILENAME, PATH, SET, TAG, DATEADDED, VIDEORESOLUTION, AUDIOCHANNELS, VIDEOCODEC, AUDIOCODEC, AUDIOLANGUAGE, SUBTITLELANGUAGE, VIDEOASPECT, PLAYLIST, VIRTUALFOLDER));
 	}
 
 	/**
@@ -4492,6 +4507,7 @@ public final class ListModel {
 		public final String DIRECTOR = "director";
 		public final String STUDIO = "studio";
 		public final String PLOT = "plot";
+		public final String TAG = "tag";
 		public final String DATEADDED = "dateadded";
 		public final String VIDEORESOLUTION = "videoresolution";
 		public final String AUDIOCHANNELS = "audiochannels";
@@ -4501,8 +4517,9 @@ public final class ListModel {
 		public final String SUBTITLELANGUAGE = "subtitlelanguage";
 		public final String VIDEOASPECT = "videoaspect";
 		public final String PLAYLIST = "playlist";
+		public final String VIRTUALFOLDER = "virtualfolder";
 
-		public final static Set<String> values = new HashSet<String>(Arrays.asList(TITLE, GENRE, ALBUM, YEAR, ARTIST, FILENAME, PATH, PLAYCOUNT, LASTPLAYED, TIME, DIRECTOR, STUDIO, PLOT, DATEADDED, VIDEORESOLUTION, AUDIOCHANNELS, VIDEOCODEC, AUDIOCODEC, AUDIOLANGUAGE, SUBTITLELANGUAGE, VIDEOASPECT, PLAYLIST));
+		public final static Set<String> values = new HashSet<String>(Arrays.asList(TITLE, GENRE, ALBUM, YEAR, ARTIST, FILENAME, PATH, PLAYCOUNT, LASTPLAYED, TIME, DIRECTOR, STUDIO, PLOT, TAG, DATEADDED, VIDEORESOLUTION, AUDIOCHANNELS, VIDEOCODEC, AUDIOCODEC, AUDIOLANGUAGE, SUBTITLELANGUAGE, VIDEOASPECT, PLAYLIST, VIRTUALFOLDER));
 	}
 
 	/**
@@ -4524,10 +4541,10 @@ public final class ListModel {
 		public final String LASTPLAYED = "lastplayed";
 		public final String RATING = "rating";
 		public final String COMMENT = "comment";
-		public final String DATEADDED = "dateadded";
 		public final String PLAYLIST = "playlist";
+		public final String VIRTUALFOLDER = "virtualfolder";
 
-		public final static Set<String> values = new HashSet<String>(Arrays.asList(GENRE, ALBUM, ARTIST, ALBUMARTIST, TITLE, YEAR, TIME, TRACKNUMBER, FILENAME, PATH, PLAYCOUNT, LASTPLAYED, RATING, COMMENT, DATEADDED, PLAYLIST));
+		public final static Set<String> values = new HashSet<String>(Arrays.asList(GENRE, ALBUM, ARTIST, ALBUMARTIST, TITLE, YEAR, TIME, TRACKNUMBER, FILENAME, PATH, PLAYCOUNT, LASTPLAYED, RATING, COMMENT, PLAYLIST, VIRTUALFOLDER));
 	}
 
 	/**
@@ -4553,9 +4570,11 @@ public final class ListModel {
 		public final String DATEADDED = "dateadded";
 		public final String LASTPLAYED = "lastplayed";
 		public final String INPROGRESS = "inprogress";
+		public final String TAG = "tag";
 		public final String PLAYLIST = "playlist";
+		public final String VIRTUALFOLDER = "virtualfolder";
 
-		public final static Set<String> values = new HashSet<String>(Arrays.asList(TITLE, PLOT, STATUS, VOTES, RATING, YEAR, GENRE, DIRECTOR, ACTOR, NUMEPISODES, NUMWATCHED, PLAYCOUNT, PATH, STUDIO, MPAARATING, DATEADDED, LASTPLAYED, INPROGRESS, PLAYLIST));
+		public final static Set<String> values = new HashSet<String>(Arrays.asList(TITLE, PLOT, STATUS, VOTES, RATING, YEAR, GENRE, DIRECTOR, ACTOR, NUMEPISODES, NUMWATCHED, PLAYCOUNT, PATH, STUDIO, MPAARATING, DATEADDED, LASTPLAYED, INPROGRESS, TAG, PLAYLIST, VIRTUALFOLDER));
 	}
 
 	/**
