@@ -1724,7 +1724,7 @@ public final class VideoModel {
 	/**
 	 * API Name: <tt>Video.Resume</tt>
 	 * <p/>
-	 * Note: This class is used as parameter as well as result.<br/>
+	 * Note: This class is used as result only.<br/>
 	 * <i>This class was generated automatically from XBMC's JSON-RPC introspect.</i>
 	 */
 	public static class Resume extends AbstractModel {

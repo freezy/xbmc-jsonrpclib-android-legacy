@@ -6156,9 +6156,8 @@ public final class VideoLibrary {
 		 * @param thumbnail 
 		 * @param fanart 
 		 * @param art 
-		 * @param resume 
 		 */
-		public SetEpisodeDetails(Integer episodeid, String title, Integer playcount, Integer runtime, String[] director, String plot, Double rating, String votes, String lastplayed, String[] writer, String firstaired, String productioncode, Integer season, Integer episode, String originaltitle, String thumbnail, String fanart, MediaModel.Artwork art, VideoModel.Resume resume) {
+		public SetEpisodeDetails(Integer episodeid, String title, Integer playcount, Integer runtime, String[] director, String plot, Double rating, String votes, String lastplayed, String[] writer, String firstaired, String productioncode, Integer season, Integer episode, String originaltitle, String thumbnail, String fanart, MediaModel.Artwork art) {
 			super();
 			addParameter("episodeid", episodeid);
 			addParameter("title", title);
@@ -6178,7 +6177,6 @@ public final class VideoLibrary {
 			addParameter("thumbnail", thumbnail);
 			addParameter("fanart", fanart);
 			addParameter("art", art);
-			addParameter("resume", resume);
 		}
 
 		@Override
@@ -6264,9 +6262,8 @@ public final class VideoLibrary {
 		 * @param fanart 
 		 * @param tag 
 		 * @param art 
-		 * @param resume 
 		 */
-		public SetMovieDetails(Integer movieid, String title, Integer playcount, Integer runtime, String[] director, String[] studio, Integer year, String plot, String[] genre, Double rating, String mpaa, String imdbnumber, String votes, String lastplayed, String originaltitle, String trailer, String tagline, String plotoutline, String[] writer, String[] country, Integer top250, String sorttitle, String set, String[] showlink, String thumbnail, String fanart, String[] tag, MediaModel.Artwork art, VideoModel.Resume resume) {
+		public SetMovieDetails(Integer movieid, String title, Integer playcount, Integer runtime, String[] director, String[] studio, Integer year, String plot, String[] genre, Double rating, String mpaa, String imdbnumber, String votes, String lastplayed, String originaltitle, String trailer, String tagline, String plotoutline, String[] writer, String[] country, Integer top250, String sorttitle, String set, String[] showlink, String thumbnail, String fanart, String[] tag, MediaModel.Artwork art) {
 			super();
 			addParameter("movieid", movieid);
 			addParameter("title", title);
@@ -6296,7 +6293,6 @@ public final class VideoLibrary {
 			addParameter("fanart", fanart);
 			addParameter("tag", tag);
 			addParameter("art", art);
-			addParameter("resume", resume);
 		}
 
 		@Override
@@ -6371,9 +6367,8 @@ public final class VideoLibrary {
 		 * @param fanart 
 		 * @param tag 
 		 * @param art 
-		 * @param resume 
 		 */
-		public SetMusicVideoDetails(Integer musicvideoid, String title, Integer playcount, Integer runtime, String[] director, String[] studio, Integer year, String plot, String album, String[] artist, String[] genre, Integer track, String lastplayed, String thumbnail, String fanart, String[] tag, MediaModel.Artwork art, VideoModel.Resume resume) {
+		public SetMusicVideoDetails(Integer musicvideoid, String title, Integer playcount, Integer runtime, String[] director, String[] studio, Integer year, String plot, String album, String[] artist, String[] genre, Integer track, String lastplayed, String thumbnail, String fanart, String[] tag, MediaModel.Artwork art) {
 			super();
 			addParameter("musicvideoid", musicvideoid);
 			addParameter("title", title);
@@ -6392,7 +6387,6 @@ public final class VideoLibrary {
 			addParameter("fanart", fanart);
 			addParameter("tag", tag);
 			addParameter("art", art);
-			addParameter("resume", resume);
 		}
 
 		@Override

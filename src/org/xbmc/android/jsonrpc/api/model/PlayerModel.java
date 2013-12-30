@@ -44,33 +44,21 @@ public final class PlayerModel {
 		public final static String API_TYPE = "Player.Audio.Stream";
 
 		// field names
-		public static final String BITRATE = "bitrate";
-		public static final String CHANNELS = "channels";
-		public static final String CODEC = "codec";
 		public static final String INDEX = "index";
 		public static final String LANGUAGE = "language";
 		public static final String NAME = "name";
 
 		// class members
-		public final Integer bitrate;
-		public final Integer channels;
-		public final String codec;
 		public final Integer index;
 		public final String language;
 		public final String name;
 
 		/**
-		 * @param bitrate
-		 * @param channels
-		 * @param codec
 		 * @param index
 		 * @param language
 		 * @param name
 		 */
-		public AudioStream(Integer bitrate, Integer channels, String codec, Integer index, String language, String name) {
-			this.bitrate = bitrate;
-			this.channels = channels;
-			this.codec = codec;
+		public AudioStream(Integer index, String language, String name) {
 			this.index = index;
 			this.language = language;
 			this.name = name;
@@ -81,9 +69,6 @@ public final class PlayerModel {
 		 * @param node JSON object representing a AudioStream object
 		 */
 		public AudioStream(JsonNode node) {
-			bitrate = node.get(BITRATE).getIntValue(); // required value
-			channels = node.get(CHANNELS).getIntValue(); // required value
-			codec = node.get(CODEC).getTextValue(); // required value
 			index = node.get(INDEX).getIntValue(); // required value
 			language = node.get(LANGUAGE).getTextValue(); // required value
 			name = node.get(NAME).getTextValue(); // required value
@@ -92,9 +77,6 @@ public final class PlayerModel {
 		@Override
 		public JsonNode toJsonNode() {
 			final ObjectNode node = OM.createObjectNode();
-			node.put(BITRATE, bitrate);
-			node.put(CHANNELS, channels);
-			node.put(CODEC, codec);
 			node.put(INDEX, index);
 			node.put(LANGUAGE, language);
 			node.put(NAME, name);
@@ -125,9 +107,6 @@ public final class PlayerModel {
 		 */
 		@Override
 		public void writeToParcel(Parcel parcel, int flags) {
-			parcel.writeValue(bitrate);
-			parcel.writeValue(channels);
-			parcel.writeValue(codec);
 			parcel.writeValue(index);
 			parcel.writeValue(language);
 			parcel.writeValue(name);
@@ -137,9 +116,6 @@ public final class PlayerModel {
 		 * Construct via parcel.
 		 */
 		protected AudioStream(Parcel parcel) {
-			bitrate = parcel.readInt();
-			channels = parcel.readInt();
-			codec = parcel.readString();
 			index = parcel.readInt();
 			language = parcel.readString();
 			name = parcel.readString();
@@ -156,6 +132,105 @@ public final class PlayerModel {
 			@Override
 			public AudioStream[] newArray(int n) {
 				return new AudioStream[n];
+			}
+		};
+
+		@Override
+		public int describeContents() {
+			return 0;
+		}
+	}
+
+	/**
+	 * API Name: <tt>Player.Audio.Stream.Extended</tt>
+	 * <p/>
+	 * Note: This class is used as result only.<br/>
+	 * <i>This class was generated automatically from XBMC's JSON-RPC introspect.</i>
+	 */
+	public static class AudioStreamExtended extends AudioStream {
+		public final static String API_TYPE = "Player.Audio.Stream.Extended";
+
+		// field names
+		public static final String BITRATE = "bitrate";
+		public static final String CHANNELS = "channels";
+		public static final String CODEC = "codec";
+
+		// class members
+		public final Integer bitrate;
+		public final Integer channels;
+		public final String codec;
+
+		/**
+		 * Construct from JSON object.
+		 * @param node JSON object representing a AudioStreamExtended object
+		 */
+		public AudioStreamExtended(JsonNode node) {
+			super(node);
+			bitrate = node.get(BITRATE).getIntValue(); // required value
+			channels = node.get(CHANNELS).getIntValue(); // required value
+			codec = node.get(CODEC).getTextValue(); // required value
+		}
+
+		@Override
+		public JsonNode toJsonNode() {
+			final ObjectNode node = (ObjectNode)super.toJsonNode();
+			node.put(BITRATE, bitrate);
+			node.put(CHANNELS, channels);
+			node.put(CODEC, codec);
+			return node;
+		}
+
+		/**
+		 * Extracts a list of {@link AudioStreamExtended} objects from a JSON array.
+		 * @param node ObjectNode containing the list of objects.
+		 * @param key Key pointing to the node where the list is stored.
+		 */
+		static List<AudioStreamExtended> getPlayerModelAudioStreamExtendedList(JsonNode node, String key) {
+			if (node.has(key)) {
+				final ArrayNode a = (ArrayNode)node.get(key);
+				final List<AudioStreamExtended> l = new ArrayList<AudioStreamExtended>(a.size());
+				for (int i = 0; i < a.size(); i++) {
+					l.add(new AudioStreamExtended((JsonNode)a.get(i)));
+				}
+				return l;
+			}
+			return new ArrayList<AudioStreamExtended>(0);
+		}
+
+		/**
+		 * Flatten this object into a Parcel.
+		 * @param parcel the Parcel in which the object should be written.
+		 * @param flags additional flags about how the object should be written.
+		 */
+		@Override
+		public void writeToParcel(Parcel parcel, int flags) {
+			super.writeToParcel(parcel, flags);
+			parcel.writeValue(bitrate);
+			parcel.writeValue(channels);
+			parcel.writeValue(codec);
+		}
+
+		/**
+		 * Construct via parcel.
+		 */
+		protected AudioStreamExtended(Parcel parcel) {
+			super(parcel);
+			bitrate = parcel.readInt();
+			channels = parcel.readInt();
+			codec = parcel.readString();
+		}
+
+		/**
+		 * Generates instances of this Parcelable class from a Parcel.
+		 */
+		public static final Parcelable.Creator<AudioStreamExtended> CREATOR = new Parcelable.Creator<AudioStreamExtended>() {
+			@Override
+			public AudioStreamExtended createFromParcel(Parcel parcel) {
+				return new AudioStreamExtended(parcel);
+			}
+			@Override
+			public AudioStreamExtended[] newArray(int n) {
+				return new AudioStreamExtended[n];
 			}
 		};
 
@@ -510,7 +585,7 @@ public final class PlayerModel {
 		public final Boolean canseek;
 		public final Boolean canshuffle;
 		public final Boolean canzoom;
-		public final AudioStream currentaudiostream;
+		public final AudioStreamExtended currentaudiostream;
 		public final Subtitle currentsubtitle;
 		public final Boolean live;
 		public final Boolean partymode;
@@ -551,7 +626,7 @@ public final class PlayerModel {
 		 * @param totaltime
 		 * @param type One of: <tt>video</tt>, <tt>audio</tt>, <tt>picture</tt>. See constants at {@link PlayerModel.PropertyValue.Type}.
 		 */
-		public PropertyValue(List<AudioStream> audiostreams, Boolean canchangespeed, Boolean canmove, Boolean canrepeat, Boolean canrotate, Boolean canseek, Boolean canshuffle, Boolean canzoom, AudioStream currentaudiostream, Subtitle currentsubtitle, Boolean live, Boolean partymode, Double percentage, Integer playlistid, Integer position, String repeat, Boolean shuffled, Integer speed, Boolean subtitleenabled, List<Subtitle> subtitles, GlobalModel.Time time, GlobalModel.Time totaltime, String type) {
+		public PropertyValue(List<AudioStream> audiostreams, Boolean canchangespeed, Boolean canmove, Boolean canrepeat, Boolean canrotate, Boolean canseek, Boolean canshuffle, Boolean canzoom, AudioStreamExtended currentaudiostream, Subtitle currentsubtitle, Boolean live, Boolean partymode, Double percentage, Integer playlistid, Integer position, String repeat, Boolean shuffled, Integer speed, Boolean subtitleenabled, List<Subtitle> subtitles, GlobalModel.Time time, GlobalModel.Time totaltime, String type) {
 			this.audiostreams = audiostreams;
 			this.canchangespeed = canchangespeed;
 			this.canmove = canmove;
@@ -590,7 +665,7 @@ public final class PlayerModel {
 			canseek = parseBoolean(node, CANSEEK);
 			canshuffle = parseBoolean(node, CANSHUFFLE);
 			canzoom = parseBoolean(node, CANZOOM);
-			currentaudiostream = node.has(CURRENTAUDIOSTREAM) ? new AudioStream(node.get(CURRENTAUDIOSTREAM)) : null;
+			currentaudiostream = node.has(CURRENTAUDIOSTREAM) ? new AudioStreamExtended(node.get(CURRENTAUDIOSTREAM)) : null;
 			currentsubtitle = node.has(CURRENTSUBTITLE) ? new Subtitle(node.get(CURRENTSUBTITLE)) : null;
 			live = parseBoolean(node, LIVE);
 			partymode = parseBoolean(node, PARTYMODE);
@@ -715,7 +790,7 @@ public final class PlayerModel {
 			canseek = parcel.readInt() == 1;
 			canshuffle = parcel.readInt() == 1;
 			canzoom = parcel.readInt() == 1;
-			currentaudiostream = parcel.<AudioStream>readParcelable(AudioStream.class.getClassLoader());
+			currentaudiostream = parcel.<AudioStreamExtended>readParcelable(AudioStreamExtended.class.getClassLoader());
 			currentsubtitle = parcel.<Subtitle>readParcelable(Subtitle.class.getClassLoader());
 			live = parcel.readInt() == 1;
 			partymode = parcel.readInt() == 1;

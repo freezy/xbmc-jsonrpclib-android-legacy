@@ -46,12 +46,12 @@ public final class PlaylistModel {
 		// class members
 		public final Albumid albumid;
 		public final Artistid artistid;
+		public final Directory directory;
 		public final Episodeid episodeid;
 		public final File file;
 		public final Genreid genreid;
 		public final Movieid movieid;
 		public final Musicvideoid musicvideoid;
-		public final RecursiveDirectoryMedia recursiveDirectoryMedia;
 		public final Songid songid;
 
 		/**
@@ -60,12 +60,12 @@ public final class PlaylistModel {
 		public Item(Albumid albumid) {
 			this.albumid = albumid;
 			this.artistid = null;
+			this.directory = null;
 			this.episodeid = null;
 			this.file = null;
 			this.genreid = null;
 			this.movieid = null;
 			this.musicvideoid = null;
-			this.recursiveDirectoryMedia = null;
 			this.songid = null;
 		}
 
@@ -75,12 +75,27 @@ public final class PlaylistModel {
 		public Item(Artistid artistid) {
 			this.artistid = artistid;
 			this.albumid = null;
+			this.directory = null;
 			this.episodeid = null;
 			this.file = null;
 			this.genreid = null;
 			this.movieid = null;
 			this.musicvideoid = null;
-			this.recursiveDirectoryMedia = null;
+			this.songid = null;
+		}
+
+		/**
+		 * @param directory
+		 */
+		public Item(Directory directory) {
+			this.directory = directory;
+			this.albumid = null;
+			this.artistid = null;
+			this.episodeid = null;
+			this.file = null;
+			this.genreid = null;
+			this.movieid = null;
+			this.musicvideoid = null;
 			this.songid = null;
 		}
 
@@ -91,11 +106,11 @@ public final class PlaylistModel {
 			this.episodeid = episodeid;
 			this.albumid = null;
 			this.artistid = null;
+			this.directory = null;
 			this.file = null;
 			this.genreid = null;
 			this.movieid = null;
 			this.musicvideoid = null;
-			this.recursiveDirectoryMedia = null;
 			this.songid = null;
 		}
 
@@ -106,11 +121,11 @@ public final class PlaylistModel {
 			this.file = file;
 			this.albumid = null;
 			this.artistid = null;
+			this.directory = null;
 			this.episodeid = null;
 			this.genreid = null;
 			this.movieid = null;
 			this.musicvideoid = null;
-			this.recursiveDirectoryMedia = null;
 			this.songid = null;
 		}
 
@@ -121,11 +136,11 @@ public final class PlaylistModel {
 			this.genreid = genreid;
 			this.albumid = null;
 			this.artistid = null;
+			this.directory = null;
 			this.episodeid = null;
 			this.file = null;
 			this.movieid = null;
 			this.musicvideoid = null;
-			this.recursiveDirectoryMedia = null;
 			this.songid = null;
 		}
 
@@ -136,11 +151,11 @@ public final class PlaylistModel {
 			this.movieid = movieid;
 			this.albumid = null;
 			this.artistid = null;
+			this.directory = null;
 			this.episodeid = null;
 			this.file = null;
 			this.genreid = null;
 			this.musicvideoid = null;
-			this.recursiveDirectoryMedia = null;
 			this.songid = null;
 		}
 
@@ -151,26 +166,11 @@ public final class PlaylistModel {
 			this.musicvideoid = musicvideoid;
 			this.albumid = null;
 			this.artistid = null;
+			this.directory = null;
 			this.episodeid = null;
 			this.file = null;
 			this.genreid = null;
 			this.movieid = null;
-			this.recursiveDirectoryMedia = null;
-			this.songid = null;
-		}
-
-		/**
-		 * @param recursiveDirectoryMedia
-		 */
-		public Item(RecursiveDirectoryMedia recursiveDirectoryMedia) {
-			this.recursiveDirectoryMedia = recursiveDirectoryMedia;
-			this.albumid = null;
-			this.artistid = null;
-			this.episodeid = null;
-			this.file = null;
-			this.genreid = null;
-			this.movieid = null;
-			this.musicvideoid = null;
 			this.songid = null;
 		}
 
@@ -181,12 +181,12 @@ public final class PlaylistModel {
 			this.songid = songid;
 			this.albumid = null;
 			this.artistid = null;
+			this.directory = null;
 			this.episodeid = null;
 			this.file = null;
 			this.genreid = null;
 			this.movieid = null;
 			this.musicvideoid = null;
-			this.recursiveDirectoryMedia = null;
 		}
 
 		@Override
@@ -196,6 +196,9 @@ public final class PlaylistModel {
 			}
 			if (artistid != null) {
 				return artistid.toJsonNode();
+			}
+			if (directory != null) {
+				return directory.toJsonNode();
 			}
 			if (episodeid != null) {
 				return episodeid.toJsonNode();
@@ -212,9 +215,6 @@ public final class PlaylistModel {
 			if (musicvideoid != null) {
 				return musicvideoid.toJsonNode();
 			}
-			if (recursiveDirectoryMedia != null) {
-				return recursiveDirectoryMedia.toJsonNode();
-			}
 			if (songid != null) {
 				return songid.toJsonNode();
 			}
@@ -230,12 +230,12 @@ public final class PlaylistModel {
 		public void writeToParcel(Parcel parcel, int flags) {
 			parcel.writeValue(albumid);
 			parcel.writeValue(artistid);
+			parcel.writeValue(directory);
 			parcel.writeValue(episodeid);
 			parcel.writeValue(file);
 			parcel.writeValue(genreid);
 			parcel.writeValue(movieid);
 			parcel.writeValue(musicvideoid);
-			parcel.writeValue(recursiveDirectoryMedia);
 			parcel.writeValue(songid);
 		}
 
@@ -245,12 +245,12 @@ public final class PlaylistModel {
 		protected Item(Parcel parcel) {
 			albumid = parcel.<Albumid>readParcelable(Albumid.class.getClassLoader());
 			artistid = parcel.<Artistid>readParcelable(Artistid.class.getClassLoader());
+			directory = parcel.<Directory>readParcelable(Directory.class.getClassLoader());
 			episodeid = parcel.<Episodeid>readParcelable(Episodeid.class.getClassLoader());
 			file = parcel.<File>readParcelable(File.class.getClassLoader());
 			genreid = parcel.<Genreid>readParcelable(Genreid.class.getClassLoader());
 			movieid = parcel.<Movieid>readParcelable(Movieid.class.getClassLoader());
 			musicvideoid = parcel.<Musicvideoid>readParcelable(Musicvideoid.class.getClassLoader());
-			recursiveDirectoryMedia = parcel.<RecursiveDirectoryMedia>readParcelable(RecursiveDirectoryMedia.class.getClassLoader());
 			songid = parcel.<Songid>readParcelable(Songid.class.getClassLoader());
 		}
 
@@ -340,35 +340,25 @@ public final class PlaylistModel {
 		 * Note: This class is used as parameter only.<br/>
 		 * <i>This class was generated automatically from XBMC's JSON-RPC introspect.</i>
 		 */
-		public static class RecursiveDirectoryMedia extends AbstractModel {
+		public static class Directory extends AbstractModel {
 
 			// field names
 			public static final String DIRECTORY = "directory";
-			public static final String MEDIA = "media";
-			public static final String RECURSIVE = "recursive";
 
 			// class members
 			public final String directory;
-			public final String media;
-			public final Boolean recursive;
 
 			/**
 			 * @param directory
-			 * @param media One of: <tt>video</tt>, <tt>music</tt>, <tt>pictures</tt>, <tt>files</tt>, <tt>programs</tt>. See constants at {@link PlaylistModel.RecursiveDirectoryMedia.Media}.
-			 * @param recursive
 			 */
-			public RecursiveDirectoryMedia(String directory, String media, Boolean recursive) {
+			public Directory(String directory) {
 				this.directory = directory;
-				this.media = media;
-				this.recursive = recursive;
 			}
 
 			@Override
 			public JsonNode toJsonNode() {
 				final ObjectNode node = OM.createObjectNode();
 				node.put(DIRECTORY, directory);
-				node.put(MEDIA, media); // enum
-				node.put(RECURSIVE, recursive);
 				return node;
 			}
 
@@ -380,50 +370,32 @@ public final class PlaylistModel {
 			@Override
 			public void writeToParcel(Parcel parcel, int flags) {
 				parcel.writeValue(directory);
-				parcel.writeValue(media); // enum
-				parcel.writeInt(recursive ? 1 : 0);
 			}
 
 			/**
 			 * Construct via parcel.
 			 */
-			protected RecursiveDirectoryMedia(Parcel parcel) {
+			protected Directory(Parcel parcel) {
 				directory = parcel.readString();
-				media = parcel.readString(); // enum
-				recursive = parcel.readInt() == 1;
 			}
 
 			/**
 			 * Generates instances of this Parcelable class from a Parcel.
 			 */
-			public static final Parcelable.Creator<RecursiveDirectoryMedia> CREATOR = new Parcelable.Creator<RecursiveDirectoryMedia>() {
+			public static final Parcelable.Creator<Directory> CREATOR = new Parcelable.Creator<Directory>() {
 				@Override
-				public RecursiveDirectoryMedia createFromParcel(Parcel parcel) {
-					return new RecursiveDirectoryMedia(parcel);
+				public Directory createFromParcel(Parcel parcel) {
+					return new Directory(parcel);
 				}
 				@Override
-				public RecursiveDirectoryMedia[] newArray(int n) {
-					return new RecursiveDirectoryMedia[n];
+				public Directory[] newArray(int n) {
+					return new Directory[n];
 				}
 			};
 
 			@Override
 			public int describeContents() {
 				return 0;
-			}
-
-			/**
-			 * API Name: <tt>media</tt>
-			 */
-			public interface Media {
-
-				public final String VIDEO = "video";
-				public final String MUSIC = "music";
-				public final String PICTURES = "pictures";
-				public final String FILES = "files";
-				public final String PROGRAMS = "programs";
-
-				public final static Set<String> values = new HashSet<String>(Arrays.asList(VIDEO, MUSIC, PICTURES, FILES, PROGRAMS));
 			}
 		}
 

@@ -960,7 +960,7 @@ public final class AudioLibrary {
 		/**
 		 * Retrieve details about a specific artist.
 		 * @param artistid 
-		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtistDetails(Integer artistid, String... properties) {
 			super();
@@ -1028,7 +1028,7 @@ public final class AudioLibrary {
 		 * @param limits 
 		 * @param sort 
 		 * @param filter 
-		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(Boolean albumartistsonly, ListModel.Limits limits, ListModel.Sort sort, FilterGenreId filter, String... properties) {
 			super();
@@ -1045,7 +1045,7 @@ public final class AudioLibrary {
 		 * @param limits 
 		 * @param sort 
 		 * @param filter 
-		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(Boolean albumartistsonly, ListModel.Limits limits, ListModel.Sort sort, FilterGenre filter, String... properties) {
 			super();
@@ -1062,7 +1062,7 @@ public final class AudioLibrary {
 		 * @param limits 
 		 * @param sort 
 		 * @param filter 
-		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(Boolean albumartistsonly, ListModel.Limits limits, ListModel.Sort sort, FilterAlbumId filter, String... properties) {
 			super();
@@ -1079,7 +1079,7 @@ public final class AudioLibrary {
 		 * @param limits 
 		 * @param sort 
 		 * @param filter 
-		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(Boolean albumartistsonly, ListModel.Limits limits, ListModel.Sort sort, FilterAlbum filter, String... properties) {
 			super();
@@ -1096,7 +1096,7 @@ public final class AudioLibrary {
 		 * @param limits 
 		 * @param sort 
 		 * @param filter 
-		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(Boolean albumartistsonly, ListModel.Limits limits, ListModel.Sort sort, FilterSongId filter, String... properties) {
 			super();
@@ -1113,7 +1113,7 @@ public final class AudioLibrary {
 		 * @param limits 
 		 * @param sort 
 		 * @param filter 
-		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(Boolean albumartistsonly, ListModel.Limits limits, ListModel.Sort sort, ListModel.ArtistFilter filter, String... properties) {
 			super();
@@ -1126,7 +1126,7 @@ public final class AudioLibrary {
 
 		/**
 		 * Retrieve all artists.
-		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(String... properties) {
 			super();
@@ -1136,7 +1136,7 @@ public final class AudioLibrary {
 		/**
 		 * Retrieve all artists.
 		 * @param albumartistsonly Whether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
-		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(Boolean albumartistsonly, String... properties) {
 			super();
@@ -1147,7 +1147,7 @@ public final class AudioLibrary {
 		/**
 		 * Retrieve all artists.
 		 * @param limits 
-		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(ListModel.Limits limits, String... properties) {
 			super();
@@ -1159,7 +1159,7 @@ public final class AudioLibrary {
 		 * Retrieve all artists.
 		 * @param albumartistsonly Whether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
 		 * @param limits 
-		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(Boolean albumartistsonly, ListModel.Limits limits, String... properties) {
 			super();
@@ -1171,7 +1171,7 @@ public final class AudioLibrary {
 		/**
 		 * Retrieve all artists.
 		 * @param sort 
-		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(ListModel.Sort sort, String... properties) {
 			super();
@@ -1183,7 +1183,7 @@ public final class AudioLibrary {
 		 * Retrieve all artists.
 		 * @param albumartistsonly Whether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
 		 * @param sort 
-		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(Boolean albumartistsonly, ListModel.Sort sort, String... properties) {
 			super();
@@ -1196,7 +1196,7 @@ public final class AudioLibrary {
 		 * Retrieve all artists.
 		 * @param limits 
 		 * @param sort 
-		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(ListModel.Limits limits, ListModel.Sort sort, String... properties) {
 			super();
@@ -1210,7 +1210,7 @@ public final class AudioLibrary {
 		 * @param albumartistsonly Whether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
 		 * @param limits 
 		 * @param sort 
-		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(Boolean albumartistsonly, ListModel.Limits limits, ListModel.Sort sort, String... properties) {
 			super();
@@ -1223,7 +1223,7 @@ public final class AudioLibrary {
 		/**
 		 * Retrieve all artists.
 		 * @param filter 
-		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(FilterGenreId filter, String... properties) {
 			super();
@@ -1235,7 +1235,7 @@ public final class AudioLibrary {
 		 * Retrieve all artists.
 		 * @param albumartistsonly Whether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
 		 * @param filter 
-		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(Boolean albumartistsonly, FilterGenreId filter, String... properties) {
 			super();
@@ -1248,7 +1248,7 @@ public final class AudioLibrary {
 		 * Retrieve all artists.
 		 * @param limits 
 		 * @param filter 
-		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(ListModel.Limits limits, FilterGenreId filter, String... properties) {
 			super();
@@ -1262,7 +1262,7 @@ public final class AudioLibrary {
 		 * @param albumartistsonly Whether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
 		 * @param limits 
 		 * @param filter 
-		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(Boolean albumartistsonly, ListModel.Limits limits, FilterGenreId filter, String... properties) {
 			super();
@@ -1276,7 +1276,7 @@ public final class AudioLibrary {
 		 * Retrieve all artists.
 		 * @param sort 
 		 * @param filter 
-		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(ListModel.Sort sort, FilterGenreId filter, String... properties) {
 			super();
@@ -1290,7 +1290,7 @@ public final class AudioLibrary {
 		 * @param albumartistsonly Whether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
 		 * @param sort 
 		 * @param filter 
-		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(Boolean albumartistsonly, ListModel.Sort sort, FilterGenreId filter, String... properties) {
 			super();
@@ -1303,7 +1303,7 @@ public final class AudioLibrary {
 		/**
 		 * Retrieve all artists.
 		 * @param filter 
-		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(FilterGenre filter, String... properties) {
 			super();
@@ -1315,7 +1315,7 @@ public final class AudioLibrary {
 		 * Retrieve all artists.
 		 * @param albumartistsonly Whether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
 		 * @param filter 
-		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(Boolean albumartistsonly, FilterGenre filter, String... properties) {
 			super();
@@ -1328,7 +1328,7 @@ public final class AudioLibrary {
 		 * Retrieve all artists.
 		 * @param limits 
 		 * @param filter 
-		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(ListModel.Limits limits, FilterGenre filter, String... properties) {
 			super();
@@ -1342,7 +1342,7 @@ public final class AudioLibrary {
 		 * @param albumartistsonly Whether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
 		 * @param limits 
 		 * @param filter 
-		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(Boolean albumartistsonly, ListModel.Limits limits, FilterGenre filter, String... properties) {
 			super();
@@ -1356,7 +1356,7 @@ public final class AudioLibrary {
 		 * Retrieve all artists.
 		 * @param sort 
 		 * @param filter 
-		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(ListModel.Sort sort, FilterGenre filter, String... properties) {
 			super();
@@ -1370,7 +1370,7 @@ public final class AudioLibrary {
 		 * @param albumartistsonly Whether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
 		 * @param sort 
 		 * @param filter 
-		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(Boolean albumartistsonly, ListModel.Sort sort, FilterGenre filter, String... properties) {
 			super();
@@ -1383,7 +1383,7 @@ public final class AudioLibrary {
 		/**
 		 * Retrieve all artists.
 		 * @param filter 
-		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(FilterAlbumId filter, String... properties) {
 			super();
@@ -1395,7 +1395,7 @@ public final class AudioLibrary {
 		 * Retrieve all artists.
 		 * @param albumartistsonly Whether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
 		 * @param filter 
-		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(Boolean albumartistsonly, FilterAlbumId filter, String... properties) {
 			super();
@@ -1408,7 +1408,7 @@ public final class AudioLibrary {
 		 * Retrieve all artists.
 		 * @param limits 
 		 * @param filter 
-		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(ListModel.Limits limits, FilterAlbumId filter, String... properties) {
 			super();
@@ -1422,7 +1422,7 @@ public final class AudioLibrary {
 		 * @param albumartistsonly Whether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
 		 * @param limits 
 		 * @param filter 
-		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(Boolean albumartistsonly, ListModel.Limits limits, FilterAlbumId filter, String... properties) {
 			super();
@@ -1436,7 +1436,7 @@ public final class AudioLibrary {
 		 * Retrieve all artists.
 		 * @param sort 
 		 * @param filter 
-		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(ListModel.Sort sort, FilterAlbumId filter, String... properties) {
 			super();
@@ -1450,7 +1450,7 @@ public final class AudioLibrary {
 		 * @param albumartistsonly Whether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
 		 * @param sort 
 		 * @param filter 
-		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(Boolean albumartistsonly, ListModel.Sort sort, FilterAlbumId filter, String... properties) {
 			super();
@@ -1463,7 +1463,7 @@ public final class AudioLibrary {
 		/**
 		 * Retrieve all artists.
 		 * @param filter 
-		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(FilterAlbum filter, String... properties) {
 			super();
@@ -1475,7 +1475,7 @@ public final class AudioLibrary {
 		 * Retrieve all artists.
 		 * @param albumartistsonly Whether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
 		 * @param filter 
-		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(Boolean albumartistsonly, FilterAlbum filter, String... properties) {
 			super();
@@ -1488,7 +1488,7 @@ public final class AudioLibrary {
 		 * Retrieve all artists.
 		 * @param limits 
 		 * @param filter 
-		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(ListModel.Limits limits, FilterAlbum filter, String... properties) {
 			super();
@@ -1502,7 +1502,7 @@ public final class AudioLibrary {
 		 * @param albumartistsonly Whether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
 		 * @param limits 
 		 * @param filter 
-		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(Boolean albumartistsonly, ListModel.Limits limits, FilterAlbum filter, String... properties) {
 			super();
@@ -1516,7 +1516,7 @@ public final class AudioLibrary {
 		 * Retrieve all artists.
 		 * @param sort 
 		 * @param filter 
-		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(ListModel.Sort sort, FilterAlbum filter, String... properties) {
 			super();
@@ -1530,7 +1530,7 @@ public final class AudioLibrary {
 		 * @param albumartistsonly Whether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
 		 * @param sort 
 		 * @param filter 
-		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(Boolean albumartistsonly, ListModel.Sort sort, FilterAlbum filter, String... properties) {
 			super();
@@ -1543,7 +1543,7 @@ public final class AudioLibrary {
 		/**
 		 * Retrieve all artists.
 		 * @param filter 
-		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(FilterSongId filter, String... properties) {
 			super();
@@ -1555,7 +1555,7 @@ public final class AudioLibrary {
 		 * Retrieve all artists.
 		 * @param albumartistsonly Whether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
 		 * @param filter 
-		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(Boolean albumartistsonly, FilterSongId filter, String... properties) {
 			super();
@@ -1568,7 +1568,7 @@ public final class AudioLibrary {
 		 * Retrieve all artists.
 		 * @param limits 
 		 * @param filter 
-		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(ListModel.Limits limits, FilterSongId filter, String... properties) {
 			super();
@@ -1582,7 +1582,7 @@ public final class AudioLibrary {
 		 * @param albumartistsonly Whether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
 		 * @param limits 
 		 * @param filter 
-		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(Boolean albumartistsonly, ListModel.Limits limits, FilterSongId filter, String... properties) {
 			super();
@@ -1596,7 +1596,7 @@ public final class AudioLibrary {
 		 * Retrieve all artists.
 		 * @param sort 
 		 * @param filter 
-		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(ListModel.Sort sort, FilterSongId filter, String... properties) {
 			super();
@@ -1610,7 +1610,7 @@ public final class AudioLibrary {
 		 * @param albumartistsonly Whether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
 		 * @param sort 
 		 * @param filter 
-		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(Boolean albumartistsonly, ListModel.Sort sort, FilterSongId filter, String... properties) {
 			super();
@@ -1623,7 +1623,7 @@ public final class AudioLibrary {
 		/**
 		 * Retrieve all artists.
 		 * @param filter 
-		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(ListModel.ArtistFilter filter, String... properties) {
 			super();
@@ -1635,7 +1635,7 @@ public final class AudioLibrary {
 		 * Retrieve all artists.
 		 * @param albumartistsonly Whether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
 		 * @param filter 
-		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(Boolean albumartistsonly, ListModel.ArtistFilter filter, String... properties) {
 			super();
@@ -1648,7 +1648,7 @@ public final class AudioLibrary {
 		 * Retrieve all artists.
 		 * @param limits 
 		 * @param filter 
-		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(ListModel.Limits limits, ListModel.ArtistFilter filter, String... properties) {
 			super();
@@ -1662,7 +1662,7 @@ public final class AudioLibrary {
 		 * @param albumartistsonly Whether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
 		 * @param limits 
 		 * @param filter 
-		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(Boolean albumartistsonly, ListModel.Limits limits, ListModel.ArtistFilter filter, String... properties) {
 			super();
@@ -1676,7 +1676,7 @@ public final class AudioLibrary {
 		 * Retrieve all artists.
 		 * @param sort 
 		 * @param filter 
-		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(ListModel.Sort sort, ListModel.ArtistFilter filter, String... properties) {
 			super();
@@ -1690,7 +1690,7 @@ public final class AudioLibrary {
 		 * @param albumartistsonly Whether or not to include artists only appearing in compilations. If the parameter is not passed or is passed as null the GUI setting will be used.
 		 * @param sort 
 		 * @param filter 
-		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>, <tt>compilationartist</tt>. See constants at {@link AudioModel.ArtistFields}.
+		 * @param properties  One or more of: <tt>instrument</tt>, <tt>style</tt>, <tt>mood</tt>, <tt>born</tt>, <tt>formed</tt>, <tt>description</tt>, <tt>genre</tt>, <tt>died</tt>, <tt>disbanded</tt>, <tt>yearsactive</tt>, <tt>musicbrainzartistid</tt>, <tt>fanart</tt>, <tt>thumbnail</tt>. See constants at {@link AudioModel.ArtistFields}.
 		 */
 		public GetArtists(Boolean albumartistsonly, ListModel.Sort sort, ListModel.ArtistFilter filter, String... properties) {
 			super();
