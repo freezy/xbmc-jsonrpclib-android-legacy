@@ -1,5 +1,5 @@
 /*
- *      Copyright (C) 2005-2013 Team XBMC
+ *      Copyright (C) 2005-2014 Team XBMC
  *      http://xbmc.org
  *
  *  This Program is free software; you can redistribute it and/or modify
@@ -22,12 +22,18 @@ package org.xbmc.android.jsonrpc.api.call;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import org.codehaus.jackson.JsonNode;
+import org.codehaus.jackson.node.ArrayNode;
+import org.codehaus.jackson.node.IntNode;
 import org.codehaus.jackson.node.ObjectNode;
+import org.codehaus.jackson.node.TextNode;
 import org.xbmc.android.jsonrpc.api.AbstractCall;
+import org.xbmc.android.jsonrpc.api.AbstractModel;
 import org.xbmc.android.jsonrpc.api.model.ApplicationModel;
 import org.xbmc.android.jsonrpc.api.model.GlobalModel;
 

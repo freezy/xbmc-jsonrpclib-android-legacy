@@ -1,5 +1,5 @@
 /*
- *      Copyright (C) 2005-2013 Team XBMC
+ *      Copyright (C) 2005-2014 Team XBMC
  *      http://xbmc.org
  *
  *  This Program is free software; you can redistribute it and/or modify
@@ -30,11 +30,8 @@ import java.util.List;
 import java.util.Set;
 import org.codehaus.jackson.JsonNode;
 import org.codehaus.jackson.node.ArrayNode;
-import org.codehaus.jackson.node.BooleanNode;
 import org.codehaus.jackson.node.ObjectNode;
-import org.codehaus.jackson.node.TextNode;
 import org.xbmc.android.jsonrpc.api.AbstractCall;
-import org.xbmc.android.jsonrpc.api.AbstractModel;
 import org.xbmc.android.jsonrpc.api.call.Addons;
 import org.xbmc.android.jsonrpc.api.model.AddonModel;
 import org.xbmc.android.jsonrpc.api.model.GlobalModel;
